@@ -1493,6 +1493,71 @@ h2, h2 * { color: #fff !important; }
 }
 
 }
+
+
+/* === UNIFIED TABLE STYLING === */
+table, .compare-table, .confusion table {
+  width: 100% !important;
+  border-collapse: collapse !important;
+  margin: 10px 0 !important;
+  font-size: 0.88em !important;
+  overflow-x: auto !important;
+  display: block !important;
+}
+table th, .compare-table th, .confusion th {
+  background: #1a237e !important;
+  color: #fff !important;
+  padding: 10px 12px !important;
+  text-align: left !important;
+  font-weight: 700 !important;
+  border: 1px solid #303f9f !important;
+}
+table td, .compare-table td, .confusion td {
+  padding: 8px 12px !important;
+  border: 1px solid #e0e0e0 !important;
+  color: #222 !important;
+}
+table tr:nth-child(even), .compare-table tr:nth-child(even), .confusion tr:nth-child(even) {
+  background: #f8f9fa !important;
+}
+table tr:nth-child(odd), .compare-table tr:nth-child(odd), .confusion tr:nth-child(odd) {
+  background: #fff !important;
+}
+table tr:hover, .compare-table tr:hover, .confusion tr:hover {
+  background: #e3f2fd !important;
+}
+
+/* ============================================================
+   FIX 3: Code blocks
+   ============================================================ */
+code, pre, .formula-display, .stata-output {
+  font-family: 'Courier New', Consolas, monospace !important;
+  background: #f5f5f5 !important;
+  border: 1px solid #e0e0e0 !important;
+  border-radius: 6px !important;
+  padding: 2px 6px !important;
+  font-size: 0.9em !important;
+  color: #333 !important;
+}
+pre, .stata-output {
+  display: block !important;
+  padding: 12px !important;
+  margin: 10px 0 !important;
+  overflow-x: auto !important;
+  line-height: 1.5 !important;
+}
+
+/* ============================================================
+   FIX 4: List normalization
+   ============================================================ */
+ul, ol {
+  padding-left: 24px !important;
+  margin: 8px 0 !important;
+}
+li {
+  margin: 4px 0 !important;
+  line-height: 1.6 !important;
+}
 </style>
 </head><body>
 <!-- 固定顶部导航栏 -->
@@ -1686,12 +1751,12 @@ speed-1"><h5>⏱ 考前5分钟必记 · 对数模型与参数解释</h5><p><b>�
   <h3>2.1 虚拟变量的基本概念与设置原则</h3>
   <div class="exam-tags">
     <span class="exam-type">📝 题型覆盖</span>
-    <span class="exam-tag" data-types="['单选','判断','简答','案例']">exam_types(['单选','判断','简答','案例'])</span>
+    <span class="exam-tag" data-types="['单选','判断','简答','案例']"><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#fff8e1;color:#e65100;font-weight:500">单选</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#f3e5f5;color:#6a1b9a;font-weight:500">判断</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#e8f5e9;color:#2e7d32;font-weight:500">简答</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#ffebee;color:#c62828;font-weight:500">案例</span></span>
   </div>
 
   <div class="knowledge-point">
     <h4>2.1.1 虚拟变量的定义</h4>
-    <div class="exam-tag-inline" data-types="['单选','判断']">exam_types(['单选','判断'])</div>
+    <div class="exam-tag-inline" data-types="['单选','判断']"><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#fff8e1;color:#e65100;font-weight:500">单选</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#f3e5f5;color:#6a1b9a;font-weight:500">判断</span></div>
     <p><strong>虚拟变量（Dummy Variable）</strong>又称哑变量、指标变量、二元变量，是取值为 0 或 1 的人工变量，用于将<strong>定性因素</strong>（如性别、地区、季节、政策实施）<strong>量化</strong>引入回归模型。</p>
     <div class="formula-display">
       D = 1（具备某属性）&emsp;或&emsp; D = 0（不具备某属性）
@@ -1701,7 +1766,7 @@ speed-1"><h5>⏱ 考前5分钟必记 · 对数模型与参数解释</h5><p><b>�
 
   <div class="knowledge-point">
     <h4>2.1.2 虚拟变量的设置原则（核心考点）</h4>
-    <div class="exam-tag-inline" data-types="['单选','判断','简答']">exam_types(['单选','判断','简答'])</div>
+    <div class="exam-tag-inline" data-types="['单选','判断','简答']"><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#fff8e1;color:#e65100;font-weight:500">单选</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#f3e5f5;color:#6a1b9a;font-weight:500">判断</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#e8f5e9;color:#2e7d32;font-weight:500">简答</span></div>
     <div class="principle-list">
       <div class="principle-item">
         <span class="principle-num">①</span>
@@ -1739,7 +1804,7 @@ speed-1"><h5>⏱ 考前5分钟必记 · 对数模型与参数解释</h5><p><b>�
 
   <div class="knowledge-point">
     <h4>2.1.3 虚拟变量的基本模型形式</h4>
-    <div class="exam-tag-inline" data-types="['单选','判断','简答']">exam_types(['单选','判断','简答'])</div>
+    <div class="exam-tag-inline" data-types="['单选','判断','简答']"><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#fff8e1;color:#e65100;font-weight:500">单选</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#f3e5f5;color:#6a1b9a;font-weight:500">判断</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#e8f5e9;color:#2e7d32;font-weight:500">简答</span></div>
     <div class="model-types">
       <div class="model-type-box">
         <strong>加法模型（截距改变）</strong>
@@ -1768,7 +1833,7 @@ speed-1"><h5>⏱ 考前5分钟必记 · 对数模型与参数解释</h5><p><b>�
 
   <div class="knowledge-point">
     <h4>2.1.4 虚拟变量陷阱的数学本质</h4>
-    <div class="exam-tag-inline" data-types="['单选','判断']">exam_types(['单选','判断'])</div>
+    <div class="exam-tag-inline" data-types="['单选','判断']"><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#fff8e1;color:#e65100;font-weight:500">单选</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#f3e5f5;color:#6a1b9a;font-weight:500">判断</span></div>
     <p>设定性变量有 m 个分类，若引入全部 m 个虚拟变量 D<sub>1</sub>, D<sub>2</sub>, ..., D<sub>m</sub>，则对每个样本点有：</p>
     <div class="formula-display">
       D<sub>1</sub> + D<sub>2</sub> + ... + D<sub>m</sub> = 1
@@ -1783,12 +1848,12 @@ speed-1"><h5>⏱ 考前5分钟必记 · 对数模型与参数解释</h5><p><b>�
   <h3>2.2 虚拟变量的主要应用场景</h3>
   <div class="exam-tags">
     <span class="exam-type">📝 题型覆盖</span>
-    <span class="exam-tag" data-types="['单选','判断','简答','案例']">exam_types(['单选','判断','简答','案例'])</span>
+    <span class="exam-tag" data-types="['单选','判断','简答','案例']"><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#fff8e1;color:#e65100;font-weight:500">单选</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#f3e5f5;color:#6a1b9a;font-weight:500">判断</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#e8f5e9;color:#2e7d32;font-weight:500">简答</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#ffebee;color:#c62828;font-weight:500">案例</span></span>
   </div>
 
   <div class="knowledge-point">
     <h4>2.2.1 季节调整（Seasonal Adjustment）</h4>
-    <div class="exam-tag-inline" data-types="['单选','判断','简答']">exam_types(['单选','判断','简答'])</div>
+    <div class="exam-tag-inline" data-types="['单选','判断','简答']"><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#fff8e1;color:#e65100;font-weight:500">单选</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#f3e5f5;color:#6a1b9a;font-weight:500">判断</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#e8f5e9;color:#2e7d32;font-weight:500">简答</span></div>
     <p>利用虚拟变量去除时间序列数据中的季节波动成分。季度数据设 3 个虚拟变量（Q<sub>2</sub>, Q<sub>3</sub>, Q<sub>4</sub>，以 Q<sub>1</sub> 为基准），月度数据设 11 个虚拟变量（以 1 月为基准）。</p>
     <div class="formula-display">
       Y<sub>t</sub> = β<sub>1</sub> + β<sub>2</sub>Q<sub>2t</sub> + β<sub>3</sub>Q<sub>3t</sub> + β<sub>4</sub>Q<sub>4t</sub> + β<sub>5</sub>X<sub>t</sub> + u<sub>t</sub>
@@ -1798,7 +1863,7 @@ speed-1"><h5>⏱ 考前5分钟必记 · 对数模型与参数解释</h5><p><b>�
 
   <div class="knowledge-point">
     <h4>2.2.2 分段回归与结构变化（Chow Test）</h4>
-    <div class="exam-tag-inline" data-types="['单选','判断','简答','案例']">exam_types(['单选','判断','简答','案例'])</div>
+    <div class="exam-tag-inline" data-types="['单选','判断','简答','案例']"><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#fff8e1;color:#e65100;font-weight:500">单选</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#f3e5f5;color:#6a1b9a;font-weight:500">判断</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#e8f5e9;color:#2e7d32;font-weight:500">简答</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#ffebee;color:#c62828;font-weight:500">案例</span></div>
     <p><strong>邹检验（Chow Test, 1960）</strong>检验回归模型在两个（或多个）子样本间是否存在<strong>结构变化</strong>。虚拟变量法是邹检验的等价实现——引入截距虚拟变量和斜率虚拟变量（即交互项），联合检验这些虚拟变量的系数是否全为零。</p>
 
     <div class="chow-steps">
@@ -1817,7 +1882,7 @@ speed-1"><h5>⏱ 考前5分钟必记 · 对数模型与参数解释</h5><p><b>�
 
   <div class="knowledge-point">
     <h4>2.2.3 交互效应分析</h4>
-    <div class="exam-tag-inline" data-types="['单选','判断','案例']">exam_types(['单选','判断','案例'])</div>
+    <div class="exam-tag-inline" data-types="['单选','判断','案例']"><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#fff8e1;color:#e65100;font-weight:500">单选</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#f3e5f5;color:#6a1b9a;font-weight:500">判断</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#ffebee;color:#c62828;font-weight:500">案例</span></div>
     <p>两个虚拟变量（或一个虚拟变量与一个连续变量）的<strong>交互项</strong>捕捉它们之间的协同效应。例如研究教育回报率是否因性别而异：</p>
     <div class="formula-display">
       ln(Wage) = β<sub>1</sub> + β<sub>2</sub>Female + β<sub>3</sub>Edu + β<sub>4</sub>(Female×Edu) + u
@@ -1827,7 +1892,7 @@ speed-1"><h5>⏱ 考前5分钟必记 · 对数模型与参数解释</h5><p><b>�
 
   <div class="knowledge-point">
     <h4>2.2.4 虚拟变量作为被解释变量（LPM 模型）</h4>
-    <div class="exam-tag-inline" data-types="['单选','判断','简答']">exam_types(['单选','判断','简答'])</div>
+    <div class="exam-tag-inline" data-types="['单选','判断','简答']"><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#fff8e1;color:#e65100;font-weight:500">单选</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#f3e5f5;color:#6a1b9a;font-weight:500">判断</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#e8f5e9;color:#2e7d32;font-weight:500">简答</span></div>
     <p><strong>线性概率模型（Linear Probability Model, LPM）</strong>：当被解释变量 Y 本身是二值变量（0/1）时，OLS 回归可解释为条件概率：</p>
     <div class="formula-display">
       E(Y|X) = P(Y=1|X) = X'β
@@ -2012,19 +2077,19 @@ id="t3">
   <h3>3.1 多重共线性的概念与分类</h3>
   <div class="exam-tags">
     <span class="exam-type">📝 题型覆盖</span>
-    <span class="exam-tag" data-types="['单选','判断','简答','案例']">exam_types(['单选','判断','简答','案例'])</span>
+    <span class="exam-tag" data-types="['单选','判断','简答','案例']"><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#fff8e1;color:#e65100;font-weight:500">单选</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#f3e5f5;color:#6a1b9a;font-weight:500">判断</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#e8f5e9;color:#2e7d32;font-weight:500">简答</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#ffebee;color:#c62828;font-weight:500">案例</span></span>
   </div>
 
   <div class="knowledge-point">
     <h4>3.1.1 定义</h4>
-    <div class="exam-tag-inline" data-types="['单选','判断']">exam_types(['单选','判断'])</div>
+    <div class="exam-tag-inline" data-types="['单选','判断']"><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#fff8e1;color:#e65100;font-weight:500">单选</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#f3e5f5;color:#6a1b9a;font-weight:500">判断</span></div>
     <p><strong>多重共线性（Multicollinearity）</strong>指线性回归模型中，两个或多个解释变量之间存在<strong>高度（但不完全）相关</strong>或<strong>精确线性相关</strong>的现象。</p>
     <p>经典线性回归模型（CLRM）假定：<strong>不存在完全多重共线性</strong>，即设计矩阵 X 列满秩 rank(X) = k+1（其中 k 为解释变量个数）。</p>
   </div>
 
   <div class="knowledge-point">
     <h4>3.1.2 完全多重共线性 vs 不完全多重共线性</h4>
-    <div class="exam-tag-inline" data-types="['单选','判断','简答']">exam_types(['单选','判断','简答'])</div>
+    <div class="exam-tag-inline" data-types="['单选','判断','简答']"><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#fff8e1;color:#e65100;font-weight:500">单选</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#f3e5f5;color:#6a1b9a;font-weight:500">判断</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#e8f5e9;color:#2e7d32;font-weight:500">简答</span></div>
     <div class="compare-table-wrapper">
       <table class="compare-table">
         <thead>
@@ -2063,7 +2128,7 @@ id="t3">
 
   <div class="knowledge-point">
     <h4>3.1.3 多重共线性的来源</h4>
-    <div class="exam-tag-inline" data-types="['单选','判断']">exam_types(['单选','判断'])</div>
+    <div class="exam-tag-inline" data-types="['单选','判断']"><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#fff8e1;color:#e65100;font-weight:500">单选</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#f3e5f5;color:#6a1b9a;font-weight:500">判断</span></div>
     <ol>
       <li><strong>经济变量共同的变动趋势</strong>：如时间序列数据中 GDP、消费、投资都随时间增长，高度相关</li>
       <li><strong>滞后变量的引入</strong>：Y<sub>t</sub> 与 Y<sub>t-1</sub> 通常高度相关</li>
@@ -2080,7 +2145,7 @@ id="t3">
   <h3>3.2 多重共线性的后果</h3>
   <div class="exam-tags">
     <span class="exam-type">📝 题型覆盖</span>
-    <span class="exam-tag" data-types="['单选','判断','简答']">exam_types(['单选','判断','简答'])</span>
+    <span class="exam-tag" data-types="['单选','判断','简答']"><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#fff8e1;color:#e65100;font-weight:500">单选</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#f3e5f5;color:#6a1b9a;font-weight:500">判断</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#e8f5e9;color:#2e7d32;font-weight:500">简答</span></span>
   </div>
 
   <div class="consequence-list">
@@ -2120,12 +2185,12 @@ id="t3">
   <h3>3.3 多重共线性的诊断与补救措施</h3>
   <div class="exam-tags">
     <span class="exam-type">📝 题型覆盖</span>
-    <span class="exam-tag" data-types="['单选','判断','简答','案例']">exam_types(['单选','判断','简答','案例'])</span>
+    <span class="exam-tag" data-types="['单选','判断','简答','案例']"><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#fff8e1;color:#e65100;font-weight:500">单选</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#f3e5f5;color:#6a1b9a;font-weight:500">判断</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#e8f5e9;color:#2e7d32;font-weight:500">简答</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#ffebee;color:#c62828;font-weight:500">案例</span></span>
   </div>
 
   <div class="knowledge-point">
     <h4>3.3.1 诊断方法</h4>
-    <div class="exam-tag-inline" data-types="['单选','判断','简答']">exam_types(['单选','判断','简答'])</div>
+    <div class="exam-tag-inline" data-types="['单选','判断','简答']"><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#fff8e1;color:#e65100;font-weight:500">单选</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#f3e5f5;color:#6a1b9a;font-weight:500">判断</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#e8f5e9;color:#2e7d32;font-weight:500">简答</span></div>
     <table class="diagnosis-table">
       <thead>
         <tr><th>方法</th><th>操作</th><th>判断标准</th></tr>
@@ -2162,7 +2227,7 @@ id="t3">
 
   <div class="knowledge-point">
     <h4>3.3.2 补救措施</h4>
-    <div class="exam-tag-inline" data-types="['单选','判断','简答','案例']">exam_types(['单选','判断','简答','案例'])</div>
+    <div class="exam-tag-inline" data-types="['单选','判断','简答','案例']"><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#fff8e1;color:#e65100;font-weight:500">单选</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#f3e5f5;color:#6a1b9a;font-weight:500">判断</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#e8f5e9;color:#2e7d32;font-weight:500">简答</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#ffebee;color:#c62828;font-weight:500">案例</span></div>
     <table class="remedy-table">
       <thead>
         <tr><th>措施</th><th>做法</th><th>代价/局限</th></tr>
@@ -2383,12 +2448,12 @@ id="t4">
   <h3>4.1 异方差的定义、来源与后果</h3>
   <div class="exam-tags">
     <span class="exam-type">📝 题型覆盖</span>
-    <span class="exam-tag" data-types="['单选','判断','简答','案例']">exam_types(['单选','判断','简答','案例'])</span>
+    <span class="exam-tag" data-types="['单选','判断','简答','案例']"><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#fff8e1;color:#e65100;font-weight:500">单选</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#f3e5f5;color:#6a1b9a;font-weight:500">判断</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#e8f5e9;color:#2e7d32;font-weight:500">简答</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#ffebee;color:#c62828;font-weight:500">案例</span></span>
   </div>
 
   <div class="knowledge-point">
     <h4>4.1.1 异方差的定义</h4>
-    <div class="exam-tag-inline" data-types="['单选','判断']">exam_types(['单选','判断'])</div>
+    <div class="exam-tag-inline" data-types="['单选','判断']"><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#fff8e1;color:#e65100;font-weight:500">单选</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#f3e5f5;color:#6a1b9a;font-weight:500">判断</span></div>
     <p><strong>异方差（Heteroscedasticity）</strong>指回归模型中随机误差项的<strong>方差不恒为常数</strong>，即 Var(uᵢ | Xᵢ) = σᵢ² ≠ σ²（常数）。</p>
     <p>经典线性回归模型（CLRM）假定 <strong>同方差（Homoscedasticity）</strong>：Var(uᵢ | X) = σ²，∀ i。当该假定被违反时，即出现异方差问题。</p>
     <div class="formula-display">
@@ -2401,7 +2466,7 @@ id="t4">
 
   <div class="knowledge-point">
     <h4>4.1.2 异方差的来源</h4>
-    <div class="exam-tag-inline" data-types="['单选','判断']">exam_types(['单选','判断'])</div>
+    <div class="exam-tag-inline" data-types="['单选','判断']"><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#fff8e1;color:#e65100;font-weight:500">单选</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#f3e5f5;color:#6a1b9a;font-weight:500">判断</span></div>
     <ol>
       <li><strong>截面数据普遍存在</strong>：不同规模企业的行为差异——大企业的利润波动方差远大于小企业</li>
       <li><strong>学习效应</strong>：随时间推移，经济主体的行为方差可能减小（如生产经验积累使产品质量更稳定）</li>
@@ -2414,7 +2479,7 @@ id="t4">
 
   <div class="knowledge-point">
     <h4>4.1.3 异方差的后果</h4>
-    <div class="exam-tag-inline" data-types="['单选','判断','简答','案例']">exam_types(['单选','判断','简答','案例'])</div>
+    <div class="exam-tag-inline" data-types="['单选','判断','简答','案例']"><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#fff8e1;color:#e65100;font-weight:500">单选</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#f3e5f5;color:#6a1b9a;font-weight:500">判断</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#e8f5e9;color:#2e7d32;font-weight:500">简答</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#ffebee;color:#c62828;font-weight:500">案例</span></div>
     <div class="consequence-grid">
       <div class="conseq-card">
         <div class="conseq-title ok">✅ 不影响</div>
@@ -2445,19 +2510,19 @@ id="t4">
   <h3>4.2 异方差的诊断方法</h3>
   <div class="exam-tags">
     <span class="exam-type">📝 题型覆盖</span>
-    <span class="exam-tag" data-types="['单选','判断','简答','案例']">exam_types(['单选','判断','简答','案例'])</span>
+    <span class="exam-tag" data-types="['单选','判断','简答','案例']"><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#fff8e1;color:#e65100;font-weight:500">单选</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#f3e5f5;color:#6a1b9a;font-weight:500">判断</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#e8f5e9;color:#2e7d32;font-weight:500">简答</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#ffebee;color:#c62828;font-weight:500">案例</span></span>
   </div>
 
   <div class="knowledge-point">
     <h4>4.2.1 图示法（Graphical Method）</h4>
-    <div class="exam-tag-inline" data-types="['单选','判断']">exam_types(['单选','判断'])</div>
+    <div class="exam-tag-inline" data-types="['单选','判断']"><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#fff8e1;color:#e65100;font-weight:500">单选</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#f3e5f5;color:#6a1b9a;font-weight:500">判断</span></div>
     <p>绘制 <strong>残差 û 对拟合值 Ŷ</strong> 的散点图或 <strong>残差² 对某个解释变量 X</strong> 的散点图。若散点呈随机均匀分布 → 同方差；若呈明显的模式（如喇叭形）→ 异方差。</p>
     <p><strong>优点：</strong>直观、初步判断。<strong>缺点：</strong>主观性强，无法给出统计显著性判断。</p>
   </div>
 
   <div class="knowledge-point">
     <h4>4.2.2 布雷-帕甘检验（Breusch-Pagan Test, 1979）</h4>
-    <div class="exam-tag-inline" data-types="['单选','判断','简答']">exam_types(['单选','判断','简答'])</div>
+    <div class="exam-tag-inline" data-types="['单选','判断','简答']"><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#fff8e1;color:#e65100;font-weight:500">单选</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#f3e5f5;color:#6a1b9a;font-weight:500">判断</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#e8f5e9;color:#2e7d32;font-weight:500">简答</span></div>
     <p><strong>思想：</strong>检验残差平方 û² 是否可以用解释变量（或其子集）Z 来解释。</p>
     <p><strong>步骤：</strong></p>
     <ol>
@@ -2471,7 +2536,7 @@ id="t4">
 
   <div class="knowledge-point">
     <h4>4.2.3 怀特检验（White Test, 1980）</h4>
-    <div class="exam-tag-inline" data-types="['单选','判断','简答','案例']">exam_types(['单选','判断','简答','案例'])</div>
+    <div class="exam-tag-inline" data-types="['单选','判断','简答','案例']"><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#fff8e1;color:#e65100;font-weight:500">单选</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#f3e5f5;color:#6a1b9a;font-weight:500">判断</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#e8f5e9;color:#2e7d32;font-weight:500">简答</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#ffebee;color:#c62828;font-weight:500">案例</span></div>
     <p><strong>思想：</strong>BP 检验的推广——辅助回归包含解释变量、平方项和交叉乘积项，不依赖异方差的具体形式（<strong>一般性检验</strong>）。</p>
     <p><strong>辅助回归：</strong>û² = δ₀ + δ₁X₁ + δ₂X₂ + ... + δₖXₖ + δ₁₁X₁² + δ₂₂X₂² + ... + δₖₖXₖ² + δ₁₂X₁X₂ + ... + v</p>
     <p>LM = n·R²<sub>aux</sub> ~ χ²(df)，df 为辅助回归中除截距外的参数个数。</p>
@@ -2481,7 +2546,7 @@ id="t4">
 
   <div class="knowledge-point">
     <h4>4.2.4 戈德菲尔德-匡特检验（Goldfeld-Quandt Test, 1965）</h4>
-    <div class="exam-tag-inline" data-types="['单选','判断','简答']">exam_types(['单选','判断','简答'])</div>
+    <div class="exam-tag-inline" data-types="['单选','判断','简答']"><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#fff8e1;color:#e65100;font-weight:500">单选</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#f3e5f5;color:#6a1b9a;font-weight:500">判断</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#e8f5e9;color:#2e7d32;font-weight:500">简答</span></div>
     <p>适用于<strong>单一变量引起异方差</strong>且可排序的情形（如异方差随某一解释变量 X 单调变化）。</p>
     <p><strong>步骤：</strong></p>
     <ol>
@@ -2495,7 +2560,7 @@ id="t4">
 
   <div class="knowledge-point">
     <h4>4.2.5 帕克检验（Park Test）与格莱泽检验（Glejser Test）</h4>
-    <div class="exam-tag-inline" data-types="['单选','判断']">exam_types(['单选','判断'])</div>
+    <div class="exam-tag-inline" data-types="['单选','判断']"><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#fff8e1;color:#e65100;font-weight:500">单选</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#f3e5f5;color:#6a1b9a;font-weight:500">判断</span></div>
     <table class="diag-compare">
       <tr><th>检验</th><th>辅助回归形式</th><th>特点</th></tr>
       <tr><td><strong>Park 检验</strong></td><td>ln(û²) = α + β·ln(X) + v</td><td>假设异方差为幂函数形式；对函数设定较敏感</td></tr>
@@ -2509,12 +2574,12 @@ id="t4">
   <h3>4.3 异方差的补救措施</h3>
   <div class="exam-tags">
     <span class="exam-type">📝 题型覆盖</span>
-    <span class="exam-tag" data-types="['单选','判断','简答','案例']">exam_types(['单选','判断','简答','案例'])</span>
+    <span class="exam-tag" data-types="['单选','判断','简答','案例']"><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#fff8e1;color:#e65100;font-weight:500">单选</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#f3e5f5;color:#6a1b9a;font-weight:500">判断</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#e8f5e9;color:#2e7d32;font-weight:500">简答</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#ffebee;color:#c62828;font-weight:500">案例</span></span>
   </div>
 
   <div class="knowledge-point">
     <h4>4.3.1 加权最小二乘法（Weighted Least Squares, WLS）</h4>
-    <div class="exam-tag-inline" data-types="['单选','判断','简答']">exam_types(['单选','判断','简答'])</div>
+    <div class="exam-tag-inline" data-types="['单选','判断','简答']"><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#fff8e1;color:#e65100;font-weight:500">单选</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#f3e5f5;color:#6a1b9a;font-weight:500">判断</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#e8f5e9;color:#2e7d32;font-weight:500">简答</span></div>
     <p><strong>思想：</strong>对方差大的观测赋较小的权重，方差小的观测赋较大的权重，实现<strong>加权同方差</strong>。</p>
     <p>若已知 Var(uᵢ) = σ²·wᵢ（wᵢ 已知），则变换后的模型为：</p>
     <div class="formula-display">
@@ -2532,7 +2597,7 @@ id="t4">
 
   <div class="knowledge-point">
     <h4>4.3.2 异方差稳健标准误（White/Huber Sandwich Estimator）</h4>
-    <div class="exam-tag-inline" data-types="['单选','判断','简答','案例']">exam_types(['单选','判断','简答','案例'])</div>
+    <div class="exam-tag-inline" data-types="['单选','判断','简答','案例']"><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#fff8e1;color:#e65100;font-weight:500">单选</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#f3e5f5;color:#6a1b9a;font-weight:500">判断</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#e8f5e9;color:#2e7d32;font-weight:500">简答</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#ffebee;color:#c62828;font-weight:500">案例</span></div>
     <p><strong>思想：</strong>不修正异方差本身，而是修正标准误的估计，使推断（t 统计量、置信区间）在异方差下仍然有效。</p>
     <div class="formula-display">
       Var̂(β̂) = (X'X)⁻¹ X' diag(ûᵢ²) X (X'X)⁻¹
@@ -2556,7 +2621,7 @@ id="t4">
 
   <div class="knowledge-point">
     <h4>4.3.3 变量变换法</h4>
-    <div class="exam-tag-inline" data-types="['单选','判断']">exam_types(['单选','判断'])</div>
+    <div class="exam-tag-inline" data-types="['单选','判断']"><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#fff8e1;color:#e65100;font-weight:500">单选</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#f3e5f5;color:#6a1b9a;font-weight:500">判断</span></div>
     <p><strong>对数变换：</strong>对变量取对数 ln(Y) 或 ln(X) 通常能压缩方差的比例效应，缓解异方差。适用于方差与变量水平值成比例的情形。</p>
     <p><strong>Box-Cox 变换：</strong>更一般的幂变换族，通过数据自适应地选择变换参数。</p>
   </div>
@@ -2734,12 +2799,12 @@ id="t5">
   <h3>5.1 自相关的定义、来源与后果</h3>
   <div class="exam-tags">
     <span class="exam-type">📝 题型覆盖</span>
-    <span class="exam-tag" data-types="['单选','判断','简答','案例']">exam_types(['单选','判断','简答','案例'])</span>
+    <span class="exam-tag" data-types="['单选','判断','简答','案例']"><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#fff8e1;color:#e65100;font-weight:500">单选</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#f3e5f5;color:#6a1b9a;font-weight:500">判断</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#e8f5e9;color:#2e7d32;font-weight:500">简答</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#ffebee;color:#c62828;font-weight:500">案例</span></span>
   </div>
 
   <div class="knowledge-point">
     <h4>5.1.1 自相关的定义</h4>
-    <div class="exam-tag-inline" data-types="['单选','判断']">exam_types(['单选','判断'])</div>
+    <div class="exam-tag-inline" data-types="['单选','判断']"><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#fff8e1;color:#e65100;font-weight:500">单选</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#f3e5f5;color:#6a1b9a;font-weight:500">判断</span></div>
     <p><strong>自相关（Autocorrelation/Serial Correlation）</strong>指线性回归模型中，不同观测期的随机误差项之间存在<strong>相关性</strong>：</p>
     <div class="formula-display">
       Cov(uᵢ, uⱼ) ≠ 0 &emsp; 对 i ≠ j
@@ -2754,7 +2819,7 @@ id="t5">
 
   <div class="knowledge-point">
     <h4>5.1.2 自相关的来源</h4>
-    <div class="exam-tag-inline" data-types="['单选','判断']">exam_types(['单选','判断'])</div>
+    <div class="exam-tag-inline" data-types="['单选','判断']"><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#fff8e1;color:#e65100;font-weight:500">单选</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#f3e5f5;color:#6a1b9a;font-weight:500">判断</span></div>
     <ol>
       <li><strong>时间序列数据的内在惯性</strong>：经济变量（GDP、消费、就业）通常具有记忆性——当期冲击会延续到以后各期。这是最常见的来源。</li>
       <li><strong>模型设定偏误</strong>：
@@ -2771,7 +2836,7 @@ id="t5">
 
   <div class="knowledge-point">
     <h4>5.1.3 自相关的后果</h4>
-    <div class="exam-tag-inline" data-types="['单选','判断','简答','案例']">exam_types(['单选','判断','简答','案例'])</div>
+    <div class="exam-tag-inline" data-types="['单选','判断','简答','案例']"><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#fff8e1;color:#e65100;font-weight:500">单选</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#f3e5f5;color:#6a1b9a;font-weight:500">判断</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#e8f5e9;color:#2e7d32;font-weight:500">简答</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#ffebee;color:#c62828;font-weight:500">案例</span></div>
     <div class="consequence-grid">
       <div class="conseq-card">
         <div class="conseq-title ok">✅ 不影响</div>
@@ -2802,19 +2867,19 @@ id="t5">
   <h3>5.2 自相关的诊断方法</h3>
   <div class="exam-tags">
     <span class="exam-type">📝 题型覆盖</span>
-    <span class="exam-tag" data-types="['单选','判断','简答','案例']">exam_types(['单选','判断','简答','案例'])</span>
+    <span class="exam-tag" data-types="['单选','判断','简答','案例']"><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#fff8e1;color:#e65100;font-weight:500">单选</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#f3e5f5;color:#6a1b9a;font-weight:500">判断</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#e8f5e9;color:#2e7d32;font-weight:500">简答</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#ffebee;color:#c62828;font-weight:500">案例</span></span>
   </div>
 
   <div class="knowledge-point">
     <h4>5.2.1 图示法</h4>
-    <div class="exam-tag-inline" data-types="['单选','判断']">exam_types(['单选','判断'])</div>
+    <div class="exam-tag-inline" data-types="['单选','判断']"><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#fff8e1;color:#e65100;font-weight:500">单选</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#f3e5f5;color:#6a1b9a;font-weight:500">判断</span></div>
     <p>绘制 <strong>残差 ûₜ 对时间 t</strong> 的序时图（Time Series Plot）：正自相关时残差呈<strong>连续同号</strong>的"波浪"模式；负自相关时残差呈<strong>频繁交替正负</strong>的"锯齿"模式。</p>
     <p>绘制 <strong>ûₜ 对 ûₜ₋₁</strong> 的散点图：呈正斜率的线性模式 → 正自相关；呈负斜率 → 负自相关。</p>
   </div>
 
   <div class="knowledge-point">
     <h4>5.2.2 德宾-沃森检验（Durbin-Watson Test, 1950, 1951）</h4>
-    <div class="exam-tag-inline" data-types="['单选','判断','简答','案例']">exam_types(['单选','判断','简答','案例'])</div>
+    <div class="exam-tag-inline" data-types="['单选','判断','简答','案例']"><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#fff8e1;color:#e65100;font-weight:500">单选</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#f3e5f5;color:#6a1b9a;font-weight:500">判断</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#e8f5e9;color:#2e7d32;font-weight:500">简答</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#ffebee;color:#c62828;font-weight:500">案例</span></div>
     <p><strong>DW 统计量：</strong></p>
     <div class="formula-display">
       d = Σ(ûₜ - ûₜ₋₁)² / Σûₜ²
@@ -2842,7 +2907,7 @@ id="t5">
 
   <div class="knowledge-point">
     <h4>5.2.3 布罗施-戈弗雷检验（Breusch-Godfrey LM Test, 1978）</h4>
-    <div class="exam-tag-inline" data-types="['单选','判断','简答','案例']">exam_types(['单选','判断','简答','案例'])</div>
+    <div class="exam-tag-inline" data-types="['单选','判断','简答','案例']"><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#fff8e1;color:#e65100;font-weight:500">单选</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#f3e5f5;color:#6a1b9a;font-weight:500">判断</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#e8f5e9;color:#2e7d32;font-weight:500">简答</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#ffebee;color:#c62828;font-weight:500">案例</span></div>
     <p><strong>思想：</strong>检验残差是否存在高阶自相关（AR(p) 或 MA(q)）。不要求解释变量严格外生，可包含滞后被解释变量。</p>
     <p><strong>步骤：</strong></p>
     <ol>
@@ -2855,7 +2920,7 @@ id="t5">
 
   <div class="knowledge-point">
     <h4>5.2.4 相关系数图（ACF/PACF）与 Q 统计量</h4>
-    <div class="exam-tag-inline" data-types="['单选','判断']">exam_types(['单选','判断'])</div>
+    <div class="exam-tag-inline" data-types="['单选','判断']"><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#fff8e1;color:#e65100;font-weight:500">单选</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#f3e5f5;color:#6a1b9a;font-weight:500">判断</span></div>
     <p><strong>自相关函数（ACF）：</strong>计算残差各阶滞后自相关系数 rₖ，绘制条形图。若所有 rₖ 都很小（在 2/√N 范围内），说明无自相关。</p>
     <p><strong>偏自相关函数（PACF）：</strong>在控制中间阶滞后后计算各阶偏自相关。AR(p) 的 PACF 在滞后 p 处截尾。</p>
     <p><strong>Ljung-Box Q 统计量：</strong>Q = N(N+2)·Σₖ₌₁ᵐ rₖ²/(N-k) ~ χ²(m)，联合检验前 m 个自相关系数是否全为零。</p>
@@ -2867,12 +2932,12 @@ id="t5">
   <h3>5.3 自相关的补救措施</h3>
   <div class="exam-tags">
     <span class="exam-type">📝 题型覆盖</span>
-    <span class="exam-tag" data-types="['单选','判断','简答','案例']">exam_types(['单选','判断','简答','案例'])</span>
+    <span class="exam-tag" data-types="['单选','判断','简答','案例']"><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#fff8e1;color:#e65100;font-weight:500">单选</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#f3e5f5;color:#6a1b9a;font-weight:500">判断</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#e8f5e9;color:#2e7d32;font-weight:500">简答</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#ffebee;color:#c62828;font-weight:500">案例</span></span>
   </div>
 
   <div class="knowledge-point">
     <h4>5.3.1 广义差分法（Generalized Difference）</h4>
-    <div class="exam-tag-inline" data-types="['单选','判断','简答','案例']">exam_types(['单选','判断','简答','案例'])</div>
+    <div class="exam-tag-inline" data-types="['单选','判断','简答','案例']"><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#fff8e1;color:#e65100;font-weight:500">单选</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#f3e5f5;color:#6a1b9a;font-weight:500">判断</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#e8f5e9;color:#2e7d32;font-weight:500">简答</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#ffebee;color:#c62828;font-weight:500">案例</span></div>
     <p><strong>AR(1) 情形的广义差分（ρ 已知时）：</strong></p>
     <div class="formula-display">
       Yₜ - ρYₜ₋₁ = β₁(1-ρ) + β₂(Xₜ - ρXₜ₋₁) + εₜ
@@ -2901,7 +2966,7 @@ id="t5">
 
   <div class="knowledge-point">
     <h4>5.3.2 纽维-韦斯特 HAC 标准误（Newey-West HAC Estimator, 1987）</h4>
-    <div class="exam-tag-inline" data-types="['单选','判断','简答','案例']">exam_types(['单选','判断','简答','案例'])</div>
+    <div class="exam-tag-inline" data-types="['单选','判断','简答','案例']"><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#fff8e1;color:#e65100;font-weight:500">单选</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#f3e5f5;color:#6a1b9a;font-weight:500">判断</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#e8f5e9;color:#2e7d32;font-weight:500">简答</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#ffebee;color:#c62828;font-weight:500">案例</span></div>
     <p><strong>思想：</strong>与异方差稳健标准误类似的"三明治"思想——在估计标准误时同时考虑异方差和自相关，得到<strong>HAC（Heteroscedasticity and Autocorrelation Consistent）</strong>标准误。</p>
     <div class="formula-display">
       Var̂<sub>HAC</sub>(β̂) = (X'X)⁻¹ X' Σ̂ X (X'X)⁻¹
@@ -2914,7 +2979,7 @@ id="t5">
 
   <div class="knowledge-point">
     <h4>5.3.3 可行的广义最小二乘法（FGLS）</h4>
-    <div class="exam-tag-inline" data-types="['单选','判断','简答']">exam_types(['单选','判断','简答'])</div>
+    <div class="exam-tag-inline" data-types="['单选','判断','简答']"><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#fff8e1;color:#e65100;font-weight:500">单选</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#f3e5f5;color:#6a1b9a;font-weight:500">判断</span><span style="display:inline-block;font-size:0.72em;padding:1px 7px;border-radius:4px;margin:2px;background:#e8f5e9;color:#2e7d32;font-weight:500">简答</span></div>
     <p>用数据估计自相关参数 ρ 后再进行 GLS 变换。C-O 迭代法和 Prais-Winsten 法都属于 FGLS 范畴。FGLS 比 OLS 更有效，但<strong>小样本下有偏</strong>（因为 ρ̂ 不是 ρ 的无偏估计）。</p>
     <div class="highlight-box">
       ⚠️ <strong>策略选择：</strong>大样本下（N>100）→ HAC 标准误（简单、稳健、不需要建模自相关结构）；小样本下 → FGLS（Prais-Winsten 或 C-O 迭代）更有效。若 ρ 接近 1 → 一阶差分法。务必先检查模型设定——许多"自相关"实际上是遗漏变量或错误函数形式的信号。
