@@ -4481,10 +4481,11 @@ id="t13" class="topic-header"&gt;
 </div>
 <!-- /.container -->
 <div class="confusion" style="background:#e8f5e9;border-color:#2e7d32"><h4>💡 简答话术模板（通用）</h4><p><b>📌 通用简答结构：</b></p><p><b>第一步</b> — 下定义<br/><b>第二步</b> — 给公式<br/><b>第三步</b> — 作解释<br/><b>第四步</b> — 举例子<br/><b>第五步</b> — 下结论</p><p style="margin-top:8px"><b>得分技巧</b>：公式+解释各占50%分。</p></div>
-<div <div class="floating-btn" style="position:fixed;bottom:80px;right:20px;z-index:99999">
+<div <div 
+<div class="floating-btn" style="position:fixed;bottom:80px;right:20px;z-index:99999">
 <button onclick="var p=document.getElementById('speedPanel');p.style.display=p.style.display==='block'?'none':'block'" style="width:56px;height:56px;border-radius:50%;background:#1a237e;color:#fff;border:none;font-size:1.3em;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,0.2)" title="考前5分钟速记">⏱</button>
 </div>
-<div class="floating-panel" <div class="floating-panel" id="speedPanel" style="display:none;position:fixed;bottom:80px;right:90px;width:300px;max-height:500px;background:#fff;border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,0.2);z-index:99999;overflow:hidden;border:1px solid #e0e0e0">
+<div id="speedPanel" style="display:none;position:fixed;bottom:80px;right:90px;width:300px;max-height:500px;background:#fff;border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,0.2);z-index:99999;overflow:hidden;border:1px solid #e0e0e0">
 <div style="background:#1a237e;color:#fff;padding:10px 14px;font-size:0.9em;font-weight:700">⏱ 考前5分钟速记</div>
 <div style="padding:10px 14px;overflow-y:auto;font-size:0.82em;max-height:440px">
 <p style="color:#1a237e;font-weight:700;margin:0 0 6px 0;border-bottom:1px solid #1a237e;padding-bottom:4px">P0必记公式</p>
@@ -4497,74 +4498,12 @@ id="t13" class="topic-header"&gt;
 <p style="margin:3px 0"><b>ADF</b>: H:=(不平稳), 统计量&lt;临界值才平稳</p>
 <p style="margin:3px 0"><b>ECM</b>: 修正项系数&lt;0</p>
 <p style="margin:3px 0"><b>DID</b>: Y=+Treat+Post+(TreatPost)</p>
-<p style="margin:6px 0 0 0;border-top:1px solid #ccc;padding-top:4px;color:#c62828;font-weight:600">实证设计模板: 面板DID控制变量固定效应+平行趋势</p>
-</div>
-</div>/div>
-<div class="body" id="speedBody" style="padding:10px 14px;overflow-y:auto;font-size:0.82em">
-<p style="color:#1a237e;font-weight:700;margin:0 0 6px 0;border-bottom:1px solid #1a237e;padding-bottom:4px">🔴 P0必记公式</p>
-<p style="margin:3px 0"><b>弹性</b>: lnY=β₀+β₁lnX → β₁ = %ΔY/%ΔX</p>
-<p style="margin:3px 0"><b>半弹性</b>: lnY=β₀+β₁X → %ΔY = 100β₁×ΔX</p>
-<p style="margin:3px 0"><b>还原A</b>: Â = e^{截距}</p>
-<p style="margin:3px 0"><b>VIF</b>: VIFⱼ=1/(1-R²ⱼ), VIF>10=严重共线性</p>
-<p style="margin:3px 0"><b>DW</b>: d≈2(1-ρ̂), d<dL→正自相关, d>dU→无</p>
-<p style="margin:3px 0"><b>BP检验</b>: LM=n×R²_û ~ χ²(k), 显著→异方差</p>
-<p style="margin:3px 0"><b>FE变换</b>: yᵢₜ-ȳᵢ=β₁(xᵢₜ-x̄ᵢ)+(uᵢₜ-ūᵢ)</p>
-<p style="margin:3px 0"><b>Hausman</b>: p<0.05→FE, p>0.05→RE</p>
-<p style="margin:3px 0"><b>ADF</b>: H₀:γ=0(不平稳), 统计量<临界值才平稳</p>
-<p style="margin:3px 0"><b>ECM</b>: 修正项系数γ<0, 以|γ|速度回调均衡</p>
-<p style="margin:6px 0 0 0;border-top:1px solid #ccc;padding-top:4px;color:#c62828;font-weight:600">📌 实证设计模板: 面板→DID→控制变量(城市/年份)→固定效应+平行趋势</p>
+<p style="margin:6px 0 0 0;border-top:1px solid #ccc;padding-top:4px;color:#c62828;font-weight:600">实证设计: 面板DID控制变量固定效应+平行趋势</p>
 </div>
 </div>
 <script>
-document.addEventListener('click',function(e){let p=document.getElementById('speedPanel');if(!p.contains(e.target)&&!e.target.closest('.floating-btn button'))p&&p.classList.remove('show')});
+document.addEventListener("click",function(e){var p=document.getElementById("speedPanel");if(p&&e.target.tagName!="BUTTON"&&!p.contains(e.target))p.style.display="none"});
 </script>
-<!-- AI 学习助手侧边栏 -->
-<div aria-label="回到顶部" data-toggle="scrolltop" style="position:fixed;bottom:210px;right:20px;width:44px;height:44px;border-radius:50%;background:#1a237e;color:#fff;border:none;cursor:pointer;z-index:107;display:flex;align-items:center;justify-content:center;font-size:1.1em;box-shadow:0 4px 12px rgba(0,0,0,0.15);opacity:0.7">⬆</div>
-<div id="aiPanel" style="position:fixed;top:60px;right:0;width:340px;max-height:90vh;background:#fff;border-radius:12px 0 0 12px;box-shadow:-4px 0 20px rgba(0,0,0,0.15);z-index:109;display:flex;flex-direction:column;font-size:0.88em;overflow:hidden;border:1px solid #e0e0e0;border-right:none">
-<div style="background:#1a237e;color:#fff;padding:12px 14px;display:flex;justify-content:space-between;align-items:center">
-<span style="font-weight:700;font-size:1em">🤖 AI 学习助手</span>
-<span aria-label="关闭AI面板" data-toggle="close-ai-panel" style="cursor:pointer;font-size:1.2em;padding:0 6px">✕</span>
-</div>
-<div style="padding:12px;overflow-y:auto;flex:1;display:flex;flex-direction:column;gap:8px">
-<p style="font-size:0.82em;color:#888">选中文本自动填入，或直接输入问题</p>
-<textarea id="aiq" placeholder="选中文本自动填入…" style="width:100%;height:60px;border:1px solid #ccc;border-radius:6px;padding:8px;font-size:0.88em;resize:vertical"></textarea>
-<div style="display:flex;gap:6px">
-<input id="apikey" placeholder="输入DeepSeek API Key" style="flex:1;padding:7px;border:1px solid #ccc;border-radius:6px;font-size:0.85em" type="password"/>
-<button aria-label="向AI提问" data-toggle="ask-ai" style="background:#1565c0;color:#fff;border:none;padding:7px 16px;border-radius:6px;cursor:pointer;font-weight:600;font-size:0.88em">🚀 提问</button>
-</div>
-<div id="aires" style="background:#f5f5f5;border-radius:8px;padding:10px;min-height:80px;max-height:300px;overflow-y:auto;white-space:pre-wrap;font-size:0.85em;line-height:1.6;color:#333">💡 输入问题后点击提问</div>
-</div>
-</div>
-<!-- 浮动机器人按钮（一直在右下角） -->
-<div aria-label="切换AI面板" data-toggle="toggle-ai-panel" id="aiToggleBtn" style="position:fixed;bottom:150px;right:20px;width:50px;height:50px;border-radius:50%;background:#1a237e;color:#fff;border:none;cursor:pointer;z-index:108;display:flex;align-items:center;justify-content:center;font-size:1.3em;box-shadow:0 4px 12px rgba(0,0,0,0.2)">🤖</div>
-<script>
-function askAI(){
-  let q=document.getElementById('aiq').value.trim();
-  let key=document.getElementById('apikey').value.trim();
-  let res=document.getElementById('aires');
-  if(!q){res.innerText='⚠ 请先输入问题';return}
-  if(!key){res.innerText='⚠ 请先输入DeepSeek API Key';return}
-  res.innerText='⏳ 思考中…';
-  fetch('https://api.deepseek.com/v1/chat/completions',{
-    method:'POST',
-    headers:{'Content-Type':'application/json','Authorization':'Bearer '+key},
-    body:JSON.stringify({
-      model:'deepseek-chat',
-      messages:[
-        {role:'system',content:'你是计量经济学助教。用简单语言、分步思路、比喻解释的方式回答问题。假设学生几乎零基础。'},
-        {role:'user',content:q}
-      ],
-      stream:false
-    })
-  }).then(function(r){return r.json()}).then(function(d){
-    res.innerText=d.choices?.[0]?.message?.content||'❌ 无响应，请检查API Key';
-  }).catch(function(e){res.innerText='❌ 请求失败: '+e.message});
-}
-// Auto-capture selected text
-document.addEventListener('mouseup',function(){
-  let s=window.getSelection().toString().trim();
-  if(s){let inp=document.getElementById('aiq');if(inp)inp.value=s}
-});
 </script>
 <script>
 // Universal Analysis Injector - runs on page load
