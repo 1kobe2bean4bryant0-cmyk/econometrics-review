@@ -742,6 +742,183 @@ h2.ovv{background:#2e7d32}
     .toc-box ul { column-count: 1; }
   }
 
+
+
+/* === NORMALIZE: All fragment structures === */
+
+/* Priority boxes - ensure text is readable */
+.priority-box.core, .priority-box.imp, .priority-box.ovv {
+  color: #fff !important;
+  font-weight: 700;
+  font-size: 0.78em;
+  padding: 3px 10px;
+  border-radius: 12px;
+  display: inline-block;
+}
+.priority-box.core { background: #c62828 !important; }
+.priority-box.imp { background: #e65100 !important; }
+.priority-box.ovv { background: #2e7d32 !important; }
+
+/* t6_9 fragment: priority-tag, priority-body */
+.priority-tag {
+  display: inline-block !important;
+  font-size: 0.78em !important;
+  padding: 3px 10px !important;
+  border-radius: 12px !important;
+  color: #fff !important;
+  font-weight: 700;
+}
+.priority-tag[class*="CORE"], .priority-tag:has(+ span:contains(CORE)) { background: #c62828 !important; }
+.priority-body { margin: 8px 0; }
+
+/* t6_9 fragment: topic headers */
+.topic-header.core, .topic-header.imp, .topic-header.ovv {
+  padding: 12px 16px;
+  border-radius: 10px;
+  margin: 10px 0;
+}
+.topic-header.core { background: #ffebee; border-left: 4px solid #c62828; }
+.topic-header.imp { background: #fff3e0; border-left: 4px solid #e65100; }
+.topic-header.ovv { background: #e8f5e9; border-left: 4px solid #2e7d32; }
+
+/* t10_13 fragment: container, toc-box */
+.toc-box { 
+  background: #fff; 
+  border-radius: 12px; 
+  padding: 18px; 
+  margin: 18px 0; 
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06); 
+}
+
+/* Knowledge point blocks - normalize across fragments */
+.zb, .kp-item, .kp, .knowledge-point {
+  background: #fff !important;
+  border: 1px solid #e0e0e0 !important;
+  border-left: 4px solid #ff6f00 !important;
+  padding: 12px 16px !important;
+  margin: 10px 0 !important;
+  border-radius: 0 8px 8px 0 !important;
+  font-size: 0.93em !important;
+  color: #222 !important;
+}
+
+/* Examples - normalize */
+.ex, .case-box {
+  background: #fff !important;
+  border: 1px solid #e0e0e0 !important;
+  border-radius: 12px !important;
+  padding: 18px !important;
+  margin: 20px 0 !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04) !important;
+}
+
+/* Questions - normalize */
+.q, .case-question {
+  background: #f5f5f5 !important;
+  border-radius: 8px !important;
+  padding: 10px 14px !important;
+  margin: 10px 0 4px !important;
+  font-weight: 600 !important;
+  border-left: 4px solid #1565c0 !important;
+  color: #333 !important;
+}
+
+/* Confusion tables - normalize */
+.confusion {
+  background: #fff3e0 !important;
+  border: 1px solid #ffe0b2 !important;
+  border-radius: 10px !important;
+  padding: 14px !important;
+  margin: 18px 0 !important;
+}
+
+/* Speed boxes - normalize */
+.speed-box {
+  background: #e8eaf6 !important;
+  border: 2px solid #1a237e !important;
+  border-radius: 10px !important;
+  padding: 14px !important;
+  margin: 20px 0 !important;
+}
+
+/* Ensure all question text is dark */
+.q, .q *, .case-question, .case-question * {
+  color: #222 !important;
+}
+.q .tag { color: inherit !important; }
+
+/* Fix dark-text-on-dark-background issues */
+body, .container, .zb, .ex, .confusion, .speed-box, .a, .step-text, p, div {
+  color: #222;
+}
+
+/* Ensure all buttons have readable text */
+.s, button.s, .s-btn {
+  color: #fff !important;
+}
+
+/* CLEAN label - make it readable */
+.clean-label {
+  display: inline-block !important;
+  font-size: 0.7em !important;
+  padding: 1px 8px !important;
+  border-radius: 10px !important;
+  background: #ffcdd2 !important;
+  color: #c62828 !important;
+  font-weight: 700 !important;
+  margin-left: 6px !important;
+}
+
+/* AI case box */
+.ai-case-box, .ai-case {
+  background: #fce4ec !important;
+  border: 1px solid #f8bbd0 !important;
+  border-radius: 8px !important;
+  padding: 12px !important;
+  margin: 10px 0 !important;
+}
+
+/* Metadata and source labels */
+.case-source, .source-label {
+  font-size: 0.82em !important;
+  color: #888 !important;
+}
+
+/* Comparison tables - fix white text */
+.compare-table th, .compare-table td {
+  color: #222 !important;
+}
+.compare-table th {
+  background: #fff8e1 !important;
+  font-weight: 700 !important;
+}
+
+/* Answer text */
+.answer, .a {
+  color: #222 !important;
+}
+.answer-hint, .hint {
+  color: #555 !important;
+  font-size: 0.88em !important;
+}
+
+/* Topic meta info */
+.topic-meta {
+  padding: 8px 0;
+  margin: 6px 0;
+}
+
+/* All text inside panels should be dark */
+[style*="background:#fff"], [style*="background: white"] {
+  color: #222;
+}
+
+/* Override any white-on-light patterns */
+.priority-box:not(.core):not(.imp):not(.ovv),
+[class*="badge"], [class*="label"], [class*="tag"] {
+  color: #222 !important;
+}
+
 </style>
 </head><body>
 <div class=container>
@@ -788,7 +965,7 @@ h2.ovv{background:#2e7d32}
 <a href="#t13">📖 专题13：模型设定与函数形式</a>
 </div>
 </div>
-id="t1"><h2 class="core">专题1：对数模型与参数解释</h2><span class="priority-box core">🔴 核心专题 ★★★★★</span><div class="clr"></div><p class="ref">📖 第2章(简单回归)、第4章(多元回归分析：推断)</p><div class="core-box"><strong>📌 核心内容</strong><br>双对数模型中斜率参数表示<strong>弹性</strong>；半对数模型中参数表示<strong>增长率或半弹性</strong>。Cobb-Douglas函数取对数后，截距的指数为效率参数A。</div><div class="weight-box">🎯 考试权重：★★★☆☆（案例分析高频）<br>📝 单选常考弹性解释 · ✍ 简答常考Cobb-Douglas变换 · 📋 案例常考工资方程综合</div><div class="learn-header">📖 第0节 · 学习前的准备</div><div class="zb"><b>0.1 什么是回归方程？</b><br>计量最常见的工作：用原因预测结果。<br><b>公式</b>：Y = β₀ + β₁X + u<br>· Y=结果(被解释变量) · X=原因(解释变量) · β₁=斜率：X↑1单位→Y平均变化β₁ · β₀=截距 · u=误差项</div><div class="zb"><b>0.2 什么是自然对数ln？</b><br>① ln(A×B)=lnA+lnB（乘法变加法）　② ln(X^k)=k·lnX　③ <b>关键</b>：ΔlnX ≈ ΔX/X（百分比变化）<br>ln(1.05)≈0.05=5%——对数的变化量≈原变量的百分比变化</div><div class="zb"><b>0.3 什么时候该取对数？</b><br>· 变量是正数且右偏（如工资、收入）<br>· 想解释「百分比变化」而非「绝对变化」<br>· 变量之间可能是乘法关系（如Cobb-Douglas生产函数）</div><div class="learn-header">📖 第1节 · 核心知识点精讲</div><div class="exam-marker-group"><span class="exam-marker tag-single">单选</span> <span class="exam-marker tag-judge">判断</span> <span class="exam-marker tag-short">简答</span> <span class="exam-marker tag-case">案例</span> 本节内容覆盖全部题型</div><div class="zb"><b>1.1 双对数模型——系数是弹性</b> <span class="exam-marker tag-single">单选</span> <span class="exam-marker tag-case">案例</span><br>形式：<b>lnY = β₀ + β₁lnX + u</b><br>β₁叫<b>弹性</b>：X变化1%，Y变化β₁%。<br><b>推导</b>：ΔlnY≈β₁·ΔlnX，ΔlnY≈ΔY/Y，ΔX/X≈1%时ΔY/Y≈β₁·1%=β₁%。<br><b>简单记</b>：两边都有ln → 百分比对百分比</div><div class="zb"><b>1.2 半对数模型(A)——lnY对X</b> <span class="exam-marker tag-single">单选</span> <span class="exam-marker tag-judge">判断</span> <span class="exam-marker tag-short">简答</span><br>形式：<b>lnY = β₀ + β₁X + u</b><br>β₁×100%叫<b>半弹性</b>：X↑1单位→Y变化约(β₁×100)%。<br><b>例子</b>：ln(工资)=0.584+0.083×educ → 多读1年书工资增约8.3%<br>⚠ <b>精确公式</b>：%ΔY=100×[exp(β₁ΔX)-1]</div><div class="zb"><b>1.3 半对数模型(B)——Y对lnX</b> <span class="exam-marker tag-single">单选</span> <span class="exam-marker tag-judge">判断</span><br>形式：<b>Y = β₀ + β₁lnX + u</b><br>β₁/100的含义：X变化1%，Y变化β₁/100个单位。</div><div class="zb"><b>1.4 Cobb-Douglas生产函数变换</b> <span class="exam-marker tag-short">简答</span> <span class="exam-marker tag-case">案例</span><br>原始：Y = A·K^α·L^β·e^u → lnY=lnA+αlnK+βlnL+u<br>α=资本弹性，β=劳动弹性。Â = e^{截距}</div><div class="confusion"><h5>⚠ 易混淆辨析：对数模型形式</h5><table><tr><th>概念A</th><th>概念B</th><th>核心区别</th></tr><tr><td>lnY = β₀ + β₁lnX + u</td><td>双对数模型</td><td>系数β₁=弹性：%对%</td></tr><tr><td>lnY = β₀ + β₁X + u</td><td>半对数模型(A)</td><td>系数β₁×100%=增长率：单位对%</td></tr><tr><td>Y = β₀ + β₁lnX + u</td><td>半对数模型(B)</td><td>系数β₁/100=半弹性：%对单位</td></tr></table></div><div class="learn-header">📖 第2节 · 例题精讲与案例分析</div><p style='font-size:0.9em;color:#666;margin:10px 0'>以下为教师给出的教材例题：</p><div class="ex"><h4>📝 1.1 工资方程（教师原题）</h4><p>$$\ln (wage)=0.584+0.083 educ +0.036 exper +0.003 exper^{2}$$</p><p class="d">wage=小时工资(USD)，educ=教育年数，exper=工作年数</p><div class="q"><span class="tag tag-teacher">📖 教师原题</span> <span class="exam-marker tag-single">单选</span> <span class="exam-marker tag-judge">判断</span> (1) 解释educ系数0.083的含义</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示详细解答</button><div class="a">
+id="t1"><h2 class="core">专题1：对数模型与参数解释（Logarithmic Models）</h2><span class="priority-box core">🔴 核心专题 ★★★★★</span><div class="clr"></div><p class="ref">📖 第2章(简单回归)、第4章(多元回归分析：推断)</p><div class="core-box"><strong>📌 核心内容</strong><br>双对数模型中斜率参数表示<strong>弹性</strong>；半对数模型中参数表示<strong>增长率或半弹性</strong>。Cobb-Douglas函数取对数后，截距的指数为效率参数A。</div><div class="weight-box">🎯 考试权重：★★★☆☆（案例分析高频）<br>📝 单选常考弹性解释 · ✍ 简答常考Cobb-Douglas变换 · 📋 案例常考工资方程综合</div><div class="learn-header">📖 第0节 · 学习前的准备</div><div class="zb"><b>0.1 什么是回归方程？</b><br>计量最常见的工作：用原因预测结果。<br><b>公式</b>：Y = β₀ + β₁X + u<br>· Y=结果(被解释变量) · X=原因(解释变量) · β₁=斜率：X↑1单位→Y平均变化β₁ · β₀=截距 · u=误差项</div><div class="zb"><b>0.2 什么是自然对数ln？</b><br>① ln(A×B)=lnA+lnB（乘法变加法）　② ln(X^k)=k·lnX　③ <b>关键</b>：ΔlnX ≈ ΔX/X（百分比变化）<br>ln(1.05)≈0.05=5%——对数的变化量≈原变量的百分比变化</div><div class="zb"><b>0.3 什么时候该取对数？</b><br>· 变量是正数且右偏（如工资、收入）<br>· 想解释「百分比变化」而非「绝对变化」<br>· 变量之间可能是乘法关系（如Cobb-Douglas生产函数）</div><div class="learn-header">📖 第1节 · 核心知识点精讲</div><div class="exam-marker-group"><span class="exam-marker tag-single">单选</span> <span class="exam-marker tag-judge">判断</span> <span class="exam-marker tag-short">简答</span> <span class="exam-marker tag-case">案例</span> 本节内容覆盖全部题型</div><div class="zb"><b>1.1 双对数模型——系数是弹性</b> <span class="exam-marker tag-single">单选</span> <span class="exam-marker tag-case">案例</span><br>形式：<b>lnY = β₀ + β₁lnX + u</b><br>β₁叫<b>弹性</b>：X变化1%，Y变化β₁%。<br><b>推导</b>：ΔlnY≈β₁·ΔlnX，ΔlnY≈ΔY/Y，ΔX/X≈1%时ΔY/Y≈β₁·1%=β₁%。<br><b>简单记</b>：两边都有ln → 百分比对百分比</div><div class="zb"><b>1.2 半对数模型(A)——lnY对X</b> <span class="exam-marker tag-single">单选</span> <span class="exam-marker tag-judge">判断</span> <span class="exam-marker tag-short">简答</span><br>形式：<b>lnY = β₀ + β₁X + u</b><br>β₁×100%叫<b>半弹性</b>：X↑1单位→Y变化约(β₁×100)%。<br><b>例子</b>：ln(工资)=0.584+0.083×educ → 多读1年书工资增约8.3%<br>⚠ <b>精确公式</b>：%ΔY=100×[exp(β₁ΔX)-1]</div><div class="zb"><b>1.3 半对数模型(B)——Y对lnX</b> <span class="exam-marker tag-single">单选</span> <span class="exam-marker tag-judge">判断</span><br>形式：<b>Y = β₀ + β₁lnX + u</b><br>β₁/100的含义：X变化1%，Y变化β₁/100个单位。</div><div class="zb"><b>1.4 Cobb-Douglas生产函数变换</b> <span class="exam-marker tag-short">简答</span> <span class="exam-marker tag-case">案例</span><br>原始：Y = A·K^α·L^β·e^u → lnY=lnA+αlnK+βlnL+u<br>α=资本弹性，β=劳动弹性。Â = e^{截距}</div><div class="confusion"><h5>⚠ 易混淆辨析：对数模型形式</h5><table><tr><th>概念A</th><th>概念B</th><th>核心区别</th></tr><tr><td>lnY = β₀ + β₁lnX + u</td><td>双对数模型</td><td>系数β₁=弹性：%对%</td></tr><tr><td>lnY = β₀ + β₁X + u</td><td>半对数模型(A)</td><td>系数β₁×100%=增长率：单位对%</td></tr><tr><td>Y = β₀ + β₁lnX + u</td><td>半对数模型(B)</td><td>系数β₁/100=半弹性：%对单位</td></tr></table></div><div class="learn-header">📖 第2节 · 例题精讲与案例分析</div><p style='font-size:0.9em;color:#666;margin:10px 0'>以下为教师给出的教材例题：</p><div class="ex"><h4>📝 1.1 工资方程（教师原题）</h4><p>$$\ln (wage)=0.584+0.083 educ +0.036 exper +0.003 exper^{2}$$</p><p class="d">wage=小时工资(USD)，educ=教育年数，exper=工作年数</p><div class="q"><span class="tag tag-teacher">📖 教师原题</span> <span class="exam-marker tag-single">单选</span> <span class="exam-marker tag-judge">判断</span> (1) 解释educ系数0.083的含义</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示详细解答</button><div class="a">
 <div class="step"><span class="step-num">步骤1</span><span class="step-label">[判断]</span><span class="step-text">半对数模型(lnY对X)，系数×100%=变化的百分比</span></div>
 <div class="step"><span class="step-num">步骤2</span><span class="step-label">[计算]</span><span class="step-text">0.083×100%=8.3%</span></div>
 <div class="step"><span class="step-num">步骤3</span><span class="step-label">[结论]</span><span class="step-text">教育每多1年，工资增长约8.3%</span></div>
@@ -849,7 +1026,7 @@ speed-1"><h5>⏱ 考前5分钟必记 · 对数模型与参数解释</h5><p><b>�
 <!-- ========== Topic 2: 虚拟变量 (Dummy Variables) ========== -->
 <div class="priority-box" data-level="core" data-stars="4">
   <div class="topic-header core" id="t2">
-    <h2 class="core">📊 Topic 2：虚拟变量（Dummy Variables）</h2>
+    <h2 class="core">专题2：虚拟变量与结构变化（Dummy Variables）</h2>
     <div class="topic-meta"><span class="badge-core">核心章节</span><span class="badge-star">★★★★</span></div>
   </div>
 </div>
@@ -1175,7 +1352,7 @@ speed-1"><h5>⏱ 考前5分钟必记 · 对数模型与参数解释</h5><p><b>�
 <div class="priority-box" data-level="imp" data-stars="3">
   <div class="topic-header imp" <div class="confusion" style="background:#e8f5e9;border-color:#2e7d32"><h5>💡 简答话术模板 · 虚拟变量解释</h5><p><b>📌 典型简答：解释模型 Y=β₀+δD+β₁X+γ(D·X)+u 中δ和γ的含义</b></p><p><b>话术结构：</b>① 写出两组方程 → ② 分别解释δ和γ</p><p><b>示范答案：</b></p><p>「将D=0（基准组）和D=1（比较组）代入方程：</p><p>D=0组：Y=β₀+β₁X+u</p><p>D=1组：Y=(β₀+δ)+(β₁+γ)X+u</p><p>δ是两组在截距上的差异——在X=0时，D=1组比D=0组平均高出δ个单位。</p><p>γ是两组在斜率上的差异——D=1组每增加1单位X，Y的变化比D=0组多γ个单位。」</p><p style="margin-top:8px"><b>得分点：</b>写出两个方程(3分)+解释δ(2分)+解释γ(3分)</p></div>
 id="t3">
-    <h2 class="imp">⚠️ Topic 3：多重共线性（Multicollinearity）</h2>
+    <h2 class="imp">专题3：多重共线性诊断与处理（Multicollinearity）</h2>
     <div class="topic-meta"><span class="badge-imp">重要章节</span><span class="badge-star">★★★</span></div>
   </div>
 </div>
@@ -1546,7 +1723,7 @@ id="t3">
 <div class="priority-box" data-level="core" data-stars="4">
   <div class="topic-header core" <div class="confusion" style="background:#e8f5e9;border-color:#2e7d32"><h5>💡 简答话术模板 · VIF解释</h5><p><b>📌 典型简答：VIF是什么意思？VIF=12.5说明什么问题？</b></p><p><b>话术结构：</b>① 定义 → ② 公式 → ③ 阈值 → ④ 结论</p><p><b>示范答案：</b></p><p>「VIF是方差膨胀因子，衡量多重共线性的严重程度。</p><p>公式：VIFⱼ=1/(1-R²ⱼ)，其中R²ⱼ是把第j个解释变量对其他所有解释变量回归的拟合优度。</p><p>经验规则：VIF>10表示存在严重多重共线性。</p><p>VIF=12.5>10，说明该变量存在严重多重共线性——参数估计的方差被膨胀了12.5倍，导致t统计量变小，系数可能不显著。」</p><p style="margin-top:8px"><b>得分点：</b>全称(1分)+公式(2分)+阈值(2分)+具体解释(3分)</p></div>
 id="t4">
-    <h2 class="core">📊 Topic 4：异方差（Heteroscedasticity）</h2>
+    <h2 class="core">专题4：异方差性检验与处理（Heteroscedasticity）</h2>
     <div class="topic-meta"><span class="badge-core">核心章节</span><span class="badge-star">★★★★</span></div>
   </div>
 </div>
@@ -1897,7 +2074,7 @@ id="t4">
 <div class="priority-box" data-level="core" data-stars="4">
   <div class="topic-header core" <div class="confusion" style="background:#e8f5e9;border-color:#2e7d32"><h5>💡 简答话术模板 · 异方差检验步骤</h5><p><b>📌 典型简答：简述Breusch-Pagan检验的步骤</b></p><p><b>话术结构：</b>① 步骤概述 → ② 辅助回归 → ③ 统计量 → ④ 判断</p><p><b>示范答案：</b></p><p>「BP检验用于检验是否存在异方差。步骤：</p><p>第一步，用OLS估计原模型，得到残差ûᵢ。</p><p>第二步，做辅助回归：ûᵢ² = δ₀ + δ₁x₁ᵢ + ... + δₖxₖᵢ + vᵢ</p><p>第三步，计算LM统计量：LM=n×R²_û，在H₀下服从χ²(k)分布。</p><p>第四步，若LM > χ²_α(k)，拒绝同方差原假设，认为存在异方差。」</p><p style="margin-top:8px"><b>得分点：</b>第一步OLS(2分)+辅助回归(3分)+LM公式(2分)+判断准则(1分)</p></div>
 id="t5">
-    <h2 class="core">📊 Topic 5：自相关（Autocorrelation / Serial Correlation）</h2>
+    <h2 class="core">专题5：序列相关检验与处理（Autocorrelation）</h2>
     <div class="topic-meta"><span class="badge-core">核心章节</span><span class="badge-star">★★★★</span></div>
   </div>
 </div>
@@ -2358,7 +2535,7 @@ id="t5">
     <div class="priority-body">
       <span class="priority-tag">CORE · 核心必考</span>
       <h2 <div class="confusion" style="background:#e8f5e9;border-color:#2e7d32"><h5>💡 简答话术模板 · DW检验判断</h5><p><b>📌 典型简答：DW统计量d=0.85，d_L=1.55，d_U=1.62，请判断自相关</b></p><p><b>话术结构：</b>① 给出比较规则 → ② 比较数据 → ③ 结论</p><p><b>示范答案：</b></p><p>「DW检验的判断规则是：</p><p>① 若d < d_L → 存在正自相关</p><p>② 若d > d_U → 无自相关</p><p>③ 若d_L ≤ d ≤ d_U → 无法判定（灰色区）</p><p>本题：d=0.85 < d_L=1.55，所以存在正自相关。</p><p>由于d接近0，自相关系数ρ̂≈1-d/2=1-0.425=0.575，属于中等偏强正自相关。」</p><p style="margin-top:8px"><b>得分点：</b>给出规则(3分)+正确比较(2分)+补充ρ̂估计(3分)</p></div>
-id="t6">Topic 6 — F检验（F-Test）</h2>
+<h2 id="t6">专题6：F检验与回归显著性检验（F-Test）</h2>
       <p style="margin:4px 0 0 0;font-size:0.92em;color:#555;">
         联合显著性检验 · 模型整体检验 · 约束检验 · Chow检验 · 方差分析
       </p>
@@ -2586,7 +2763,7 @@ id="t6">Topic 6 — F检验（F-Test）</h2>
     <div class="priority-body">
       <span class="priority-tag">IMPORTANT · 重要考点</span>
       <h2 <div class="confusion" style="background:#e8f5e9;border-color:#2e7d32"><h5>💡 简答话术模板 · F检验与t检验的区别</h5><p><b>📌 典型简答：F检验和t检验有什么区别？什么时候用哪个？</b></p><p><b>话术结构：</b>① 各自用途 → ② 统计量形式 → ③ 选择规则</p><p><b>示范答案：</b></p><p>「t检验用于检验单个回归系数是否显著不为零：H₀:βⱼ=0。</p><p>F检验用于检验一组系数是否同时为零：H₀:β₁=β₂=...=βₖ=0。</p><p>如果只检验一个系数，t² = F(1, n-k-1)，两者等价。</p><p>如果检验多个系数（如β₁=β₂=0或β₁=β₂），必须用F检验。</p><p>另外，检验整个回归方程的显著性用F检验，检验单个解释变量的重要性用t检验。」</p><p style="margin-top:8px"><b>得分点：</b>t检验用途(2分)+F检验用途(2分)+关系(2分)+选择规则(2分)</p></div>
-id="t7">Topic 7 — 误差项 vs 残差（Error Term vs Residual）</h2>
+<h2 id="t7">专题7：随机误差项与残差（Error Term vs Residual）</h2>
       <p style="margin:4px 0 0 0;font-size:0.92em;color:#555;">
         概念辨析 · 性质差异 · 在OLS假设中的角色 · 诊断应用
       </p>
@@ -2719,7 +2896,7 @@ id="t7">Topic 7 — 误差项 vs 残差（Error Term vs Residual）</h2>
     <div class="priority-body">
       <span class="priority-tag">OVERVIEW · 了解即可</span>
       <h2 <div class="confusion" style="background:#e8f5e9;border-color:#2e7d32"><h5>💡 简答话术模板 · 误差项vs残差</h5><p><b>📌 典型简答：误差项uᵢ和残差ûᵢ有什么区别和联系？</b></p><p><b>话术结构：</b>① 定义区别 → ② 数学关系 → ③ OLS性质</p><p><b>示范答案：</b></p><p>「误差项uᵢ是总体模型Yᵢ=β₀+β₁Xᵢ+uᵢ中的随机项，不可观测。</p><p>残差ûᵢ是样本估计的：ûᵢ=Yᵢ-Ŷᵢ，是可计算、可检验的。</p><p>联系：ûᵢ是uᵢ的样本估计量——我们用残差去推断误差项的性质。</p><p>重要区别：OLS保证Σûᵢ=0（这是估计结果），但Σuᵢ=0是假设（零条件均值假设的一部分），不是必然成立的。」</p><p style="margin-top:8px"><b>得分点：</b>误差项定义(2分)+残差定义(2分)+联系(2分)+关键区别(2分)</p></div>
-id="t8">Topic 8 — Probit &amp; Logit模型（精简版）<span class="clean-label">CLEAN</span></h2>
+<h2 id="t8">专题8：Probit与Logit模型（Binary Choice Models）</h2>
 <div style="background:#fff3e0;border:2px solid #e65100;border-radius:8px;padding:10px 14px;margin:10px 0;font-size:0.9em">
 <b>⚠️ 考试权重提示</b>：本专题考试权重极低（约2-4分），<b>建议优先学完核心专题(1/2/4/5/6/9/11/12)后再回看</b>。若时间紧迫，可直接跳到考前速记部分。
 </div>      <p style="margin:4px 0 0 0;font-size:0.92em;color:#555;">
@@ -2851,7 +3028,7 @@ id="t8">Topic 8 — Probit &amp; Logit模型（精简版）<span class="clean-la
     <div class="priority-body">
       <span class="priority-tag">CORE · 核心必考</span>
       <h2 <div class="confusion" style="background:#e8f5e9;border-color:#2e7d32"><h5>💡 简答话术模板（通用）</h5><p><b>📌 通用简答结构：</b></p><p><b>第一步</b> — 下定义：用一句话说清楚概念是什么。</p><p><b>第二步</b> — 给公式：写出相关公式或模型设定。</p><p><b>第三步</b> — 作解释：逐一解释关键符号的经济含义。</p><p><b>第四步</b> — 举例子：给一个具体场景让概念落地。</p><p><b>第五步</b> — 下结论：一句话总结，呼应问题。</p><p style="margin-top:8px"><b>得分技巧</b>：公式+解释各占50%分。</p></div>
-id="t9">Topic 9 — OLS基本假设（Gauss-Markov定理）</h2>
+<h2 id="t9">专题9：多元线性回归假设与OLS性质（Gauss-Markov）</h2>
       <p style="margin:4px 0 0 0;font-size:0.92em;color:#555;">
         六大经典假设 · BLUE性质 · 假设违背与后果 · 诊断与修正
       </p>
@@ -3112,7 +3289,7 @@ id="t9">Topic 9 — OLS基本假设（Gauss-Markov定理）</h2>
 <!-- ============================================================ -->
 <div <div class="confusion" style="background:#e8f5e9;border-color:#2e7d32"><h5>💡 简答话术模板 · OLS无偏性证明思路</h5><p><b>📌 典型简答：简要说明OLS估计量在什么条件下无偏？为什么？</b></p><p><b>话术结构：</b>① 列出条件 → ② 证明思路 → ③ 关键假设</p><p><b>示范答案：</b></p><p>「OLS估计量无偏需要满足高斯-马尔可夫假设，其中最关键的假设是零条件均值假设：E(u|X)=0，即误差项与解释变量不相关。</p><p>证明思路：将Y=β₀+β₁X+u代入β̂₁的公式，得到β̂₁=β₁+Σ(Xᵢ-Ȳ)uᵢ/SST。取条件期望后，第二项的分子中出现E(uᵢ|X)。如果E(u|X)=0，则第二项期望为零，E(β̂₁|X)=β₁，证明无偏。」</p><p style="margin-top:8px"><b>得分点：</b>列出假设(3分)+代入推导(3分)+指出外生性关键(2分)</p></div>
 id="t10" class="topic-header">
-  <h2>🔧 Topic 10 · 工具变量法 <span class="clean-label">CLEAN</span></h2>
+  <h2>专题10：工具变量与内生性（Instrumental Variables）</h2>
 <div style="background:#fff3e0;border:2px solid #e65100;border-radius:8px;padding:10px 14px;margin:10px 0;font-size:0.9em">
 <b>⚠️ 考试权重提示</b>：本专题考试权重极低（约2-4分），<b>建议优先学完核心专题(1/2/4/5/6/9/11/12)后再回看</b>。若时间紧迫，可直接跳到考前速记部分。
 </div>  <p>Instrumental Variables (IV) Estimation</p>
@@ -3259,7 +3436,7 @@ id="t10" class="topic-header">
 <!-- ============================================================ -->
 <div <div class="confusion" style="background:#e8f5e9;border-color:#2e7d32"><h5>💡 简答话术模板（通用）</h5><p><b>📌 通用简答结构：</b></p><p><b>第一步</b> — 下定义：用一句话说清楚概念是什么。</p><p><b>第二步</b> — 给公式：写出相关公式或模型设定。</p><p><b>第三步</b> — 作解释：逐一解释关键符号的经济含义。</p><p><b>第四步</b> — 举例子：给一个具体场景让概念落地。</p><p><b>第五步</b> — 下结论：一句话总结，呼应问题。</p><p style="margin-top:8px"><b>得分技巧</b>：公式+解释各占50%分。</p></div>
 id="t11" class="topic-header">
-  <h2>📊 Topic 11 · 面板数据模型 <span style="color:#e74c3c;font-weight:700;font-size:0.7em;background:rgba(255,255,255,0.2);padding:2px 12px;border-radius:12px;letter-spacing:1px;margin-left:10px;vertical-align:middle;">CORE</span></h2>
+  <h2>专题11：面板数据模型（Panel Data）</h2>
   <p>Panel Data Models — Fixed Effects · Random Effects · Dynamic Panel</p>
   <div class="topic-meta">
     <span class="priority-box core">📌 PRIORITY: CORE</span>
@@ -3424,7 +3601,7 @@ id="t11" class="topic-header">
 <!-- ============================================================ -->
 <div <div class="confusion" style="background:#e8f5e9;border-color:#2e7d32"><h5>💡 简答话术模板 · 固定效应vs随机效应</h5><p><b>📌 典型简答：固定效应模型和随机效应模型的区别，如何选择？</b></p><p><b>话术结构：</b>① 假设差异 → ② 估计方法 → ③ 选择标准</p><p><b>示范答案：</b></p><p>「固定效应(FE)模型不要求个体效应aᵢ与解释变量不相关，通过组内去均值消除aᵢ。</p><p>随机效应(RE)模型假设aᵢ与解释变量不相关，用GLS估计，更有效。</p><p>选择标准——Hausman检验：原假设H₀为RE成立(aᵢ与X不相关)。</p><p>若拒绝H₀，说明RE不一致，应选FE；若不拒绝，RE更有效，选RE。」</p><p style="margin-top:8px"><b>得分点：</b>FE假设(2分)+RE假设(2分)+Hausman原假设(2分)+结论(2分)</p></div>
 id="t12" class="topic-header">
-  <h2>📈 Topic 12 · 时间序列分析 <span style="color:#e74c3c;font-weight:700;font-size:0.7em;background:rgba(255,255,255,0.2);padding:2px 12px;border-radius:12px;letter-spacing:1px;margin-left:10px;vertical-align:middle;">CORE</span></h2>
+  <h2>专题12：时间序列与平稳性（Time Series）</h2>
   <p>Time Series Analysis — Stationarity · ARIMA · Cointegration · Granger Causality</p>
   <div class="topic-meta">
     <span class="priority-box core">📌 PRIORITY: CORE</span>
@@ -3610,7 +3787,7 @@ id="t12" class="topic-header">
 <!-- ============================================================ -->
 <div <div class="confusion" style="background:#e8f5e9;border-color:#2e7d32"><h5>💡 简答话术模板 · 伪回归解释</h5><p><b>📌 典型简答：什么是伪回归？如何避免？</b></p><p><b>话术结构：</b>① 定义 → ② 原因 → ③ 诊断 → ④ 处理</p><p><b>示范答案：</b></p><p>「伪回归是指对两个相互独立但非平稳的时间序列进行回归时，得到显著的t统计量和很高的R²，但结果毫无经济意义。</p><p>原因：非平稳序列有共同的时间趋势，导致虚假相关。</p><p>诊断方法：ADF单位根检验。若序列非平稳，不能直接回归。</p><p>处理方法：① 差分到平稳后再回归 ② 检验协整关系（若协整存在，可直接回归且结果有意义）。」</p><p style="margin-top:8px"><b>得分点：</b>定义(3分)+原因(2分)+ADF(2分)+协整(1分)</p></div>
 id="t13" class="topic-header">
-  <h2>🔍 Topic 13 · 模型设定与诊断 <span class="clean-label">CLEAN</span></h2>
+  <h2>专题13：模型设定与函数形式（Model Specification）</h2>
 <div style="background:#fff3e0;border:2px solid #e65100;border-radius:8px;padding:10px 14px;margin:10px 0;font-size:0.9em">
 <b>⚠️ 考试权重提示</b>：本专题考试权重极低（约2-4分），<b>建议优先学完核心专题(1/2/4/5/6/9/11/12)后再回看</b>。若时间紧迫，可直接跳到考前速记部分。
 </div>  <p>Model Specification &amp; Diagnostic Tests — RESET · 多重共线性 · 异方差 · 自相关</p>
@@ -3760,7 +3937,7 @@ id="t13" class="topic-header">
 
 <div class="<div class="confusion" style="background:#e8f5e9;border-color:#2e7d32"><h5>💡 简答话术模板（通用）</h5><p><b>📌 通用简答结构：</b></p><p><b>第一步</b> — 下定义<br><b>第二步</b> — 给公式<br><b>第三步</b> — 作解释<br><b>第四步</b> — 举例子<br><b>第五步</b> — 下结论</p><p style="margin-top:8px"><b>得分技巧</b>：公式+解释各占50%分。</p></div>
 floating-btn">
-<button onclick="var p=document.getElementById('speedPanel');p.classList.toggle('show')" title="考前5分钟速记">⏱</button>
+<button onclick="toggleAI()" title="考前5分钟速记">⏱</button>
 </div>
 <div class="floating-panel" id="speedPanel">
 <div class="header">⏱ 考前5分钟速记</div>
@@ -3768,7 +3945,71 @@ floating-btn">
 </div>
 </div>
 <script>
-document.addEventListener('click',function(e){var p=document.getElementById('speedPanel');if(!p.contains(e.target)&&!e.target.closest('.floating-btn button'))p.classList.remove('show')});
+document.addEventListener('click',function(e){var p=document.getElementById('speedPanel');if(!p.contains(e.target)&&!e.target.closest('.floating-btn button'))p&&p.classList.remove('show')});
 </script>
 
 </div></body></html>
+<!-- AI 学习助手 -->
+<div id="aiPanel" class="ai-panel" style="position:fixed;bottom:145px;right:86px;width:320px;max-height:480px;background:#fff;border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,0.15);z-index:999;display:none;flex-direction:column;font-size:0.88em;overflow:hidden">
+<div style="background:#1a237e;color:#fff;padding:10px 14px;border-radius:12px 12px 0 0;cursor:pointer;display:flex;justify-content:space-between" onclick="var b=document.getElementById('aiBody');b.style.display=b.style.display==='none'?'block':'none'">
+<span>🤖 AI 学习助手</span><span>_</span></div>
+<div id="aiBody" style="padding:12px;overflow-y:auto">
+<p style="font-size:0.82em;color:#888;margin-bottom:8px">选中文本自动填入，或直接输入问题</p>
+<textarea id="aiq" placeholder="选中文本自动填入…" style="width:100%;height:60px;border:1px solid #ccc;border-radius:6px;padding:6px;font-size:0.88em;resize:vertical"></textarea>
+<div style="display:flex;gap:6px;margin:6px 0">
+<button onclick="askAI()" style="flex:1;background:#1565c0;color:#fff;border:none;padding:7px;border-radius:6px;cursor:pointer;font-size:0.88em">🚀 提问</button>
+<button onclick="var k=document.getElementById('aikey');k.style.display=k.style.display==='none'?'block':'none'" style="background:#e0e0e0;border:none;padding:7px 10px;border-radius:6px;cursor:pointer;font-size:0.88em">🔑</button>
+</div>
+<div id="aikey" style="display:none;margin:4px 0">
+<input id="apikey" type="password" placeholder="输入DeepSeek API Key" style="width:100%;padding:6px;border:1px solid #ccc;border-radius:4px;font-size:0.85em">
+</div>
+<div id="aires" style="background:#f5f5f5;border-radius:6px;padding:8px;margin:4px 0;max-height:200px;overflow-y:auto;white-space:pre-wrap;font-size:0.85em;min-height:30px">💡 输入问题后点击提问</div>
+</div></div>
+
+<style>
+/* AI panel toggle via floating button */
+</style>
+<script>
+function toggleAI(){var p=document.getElementById('aiPanel');p.style.display=p.style.display==='none'?'flex':'none'}
+
+function askAI(){
+  var q=document.getElementById('aiq').value.trim();
+  var key=document.getElementById('apikey').value.trim();
+  var res=document.getElementById('aires');
+  if(!q){res.innerText='⚠ 请先输入问题';return}
+  if(!key){res.innerText='⚠ 请先输入DeepSeek API Key';return}
+  res.innerText='⏳ 思考中…';
+  fetch('https://api.deepseek.com/v1/chat/completions',{
+    method:'POST',
+    headers:{'Content-Type':'application/json','Authorization':'Bearer '+key},
+    body:JSON.stringify({
+      model:'deepseek-chat',
+      messages:[
+        {role:'system',content:'你是计量经济学助教。用简单语言、分步思路、比喻解释的方式回答问题。假设学生几乎零基础。'},
+        {role:'user',content:q}
+      ],
+      stream:false
+    })
+  }).then(function(r){return r.json()}).then(function(d){
+    res.innerText=d.choices?.[0]?.message?.content||'❌ 无响应，请检查API Key';
+  }).catch(function(e){res.innerText='❌ 请求失败: '+e.message});
+}
+
+// Auto-capture selected text
+document.addEventListener('mouseup',function(){
+  var s=window.getSelection().toString().trim();
+  if(s){var inp=document.getElementById('aiq');if(inp)inp.value=s}
+});
+
+// Open AI panel when clicking floating button - modify the existing button
+window.addEventListener('load',function(){
+  var btns=document.querySelectorAll('.floating-btn button');
+  if(btns.length>0){
+    btns[0].onclick=toggleAI;
+    // Also keep the speed panel toggle on the existing button
+    btns[0].innerHTML='⚡';
+  }
+});
+</script>
+
+
