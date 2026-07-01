@@ -4,7 +4,7 @@
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
 <style>:root{--bg:#f8f9fa;--card:#fff;--primary:#1a73e8;--text:#202124;--text2:#5f6368;--border:#dadce0;--accent:#e8f0fe;--shadow:0 1px 3px rgba(0,0,0,0.08)}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans SC",sans-serif;background:var(--bg);color:var(--text);line-height:1.8;display:flex;min-height:100vh}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans SC",sans-serif;background:var(--bg);color:var(--text);line-height:1.9;display:flex;min-height:100vh}
 #toc{width:250px;position:fixed;top:0;left:0;height:100vh;overflow-y:auto;background:var(--card);border-right:1px solid var(--border);padding:24px 18px;z-index:100;font-size:14px}
 #toc h2{font-size:16px;color:var(--primary);margin-bottom:18px;padding-bottom:10px;border-bottom:2px solid var(--primary)}
 #toc a{display:block;padding:7px 12px;color:var(--text2);text-decoration:none;border-radius:6px;margin:2px 0;font-size:13px;transition:all 0.15s}
@@ -16,14 +16,17 @@ h1{font-size:30px;margin-bottom:4px;color:var(--primary)}.sub{color:var(--text2)
 .topic .ref{font-size:13px;color:var(--text2);margin-bottom:14px}
 .topic .core{background:var(--accent);padding:16px 20px;border-radius:8px;margin:16px 0;border-left:4px solid var(--primary);font-size:15px}
 .topic .core strong{color:var(--primary)}
-.zb{background:#fffde7;padding:14px 18px;border-radius:8px;margin:10px 0;border-left:4px solid #f9a825;font-size:14px;line-height:1.7}
-.zb b{color:#e65100}.zb strong{color:#e65100}
+.learn-header{font-size:16px;font-weight:bold;color:#e65100;margin:20px 0 8px;padding-bottom:6px;border-bottom:2px solid #f9a825}
+.zb{background:#fffde7;padding:14px 18px;border-radius:8px;margin:10px 0;border-left:4px solid #f9a825;font-size:14px;line-height:1.9}
+.zb b{color:#e65100}.zb strong{color:#e65100}.zb i{color:#1a73e8}
+.sub-sect{margin:12px 0 8px 4px;font-size:14px;line-height:1.8}
+.sub-sect b{color:#e65100}
 .ex{margin:16px 0;padding:18px 20px;background:#fafafa;border-radius:8px;border:1px solid var(--border)}
 .ex h4{font-size:15px;color:var(--text);margin-bottom:8px}
 .ex .q{margin:5px 0;padding-left:12px;border-left:3px solid #e0e0e0;font-size:14px}
 .ex .d{font-size:14px;color:var(--text2);margin:6px 0}
 .ex .a{margin:6px 0 6px 12px;padding:8px 14px;background:#e8f5e9;border-radius:6px;font-size:14px;display:none}
-.ex .s{font-size:12px;color:var(--primary);cursor:pointer;background:none;border:none;padding:2px 0;margin:2px 0 6px;display:inline}
+.ex .s{font-size:12px;color:var(--primary);cursor:pointer;background:none;border:none;padding:2px 0;margin:2px 0 6px}
 .ex .s:hover{text-decoration:underline}
 .st{margin:20px 0px 28px}.st table{width:100%;border-collapse:collapse;font-size:14px}
 .st th,.st td{padding:8px 12px;border:1px solid var(--border);text-align:left}
@@ -45,356 +48,382 @@ h1{font-size:30px;margin-bottom:4px;color:var(--primary)}.sub{color:var(--text2)
 @keyframes s{to{transform:rotate(360deg)}}
 @media print{#toc,#sb{display:none}#main{margin:0;padding:20px}}
 @media(max-width:1200px){#toc{width:200px}#main{margin-left:200px;margin-right:0}#sb{display:none}}
-@media(max-width:768px){#toc{display:none}#main{margin:0;padding:16px}}</style></head><body><div id="toc"><h2>📋 目录</h2><a href="#t1">重点1：对数模型与参数解释</a><a href="#t2">重点2：虚拟变量与结构变化</a><a href="#t3">重点3：多重共线性诊断</a><a href="#t4">重点4：异方差性检验</a><a href="#t5">重点5：序列相关(自相关)</a><a href="#t6">重点6：F检验与回归显著性</a><a href="#t7">重点7：误差项与残差</a><a href="#t8">重点8：Probit/Logit模型</a><a href="#t9">重点9：OLS假设与性质</a><a href="#t10">重点10：工具变量与内生性</a><a href="#t11">重点11：面板数据模型</a><a href="#t12">重点12：时间序列与平稳性</a><a href="#t13">重点13：模型设定与函数形式</a></div><div id="main"><h1>📊 计量经济学导论 · 考前速通</h1><p class="sub">基于老师划定的十三个重点 · 零基础友好 · 目标：考过</p><div class="st"><table><tr><th>优先级</th><th>专题</th><th>建议用时</th><th>策略</th></tr><tr><td>🔴 必拿</td><td>1·2·6·7·9</td><td>6h</td><td>题型固定，先学先练</td></tr><tr><td>🟡 核心</td><td>3·4·5</td><td>5h</td><td>掌握概念+判断方法</td></tr><tr><td>🟢 扫尾</td><td>11·12·13</td><td>2h</td><td>理解概念能答简答</td></tr><tr><td>⚪ 战略放弃</td><td>8·10</td><td>0h</td><td>赌不考，老师会捞</td></tr></table></div><div class="topic" id="t1">
+@media(max-width:768px){#toc{display:none}#main{margin:0;padding:16px}}</style></head><body><div id="toc"><h2>📋 目录</h2><a href="#t1">重点1：对数模型</a><a href="#t2">重点2：虚拟变量</a><a href="#t3">重点3：多重共线性</a><a href="#t4">重点4：异方差</a><a href="#t5">重点5：自相关</a><a href="#t6">重点6：F检验</a><a href="#t7">重点7：残差vs误差</a><a href="#t8">重点8：Probit/Logit</a><a href="#t9">重点9：OLS假设</a><a href="#t10">重点10：工具变量</a><a href="#t11">重点11：面板数据</a><a href="#t12">重点12：时间序列</a><a href="#t13">重点13：模型设定</a></div><div id="main"><h1>📊 计量经济学导论 · 考前速通</h1><p class="sub">零基础一步一步学 · 目标：考过</p><div class="st"><table><tr><th>优先级</th><th>专题</th><th>建议用时</th><th>策略</th></tr><tr><td>🔴 必拿</td><td>1·2·6·7·9</td><td>6h</td><td>题型固定，先学先练</td></tr><tr><td>🟡 核心</td><td>3·4·5</td><td>5h</td><td>掌握概念+判断方法</td></tr><tr><td>🟢 扫尾</td><td>11·12·13</td><td>2h</td><td>理解概念能答简答</td></tr><tr><td>⚪ 战略放弃</td><td>8·10</td><td>0h</td><td>赌不考，老师会捞</td></tr></table></div><div class="topic" id="t1">
 <h2>重点1：对数模型与参数解释</h2>
 <p class="ref">📖 第2章(简单回归)、第4章(多元回归分析：推断)</p>
 <div class="core"><strong>📌 核心内容</strong><br>双对数模型中斜率参数表示<strong>弹性</strong>；半对数模型中参数表示<strong>增长率或半弹性</strong>。Cobb-Douglas生产函数经对数变换后，截距项与原模型中效率参数 $A$ 的关系为 $\hat{A}=e^{\hat{\beta}_{0}}$。</div>
-<div class="zb">🤔 <b>为什么要取对数？</b>三点：把乘法变加法便于计算；系数直接解释为百分比变化；缓解异方差。</div>
-<div class="zb">📐 <b>双对数模型</b>(lnY对lnX回归)：系数β₁是<b>弹性</b>——X变化1%，Y变化β₁%。如收入弹性0.5→收入增1%消费增0.5%。</div>
-<div class="zb">📐 <b>半对数模型</b>(lnY对X回归)：系数β₁代表X变化1单位，Y变化(β₁×100)%。如ln(wage)=0.083educ→多读1年书工资涨8.3%。</div>
-<div class="zb">🧮 <b>Cobb-Douglas函数</b> Y=A·K^α·L^β→lnY=lnA+αlnK+βlnL。α和β是产出弹性。Â=e^{截距}。</div>
+<div class="learn-header">📖 零基础一步一步学</div>
+<div class="zb"><b>第一步：先从「回归」说起（如果你忘了）</b><br>回归就是找一条线，描述 X 和 Y 的关系。比如工资(Y) 和 教育年数(X) —— 读的书越多，工资越高。回归方程就是写出来这个关系：Y = a + bX。这里的 b 告诉我们「X每增加1个单位，Y增加b个单位」。这是最基础的。</div>
+<div class="zb"><b>第二步：为什么有时候要用「对数」？</b><br>对数(ln)是一个数学工具，把大的数字变小。比如：ln(100)=4.6，ln(1000)=6.9。用对数有三个好处：<br>① 把乘法关系变成加法关系（更好计算）<br>② 结果可以直接看成「百分比变化」（更容易理解）<br>③ 数据会变得更整齐（减少异方差问题，后面会讲）</div>
+<div class="zb"><b>第三步：关键概念——「弹性」</b><br>弹性 = X变化1%时，Y变化百分之几。比如收入弹性=0.5，意思是：收入增加1%，消费增加0.5%。<br><i>注意：弹性和普通系数的区别：普通系数是「X变1单位，Y变多少」；弹性是「X变1%，Y变百分之几」。</i></div>
+<div class="zb"><b>第四步：第一种模型——双对数模型（lnY对lnX）</b><br>形式：lnY = a + b·lnX。此时 b 就是弹性。<br>例子：ln(销售额) = 3.2 + 0.45×ln(广告费)。b=0.45 的意思是：广告费增加1%，销售额增加0.45%。<br><i>为什么？因为两边都是对数，系数的解释自动变成「百分比对百分比」，这就是弹性。</i></div>
+<div class="zb"><b>第五步：第二种模型——半对数模型（lnY对X）</b><br>形式：lnY = a + b·X。此时 b×100% 就是增长率。<br>例子：ln(工资) = 0.584 + 0.083×教育年数。b=0.083，意思是：教育每多1年，工资增长8.3%。<br><i>为什么乘以100%？因为左边是对数(lnY)，右边是普通数字(X)，系数要×100%才是百分比变化。</i></div>
+<div class="zb"><b>第六步：举个例子一步一步算</b><br>假设 ln(工资) = 0.584 + 0.083×教育年数<br>问：教育从12年到16年，工资变了百分之几？<br>答：①先算Δln(工资)=0.083×(16-12)=0.332<br>②这个0.332的意思是：ln(新工资)-ln(旧工资)=0.332<br>③百分比变化≈0.332×100%=33.2%<br><i>精确一点的话：e^0.332-1≈39.4%。但考试直接用0.332×100%就行。</i></div>
+<div class="zb"><b>第七步：Cobb-Douglas生产函数</b><br>Y = A·K^α·L^β 这是经济学一个著名公式。<br>Y=产出，K=资本，L=劳动。<br>取对数后变成：lnY = lnA + α·lnK + β·lnL<br>α和β就是弹性——α=0.5表示资本增加1%，产出增加0.5%。<br>常数A=e^{截距}。比如截距=1.845，则A=e^1.845≈6.33。</div>
 <div class="ex"><h4>📝 1.1 工资方程</h4>
 <p>$$\ln (wage)=0.584+0.083 educ +0.036 exper +0.003 exper ^{2}$$</p>
-<p class="d">wage小时工资(USD)，educ教育年，exper工作年</p>
-<div class="q">(1) 解释educ系数0.083的经济含义</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：半对数模型。educ增1年→ln(wage)增0.083→工资增约8.3%(系数×100%)。</div>
-<div class="q">(2) 教育从12年增到16年，工资变化百分比？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：Δln(wage)=0.083×4=0.332→工资增约33.2%。精确计算e^0.332-1≈39.4%。</div>
-<div class="q">(3) 工作经验多少年时工资达到峰值？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：令∂ln(wage)/∂exper=0.036-2×0.003×exper=0→exper=6年。工作经验约6年时工资最高。</div>
+<p class="d">wage=小时工资(美元)，educ=教育年数，exper=工作年数</p>
+<div class="q">(1) 解释educ系数0.083的含义</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：半对数模型。educ增1年→ln(wage)增0.083→工资增约8.3%。</div>
+<div class="q">(2) 教育从12年增到16年，工资变多少？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：Δln(wage)=0.083×4=0.332→工资增约33.2%。</div>
+<div class="q">(3) 工作几年时工资最高？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：∂ln(wage)/∂exper=0.036-0.006×exper=0→exper=6年。工作约6年时最高。</div>
 </div>
 <div class="ex"><h4>📝 1.2 Cobb-Douglas生产函数</h4>
 <p>$$\ln \hat{Y}=1.845+0.512 \ln K+0.398 \ln L,\ R^{2}=0.96,\ n=30$$</p>
-<div class="q">(1) 求参数A的估计值</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：lnÂ=1.845→Â=e^{1.845}≈6.33</div>
-<div class="q">(2) 检验规模报酬不变H₀:α+β=1</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：α+β=0.512+0.398=0.910<1→规模报酬递减</div>
-<div class="q">(3) α和β的经济含义</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：α=0.512是资本产出弹性(资本↑1%→产出↑0.512%)；β=0.398是劳动产出弹性</div>
+<div class="q">(1) 求A的估计值</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：lnÂ=1.845→Â=e^{1.845}≈6.33</div>
+<div class="q">(2) 规模报酬不变？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：α+β=0.512+0.398=0.910<1→规模报酬递减</div>
+<div class="q">(3) α和β的含义</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：α=0.512=资本产出弹性；β=0.398=劳动产出弹性</div>
 </div>
 <div class="ex"><h4>📝 1.3 销售额与广告</h4>
 <p>$$\ln S=3.2+0.45 \ln A$$</p>
-<div class="q">(1) 广告支出增加1%，销售额变化百分比？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：双对数模型，0.45是弹性→广告↑1%销售额↑0.45%</div>
-<div class="q">(2) 广告支出从100万元增加到110万元，销售额变化百分比？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：(110-100)/100=10%→销售额变化≈0.45×10%=4.5%</div>
-<div class="q">(3) 广告支出为零时销售额是否为正？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：否。A=0时lnA无定义，从经济学解释——没广告销售额趋向0。</div>
+<div class="q">(1) 广告↑1%，销售额↑？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：双对数模型→0.45%</div>
+<div class="q">(2) 100→110万，销售变多少？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：(110-100)/100=10%→0.45×10%=4.5%</div>
+<div class="q">(3) 广告=0时销售为正吗？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：不对。A=0时lnA无定义。</div>
 </div></div>
 <div class="topic" id="t2">
 <h2>重点2：虚拟变量与结构变化</h2>
 <p class="ref">📖 第7章(含有定性信息的多元回归分析：二值变量)</p>
 <div class="core"><strong>📌 核心内容</strong><br>虚拟变量用于捕捉不同组别间的<strong>截距差异</strong>(加法形式)或<strong>斜率差异</strong>(交互项形式)。同时加入加法项和乘法项可同时反映截距和斜率的差异。</div>
-<div class="zb">🤔 <b>虚拟变量</b>：取0或1，如female=1女0男。表示分类信息(男/女、城市/农村)。</div>
-<div class="zb">📐 <b>加法形式</b>(只加D)：系数=截距差异。如β₁=-2→女性平均少2单位。</div>
-<div class="zb">📐 <b>交互项</b>(D×X)：系数=斜率差异。如β₃=0.01→女性教育回报比男性高1个百分点。</div>
-<div class="zb">💡 <b>同时加D和D×X</b>：男Y=β₀+β₂X；女Y=(β₀+β₁)+(β₂+β₃)X。截距和斜率都不同。</div>
+<div class="learn-header">📖 零基础一步一步学</div>
+<div class="zb"><b>第一步：什么是「虚拟变量」？</b><br>虚拟变量 = 只能取0或1的变量。用来表示「是」或「不是」——比如：女性=1，男性=0。或者城市=1，农村=0。就这么简单。</div>
+<div class="zb"><b>第二步：为什么需要虚拟变量？</b><br>因为有些重要信息是「分类」的，不是数字。比如性别——你不能说「女性=2，男性=5」。只能说是或不是。所以要造一个0/1变量来代表它。</div>
+<div class="zb"><b>第三步：加法形式——只看截距差异</b><br>模型：Y = a + b×D + c×X<br>其中D是虚拟变量(0或1)。<br>当D=0(比如男性)：Y = a + cX<br>当D=1(比如女性)：Y = (a+b) + cX<br>b代表两组之间的差距。<br><i>如果b=-2，意味着女性平均比男性低2个单位。</i></div>
+<div class="zb"><b>第四步：交互项——看斜率差异</b><br>有时候不仅起点不同，变化速度也不同。<br>模型：Y = a + b×D + c×X + d×(D×X)<br>这里D×X是交互项。<br>当D=0：Y = a + cX（男性：教育每多1年，工资增加c）<br>当D=1：Y = (a+b) + (c+d)X（女性：教育每多1年，工资增加c+d）<br><i>如果d=0.01，说明女性每多读1年书的收益比男性高0.01。</i></div>
+<div class="zb"><b>第五步：一个具体例子帮助理解</b><br>模型：工资 = β₀ + β₁×女性 + β₂×教育 + β₃×(女性×教育)<br>假设β₀=10，β₁=-2，β₂=0.5，β₃=0.1<br>男性工资 = 10 + 0.5×教育<br>女性工资 = (10-2) + (0.5+0.1)×教育 = 8 + 0.6×教育<br>意思是：女性起薪比男性低2万(截距)，但每多读1年书，工资涨得比男性多0.1万(斜率)。</div>
+<div class="zb"><b>第六步：怎么检验「有没有差异」？</b><br>用t检验看β₁和β₃是否显著（不等于0）。<br>如果β₁显著→截距有差异（起薪不同）<br>如果β₃显著→斜率有差异（回报率不同）<br>如果都不显著→男女没有差别。</div>
 <div class="ex"><h4>📝 2.1 性别与工资</h4>
 <p>$$wage=\beta _{0}+\beta _{1}female+\beta _{2}educ+\beta _{3}(female\cdot educ)+u$$</p>
 <p class="d">female=1女性，0男性</p>
-<div class="q">(1) 写出男性和女性的工资方程</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：男wage=β₀+β₂educ；女wage=(β₀+β₁)+(β₂+β₃)educ</div>
-<div class="q">(2) β₁和β₃的含义</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：β₁=女性与男性起薪差异；β₃=教育回报率的性别差异</div>
-<div class="q">(3) 如何检验性别影响仅体现在截距上？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：H₀:β₃=0→交互项不显著→性别只影响截距</div>
+<div class="q">(1) 男女工资方程</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：男wage=β₀+β₂educ；女wage=(β₀+β₁)+(β₂+β₃)educ</div>
+<div class="q">(2) β₁和β₃含义</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：β₁=起薪差异；β₃=教育回报率差异</div>
+<div class="q">(3) 检验性别只影响截距？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：H₀:β₃=0。不显著→无斜率差异</div>
 </div>
-<div class="ex"><h4>📝 2.2 改革开放前后教育回报率变化</h4>
+<div class="ex"><h4>📝 2.2 改革开放前后</h4>
 <p>$$\ln (wage)=\beta _{0}+\beta _{1}educ+\beta _{2}post+\beta _{3}(post\cdot educ)+u$$</p>
 <p class="d">post=1为1978年后</p>
-<div class="q">(1) β₃的含义</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：β₃是改革开放前后教育回报率的差异</div>
-<div class="q">(2) 如何检验教育回报率是否变化？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：H₀:β₃=0→不显著则无结构变化</div>
-<div class="q">(3) β₂=0.15,β₃=0.02且显著说明什么？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：β₂=0.15→改革开放后工资截距高15%；β₃=0.02→年教育回报率高出2个百分点</div>
+<div class="q">(1) β₃含义</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：改革开放前后教育回报率的差异</div>
+<div class="q">(2) 检验是否变化</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：H₀:β₃=0→不显著则无变化</div>
+<div class="q">(3) β₂=0.15,β₃=0.02且显著</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：改革后工资截距高15%；年教育回报率高出2个百分点</div>
 </div>
 <div class="ex"><h4>📝 2.3 城乡消费函数</h4>
 <p>$$C_{t}=\alpha _{0}+\alpha _{1}D_{t}+\alpha _{2}x_{t}+\alpha _{3}(D_{t}\cdot x_{t})+u_{t}$$</p>
 <p class="d">D=1城镇，0农村</p>
-<div class="q">(1) 城镇和农村消费函数</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：农村C=α₀+α₂x；城镇C=(α₀+α₁)+(α₂+α₃)x</div>
-<div class="q">(2) α₁和α₃的经济含义</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：α₁=城乡消费水平差异；α₃=城乡边际消费倾向差异</div>
-<div class="q">(3) α₁=50,α₂=0.6,α₃=0.1→城镇MPC？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：城镇MPC=α₂+α₃=0.6+0.1=0.7</div>
+<div class="q">(1) 城乡消费函数</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：农村C=α₀+α₂x；城镇C=(α₀+α₁)+(α₂+α₃)x</div>
+<div class="q">(2) α₁和α₃含义</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：α₁=城乡消费水平差异；α₃=城乡边际消费倾向差异</div>
+<div class="q">(3) α₁=50,α₂=0.6,α₃=0.1→城镇MPC？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：城镇MPC=0.6+0.1=0.7</div>
 </div></div>
 <div class="topic" id="t3">
 <h2>重点3：多重共线性诊断与处理</h2>
 <p class="ref">📖 第3章补充、第9章</p>
 <div class="core"><strong>📌 核心内容</strong><br>方差膨胀因子 $VIF_{j}=1/(1-R_{j}^{2})$，$VIF>10$（或5）认为存在严重多重共线性。危害：参数估计方差增大、t统计量变小、系数符号可能反常，但$R^{2}$仍可能很高。处理方法：增样本、删变量、主成分、岭回归。</div>
-<div class="zb">🤔 <b>多重共线性</b>：两个解释变量高度相关(如房间数和卧室数)，模型分不清各自贡献。</div>
-<div class="zb">😱 <b>危害</b>：系数标准误变大→t值变小→本应显著的变量不显著，但R²仍很高。</div>
-<div class="zb">🧮 <b>VIF公式</b>：把Xj对其他X回归得R²→VIF=1/(1-R²)。>10说明严重。</div>
-<div class="zb">🛠️ <b>处理</b>：删变量(简单但可能遗漏)；增样本(最优但可能做不到)；主成分/岭回归(复杂)。</div>
+<div class="learn-header">📖 零基础一步一步学</div>
+<div class="zb"><b>第一步：先理解「相关」</b><br>如果两个东西有关系，比如「房子面积」和「房间数量」——大房子通常房间多。这两个变量就是相关的。在回归里如果两个变量高度相关，就会出问题。</div>
+<div class="zb"><b>第二步：什么是多重共线性？</b><br>就是两个解释变量(比如房间数和卧室数)高度相关。模型没办法分清——工资上涨到底是因为房间数多了，还是卧室数多了？<br>就像你让两个人同时告诉你一个方向，他俩说的差不多，你听不清谁说的。</div>
+<div class="zb"><b>第三步：它会造成什么问题？</b><br>① 系数的标准误会变大（变得不确定）<br>② t值变小（本来显著的变量变得不显著）<br>③ 但整个方程的决定系数R²还是很高<br>这种情况让人很困惑：整体看模型很好(R²高)，但每个变量都不显著(t值小)。</div>
+<div class="zb"><b>第四步：怎么发现它？——VIF</b><br>VIF = 方差膨胀因子。公式：VIF = 1/(1-R²_j)<br>其中R²_j是把第j个变量对其他所有变量做回归得到的R²。<br>判断标准：VIF>10 → 严重多重共线性；VIF>5 → 需要关注。<br>算起来也不难——比如VIF=12.5，说明这个变量的方差因为共线性膨胀了12.5倍。</div>
+<div class="zb"><b>第五步：怎么处理？</b><br>① <b>删变量</b>：把VIF最高的那个变量删掉。最简单但可能丢失信息。<br>② <b>增样本</b>：拿更多数据。最理想但可能做不到。<br>③ <b>主成分分析/岭回归</b>：更复杂的方法。了解有这回事就行。</div>
 <div class="ex"><h4>📝 3.1 VIF诊断</h4>
 <p>$$VIF_{1}=18.5,\ VIF_{2}=12.3,\ VIF_{3}=2.1$$</p>
-<div class="q">(1) 是否存在严重多重共线性？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：VIF₁=18.5>10，VIF₂=12.3>10→严重共线性。VIF₃=2.1正常。</div>
-<div class="q">(2) 哪个变量最可能是根源？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：VIF₁最高，变量1最可能是共线性根源。</div>
-<div class="q">(3) 提出两种处理方案</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：方案一删VIF最高的变量(简单但可能遗漏)；方案二增样本(保变量但可能做不到)。</div>
+<div class="q">(1) 是否严重？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：VIF₁=18.5>10，VIF₂=12.3>10→严重。VIF₃=2.1正常。</div>
+<div class="q">(2) 哪个根源？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：VIF₁最高→变量1。</div>
+<div class="q">(3) 两种方案</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：删VIF最高的变量 或 增样本量。</div>
 </div>
 <div class="ex"><h4>📝 3.2 房价模型</h4>
 <p>$$price =\beta_{0}+\beta_{1} rooms +\beta_{2} bdrms +\beta_{3} size +u$$</p>
 <p class="d">R²=0.85但所有t不显著，rooms对bdrms+size回归R²=0.92</p>
-<div class="q">(1) 解释这一现象</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：典型多重共线性——变量高度相关(房间/卧室/面积)，分不清各自贡献。</div>
-<div class="q">(2) 求VIF_rooms</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：VIF_rooms=1/(1-0.92)=12.5>10→严重共线性。</div>
-<div class="q">(3) 不删变量的改进方法</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：增样本量或使用岭回归(有偏但更稳定)。</div>
+<div class="q">(1) 解释这个现象</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：多重共线性——房间/卧室/面积高度相关。</div>
+<div class="q">(2) VIF_rooms</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：VIF=1/(1-0.92)=12.5>10→严重。</div>
+<div class="q">(3) 不删变量的方法</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：增样本量或岭回归。</div>
 </div>
 <div class="ex"><h4>📝 3.3 企业生产函数</h4>
 <p>$$\ln Y=\beta _{0}+\beta _{1}\ln L+\beta _{2}\ln K+\beta _{3}\ln E+u$$</p>
-<p class="d">n=50,R²=0.95,t(L)=1.2,t(K)=1.5,t(E)=5.8，lnL与lnK相关系数0.95</p>
-<div class="q">(1) 是否多重共线性？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：是。R²极高但t值不显著，lnL与lnK高度相关→典型共线性。</div>
-<div class="q">(2) 相关系数0.95说明什么？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：劳动和资本高度相关(企业规模效应)，模型无法区分各自贡献。</div>
-<div class="q">(3) 删除lnK的后果？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：删除lnK可能导致遗漏偏误——lnL会吸收lnK的效应，系数有偏。</div>
+<p class="d">n=50,R²=0.95,t(L)=1.2,t(K)=1.5,t(E)=5.8,lnL与lnK相关系数0.95</p>
+<div class="q">(1) 是否共线性？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：是。R²极高t不显著，lnL与lnK高度相关。</div>
+<div class="q">(2) 相关系数0.95</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：劳动和资本高度相关(企业越大两者都大)。</div>
+<div class="q">(3) 删除lnK的后果</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：删除→lnL会吸收lnK的效应→系数有偏。</div>
 </div></div>
 <div class="topic" id="t4">
 <h2>重点4：异方差性检验与处理</h2>
 <p class="ref">📖 第8章(异方差性)</p>
 <div class="core"><strong>📌 核心内容</strong><br>异方差导致OLS估计量仍<strong>无偏但非有效</strong>，标准误估计有偏，t检验和F检验失效。检验方法：Breusch-Pagan检验、White检验。处理方法：加权最小二乘法(WLS)、异方差稳健标准误(HC标准误)。</div>
-<div class="zb">🤔 <b>异方差</b>：误差项的波动幅度不是常数。如高收入者储蓄波动大于低收入者。</div>
-<div class="zb">😱 <b>后果</b>：系数估计仍准(无偏)，但标准误不准→t检验p值置信区间全不可信。</div>
-<div class="zb">🔍 <b>发现</b>：残差图呈喇叭状→异方差。BP检验和White检验可正式检验。</div>
-<div class="zb">🛠️ <b>处理</b>：WLS=给波动大的观测值更小权重；稳健标准误(HC)=只矫正标准误、不改变系数。实际中最常用稳健标准误。</div>
+<div class="learn-header">📖 零基础一步一步学</div>
+<div class="zb"><b>第一步：先理解「方差」</b><br>方差衡量数据的分散程度。比如低收入人群的消费差异较小，高收入人群的消费差异很大——有人存钱有人花钱。</div>
+<div class="zb"><b>第二步：什么是「同方差」？</b><br>同方差 = 不管X怎么变，误差的波动幅度是一样的。<br>画个图：你沿着回归线走，误差项(点到线的距离)的分散程度始终一样。<br>这是OLS回归的理想状态。</div>
+<div class="zb"><b>第三步：什么是「异方差」？</b><br>异方差 = 误差的波动幅度会变。<br>比如研究储蓄和收入的关系——低收入者储蓄差异小(都没钱存)，高收入者储蓄差异大(有人存有人花)。<br>画出来像一个喇叭：X越大，残差越散开。</div>
+<div class="zb"><b>第四步：异方差有什么后果？</b><br>① 系数估计还是准的(无偏性的不受影响)<br>② <b>但标准误不准了</b>——t检验、p值、置信区间全都不可信<br>③ 因为标准误错了，你没法判断系数是否显著<br>也就是说：你算出来的「显著性」可能是假的。</div>
+<div class="zb"><b>第五步：怎么发现异方差？</b><br>① <b>看图</b>：把残差(实际值-预测值)画在图上。如果呈喇叭形散开→异方差。<br>② <b>Breusch-Pagan检验</b>：把残差的平方对X做回归，看R²。LM=n×R²。如果LM大于卡方临界值→存在异方差。<br>③ <b>White检验</b>：比BP检验更一般，加入了平方项和交叉项。</div>
+<div class="zb"><b>第六步：怎么处理？</b><br>① <b>稳健标准误(HC标准误)</b>：不改变系数，只矫正标准误。最简单的办法。<br>② <b>WLS(加权最小二乘)</b>：给波动大的数据更小的权重。需要知道异方差的形式。<br>实际中最常用的是稳健标准误——大部分统计软件默认就有。</div>
 <div class="ex"><h4>📝 4.1 储蓄与收入</h4>
 <p>$$S_{i}=\beta_{0}+\beta_{1} Y_{i}+u_{i}$$</p>
 <p class="d">残差绝对值随收入增大而增大</p>
-<div class="q">(1) 存在什么计量问题？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：异方差——残差波动随Y增大而增大。</div>
-<div class="q">(2) 对OLS无偏性和有效性的影响</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：OLS仍无偏但不再有效(非BLUE)，标准误有偏→t检验不可靠。</div>
-<div class="q">(3) White稳健t统计量公式</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：t=(β̂_j-β_j)/se_robust(β̂_j)，se_robust为White异方差稳健标准误。</div>
+<div class="q">(1) 什么问题？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：异方差。残差波动随Y增大而增大。</div>
+<div class="q">(2) 对无偏性和有效性的影响</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：仍无偏但非BLUE，标准误有偏→t检验不可靠。</div>
+<div class="q">(3) White稳健t统计量</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：t=(β̂_j-β_j)/se_robust</div>
 </div>
 <div class="ex"><h4>📝 4.2 Breusch-Pagan检验</h4>
 <p>$\hat{u}_{i}^{2}=\delta_{0}+\delta_{1} x_{1 i}+\delta_{2} x_{2 i}+v_{i}$，$R^{2}=0.18$，$n=100$</p>
-<div class="q">(1) 原假设和备择假设</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：H₀:δ₁=δ₂=0(同方差)；H₁:至少一个δ≠0(异方差)。</div>
-<div class="q">(2) 计算LM统计量并判断</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：LM=n×R²=100×0.18=18。χ²(2)临界值≈5.99。18>5.99→拒绝H₀→异方差。</div>
-<div class="q">(3) 若拒绝H₀应如何处理？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：使用异方差稳健标准误(HC标准误)或WLS。</div>
+<div class="q">(1) 原假设和备择假设</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：H₀:同方差；H₁:异方差。</div>
+<div class="q">(2) LM统计量</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：LM=100×0.18=18。χ²(2)临界值≈5.99。18>5.99→拒绝H₀→异方差。</div>
+<div class="q">(3) 怎么处理？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：使用稳健标准误(HC)或WLS。</div>
 </div>
 <div class="ex"><h4>📝 4.3 CEO薪酬</h4>
 <p>$Var(u|sales,roe)=\sigma^{2}\cdot sales^{2}$</p>
 <p class="d">已知异方差形式</p>
-<div class="q">(1) 写出变换后满足同方差的模型</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：除以sales→y/sales=β₀/sales+β₁+β₂(roe/sales)+u/sales。新误差方差σ²同方差。</div>
-<div class="q">(2) 对应哪种估计方法？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：加权最小二乘(WLS)—权重wt=1/sales²。</div>
-<div class="q">(3) 若不知异方差形式怎么办？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：使用异方差稳健标准误(HC标准误)，不需知道异方差具体形式。</div>
+<div class="q">(1) 写出变换后模型</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：除以sales→y/sales=β₀/sales+β₁+β₂(roe/sales)+u/sales。</div>
+<div class="q">(2) 对应方法？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：WLS，权重=1/sales²。</div>
+<div class="q">(3) 不知异方差形式怎么办？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：用稳健标准误(HC标准误)。</div>
 </div></div>
 <div class="topic" id="t5">
 <h2>重点5：序列相关(自相关)检验与处理</h2>
 <p class="ref">📖 第12章(时间序列回归中的序列相关和异方差)</p>
 <div class="core"><strong>📌 核心内容</strong><br>D.W.检验用于一阶自相关检验，$d \approx2(1-\hat{\rho})$。$d<d_{L}$→存在正自相关，$d>d_{U}$→不存在。序列相关导致OLS标准误有偏，t和F检验失效。处理方法：Cochrane-Orcutt迭代、Newey-West标准误。</div>
-<div class="zb">🤔 <b>自相关</b>：今天误差和昨天相关。如今年GDP高→明年也可能高(惯性)。</div>
-<div class="zb">😱 <b>后果</b>：与异方差类似——系数仍无偏，标准误不准。</div>
-<div class="zb">🔍 <b>DW检验</b>：DW≈2无自相关；明显<2正自相关；明显>2负自相关。</div>
-<div class="zb">🛠️ <b>处理</b>：Cochrane-Orcutt迭代法(先估计ρ再变换)；Newey-West标准误(直接矫正)。</div>
+<div class="learn-header">📖 零基础一步一步学</div>
+<div class="zb"><b>第一步：什么是「时间序列」？</b><br>时间序列 = 按时间顺序排列的数据。比如每天的股价、每年的GDP。跟横截面数据(同一时间点调查很多人)不同，时间序列数据前后有关联。</div>
+<div class="zb"><b>第二步：什么是「自相关」？</b><br>自相关 = 今天的误差和昨天的误差有关系。<br>比如今年GDP高了→明年可能也高(经济有惯性)。<br>这就是正自相关——今天高明天也高。</div>
+<div class="zb"><b>第三步：自相关的后果</b><br>和异方差类似：系数估计还是准的，但标准误不准→t检验失效。<br>如果存在正自相关(最常见)，OLS标准误会被低估，让你觉得系数显著但实际上可能不显著。</div>
+<div class="zb"><b>第四步：怎么发现？——DW检验</b><br>DW统计量≈2×(1-ρ̂)。ρ是自相关系数。<br>判断规则：<br>· DW≈2 → 无自相关<br>· DW明显小于2(如0.85) → 正自相关<br>· DW明显大于2(如3.2) → 负自相关<br>有两个临界值dL和dU：DW<dL→有自相关；DW>dU→无；在中间→无法判断。</div>
+<div class="zb"><b>第五步：怎么处理</b><br>① <b>Cochrane-Orcutt迭代法</b>：先估计ρ，然后用ρ变换数据，消除自相关。<br>② <b>Newey-West标准误</b>：直接矫正标准误，不改变系数。更简单。<br>在实际应用中，Newey-West标准误更常用。</div>
 <div class="ex"><h4>📝 5.1 DW检验</h4>
 <p>$y_{t}=\beta_{0}+\beta_{1} x_{t}+u_{t}$，n=50，DW=1.35，dL=1.32，dU=1.53</p>
-<div class="q">(1) 是否存在一阶正自相关？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：DW=1.35。dL<DW<dU→落入无法判断区域。</div>
-<div class="q">(2) OLS标准误如何变化？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：若存在正自相关(ρ>0)，OLS标准误被低估(偏小)，t统计量被高估。</div>
-<div class="q">(3) Cochrane-Orcutt第一步变换方程</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：y_t-ρ̂y_{t-1}=β₀(1-ρ̂)+β₁(x_t-ρ̂x_{t-1})+e_t，ρ̂≈1-DW/2。</div>
+<div class="q">(1) 是否存在自相关？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：dL<DW<dU→无法判断区域。</div>
+<div class="q">(2) 标准误怎么变？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：若存在正自相关，标准误被低估。</div>
+<div class="q">(3) Cochrane-Orcutt第一步方程</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：y_t-ρ̂y_{t-1}=β₀(1-ρ̂)+β₁(x_t-ρ̂x_{t-1})+e_t</div>
 </div>
-<div class="ex"><h4>📝 5.2 季度数据自相关</h4>
+<div class="ex"><h4>📝 5.2 季度数据</h4>
 <p>$DW=0.85$，n=60，dL=1.55，dU=1.62</p>
-<div class="q">(1) 判断自相关方向和严重程度</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：DW=0.85<dL=1.55→存在一阶正自相关。远小于2，较严重。</div>
-<div class="q">(2) 估计ρ的值</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：ρ̂≈1-DW/2=1-0.85/2=0.575。正相关性较强。</div>
-<div class="q">(3) Newey-West相比OLS标准误的优势</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：Newey-West在自相关和异方差并存时仍一致(稳健)，OLS标准误有偏。</div>
+<div class="q">(1) 判断自相关</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：DW=0.85<dL→存在正自相关。远小于2，较严重。</div>
+<div class="q">(2) ρ的值</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：ρ̂≈1-0.85/2=0.575。</div>
+<div class="q">(3) Newey-West优势</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：自相关和异方差并存时仍一致。</div>
 </div>
 <div class="ex"><h4>📝 5.3 含滞后因变量模型</h4>
 <p>$$y_{t}=\beta_{0}+\beta_{1} y_{t-1}+\beta_{2} x_{t}+u_{t}$$</p>
-<div class="q">(1) DW检验是否适用？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：不适用。含滞后因变量时DW偏向不拒绝H₀，检验失效。</div>
-<div class="q">(2) u_t=ρu_{t-1}+e_t时OLS是否一致？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：OLS不一致。y_{t-1}与u_{t-1}相关→y_{t-1}与u_t相关→违反外生性。</div>
-<div class="q">(3) 提出适用的自相关检验方法</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：Durbin h检验或Breusch-Godfrey LM检验(适用于含滞后因变量模型)。</div>
+<div class="q">(1) DW是否适用？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：不适用。含y_{t-1}时DW失效。</div>
+<div class="q">(2) 若u_t=ρu_{t-1}，OLS一致吗？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：不一致。y_{t-1}与u_t相关→违反外生性。</div>
+<div class="q">(3) 适用方法</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：Durbin h检验或BG LM检验。</div>
 </div></div>
 <div class="topic" id="t6">
 <h2>重点6：F检验与回归显著性检验</h2>
 <p class="ref">📖 第4章(多元回归分析：推断)</p>
 <div class="core"><strong>📌 核心内容</strong><br>回归总体显著性F统计量：$F=\frac{ESS/k}{RSS/(n-k-1)}=\frac{R^{2}/k}{(1-R^{2})/(n-k-1)}$，用于检验所有斜率系数同时为零。区别于单个参数的t检验。</div>
-<div class="zb">🤔 <b>F检验</b>：t验单个变量，F验所有变量一起是否显著。t=逐个面试，F=群面。</div>
-<div class="zb">📐 <b>公式</b>：F=(R²/k)/[(1-R²)/(n-k-1)]。F越大越显著。</div>
-<div class="zb">🔍 <b>何时用</b>：检验一组变量联合显著；或检验约束条件(如α+β=1)。</div>
-<div class="zb">📊 <b>R²与F</b>：R²高不一定F大(变量多时)，但通常正相关。调整R²修正了变量数的影响。</div>
+<div class="learn-header">📖 零基础一步一步学</div>
+<div class="zb"><b>第一步：F检验是做什么的？</b><br>t检验是看一个变量是否显著；F验是看所有变量一起是否显著。<br>打个比方：t检验是「逐个面试」，F检验是「群面」——你一个人好不好不重要，你们整个团队好不好才重要。</div>
+<div class="zb"><b>第二步：F统计量的公式</b><br>F = (R²/k) / [(1-R²)/(n-k-1)]<br>其中：<br>· R² = 模型能解释的百分比<br>· k = 解释变量的个数<br>· n = 样本量<br>F值越大→模型越显著。</div>
+<div class="zb"><b>第三步：怎么判断是否显著？</b><br>查F分布表。给定显著性水平(通常是5%)和自由度(k, n-k-1)，有一个临界值。如果F大于这个临界值→回归显著。<br>比如F=95，而临界值≈2.70，95>>2.70→高度显著。</div>
+<div class="zb"><b>第四步：F检验的两种应用</b><br>① <b>总体显著性</b>：检验所有变量一起是否对Y有影响(H₀:所有系数=0)。<br>② <b>约束检验</b>：检验某一个条件是否成立。比如检验β₁=β₂，或α+β=1。用有约束和无约束的RSS来计算F。</div>
+<div class="zb"><b>第五步：F和t的关系</b><br>· F显著但个别t不显著→可能有多重共线性（整体有意义但单个变量分不清）<br>· 反过来，F不显著但个别t显著→很少见，可能是数据问题<br>· F检验比t检验更「整体」</div>
 <div class="ex"><h4>📝 6.1 多元回归显著性</h4>
 <p>$Y=\beta_{0}+\beta_{1} X_{1}+\beta_{2} X_{2}+\beta_{3} X_{3}+u$，n=100，ESS=450，RSS=150</p>
-<div class="q">(1) 计算R²和调整R̄²</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：R²=450/600=0.75。R̄²=1-0.25×99/95≈0.739。</div>
-<div class="q">(2) 5%水平检验回归总体显著性</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：F=(0.75/3)/(0.25/95)=0.25/0.00263≈95。F₀.₀₅(3,95)≈2.70，95>2.70→高度显著。</div>
-<div class="q">(3) F检验与t检验的区别</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：F检验所有斜率系数是否全为零；t检验单个系数。F显著但个别t不显著→可能多重共线性。</div>
+<div class="q">(1) R²和调整R̄²</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：R²=450/600=0.75。R̄²=1-0.25×99/95≈0.739。</div>
+<div class="q">(2) 总体显著性检验</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：F=95>2.70→高度显著。</div>
+<div class="q">(3) F和t的区别</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：F检验所有系数是否全为零；t检验单个系数。</div>
 </div>
 <div class="ex"><h4>📝 6.2 约束检验</h4>
-<p>$RSS_U=120$，$RSS_R=135$，n=50，k=4。检验H₀:β₁=β₂</p>
-<div class="q">(1) 写出原假设</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：H₀:β₁=β₂；H₁:β₁≠β₂。1个约束(q=1)。</div>
-<div class="q">(2) 计算F统计量</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：F=[(135-120)/1]/[120/(50-4-1)]=15/2.67≈5.62。</div>
-<div class="q">(3) 5%水平下判断</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：5.62>4.06(F₀.₀₅(1,45))→拒绝H₀→β₁≠β₂。</div>
+<p>$RSS_U=120$，$RSS_R=135$，n=50，k=4。检验β₁=β₂</p>
+<div class="q">(1) 原假设</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：H₀:β₁=β₂</div>
+<div class="q">(2) F统计量</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：F=[(135-120)/1]/[120/45]=15/2.67≈5.62</div>
+<div class="q">(3) 5%水平下</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：5.62>4.06→拒绝H₀→β₁≠β₂</div>
 </div>
-<div class="ex"><h4>📝 6.3 R²与F的关系</h4>
+<div class="ex"><h4>📝 6.3 R²与F</h4>
 <p>$R²=0.72$，n=35，k=5</p>
-<div class="q">(1) 计算F统计量</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：F=(0.72/5)/[(1-0.72)/(35-5-1)]=0.144/0.00966≈14.91。</div>
-<div class="q">(2) 所有t不显著但F显著的原因</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：多重共线性导致变量标准误增大→t不显著，但整体回归有意义。</div>
-<div class="q">(3) 与多重共线性的关系</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：典型共线性症状：整体显著(F大)，单个不显著(t小)。</div>
+<div class="q">(1) 计算F</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：F=14.91</div>
+<div class="q">(2) 所有t不显著但F显著？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：多重共线性导致标准误增大→t小但整体有意义。</div>
+<div class="q">(3) 与共线性的关系</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：典型症状：F大、单个t小。</div>
 </div></div>
 <div class="topic" id="t7">
 <h2>重点7：随机误差项与残差</h2>
 <p class="ref">📖 第2章(简单回归)</p>
 <div class="core"><strong>📌 核心内容</strong><br>随机误差项 $u_{i}$ 是总体模型中不可观测的随机变量；残差 $\hat{u}_{i}=Y_{i}-\hat{Y}_{i}$ 是样本估计值。残差是误差项的样本对应物；误差项不可观测，残差可计算；OLS下残差和为0，但误差项均值为0是假设。</div>
-<div class="zb">🤔 <b>一句区别</b>：误差项u=真值-真实回归线(永远不知道)；残差û=真值-估计回归线(可计算)。</div>
-<div class="zb">🧪 <b>u</b>：总体层面，不可观测。E(u|X)=0是假设。</div>
-<div class="zb">🧪 <b>û</b>：样本层面，可计算。∑û=0是OLS数学结果，不是假设。</div>
-<div class="zb">💡 <b>易混淆点</b>：E(u)=0是假设；∑û=0是数学性质。初学者常搞混。</div>
+<div class="learn-header">📖 零基础一步一步学</div>
+<div class="zb"><b>第一步：先回想一下回归模型</b><br>Y = a + bX + u<br>Y = 实际值（你看到的数据）<br>a+bX = 预测值（回归线告诉你的）<br>u = 误差项（实际值和预测值的差距）</div>
+<div class="zb"><b>第二步：什么是误差项u？</b><br>u是「真实的误差」——实际值减去真实回归线的差距。<br>但有一个问题：真实回归线我们永远不知道！因为我们只有样本数据。<br>所以u是不可观测的。我们只能假设它的平均值是0（E(u)=0）。</div>
+<div class="zb"><b>第三步：什么是残差û？</b><br>û = 实际值 - 我们估计的回归线<br>这个是可以算出来的——因为我们的回归线是知道的。<br>残差 = 实际值 - 预测值。就这么简单。</div>
+<div class="zb"><b>第四步：两者的关键区别</b><br>误差项u = 真值 - 真实回归线（永远不知道）<br>残差û = 真值 - 估计回归线（可以计算）<br>残差是误差项的「估计」——我们用û来推测u。</div>
+<div class="zb"><b>第五步：一个总搞混的点</b><br>E(u)=0是假设（我们认为平均误差为0）<br>∑û=0是数学结果（OLS自动让残差和为零）<br>初学者常犯的错误：说「因为E(u)=0，所以残差和为零是自然的」<br>不对！E(u)=0是假设，∑û=0是数学推导的结果。</div>
+<div class="zb"><b>第六步：残差有三个重要性质</b><br>① 残差和为零（∑ûᵢ=0）<br>② 残差和X不相关（∑Xᵢûᵢ=0）<br>③ 残差的均值就是预测值的均值<br>这些都是OLS自动保证的。</div>
 <div class="ex"><h4>📝 7.1 u与û的定义</h4>
 <p>总体模型$Y_{i}=\beta_{0}+\beta_{1} X_{i}+u_{i}$，样本回归$\hat{Y}_{i}=\hat{\beta}_{0}+\hat{\beta}_{1} X_{i}$</p>
-<div class="q">(1) 写出u_i和û_i的定义</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：u_i=Y_i-(β₀+β₁X_i)；û_i=Y_i-(β̂₀+β̂₁X_i)。</div>
-<div class="q">(2) 证明OLS下∑û_i=0</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：∂RSS/∂β̂₀=-2∑û_i=0→∑û_i=0。OLS一阶条件，数学推导结果。</div>
-<div class="q">(3) 为什么∑u_i=0不一定成立</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：E(u)=0是理论假设，不等于样本中u_i之和为零。且u_i不可观测。</div>
+<div class="q">(1) 写出u_i和û_i</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：u_i=Y_i-(β₀+β₁X_i)；û_i=Y_i-(β̂₀+β̂₁X_i)。</div>
+<div class="q">(2) 证明∑û_i=0</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：∂RSS/∂β̂₀=-2∑û_i=0→∑û_i=0。</div>
+<div class="q">(3) 为什么∑u_i=0不一定成立？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：E(u)=0是假设，不等于样本中成立。且u不可观测。</div>
 </div>
-<div class="ex"><h4>📝 7.2 混淆误差项与残差</h4>
-<p class="d">某研究者认为「因为E(u)=0，残差和必为零是自然的」</p>
-<div class="q">(1) 指出问题所在</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：混淆了总体u(不可观测)和样本û(可计算)。E(u)=0是假设，和为0是OLS性质。</div>
-<div class="q">(2) 解释残差和为0是OLS结果而非假设</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：∂RSS/∂β̂₀=0→∑û_i=0，来自最小二乘的数学，不是来自E(u)=0。</div>
-<div class="q">(3) 残差何时可作为误差项的合理近似？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：当样本量足够大且模型设定正确时，残差是误差项的一致估计。</div>
+<div class="ex"><h4>📝 7.2 混淆概念</h4>
+<p class="d">有人认为「因为E(u)=0，残差和必为零是自然的」</p>
+<div class="q">(1) 指出问题</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：混淆了u(不可观测)和û(可计算)。E(u)=0是假设，和为0是OLS性质。</div>
+<div class="q">(2) 解释为何是OLS结果</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：∂RSS/∂β̂₀=0→∑û_i=0，是最小二乘数学性质。</div>
+<div class="q">(3) û何时可近似u？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：样本量大且模型设定正确时。</div>
 </div>
 <div class="ex"><h4>📝 7.3 残差与X不相关</h4>
 <p>证明∑X_iû_i=0</p>
-<div class="q">(1) 利用OLS一阶条件证明</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：∂RSS/∂β̂₁=-2∑X_i(Y_i-β̂₀-β̂₁X_i)=0→∑X_iû_i=0。</div>
-<div class="q">(2) 与E(u|X)=0的关系</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：∑X_iû_i=0是OLS代数结果；E(u|X)=0是保证无偏性的假设。两者对应但不相同。</div>
-<div class="q">(3) 遗漏变量时是否仍成立？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：OLS在计算上仍保证∑X_iû_i=0，但此时û包含遗漏变量效应，不能再近似u。</div>
+<div class="q">(1) 证明</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：∂RSS/∂β̂₁=-2∑X_i(Y_i-β̂₀-β̂₁X_i)=0→∑X_iû_i=0。</div>
+<div class="q">(2) 与E(u|X)=0的关系</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：∑X_iû_i=0是OLS代数结果；E(u|X)=0是保证无偏的假设。</div>
+<div class="q">(3) 遗漏变量时还成立吗？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：计算上仍成立，但û包含遗漏变量效应，不再近似u。</div>
 </div></div>
 <div class="topic" id="t8">
 <h2>重点8：Probit与Logit模型</h2>
 <p class="ref">📖 第17章(限值因变量模型和样本选择纠正)</p>
 <div class="core"><strong>📌 核心内容</strong><br>二元离散选择模型(Y=0或1)。Probit使用标准正态CDF，Logit使用逻辑斯蒂CDF。边际效应≠系数本身，需通过链式法则：$\partial P/\partial x_j =\beta_j \cdot g(\beta_0+\beta_1 x_1+\cdots)$，g为PDF。</div>
-<div class="zb">🤔 <b>何时用？</b>Y是0或1(是否贷款批准/劳动参与)。OLS不适合(预测会超出0-1)。</div>
-<div class="zb">📐 <b>Probit vs Logit</b>：很相似。Probit用正态分布，Logit用逻辑分布。实际差异极小。</div>
-<div class="zb">⚠️ <b>系数≠边际效应</b>：系数不能直接解释为概率变化，因模型非线性。需通过PDF额外计算。</div>
-<div class="zb">⚪ <b>战略放弃</b>：进阶专题，时间不够优先放弃。</div>
+<div class="learn-header">📖 零基础一步一步学</div>
+<div class="zb"><b>⚠️ 战略放弃提示</b><br>本章是进阶内容，如果你的目标是考过且老师会捞，建议优先学好前7章。时间允许再看这里。</div>
+<div class="zb"><b>第一步：什么时候用Probit/Logit？</b><br>当Y只能取0或1的时候——比如：是否贷款批准？是否参加工作？<br>普通回归(OLS)不适合，因为预测值会超出0-1范围。</div>
+<div class="zb"><b>第二步：Probit和Logit的区别</b><br>两者几乎一样，只是用不同的数学函数：<br>Probit用标准正态分布(像钟形曲线)<br>Logit用逻辑分布(形状类似但尾巴更厚)<br>结果通常差异很小。</div>
+<div class="zb"><b>第三步：关键提醒——系数≠边际效应</b><br>在普通回归中，系数就是「X增1单位Y增b」。但在这里不是！<br>因为模型是非线性的，系数的解释需要通过一个转换才能变成概率的变化。<br>考试中如果是选择题，记住「系数不能直接解释为概率变化」就行。</div>
 <div class="ex"><h4>📝 8.1 Logit贷款批准</h4>
 <p>$P(loan=1|income)=\Lambda(0.5+0.02\ income)$，$\Lambda(z)=e^{z}/(1+e^{z})$</p>
 <p class="d">income千元</p>
-<div class="q">(1) income=30时贷款批准概率？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：z=0.5+0.02×30=1.1。P=e^{1.1}/(1+e^{1.1})≈0.75。</div>
-<div class="q">(2) 收入从30→31概率变化近似值？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：边际效应=β×P×(1-P)=0.02×0.75×0.25=0.00375(约0.375个百分点)。</div>
-<div class="q">(3) 为什么0.02不是边际效应？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：Logit非线性，0.02是潜变量系数。边际效应须通过PDF转换。</div>
+<div class="q">(1) income=30时概率？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：z=0.5+0.02×30=1.1。P=e^1.1/(1+e^1.1)≈0.75。</div>
+<div class="q">(2) 30→31概率变化？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：边际效应=β×P×(1-P)=0.02×0.75×0.25=0.00375。</div>
+<div class="q">(3) 0.02为什么不是边际效应？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：Logit非线性，系数需通过PDF转换。</div>
 </div>
 <div class="ex"><h4>📝 8.2 Probit劳动参与</h4>
 <p>$P(inlf=1|educ,exper)=\Phi(-0.5+0.15\ educ+0.02\ exper)$</p>
 <p class="d">Φ标准正态CDF</p>
-<div class="q">(1) educ=12,exper=10时概率？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：z=-0.5+1.8+0.2=1.5。Φ(1.5)≈0.9332→概率93.3%</div>
-<div class="q">(2) 教育的边际效应(均值处)？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：边际效应=β×φ(z)=0.15×0.1295≈0.0194。教育增1年概率增1.94个百分点。</div>
-<div class="q">(3) Probit与Logit计算异同</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：都通过β×PDF计算，仅PDF不同(正态vs逻辑)。结果通常接近。</div>
+<div class="q">(1) educ=12,exper=10时？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：z=1.5。Φ(1.5)≈0.9332→概率93.3%。</div>
+<div class="q">(2) 教育边际效应</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：0.15×φ(1.5)=0.15×0.1295≈0.0194。</div>
+<div class="q">(3) Probit vs Logit</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：都通过β×PDF计算，仅PDF不同。结果接近。</div>
 </div>
 <div class="ex"><h4>📝 8.3 LPM缺陷</h4>
-<p class="d">LPM得β̂₁=0.3，改用Logit得β̂₁=1.2</p>
-<div class="q">(1) LPM的主要缺陷</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：①预测概率可能<0或>1；②误差必然异方差；③边际效应固定不变(不符合非线性)。</div>
-<div class="q">(2) 能否说Logit的影响是LPM的4倍？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：不能。LPM的0.3是概率变化，Logit的1.2是潜变量系数，不可直接比。</div>
-<div class="q">(3) 何时两者边际效应近似？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：概率在0.2-0.8且曲线接近直线时。</div>
+<p class="d">LPM得β̂₁=0.3，Logit得β̂₁=1.2</p>
+<div class="q">(1) LPM缺陷</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：①预测可能<0或>1 ②异方差 ③边际效应固定不变。</div>
+<div class="q">(2) 能说Logit是4倍？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：不能。LPM的0.3和Logit的1.2不是同一尺度。</div>
+<div class="q">(3) 何时两者近似？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：概率在0.2-0.8且曲线接近直线时。</div>
 </div></div>
 <div class="topic" id="t9">
 <h2>重点9：多元线性回归的基本假设与OLS性质</h2>
 <p class="ref">📖 第2–3章</p>
 <div class="core"><strong>📌 核心内容</strong><br>高斯-马尔可夫假设：线性于参数、随机抽样、解释变量变异、零条件均值(外生性)、同方差、无完全共线性。这些假设下OLS是<strong>BLUE</strong>(最佳线性无偏估计量)。无偏性用零条件均值假设；有效性用同方差假设。</div>
-<div class="zb">🤔 六个假设就像做菜的前置准备：</div>
-<div class="zb">📋 ①线性于参数 ②随机抽样 ③X有变异 ④E(u|X)=0(最关键！) ⑤同方差 ⑥无完全共线性</div>
-<div class="zb">🏆 <b>BLUE</b>：在所有线性无偏估计量中OLS方差最小、最精确。前提是GM假设成立。</div>
-<div class="zb">💡 <b>最重要</b>：E(u|X)=0(外生性)。不成立时OLS有偏且不一致→内生性问题。</div>
-<div class="ex"><h4>📝 9.1 列出GM假设</h4>
+<div class="learn-header">📖 零基础一步一步学</div>
+<div class="zb"><b>第一步：复习一下回归在做的事情</b><br>回归就是找一条线：Y = β₀ + β₁X₁ + β₂X₂ + ... + u<br>我们要用样本数据估计出β₀, β₁, β₂...这些系数。<br>OLS是最常用的估计方法——它让残差的平方和最小。</div>
+<div class="zb"><b>第二步：为什么OLS需要假设？</b><br>就像做菜需要先准备好食材——没有食材做不了菜。没有假设，OLS的性质就得不到保证。<br>一共有六个高斯-马尔可夫假设（简称GM假设）。</div>
+<div class="zb"><b>第三步：六个假设（一个一个来）</b><br>① <b>线性于参数</b>：模型写成Y=β₀+β₁X+u的形式，不能是Y=β₁²X这种。<br>② <b>随机抽样</b>：样本是随机抽取的。<br>③ <b>解释变量有变异</b>：X不能是常数（全是0或全是1没用）。<br>④ <b>零条件均值E(u|X)=0</b>：误差和X没有关系——<b>最重要的一条！</b><br>⑤ <b>同方差Var(u|X)=σ²</b>：误差的波动幅度不变。<br>⑥ <b>无完全共线性</b>：变量之间不完全是线性关系。</div>
+<div class="zb"><b>第四步：最重要的假设——E(u|X)=0</b><br>用大白话说：误差里不能有和X有关的东西。<br>举个例子：研究教育对工资的影响。误差里包含了「能力」。能力强的人工资高，受教育也多。所以教育就和误差(能力)相关了→E(u|X)≠0→OLS就不准了。<br>这叫内生性问题，需要用工具变量来解决。</div>
+<div class="zb"><b>第五步：BLUE是什么意思？</b><br>BLUE = Best Linear Unbiased Estimator（最佳线性无偏估计量）<br>· 无偏 = 平均而言估计值等于真实值<br>· 最佳 = 在所有无偏估计量中方差最小<br>在六个假设都成立的情况下，OLS就是BLUE。</div>
+<div class="ex"><h4>📝 9.1 GM假设</h4>
 <p>$Y=X\beta+u$</p>
-<div class="q">(1) 列出五个GM假设</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：①线性于参数 ②随机抽样 ③X变异 ④E(u|X)=0(零条件均值) ⑤同方差 ⑥无完全共线性。</div>
+<div class="q">(1) 六个GM假设</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：①线性于参数 ②随机抽样 ③X有变异 ④E(u|X)=0 ⑤同方差 ⑥无完全共线性。</div>
 <div class="q">(2) 哪个保证无偏性？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：E(u|X)=0(零条件均值假设)。</div>
-<div class="q">(3) 哪个保证有效性？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：同方差假设Var(u|X)=σ²。</div>
-<div class="q">(4) E(u|X)≠0会怎样？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：OLS有偏且不一致→内生性问题→需工具变量(2SLS)。</div>
+<div class="q">(3) 哪个保证有效性？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：同方差假设。</div>
+<div class="q">(4) E(u|X)≠0会怎样？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：OLS有偏且不一致→需要工具变量法。</div>
 </div>
 <div class="ex"><h4>📝 9.2 无偏性证明</h4>
 <p>$$\hat{\beta}_{1}=\frac{\sum(X_{i}-\bar{X})(Y_{i}-\bar{Y})}{\sum(X_{i}-\bar{X})^{2}}$$</p>
-<div class="q">(1) 代入Y写出E(β̂₁|X)</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：β̂₁=β₁+∑w_iu_i，w_i=(X_i-\bar{X})/∑(X_i-\bar{X})²。E(β̂₁|X)=β₁+∑w_iE(u_i|X)。</div>
-<div class="q">(2) E(u_i|X)=0的作用</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：若E(u_i|X)=0→∑w_iE(u_i|X)=0→E(β̂₁|X)=β₁→无偏。</div>
-<div class="q">(3) X与u相关结论是否成立？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：不成立。E(u|X)≠0→E(β̂₁|X)≠β₁→OLS有偏。</div>
+<div class="q">(1) 代入Y写出E(β̂₁|X)</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：β̂₁=β₁+∑w_iu_i，E(β̂₁|X)=β₁+∑w_iE(u_i|X)。</div>
+<div class="q">(2) E(u_i|X)=0的作用</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：使∑w_iE(u_i|X)=0→E(β̂₁|X)=β₁→无偏。</div>
+<div class="q">(3) X与u相关结论？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：E(u|X)≠0→OLS有偏。</div>
 </div>
 <div class="ex"><h4>📝 9.3 小样本vs大样本</h4>
-<div class="q">(1) GM定理适用于什么情形？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：小样本(有限样本)——GM假设下OLS是BLUE。</div>
-<div class="q">(2) 大样本下放松某些假设为何仍一致？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：大数定律保证OLS仍一致。但标准误需用稳健标准误。</div>
-<div class="q">(3) 一致性与无偏性的区别</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：无偏=E(β̂)=β；一致=n→∞时β̂→β。无偏不一定一致，一致小样本不一定无偏。</div>
+<p class="d">[('(1) GM定理适用什么情形？', '答：小样本——GM假设下OLS是BLUE。'), ('(2) 大样本下为何仍一致？', '答：大数定律保证OLS一致。但标准误需用稳健标准误。'), ('(3) 一致性与无偏性的区别', '答：无偏=平均准；一致=样本越大越准。')]</p>
 </div></div>
 <div class="topic" id="t10">
 <h2>重点10：工具变量与内生性</h2>
 <p class="ref">📖 第15章(工具变量估计与两阶段最小二乘法)</p>
 <div class="core"><strong>📌 核心内容</strong><br>解释变量与误差项相关(<strong>内生性</strong>)时OLS有偏且不一致。工具变量Z需：<strong>相关性</strong>(与内生解释变量相关)和<strong>外生性</strong>(与误差项不相关)。2SLS是处理多个内生变量和多个IV的通用方法。</div>
-<div class="zb">🤔 <b>内生性</b>：X和u相关。如教育→工资，能力强的人教育多工资也高，教育与能力(在u中)相关→内生。</div>
-<div class="zb">🔧 <b>工具变量Z</b>：只通过X影响Y的变量。条件：①与X相关 ②与u不相关(靠逻辑论证)。</div>
-<div class="zb">🔄 <b>2SLS</b>：第一步X=γ₀+γ₁Z+v→X̂；第二步Y=β₀+β₁X̂+u。</div>
-<div class="zb">⚠️ <b>弱IV</b>：第一阶段F<10→IV估计不准。</div>
+<div class="learn-header">📖 零基础一步一步学</div>
+<div class="zb"><b>⚠️ 战略放弃提示</b><br>本章也是进阶内容。如果时间紧，优先复习前7章。</div>
+<div class="zb"><b>第一步：什么是内生性？</b><br>简单说：X和误差u有关联了。<br>比如研究教育对工资的影响——能力强的人既受教育多又工资高。教育就和误差(能力)有关了。<br>这就叫内生性。OLS在这种情况下就不准了。</div>
+<div class="zb"><b>第二步：怎么解决？——工具变量Z</b><br>找一个变量Z，它满足两个条件：<br>① Z能影响X（相关性）<br>② Z不影响Y除了通过X（外生性）<br>比如用「家到最近大学的距离」作为教育的工具变量——离家近→更容易上大学→但不直接影响工资。</div>
+<div class="zb"><b>第三步：2SLS两步法</b><br>第一步：把X对Z做回归，得到X̂（排除掉X和u相关的部分）<br>第二步：用X̂代替X对Y做回归<br>这样得到的就是一致的估计。</div>
 <div class="ex"><h4>📝 10.1 IV估计量</h4>
 <p>$Y_i=\beta_0+\beta_1X_i+u_i$，X与u相关，工具Z</p>
 <div class="q">(1) IV的两个条件</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：①相关性Cov(Z,X)≠0 ②外生性Cov(Z,u)=0。</div>
-<div class="q">(2) 推导IV估计量表达式</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：β̂₁_IV=Cov(Z,Y)/Cov(Z,X)。</div>
-<div class="q">(3) Z与u不相关为何关键？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：若Cov(Z,u)≠0则IV不一致。外生性不可检验，靠逻辑论证。</div>
+<div class="q">(2) IV估计量表达式</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：β̂₁_IV=Cov(Z,Y)/Cov(Z,X)。</div>
+<div class="q">(3) 为什么Z与u不相关关键？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：若相关则IV不一致。</div>
 </div>
 <div class="ex"><h4>📝 10.2 距离作为IV</h4>
 <p class="d">用「到最近大学距离」作为教育IV</p>
-<div class="q">(1) 相关性条件满足吗？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：可能满足——距大学越近上大学的概率越高。需F检验确认。</div>
-<div class="q">(2) 外生性条件满足吗？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：有争议。距大学近的地区经济发达，可能直接影响工资。</div>
-<div class="q">(3) 写出2SLS两个阶段</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：①educ=γ₀+γ₁dist+v→eduĉ ②ln(wage)=β₀+β₁eduĉ+u。</div>
+<div class="q">(1) 相关性满足吗？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：可能满足——距大学近→上大学概率高。需要F检验。</div>
+<div class="q">(2) 外生性满足吗？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：有争议——近大学地区经济发达可能直接影响工资。</div>
+<div class="q">(3) 写出2SLS</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：①educ=γ₀+γ₁dist+v ②ln(wage)=β₀+β₁eduĉ+u。</div>
 </div>
-<div class="ex"><h4>📝 10.3 第一阶段F检验</h4>
+<div class="ex"><h4>📝 10.3 F检验</h4>
 <p>y=β₀+β₁x₁+β₂x₂+u，x₂内生，z₁z₂为IV</p>
-<div class="q">(1) 写出第一阶段回归</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：x₂=γ₀+γ₁z₁+γ₂z₂+γ₃x₁+v。</div>
-<div class="q">(2) F检验的作用</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：检验IV在第一阶段的联合显著性。经验准则F>10。</div>
-<div class="q">(3) 第一阶段F=3.5说明什么？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：F<10→弱工具变量。IV可能有偏，不如直接用OLS。</div>
+<div class="q">(1) 第一阶段回归</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：x₂=γ₀+γ₁z₁+γ₂z₂+γ₃x₁+v。</div>
+<div class="q">(2) F检验作用</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：检验IV联合显著性。经验准则F>10。</div>
+<div class="q">(3) F=3.5说明什么？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：F<10→弱工具变量。IV可能有偏。</div>
 </div></div>
 <div class="topic" id="t11">
 <h2>重点11：面板数据模型</h2>
 <p class="ref">📖 第13–14章</p>
 <div class="core"><strong>📌 核心内容</strong><br>面板数据兼具截面和时间维度，可控制不可观测的<strong>个体异质性</strong>。固定效应(FE)通过组内变换消除不随时间变化的个体效应；随机效应(RE)假设个体效应与解释变量不相关。Hausman检验选择FE与RE。</div>
-<div class="zb">🤔 <b>面板数据</b>：同一批对象跟踪多年。如100企业×5年=500条。好处：可控制每个企业天生不同的部分。</div>
-<div class="zb">📐 <b>FE</b>：每个对象有自己的截距a_i，a_i可与X相关。通过去均值消掉a_i。</div>
-<div class="zb">📐 <b>RE</b>：假设a_i与X不相关。更有效但假设更强。</div>
-<div class="zb">🔍 <b>Hausman</b>：显著→拒绝RE→选FE。不显著→RE更有效。</div>
+<div class="learn-header">📖 零基础一步一步学</div>
+<div class="zb"><b>第一步：什么是面板数据？</b><br>面板数据 = 同一批对象(人/企业/国家)跟踪多年观察。<br>比如：100家企业，连续追踪5年，共500条数据。<br>好处：可以控制每个企业「天生不同」的那部分。</div>
+<div class="zb"><b>第二步：为什么要用面板？</b><br>每个人/企业都有自己的特点，这些特点可能是固定的。<br>比如有的公司管理好，有的公司地理位置好。<br>面板数据可以剔除这些固定特征，看到真正的原因。</div>
+<div class="zb"><b>第三步：固定效应(FE)</b><br>FE假设每个个体有自己的截距(个体效应aᵢ)，这个aᵢ可以和X相关。<br>FE通过「去均值」把aᵢ消掉——用每个变量减去它在时间上的平均值。<br>结果：aᵢ消失了，只留下随时间变化的部分。</div>
+<div class="zb"><b>第四步：随机效应(RE)</b><br>RE假设个体效应aᵢ和X不相关。<br>如果这个假设成立，RE比FE更有效(方差更小)。<br>但如果不成立，RE就有偏。</div>
+<div class="zb"><b>第五步：Hausman检验</b><br>用来决定用FE还是RE。<br>H₀：aᵢ与X不相关(RE可靠且有效)<br>如果Hausman检验显著(p<0.05)→拒绝H₀→用FE<br>如果不显著→可以用RE</div>
 <div class="ex"><h4>📝 11.1 FE变换</h4>
 <p>$y_{it}=\beta_0+\beta_1x_{it}+a_i+u_{it}$</p>
-<div class="q">(1) 写出组内去均值后的模型</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：(y_{it}-\bar{y}_i)=β₁(x_{it}-\bar{x}_i)+(u_{it}-\bar{u}_i)。</div>
-<div class="q">(2) 证明a_i被消除</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：原式减时间均值→a_i消掉。因为a_i是时间恒定的。</div>
-<div class="q">(3) FE能否估计不随时间变化的变量？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：不能。FE只用组内变异，恒定变量(如性别)会被差分掉。</div>
+<div class="q">(1) 写出组内去均值模型</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：(y_{it}-\bar{y}_i)=β₁(x_{it}-\bar{x}_i)+(u_{it}-\bar{u}_i)。</div>
+<div class="q">(2) 证明a_i被消除</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：原式减时间均值→a_i消掉（因为a_i不随时间变）。</div>
+<div class="q">(3) FE能否估计不变变量？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：不能。不随时间变的变量(如性别)会被差分掉。</div>
 </div>
 <div class="ex"><h4>📝 11.2 FE vs RE</h4>
-<p class="d">企业面板数据估计生产函数</p>
-<div class="q">(1) RE假设及GLS估计</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：RE假设Cov(a_i,x_{it})=0，a_i∼iid。GLS加权重合组内和组间变异。</div>
-<div class="q">(2) Hausman检验的逻辑</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：H₀:Cov(a_i,X)=0(RE一致有效)。显著→拒绝RE。</div>
-<div class="q">(3) Hausman拒绝H₀选哪个？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：选FE。RE有内生性时不一致，FE虽方差大但一致。</div>
+<p class="d">企业面板估计生产函数</p>
+<div class="q">(1) RE假设</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：Cov(a_i,x_{it})=0。GLS加权重合组内和组间变异。</div>
+<div class="q">(2) Hausman检验逻辑</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：H₀:Cov(a_i,X)=0(RE一致)。显著→拒绝RE。</div>
+<div class="q">(3) 拒绝H₀选哪个？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：选FE。RE有内生性时不一致。</div>
 </div>
 <div class="ex"><h4>📝 11.3 FD vs FE</h4>
 <p>$\Delta y_{it}=\beta_1\Delta x_{it}+\Delta u_{it}$</p>
 <div class="q">(1) FD与FE异同</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：同：都消除a_i。异：FD用一阶差分，FE用组内去均值。</div>
-<div class="q">(2) T=2时两者等价</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：T=2时一阶差分与组内去均值只差常数因子，估计量等价。</div>
-<div class="q">(3) u存在序列相关时谁更有效？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：u存在正自相关时FD更有效；u为白噪声时FE更有效。</div>
+<div class="q">(2) T=2时</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：FD与FE等价。</div>
+<div class="q">(3) 序列相关时谁更有效？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：正自相关时FD更有效；白噪声时FE更有效。</div>
 </div></div>
 <div class="topic" id="t12">
 <h2>重点12：时间序列与平稳性</h2>
 <p class="ref">📖 第10–11章</p>
 <div class="core"><strong>📌 核心内容</strong><br>时间序列需关注<strong>平稳性</strong>。非平稳序列(如随机游走)可能导致<strong>伪回归</strong>。ADF检验判断是否平稳。<strong>协整</strong>允许对非平稳序列进行回归。</div>
-<div class="zb">🤔 <b>平稳性</b>：均值和方差不随时间变化→平稳。GDP、股价→非平稳(长期上涨)。</div>
-<div class="zb">⚠️ <b>伪回归</b>：两个无关的非平稳序列回归也可能显著。如中国GDP vs 美国降雨量。</div>
-<div class="zb">🔍 <b>ADF检验</b>：H₀:非平稳(有单位根)。统计量<临界值→拒绝H₀→平稳。</div>
-<div class="zb">🔗 <b>协整</b>：两非平稳序列的线性组合平稳→有长期均衡关系。</div>
+<div class="learn-header">📖 零基础一步一步学</div>
+<div class="zb"><b>第一步：什么是平稳性？</b><br>平稳 = 数据的统计性质(均值、方差)不随时间变化。<br>比如白噪声(纯粹随机波动)就是平稳的——它没有趋势。</div>
+<div class="zb"><b>第二步：非平稳是什么样？</b><br>大多数经济指标是非平稳的——比如GDP、股价，一直在涨。<br>这些序列的均值随时间变化，所以不是平稳的。<br>随机游走是典型的非平稳序列：y_t = y_{t-1} + e_t。今天的值=昨天的值+一个随机波动。</div>
+<div class="zb"><b>第三步：伪回归是什么？</b><br>如果你把两个毫无关系的非平稳序列放在一起做回归——比如中国的GDP和美国的降雨量——可能得到一个高度显著的结果。<br>但这是假的！只是因为它们都有时间趋势，并不是真的有因果关系。<br>这就是伪回归。</div>
+<div class="zb"><b>第四步：怎么判断是否平稳？——ADF检验</b><br>原假设H₀：序列非平稳(有单位根)。<br>如果检验统计量小于临界值→拒绝H₀→序列平稳。<br>如果不拒绝→非平稳→需要差分。</div>
+<div class="zb"><b>第五步：协整——两个非平稳序列的关系</b><br>有时候两个非平稳序列(比如消费和收入)的某种组合是平稳的。<br>这意味着它们有长期均衡关系——虽然各自不平稳，但不会偏离太远。<br>这叫做协整。</div>
 <div class="ex"><h4>📝 12.1 随机游走</h4>
 <p>$y_t=y_{t-1}+e_t$，$e_t\sim iid(0,\sigma^2)$</p>
 <div class="q">(1) 证明方差随时间递增</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：Var(y_t)=tσ²。t越大方差越大→非平稳。</div>
-<div class="q">(2) 两独立随机游走回归为何是伪回归？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：各自趋势使t值偏大、R²偏高→虚假显著。Granger-Newbold证明了这个现象。</div>
-<div class="q">(3) ADF检验回归方程形式</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：Δy_t=α+δt+γy_{t-1}+∑θ_jΔy_{t-j}+e_t。H₀:γ=0。</div>
+<div class="q">(2) 为什么伪回归？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：趋势使t值偏大R²偏高。Granger-Newbold证明了这一点。</div>
+<div class="q">(3) ADF检验方程</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：Δy_t=α+δt+γy_{t-1}+∑θ_jΔy_{t-j}+e_t。H₀:γ=0。</div>
 </div>
 <div class="ex"><h4>📝 12.2 协整</h4>
 <p class="d">ln(GDP_t)和ln(消费_t)均为I(1)，线性组合平稳</p>
-<div class="q">(1) 协整的含义</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：两个非平稳序列存在长期均衡关系，线性组合抵消共同趋势变平稳。</div>
-<div class="q">(2) ECM一般形式</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：ΔY_t=α+βΔX_t+γ(Y_{t-1}-δX_{t-1})+e_t。</div>
-<div class="q">(3) 误差修正项系数符号条件</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：γ<0(负值)。当短期偏离均衡时拉回。</div>
+<div class="q">(1) 协整含义</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：两个非平稳序列有长期均衡关系。</div>
+<div class="q">(2) ECM形式</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：ΔY_t=α+βΔX_t+γ(Y_{t-1}-δX_{t-1})+e_t。</div>
+<div class="q">(3) 误差修正项符号</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：γ<0(负值)。短期偏离时拉回均衡。</div>
 </div>
 <div class="ex"><h4>📝 12.3 ADF检验</h4>
 <p>$$\Delta y_t = \alpha + \delta t + \gamma y_{t-1} + \sum\theta_j\Delta y_{t-j} + e_t$$</p>
 <p class="d">检验统计量=-2.1，5%临界值=-3.5</p>
-<div class="q">(1) 原假设和备择假设</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：H₀:γ=0(非平稳/有单位根)；H₁:γ<0(平稳)。</div>
-<div class="q">(2) 检验结论</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：-2.1 > -3.5→不拒绝H₀→序列非平稳。</div>
-<div class="q">(3) 滞后阶数p的选择</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：AIC或BIC选择，或从较大p逐步减少至最后一项显著。</div>
+<div class="q">(1) 假设</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：H₀:γ=0(非平稳)；H₁:γ<0(平稳)。</div>
+<div class="q">(2) 结论</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：-2.1 > -3.5→不拒绝H₀→非平稳。</div>
+<div class="q">(3) 滞后阶数选择</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：AIC或BIC。</div>
 </div></div>
 <div class="topic" id="t13">
 <h2>重点13：模型设定与函数形式</h2>
 <p class="ref">📖 第6章、第9章</p>
 <div class="core"><strong>📌 核心内容</strong><br>遗漏变量导致估计偏误(遗漏变量与包含变量相关时)；包含无关变量增大方差但不导致偏误。RESET检验用于检验函数形式误设。<strong>代理变量</strong>和<strong>测量误差</strong>也是重要数据问题。</div>
-<div class="zb">🤔 <b>遗漏变量偏误</b>：真实模型含X₂但你只用X₁。若X₁与X₂相关，X₁系数会吸收X₂的效应→有偏。</div>
-<div class="zb">➕ <b>包含无关变量</b>：多加了无用的变量→系数仍无偏但方差增大(效率降低)。</div>
-<div class="zb">🔍 <b>RESET检验</b>：加入Ŷ²和Ŷ³，检验联合显著性。显著→模型形式有问题。</div>
-<div class="zb">📏 <b>测量误差</b>：X测不准→系数偏向0(衰减偏误)。</div>
+<div class="learn-header">📖 零基础一步一步学</div>
+<div class="zb"><b>第一步：遗漏变量偏误</b><br>真实情况：Y受X₁和X₂影响。但你只把X₁放进模型。<br>X₂被「遗漏」了——它跑到了误差项里。<br>如果X₁和X₂相关(比如教育和能力)，X₁的系数会吸收X₂的效应→有偏。</div>
+<div class="zb"><b>第二步：包含无关变量</b><br>反过来：你把一个没用的变量加进模型了。<br>后果：系数仍是无偏的（不会出大错），但方差会增大（估计不那么精确）。<br>所以不应该加不必要的变量。</div>
+<div class="zb"><b>第三步：RESET检验</b><br>怎么知道模型形式对不对？<br>在原模型中加入预测值的平方和立方项(Ŷ²和Ŷ³)，看它们是否显著。<br>如果显著→说明模型形式有问题，可能需要取对数或加平方项。</div>
+<div class="zb"><b>第四步：测量误差</b><br>如果X测不准（比如收入经常报低），X的系数会偏向0。<br>这叫衰减偏误——真实效应被低估了。<br>测量误差越大(相对于X本身的变异)，偏误越严重。</div>
 <div class="ex"><h4>📝 13.1 遗漏变量偏误</h4>
-<p>真实模型$Y=\beta_0+\beta_1X_1+\beta_2X_2+u$，估计$Y=\alpha_0+\alpha_1X_1+v$</p>
-<div class="q">(1) 推导plim(α̂₁)</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：plim(α̂₁)=β₁+β₂·δ，δ=Cov(X₁,X₂)/Var(X₁)。含X₂的间接效应。</div>
-<div class="q">(2) α̂₁何时无偏？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：β₂=0或Cov(X₁,X₂)=0时α̂₁无偏。</div>
-<div class="q">(3) X₂=能力，X₁=教育→后果</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：能力高者教育也多(Cov>0)，α̂₁高估教育真实回报。</div>
+<p>真实$Y=\beta_0+\beta_1X_1+\beta_2X_2+u$，估计$Y=\alpha_0+\alpha_1X_1+v$</p>
+<div class="q">(1) plim(α̂₁)</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：plim(α̂₁)=β₁+β₂·δ，δ=Cov(X₁,X₂)/Var(X₁)。</div>
+<div class="q">(2) α̂₁何时无偏？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：β₂=0或Cov(X₁,X₂)=0时。</div>
+<div class="q">(3) X₂=能力，X₁=教育</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：能力高教育也多(Cov>0)→α̂₁高估教育真实回报。</div>
 </div>
 <div class="ex"><h4>📝 13.2 RESET检验</h4>
-<div class="q">(1) RESET检验的基本思想</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：若函数形式正确，Y的各次幂不应有解释力。加入Ŷ的高次项检验。</div>
-<div class="q">(2) 写出辅助回归</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：y=β₀+β₁x+δ₁ŷ²+δ₂ŷ³+u，检验H₀:δ₁=δ₂=0。</div>
-<div class="q">(3) Ŷ²和Ŷ³联合显著说明什么？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：拒绝H₀→函数形式误设，应考虑非线性(取对数或加平方项)。</div>
+<div class="q">(1) 基本思想</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：若函数正确，Ŷ的高次项不应有解释力。</div>
+<div class="q">(2) 辅助回归</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：y=β₀+β₁x+δ₁ŷ²+δ₂ŷ³+u，检验δ₁=δ₂=0。</div>
+<div class="q">(3) Ŷ²和Ŷ³显著</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：拒绝H₀→应考虑非线性形式。</div>
 </div>
 <div class="ex"><h4>📝 13.3 测量误差</h4>
 <p class="d">观测到X*=X+e，e与X和u不相关</p>
-<div class="q">(1) 偏误方向</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：估计量偏向0——测量误差增大X方差但削弱X与Y的关系。</div>
-<div class="q">(2) 衰减偏误含义</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：系数被拉向0——真实效应被低估。Var(e)/Var(X)越大偏误越重。</div>
-<div class="q">(3) X为二值变量时是否仍存在？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：存在。二值变量的分类错误也会导致偏误，方向不一定衰减。</div>
+<div class="q">(1) 偏误方向</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：偏向0——测量误差削弱X与Y的关系。</div>
+<div class="q">(2) 衰减偏误</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：系数被拉向0。Var(e)/Var(X)越大偏误越重。</div>
+<div class="q">(3) 二值变量时？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示答案</button><div class="a">答：分类错误也会导致偏误，方向不一定衰减。</div>
 </div></div></div><div id="sb"><div class="sh"><span>🤖 计量AI助教</span>
 <button onclick="document.getElementById('sb').style.display='none'" style="background:none;border:none;color:#fff;font-size:20px;cursor:pointer">×</button></div>
-<div class="sc" id="chatBox"><div class="m b">👋 先在下方的API Key输入框中填入你的DeepSeek API Key，然后选中页面文本提问或直接提问。</div></div>
+<div class="sc" id="chatBox"><div class="m b">👋 在下方输入DeepSeek API Key，选中文本提问或直接提问。</div></div>
 <div class="ak"><span>🔑</span><input id="akInput" type="password" placeholder="sk-..." onchange="saveKey()">
 <span class="st" id="akStatus">未设置</span></div>
 <div class="sa"><textarea id="qInput" placeholder="输入问题…" onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();ask()}"></textarea>
@@ -405,12 +434,11 @@ if(savedKey){document.getElementById("akInput").value=savedKey;document.getEleme
 function saveKey(){var k=document.getElementById("akInput").value.trim();if(k.startsWith("sk-")){localStorage.setItem("ds_key",k);document.getElementById("akStatus").textContent="已设置"}else{document.getElementById("akStatus").textContent="无效密钥"}}
 function gs(){var t=window.getSelection().toString().trim();return t.length>300?t.substring(0,300)+"...":t}
 function am(t,r){var b=document.getElementById("chatBox"),d=document.createElement("div");d.className="m "+r;d.textContent=t;b.appendChild(d);b.scrollTop=b.scrollHeight}
-function ask(){var k=document.getElementById("akInput").value.trim();if(!k||!k.startsWith("sk-")){am("请先在下方输入有效的DeepSeek API Key。可以在 platform.deepseek.com 获取。","b");return}
+function ask(){var k=document.getElementById("akInput").value.trim();if(!k||!k.startsWith("sk-")){am("请先输入有效的DeepSeek API Key。可在 platform.deepseek.com 获取","b");return}
 var q=document.getElementById("qInput").value.trim();if(!q)return;var s=gs();am((s?"[选中] "+s+"\n\n":"")+q,"u");
 document.getElementById("qInput").value="";var b=document.getElementById("chatBox");
 var l=document.createElement("div");l.className="m b";l.id="ld";l.innerHTML='<span class="loading"></span> 思考中...';b.appendChild(l);b.scrollTop=b.scrollHeight;
-var sys="你是一个计量经济学教授，用最简单直白的语言解释计量经济学概念。假设对方完全不理解。避免术语堆砌。如果涉及公式用LaTeX格式 $$公式$$。可以打比方举例子。回答不超过300字。";
-fetch(API_URL,{method:"POST",headers:{"Content-Type":"application/json","Authorization":"Bearer "+k},body:JSON.stringify({model:"deepseek-chat",messages:[{role:"system",content:sys},{role:"user",content:q+(s?"\n\n用户选中了这段文本:\n"+s:"")}],max_tokens:600,temperature:0.3})})
-.then(function(r){return r.json()}).then(function(d){var e=document.getElementById("ld");if(e)e.remove();if(d.choices&&d.choices[0])am(d.choices[0].message.content,"b");else am("API响应异常，请检查密钥是否有效","b")})
+fetch(API_URL,{method:"POST",headers:{"Content-Type":"application/json","Authorization":"Bearer "+k},body:JSON.stringify({model:"deepseek-chat",messages:[{"role":"system","content":"你是一个计量经济学教授，用最简单的语言解释概念。假设对方智力障碍且完全没学过计量。避免术语堆砌。用LaTeX写公式。回答不超过300字。"},{"role":"user","content":q+(s?"\n\n用户选中:\n"+s:"")}],max_tokens:600,temperature:0.3})})
+.then(function(r){return r.json()}).then(function(d){var e=document.getElementById("ld");if(e)e.remove();if(d.choices&&d.choices[0])am(d.choices[0].message.content,"b");else am("API异常，请检查密钥","b")})
 .catch(function(e){var e=document.getElementById("ld");if(e)e.remove();am("请求失败: "+e.message,"b")})}
 </script></body></html>
