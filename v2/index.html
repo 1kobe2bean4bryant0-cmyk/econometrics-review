@@ -2,529 +2,197 @@
 <html lang="zh-CN">
 <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>📊 计量经济学 · 考前冲刺宝典 v6</title>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#f5f7fa;color:#222;line-height:1.8}
-
-h1{text-align:center;color:#1a237e;font-size:1.8em;margin:30px 0;padding:20px;background:linear-gradient(135deg,#e8eaf6,#c5cae9);border-radius:16px}
-h2{padding:15px 20px;border-radius:12px;margin:40px 0 20px;font-size:1.3em;color:#fff}
-h2.core{background:#c62828}
-h2.imp{background:#e65100}
-h2.ovv{background:#2e7d32}
-.group-label{font-size:1.5em;font-weight:700;margin:50px 0 10px;padding:10px 15px;border-radius:8px}
-.group-label.core{background:#ffebee;color:#c62828;border-left:5px solid #c62828}
-.group-label.imp{background:#fff3e0;color:#e65100;border-left:5px solid #e65100}
-.group-label.ovv{background:#e8f5e9;color:#2e7d32;border-left:5px solid #2e7d32}
-.ref{font-size:0.85em;color:#666;margin:-10px 0 20px;padding:0 5px}
-.core-box{background:#e8eaf6;border-left:5px solid #1a237e;padding:15px;margin:15px 0;border-radius:0 8px 8px 0;font-size:1.05em}
-.zb{background:#fff;border:1px solid #e0e0e0;border-left:4px solid #ff6f00;padding:12px 16px;margin:10px 0;border-radius:0 8px 8px 0;font-size:0.93em}
-.zb b{color:#e65100}
-.ex{background:#fff;border:1px solid #e0e0e0;border-radius:12px;padding:18px;margin:20px 0;box-shadow:0 2px 8px rgba(0,0,0,0.04)}
-.ex h4{color:#1a237e;font-size:1.1em;margin-bottom:8px}
-.ex p.d{color:#555;font-size:0.88em;margin:5px 0 10px}
-.q{background:#f5f5f5;border-radius:8px;padding:10px 14px;margin:10px 0 4px;font-weight:600;color:#333;border-left:4px #1565c0 solid;font-size:0.93em}
-.q .tag{display:inline-block;font-size:0.75em;padding:1px 8px;border-radius:4px;margin-right:6px;font-weight:400}
-.tag-teacher{background:#e3f2fd;color:#1565c0}
-.tag-ai{background:#fce4ec;color:#c62828}
-.tag-exam{display:inline-block;font-size:0.7em;padding:1px 6px;border-radius:3px;margin-left:4px;font-weight:400}
-.tag-single{background:#fff8e1;color:#e65100}
-.tag-judge{background:#f3e5f5;color:#6a1b9a}
-.tag-short{background:#e8f5e9;color:#2e7d32}
-.tag-case{background:#ffebee;color:#c62828}
-.s{background:#1565c0;color:#fff;border:none;padding:7px 16px;border-radius:6px;cursor:pointer;font-size:0.88em;margin:4px 0;transition:.2s}
-.s:hover{background:#0d47a1}
-.a{display:none;background:#fafafa;border:1px dashed #1565c0;border-radius:8px;padding:12px;margin:6px 0 12px}
-.step{display:flex;align-items:flex-start;padding:4px 0;border-bottom:1px solid #eee;font-size:0.88em}
-.step:last-child{border-bottom:none}
-.step-num{min-width:48px;font-weight:700;color:#1565c0}
-.step-label{min-width:56px;color:#e65100;font-weight:600;font-size:0.85em}
-.step-text{flex:1}
-.ta{background:#e8f5e9;padding:10px;margin:8px 0;border-radius:6px;font-size:0.88em}
-.ta b{color:#2e7d32}
-.weight-box{background:#fff9c4;border:1px solid #f9a825;border-radius:8px;padding:10px 14px;margin:10px 0;display:inline-block;font-size:0.88em}
-.weight-box .star{color:#f57f17}
-.priority-box{float:right;font-size:0.78em;padding:3px 10px;border-radius:12px;color:#fff;margin-top:-8px}
-.priority-box.core{background:#c62828}
-.priority-box.imp{background:#e65100}
-.priority-box.ovv{background:#2e7d32}
-.exam-marker{display:inline-block;margin:3px 2px;padding:1px 7px;border-radius:3px;font-size:0.75em}
-.clr{clear:both}
-.confusion{background:#fff3e0;border:1px solid #ffe0b2;border-radius:10px;padding:14px;margin:18px 0}
-.confusion h5{color:#e65100;margin-bottom:8px}
-.confusion table{width:100%;border-collapse:collapse;font-size:0.88em}
-.confusion td,.confusion th{border:1px solid #ffe0b2;padding:8px;text-align:left}
-.confusion th{background:#fff8e1;color:#e65100}
-.speed-box{background:#e8eaf6;border:2px solid #1a237e;border-radius:10px;padding:14px;margin:20px 0}
-.speed-box h5{color:#1a237e;margin-bottom:6px}
-.speed-box .formula{font-family:'Courier New',monospace;background:#fff;padding:4px 8px;border-radius:4px;margin:3px 0;display:inline-block}
-.learning-path{background:#e8eaf6;border-radius:12px;padding:18px;margin:20px 0}
-.learning-path h3{color:#1a237e;margin-bottom:10px}
-.learning-path .step-path{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
-.learning-path .step-path span{background:#fff;padding:4px 12px;border-radius:16px;font-size:0.85em;border:1px solid #c5cae9}
-.exam-header{background:#fff;border:2px solid #1a237e;border-radius:12px;padding:16px;margin:20px 0;display:flex;flex-wrap:wrap;gap:10px}
-.exam-header .section{flex:1;min-width:120px;text-align:center;padding:8px;border-radius:8px}
-.exam-header .section .pts{font-size:1.3em;font-weight:700;color:#1a237e}
-.exam-header .section .label{font-size:0.8em;color:#666}
-.exam-header .section.highlight{background:#fff8e1;border:1px solid #f9a825}
-.toc{background:#fff;border-radius:12px;padding:20px;margin:20px 0;box-shadow:0 2px 8px rgba(0,0,0,0.06)}
-.toc-group{margin:12px 0}
-.toc-group h4{margin-bottom:6px}
-.toc-group.core h4{color:#c62828}
-.toc-group.imp h4{color:#e65100}
-.toc-group.ovv h4{color:#2e7d32}
-.toc a{display:inline-block;padding:3px 10px;margin:2px;color:#1565c0;text-decoration:none;border-radius:4px;font-size:0.88em}
-.toc a:hover{background:#e3f2fd}
-.floating-btn{position:fixed;bottom:80px;right:20px;z-index:998}
-.floating-btn button{width:56px;height:56px;border-radius:50%;background:#1a237e;color:#fff;border:none;font-size:1.2em;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,0.2)}
-.floating-panel{position:fixed;bottom:145px;right:20px;width:320px;max-height:500px;background:#fff;border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,0.15);z-index:999;display:none;overflow-y:auto}
-.floating-panel.show{display:block}
-.floating-panel .header{background:#1a237e;color:#fff;padding:10px 14px;border-radius:12px 12px 0 0;font-size:0.9em}
-.floating-panel .body{padding:12px}
-.floating-panel .topic-item{padding:6px 0;border-bottom:1px solid #eee;font-size:0.83em}
-.floating-panel .topic-item .form{font-family:monospace;background:#f5f5f5;padding:2px 6px;border-radius:3px}
-@media print{.floating-btn,.floating-panel{display:none}}
-
-
-/* === Fragment CSS (merged) === */
-/* === From t2_5 fragment === */
-
-
-/* === From t6_9 fragment === */
-
-  :root {
-    --core-color: #c0392b;
-    --core-bg: #fdecea;
-    --imp-color: #d35400;
-    --imp-bg: #fef5e7;
-    --ovv-color: #7f8c8d;
-    --ovv-bg: #f5f5f5;
-    --primary: #1a5276;
+:root {
+  --primary: #1a5276;
     --primary-light: #2e86c1;
     --accent: #e74c3c;
     --bg: #f0f4f8;
     --card-bg: #ffffff;
-    --wrong-bg: #fdedec;
-    --wrong-border: #e74c3c;
-    --correct-bg: #eafaf1;
-    --correct-border: #27ae60;
     --text: #2c3e50;
     --text-light: #566573;
     --gold: #f39c12;
     --gold-bg: #fef9e7;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    line-height: 1.8;
-  }
-  
-
-  /* === PriorityBox === */
-  .priority-box {
-    border-radius: 10px;
-    padding: 18px 22px;
-    margin: 20px 0 16px;
-    display: flex;
-    align-items: flex-start;
-    gap: 14px;
-    border-left: 5px solid;
-  }
-  .priority-box .priority-icon { font-size: 28px; flex-shrink: 0; line-height: 1; }
-  .priority-box .priority-body { flex: 1; }
-  .priority-box .priority-body h2 { margin: 0 0 4px 0; padding: 0; border: none; font-size: 1.2em; }
-  .priority-box .priority-body .priority-tag {
-    display: inline-block;
-    padding: 2px 10px;
-    border-radius: 12px;
-    font-size: 0.75em;
-    font-weight: 700;
-    letter-spacing: 1px;
-    margin-bottom: 4px;
-  }
-  .priority-box.core {
-    background: var(--core-bg);
-    border-left-color: var(--core-color);
-  }
-  .priority-box.core h2 { color: var(--core-color); }
-  .priority-box.core .priority-tag { background: var(--core-color); color: #fff; }
-  .priority-box.imp {
-    background: var(--imp-bg);
-    border-left-color: var(--imp-color);
-  }
-  .priority-box.imp h2 { color: var(--imp-color); }
-  .priority-box.imp .priority-tag { background: var(--imp-color); color: #fff; }
-  .priority-box.ovv {
-    background: var(--ovv-bg);
-    border-left-color: var(--ovv-color);
-  }
-  .priority-box.ovv h2 { color: var(--ovv-color); }
-  .priority-box.ovv .priority-tag { background: var(--ovv-color); color: #fff; }
-
-  /* === WeightBox === */
-  .weight-box {
-    background: linear-gradient(135deg, #fff8e1, #fff3cd);
-    border: 1px solid #ffc107;
-    border-radius: 8px;
-    padding: 12px 18px;
-    margin: 10px 0 18px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-size: 0.95em;
-  }
-  .weight-box .weight-stars { color: var(--gold); font-size: 1.2em; letter-spacing: 2px; }
-  .weight-box .weight-label { font-weight: 600; color: #856404; }
-
-  /* === SpeedBox (考前5分钟必记) === */
-  .speed-box {
-    background: linear-gradient(135deg, #e8f8f5, #d1f2eb);
-    border: 2px solid #1abc9c;
-    border-radius: 10px;
-    padding: 16px 20px;
-    margin: 18px 0;
-    position: relative;
-  }
-  .speed-box::before {
-    content: "⏱ 考前5分钟必记";
-    position: absolute;
-    top: -12px;
-    left: 16px;
-    background: #1abc9c;
-    color: #fff;
-    padding: 2px 14px;
-    border-radius: 12px;
-    font-size: 0.78em;
-    font-weight: 700;
-    letter-spacing: 1px;
-  }
-  .speed-box ul { margin: 8px 0 0 0; padding-left: 20px; }
-  .speed-box ul li { margin-bottom: 4px; font-size: 0.95em; }
-  .speed-box .speed-highlight { color: #c0392b; font-weight: 700; }
-
-  /* === ConfusionTable === */
-  .confusion-table-wrap {
-    margin: 16px 0;
-    border-radius: 8px;
-    overflow: hidden;
-    border: 2px solid #e74c3c;
-  }
-  .confusion-table-wrap .confusion-header {
-    background: #e74c3c;
-    color: #fff;
-    padding: 8px 14px;
-    font-weight: 700;
-    font-size: 0.95em;
-  }
-  .confusion-table-wrap .confusion-header::before { content: "⚠ 易混淆辨析 — "; }
-  .confusion-table-wrap table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 0;
-  }
-  .confusion-table-wrap th {
-    background: #fadbd8;
-    color: #922b21;
-    padding: 8px 12px;
-    text-align: center;
-    font-size: 0.9em;
-    border: 1px solid #e6b0aa;
-  }
-  .confusion-table-wrap td {
-    padding: 8px 12px;
-    border: 1px solid #f5b7b1;
-    font-size: 0.9em;
-  }
-  .confusion-table-wrap tr:nth-child(even) td { background: #fdedec; }
-
-  /* === Exam Types Tag === */
-  .exam-types {
-    display: inline-flex;
-    gap: 4px;
-    flex-wrap: wrap;
-    margin: 4px 0;
-  }
-  .exam-types .exam-tag {
-    display: inline-block;
-    font-size: 0.7em;
-    padding: 1px 8px;
-    border-radius: 10px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-  }
-  .exam-tag.choice { background: #d5f5e3; color: #1e8449; border: 1px solid #82e0aa; }
-  .exam-tag.calc { background: #fdebd0; color: #a04000; border: 1px solid #f0b27a; }
-  .exam-tag.shortq { background: #d6eaf8; color: #1a5276; border: 1px solid #85c1e9; }
-  .exam-tag.essay { background: #f5eef8; color: #7d3c98; border: 1px solid #c39bd3; }
-  .exam-tag.analysis { background: #fdedec; color: #922b21; border: 1px solid #f1948a; }
-  .exam-tag.case { background: #fef9e7; color: #7d6608; border: 1px solid #f9e79f; }
-  .exam-tag.source-ai { background: #e8daef; color: #7d3c98; border: 1px solid #bb8fce; }
-  .exam-tag.source-teacher { background: #d5f5e3; color: #1e8449; border: 1px solid #82e0aa; }
-
-  /* === AI Case Question === */
-  .ai-case-box {
-    background: linear-gradient(135deg, #f5eef8, #ebdef0);
-    border: 2px solid #8e44ad;
-    border-radius: 10px;
-    padding: 20px 24px;
-    margin: 20px 0;
-    position: relative;
-  }
-  .ai-case-box::before {
-    content: "🤖 AI编拟综合案例题";
-    position: absolute;
-    top: -12px;
-    left: 16px;
-    background: #8e44ad;
-    color: #fff;
-    padding: 2px 14px;
-    border-radius: 12px;
-    font-size: 0.78em;
-    font-weight: 700;
-    letter-spacing: 1px;
-  }
-  .ai-case-box .case-meta {
-    font-size: 0.82em;
-    color: #7d3c98;
-    margin-bottom: 8px;
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
-  }
-  .ai-case-box .case-meta span { background: #e8daef; padding: 1px 10px; border-radius: 10px; }
-  .ai-case-box h4 { color: #6c3483; margin: 10px 0 6px; }
-  .ai-case-box .ai-answer {
-    background: #f8f5fa;
-    border-left: 3px solid #8e44ad;
-    padding: 10px 14px;
-    margin-top: 8px;
-    border-radius: 0 6px 6px 0;
-    font-size: 0.92em;
-  }
-
-  /* === Chapter Section (v5 compat) === */
-  .chapter-section {
-    background: var(--card-bg);
-    border-radius: 12px;
-    padding: 30px;
-    margin: 24px 0;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  }
-  .chapter-section h2 {
-    color: var(--primary);
-    border-bottom: 3px solid var(--primary-light);
-    padding-bottom: 8px;
-    margin-bottom: 20px;
-  }
-  .chapter-section h3 {
-    color: var(--primary-light);
-    margin: 20px 0 10px;
-  }
-  .chapter-section h4 {
-    color: var(--text);
-    margin: 14px 0 6px;
-    font-weight: 600;
-  }
-  .chapter-section p, .chapter-section li {
-    margin-bottom: 8px;
-    text-align: justify;
-  }
-  .chapter-section ul, .chapter-section ol {
-    padding-left: 24px;
-    margin-bottom: 12px;
-  }
-  .chapter-section table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 12px 0;
-    font-size: 0.95em;
-  }
-  .chapter-section th {
-    background: var(--primary);
-    color: white;
-    padding: 10px;
-    text-align: left;
-  }
-  .chapter-section td {
-    padding: 8px 10px;
-    border: 1px solid #ddd;
-  }
-  .chapter-section tr:nth-child(even) { background: #f8f9fa; }
-
-  /* === Formula === */
-  .formula {
-    background: #f7f9fc;
-    border: 1px solid #e0e6ed;
-    border-radius: 6px;
-    padding: 10px 14px;
-    margin: 8px 0;
-    font-family: 'CMU Serif', 'Times New Roman', serif;
-    font-size: 1.05em;
-    text-align: center;
-  }
-
-  /* === Key Point === */
-  .key-point {
-    background: #eaf2f8;
-    border-left: 4px solid var(--primary-light);
-    padding: 10px 16px;
-    margin: 10px 0;
-    border-radius: 0 6px 6px 0;
-  }
-  .key-point strong { color: var(--primary); }
-
-  /* === Wrong/Correct === */
-  .wrong-approach {
-    background: var(--wrong-bg);
-    border-left: 4px solid var(--wrong-border);
-    padding: 12px 16px;
-    margin: 10px 0;
-    border-radius: 6px;
-  }
-  .wrong-approach h5 { color: var(--accent); margin-bottom: 6px; }
-  .correct-approach {
-    background: var(--correct-bg);
-    border-left: 4px solid var(--correct-border);
-    padding: 12px 16px;
-    margin: 10px 0;
-    border-radius: 6px;
-  }
-  .correct-approach h5 { color: var(--correct-border); margin-bottom: 6px; }
-
-  /* === Tricky Box === */
-  .tricky-box {
-    background: var(--card-bg);
-    border-radius: 12px;
-    padding: 24px;
-    margin: 16px 0;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    border-left: 4px solid var(--accent);
-  }
-
-  /* === Clean Label (for Topic 8) === */
-  .clean-label {
-    display: inline-block;
-    font-size: 0.7em;
-    padding: 1px 10px;
-    border-radius: 10px;
-    background: #aed6f1;
-    color: #1a5276;
-    font-weight: 600;
-    border: 1px solid #5dade2;
-    margin-left: 6px;
-    vertical-align: middle;
-  }
-
-  /* === Star Rating === */
-  .star-rating { color: var(--gold); font-size: 1.1em; letter-spacing: 1px; }
-
-  hr.section-divider {
-    border: none;
-    height: 3px;
-    background: linear-gradient(to right, transparent, var(--primary-light), transparent);
-    margin: 30px 0;
-  }
-
-  .header {
-    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-    color: white;
-    padding: 40px 20px;
-    text-align: center;
-  }
-  .header h1 { font-size: 2em; margin-bottom: 10px; }
-  .header p { opacity: 0.9; font-size: 1.1em; }
-
-  @media (max-width: 600px) {
-    
-    .chapter-section { padding: 16px; }
-    .header h1 { font-size: 1.5em; }
-  }
-
-
-/* === From t10_13 fragment === */
-
-  :root {
-    --primary: #1a3a5c;
-    --primary-light: #2980b9;
-    --accent: #e74c3c;
-    --gold: #f39c12;
     --green: #27ae60;
-    --bg: #f5f7fa;
-    --card-bg: #ffffff;
-    --text: #2c3e50;
-    --text-light: #7f8c8d;
     --border: #e0e6ed;
-    --ovv-bg: #fef9e7;
-    --ovv-border: #f1c40f;
-    --core-bg: #eaf2f8;
+    --core-color: #c0392b;
+    --core-bg: #fdecea;
     --core-border: #2980b9;
+    --imp-color: #d35400;
+    --imp-bg: #fef5e7;
+    --ovv-color: #7f8c8d;
+    --ovv-bg: #f5f5f5;
+    --ovv-border: #f1c40f;
+    --wrong-bg: #fdedec;
+    --wrong-border: #e74c3c;
+    --correct-bg: #eafaf1;
+    --correct-border: #27ae60;
     --clean-label: #8e44ad;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+}
+
+* {
+  margin: 0; padding: 0; box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
     background: var(--bg);
     color: var(--text);
     line-height: 1.75;
     padding: 30px 20px;
-  }
-  
 
-  /* ===== TOPIC HEADER ===== */
-  .topic-header {
-    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-    color: white;
-    border-radius: 14px;
-    padding: 28px 32px;
-    margin: 36px 0 20px;
-    position: relative;
-    overflow: hidden;
-  }
-  .topic-header h2 {
-    font-size: 1.6em;
-    margin-bottom: 6px;
-    letter-spacing: 1px;
-  }
-  .topic-header .topic-meta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-top: 12px;
-    align-items: center;
-  }
-  .topic-header .topic-meta span {
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    background: rgba(255,255,255,0.15);
-    padding: 4px 14px;
-    border-radius: 20px;
-    font-size: 0.85em;
-    backdrop-filter: blur(4px);
-  }
-  .topic-header .topic-meta .stars { color: #f1c40f; letter-spacing: 2px; }
+  font-display: swap;
+}
 
-  /* ===== PRIORITY BOX ===== */
-  .priority-box {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: var(--gold);
-    color: #fff;
-    font-weight: 700;
-    font-size: 0.85em;
-    padding: 5px 16px;
-    border-radius: 8px;
-    margin-bottom: 10px;
-  }
-  .priority-box.ovv { background: #f39c12; }
-  .priority-box.core { background: #e74c3c; }
+h1 {
+  text-align:center;color:#1a237e;font-size:1.8em;margin:30px 0;padding:20px;background:linear-gradient(135deg,#e8eaf6,#c5cae9);border-radius:16px
+}
 
-  /* ===== WEIGHT BOX ===== */
-  .weight-box {
-    display: inline-flex;
+h2 {
+  color: #fff !important; padding: 15px 20px !important; 
+     border-radius: 12px !important; margin: 40px 0 20px !important; 
+     font-size: 1.3em !important; border: none !important;
+}
+
+h2.core {
+  background:#c62828
+}
+
+h2.imp {
+  background:#e65100
+}
+
+h2.ovv {
+  background:#2e7d32
+}
+
+.group-label {
+  font-size:1.5em;font-weight:700;margin:50px 0 10px;padding:10px 15px;border-radius:8px
+}
+
+.group-label.core {
+  background:#ffebee;color:#c62828;border-left:5px solid #c62828
+}
+
+.group-label.imp {
+  background:#fff3e0;color:#e65100;border-left:5px solid #e65100
+}
+
+.group-label.ovv {
+  background:#e8f5e9;color:#2e7d32;border-left:5px solid #2e7d32
+}
+
+.ref {
+  font-size:0.85em;color:#666;margin:-10px 0 20px;padding:0 5px
+}
+
+.core-box {
+  background:#e8eaf6;border-left:5px solid #1a237e;padding:15px;margin:15px 0;border-radius:0 8px 8px 0;font-size:1.05em
+}
+
+.zb {
+  background:#fff;border:1px solid #e0e0e0;border-left:4px solid #ff6f00;padding:12px 16px;margin:10px 0;border-radius:0 8px 8px 0;font-size:0.93em
+}
+
+.zb b {
+  color:#e65100
+}
+
+.ex {
+  background:#fff;border:1px solid #e0e0e0;border-radius:12px;padding:18px;margin:20px 0;box-shadow:0 2px 8px rgba(0,0,0,0.04)
+}
+
+.ex h4 {
+  color:#1a237e;font-size:1.1em;margin-bottom:8px
+}
+
+.ex p.d {
+  color:#555;font-size:0.88em;margin:5px 0 10px
+}
+
+.q {
+  background:#f5f5f5;border-radius:8px;padding:10px 14px;margin:10px 0 4px;font-weight:600;color:#333;border-left:4px #1565c0 solid;font-size:0.93em
+}
+
+.q .tag {
+  color: inherit !important;
+}
+
+.tag-teacher {
+  background: #e3f2fd !important; color: #1565c0 !important;
+}
+
+.tag-ai {
+  background: #fce4ec !important; color: #c62828 !important;
+}
+
+.tag-exam {
+  display:inline-block;font-size:0.7em;padding:1px 6px;border-radius:3px;margin-left:4px;font-weight:400
+}
+
+.tag-single {
+  background: #fff8e1 !important; color: #e65100 !important;
+}
+
+.tag-judge {
+  background: #f3e5f5 !important; color: #6a1b9a !important;
+}
+
+.tag-short {
+  background: #e8f5e9 !important; color: #2e7d32 !important;
+}
+
+.tag-case {
+  background: #ffebee !important; color: #c62828 !important;
+}
+
+.s {
+  background:#1565c0;color:#fff;border:none;padding:7px 16px;border-radius:6px;cursor:pointer;font-size:0.88em;margin:4px 0;transition:.2s
+}
+
+.s:hover {
+  background:#0d47a1
+}
+
+.a {
+  display:none;background:#fafafa;border:1px dashed #1565c0;border-radius:8px;padding:12px;margin:6px 0 12px
+}
+
+.step {
+  display: flex !important;
+  align-items: flex-start !important;
+  padding: 5px 0 !important;
+  border-bottom: 1px solid #eee !important;
+  font-size: 0.9em !important;
+}
+
+.step:last-child {
+  border-bottom: none !important;
+}
+
+.step-num {
+  min-width: 52px !important; font-weight: 700 !important; color: #1565c0 !important;
+}
+
+.step-label {
+  min-width: 60px !important; color: #e65100 !important; font-weight: 600 !important; font-size: 0.85em !important;
+}
+
+.step-text {
+  flex: 1 !important; color: #222 !important;
+}
+
+.ta {
+  background:#e8f5e9;padding:10px;margin:8px 0;border-radius:6px;font-size:0.88em
+}
+
+.ta b {
+  color:#2e7d32
+}
+
+.weight-box {
+  display: inline-flex;
     align-items: center;
     gap: 6px;
     background: #2c3e50;
@@ -534,21 +202,245 @@ h2.ovv{background:#2e7d32}
     padding: 4px 14px;
     border-radius: 8px;
     margin-left: 8px;
-  }
+}
 
-  /* ===== SPEED BOX ===== */
-  .speed-box {
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-    color: #e0e0e0;
+.weight-box .star {
+  color:#f57f17
+}
+
+.priority-box {
+  display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--gold);
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.85em;
+    padding: 5px 16px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.priority-box.core {
+  background: #c62828 !important;
+}
+
+.priority-box.imp {
+  background: #e65100 !important;
+}
+
+.priority-box.ovv {
+  background: #2e7d32 !important;
+}
+
+.exam-marker {
+  display:inline-block;margin:3px 2px;padding:1px 7px;border-radius:3px;font-size:0.75em
+}
+
+.clr {
+  clear:both
+}
+
+.confusion {
+  background: #fff3e0 !important;
+  border: 1px solid #ffe0b2 !important;
+  border-radius: 10px !important;
+  padding: 14px !important;
+  margin: 18px 0 !important;
+}
+
+.confusion h5 {
+  color: #e65100 !important; margin-bottom: 8px !important;
+}
+
+.confusion table {
+  width:100%;border-collapse:collapse;font-size:0.88em
+}
+
+.confusion td,.confusion th {
+  border:1px solid #ffe0b2;padding:8px;text-align:left
+}
+
+.confusion th {
+  background:#fff8e1;color:#e65100
+}
+
+.speed-box {
+  background: #e8eaf6 !important;
+  border: 2px solid #1a237e !important;
+  border-radius: 10px !important;
+  padding: 14px !important;
+  margin: 20px 0 !important;
+}
+
+.speed-box h5 {
+  color:#1a237e;margin-bottom:6px
+}
+
+.speed-box .formula {
+  font-family:'Courier New',monospace;background:#fff;padding:4px 8px;border-radius:4px;margin:3px 0;display:inline-block
+}
+
+.learning-path {
+  background:#e8eaf6;border-radius:12px;padding:18px;margin:20px 0
+}
+
+.learning-path h3 {
+  color:#1a237e;margin-bottom:10px
+}
+
+.learning-path .step-path {
+  display:flex;flex-wrap:wrap;gap:8px;margin:10px 0
+}
+
+.learning-path .step-path span {
+  background:#fff;padding:4px 12px;border-radius:16px;font-size:0.85em;border:1px solid #c5cae9
+}
+
+.exam-header {
+  background:#fff;border:2px solid #1a237e;border-radius:12px;padding:16px;margin:20px 0;display:flex;flex-wrap:wrap;gap:10px
+}
+
+.exam-header .section {
+  flex:1;min-width:120px;text-align:center;padding:8px;border-radius:8px
+}
+
+.exam-header .section .pts {
+  font-size:1.3em;font-weight:700;color:#1a237e
+}
+
+.exam-header .section .label {
+  font-size:0.8em;color:#666
+}
+
+.exam-header .section.highlight {
+  background:#fff8e1;border:1px solid #f9a825
+}
+
+.toc {
+  background:#fff;border-radius:12px;padding:20px;margin:20px 0;box-shadow:0 2px 8px rgba(0,0,0,0.06)
+}
+
+.toc-group {
+  margin:12px 0
+}
+
+.toc-group h4 {
+  margin-bottom:6px
+}
+
+.toc-group.core h4 {
+  color:#c62828
+}
+
+.toc-group.imp h4 {
+  color:#e65100
+}
+
+.toc-group.ovv h4 {
+  color:#2e7d32
+}
+
+.toc a {
+  display:inline-block;padding:3px 10px;margin:2px;color:#1565c0;text-decoration:none;border-radius:4px;font-size:0.88em
+}
+
+.toc a:hover {
+  background:#e3f2fd
+}
+
+.floating-btn {
+  position:fixed;bottom:80px;right:20px;z-index:10
+}
+
+.floating-btn button {
+  width:56px;height:56px;border-radius:50%;background:#1a237e;color:#fff;border:none;font-size:1.2em;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,0.2)
+}
+
+.floating-panel {
+  z-index: 105 !important;
+}
+
+.floating-panel.show {
+  display:block
+}
+
+.floating-panel .header {
+  background:#1a237e;color:#fff;padding:10px 14px;border-radius:12px 12px 0 0;font-size:0.9em
+}
+
+.floating-panel .body {
+  padding:12px
+}
+
+.floating-panel .topic-item {
+  padding:6px 0;border-bottom:1px solid #eee;font-size:0.83em
+}
+
+.floating-panel .topic-item .form {
+  font-family:monospace;background:#f5f5f5;padding:2px 6px;border-radius:3px
+}
+
+@media print {
+  .floating-btn,.floating-panel{display:none}
+}
+
+.priority-box .priority-icon {
+  font-size: 28px; flex-shrink: 0; line-height: 1;
+}
+
+.priority-box .priority-body {
+  flex: 1;
+}
+
+.priority-box .priority-body h2 {
+  margin: 0 0 4px 0; padding: 0; border: none; font-size: 1.2em;
+}
+
+.priority-box .priority-body .priority-tag {
+  display: inline-block;
+    padding: 2px 10px;
     border-radius: 12px;
-    padding: 18px 22px;
-    margin: 20px 0;
-    border-left: 5px solid #e94560;
-    font-size: 0.92em;
-    position: relative;
-  }
-  .speed-box::before {
-    content: "⚡ SPEED BOX";
+    font-size: 0.75em;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+}
+
+.priority-box.core h2 {
+  color: var(--core-color);
+}
+
+.priority-box.core .priority-tag {
+  background: var(--core-color); color: #fff;
+}
+
+.priority-box.imp h2 {
+  color: var(--imp-color);
+}
+
+.priority-box.imp .priority-tag {
+  background: var(--imp-color); color: #fff;
+}
+
+.priority-box.ovv h2 {
+  color: var(--ovv-color);
+}
+
+.priority-box.ovv .priority-tag {
+  background: var(--ovv-color); color: #fff;
+}
+
+.weight-box .weight-stars {
+  color: var(--gold); font-size: 1.2em; letter-spacing: 2px;
+}
+
+.weight-box .weight-label {
+  font-weight: 600; color: #856404;
+}
+
+.speed-box::before {
+  content: "⚡ SPEED BOX";
     position: absolute;
     top: -10px;
     left: 16px;
@@ -559,171 +451,222 @@ h2.ovv{background:#2e7d32}
     padding: 2px 14px;
     border-radius: 10px;
     letter-spacing: 1px;
-  }
-  .speed-box h4 { color: #e94560; margin-bottom: 8px; font-size: 0.95em; }
+}
 
-  /* ===== CLEAN LABEL ===== */
-  .clean-label {
-    display: inline-block;
-    background: var(--clean-label);
+.speed-box ul {
+  margin: 8px 0 0 0; padding-left: 20px;
+}
+
+.speed-box ul li {
+  margin-bottom: 4px; font-size: 0.95em;
+}
+
+.speed-box .speed-highlight {
+  color: #c0392b; font-weight: 700;
+}
+
+.confusion-table-wrap {
+  margin: 16px 0;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 2px solid #e74c3c;
+}
+
+.confusion-table-wrap .confusion-header {
+  background: #e74c3c;
     color: #fff;
-    font-size: 0.7em;
+    padding: 8px 14px;
     font-weight: 700;
-    padding: 2px 12px;
-    border-radius: 12px;
-    letter-spacing: 1px;
-    margin-left: 10px;
-    vertical-align: middle;
-  }
+    font-size: 0.95em;
+}
 
-  /* ===== SECTION ===== */
-  .section-card {
-    background: var(--card-bg);
-    border-radius: 12px;
-    padding: 24px 28px;
-    margin: 18px 0;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-  }
-  .section-card h3 {
-    color: var(--primary);
-    font-size: 1.15em;
-    border-bottom: 2px solid var(--primary-light);
-    padding-bottom: 6px;
-    margin-bottom: 14px;
-  }
-  .section-card h4 {
-    color: var(--primary-light);
-    margin: 16px 0 6px;
-    font-size: 1em;
-  }
+.confusion-table-wrap .confusion-header::before {
+  content: "⚠ 易混淆辨析 — ";
+}
 
-  /* ===== KNOWLEDGE POINT ===== */
-  .kp {
-    display: inline-block;
-    background: #eaf2f8;
-    color: var(--primary);
-    padding: 1px 10px;
-    border-radius: 4px;
-    font-weight: 600;
-    font-size: 0.88em;
-    margin-right: 4px;
-  }
-  .exam-tag {
-    display: inline-block;
-    font-size: 0.7em;
-    font-weight: 700;
-    padding: 1px 10px;
-    border-radius: 10px;
-    margin: 0 3px;
-  }
-  .exam-tag.t { background: #3498db; color: #fff; }   /* 理论 */
-  .exam-tag.c { background: #9b59b6; color: #fff; }   /* 计算 */
-  .exam-tag.ca { background: #27ae60; color: #fff; }  /* 案例 */
-  .exam-tag.s { background: #e74c3c; color: #fff; }   /* 论述/简答 */
-  .exam-tag.j { background: #f39c12; color: #fff; }   /* 判断 */
-
-  /* ===== TEACHER QUESTION ===== */
-  .teacher-q {
-    background: #f0f4f8;
-    border-left: 4px solid var(--primary-light);
-    padding: 14px 18px;
-    margin: 14px 0;
-    border-radius: 0 8px 8px 0;
-    font-size: 0.92em;
-  }
-  .teacher-q .q-label {
-    font-weight: 700;
-    color: var(--primary);
-  }
-  .teacher-q .exam-types {
-    display: inline-flex;
-    gap: 4px;
-    margin-left: 8px;
-  }
-
-  /* ===== CONFUSION TABLE ===== */
-  .confusion-table {
-    width: 100%;
+.confusion-table-wrap table {
+  width: 100%;
     border-collapse: collapse;
-    margin: 12px 0;
-    font-size: 0.9em;
-  }
-  .confusion-table th {
-    background: var(--primary);
-    color: white;
-    padding: 10px 12px;
-    text-align: left;
-  }
-  .confusion-table td {
-    padding: 10px 12px;
-    border: 1px solid var(--border);
-    vertical-align: top;
-  }
-  .confusion-table tr:nth-child(even) { background: #f8f9fa; }
-  .confusion-table .concept-a { background: #eafaf1; }
-  .confusion-table .concept-b { background: #fdedec; }
-  .confusion-table .careful {
-    background: #fef9e7;
-    font-weight: 600;
-  }
+    margin: 0;
+}
 
-  /* ===== COMPREHENSIVE CASE ===== */
-  .case-box {
-    background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+.confusion-table-wrap th {
+  background: #fadbd8;
+    color: #922b21;
+    padding: 8px 12px;
+    text-align: center;
+    font-size: 0.9em;
+    border: 1px solid #e6b0aa;
+}
+
+.confusion-table-wrap td {
+  padding: 8px 12px;
+    border: 1px solid #f5b7b1;
+    font-size: 0.9em;
+}
+
+.confusion-table-wrap tr:nth-child(even) td {
+  background: #fdedec;
+}
+
+.exam-types {
+  display: inline-flex;
+    gap: 4px;
+    flex-wrap: wrap;
+    margin: 4px 0;
+}
+
+.exam-types .exam-tag {
+  display: inline-block;
+    font-size: 0.7em;
+    padding: 1px 8px;
+    border-radius: 10px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.exam-tag.choice {
+  background: #d5f5e3; color: #1e8449; border: 1px solid #82e0aa;
+}
+
+.exam-tag.calc {
+  background: #fdebd0; color: #a04000; border: 1px solid #f0b27a;
+}
+
+.exam-tag.shortq {
+  background: #d6eaf8; color: #1a5276; border: 1px solid #85c1e9;
+}
+
+.exam-tag.essay {
+  background: #f5eef8; color: #7d3c98; border: 1px solid #c39bd3;
+}
+
+.exam-tag.analysis {
+  background: #fdedec; color: #922b21; border: 1px solid #f1948a;
+}
+
+.exam-tag.case {
+  background: #fef9e7; color: #7d6608; border: 1px solid #f9e79f;
+}
+
+.exam-tag.source-ai {
+  background: #e8daef; color: #7d3c98; border: 1px solid #bb8fce;
+}
+
+.exam-tag.source-teacher {
+  background: #d5f5e3; color: #1e8449; border: 1px solid #82e0aa;
+}
+
+.ai-case-box {
+  background: linear-gradient(135deg, #f5eef8, #ebdef0);
     border: 2px solid #8e44ad;
-    border-radius: 12px;
-    padding: 22px 26px;
+    border-radius: 10px;
+    padding: 20px 24px;
     margin: 20px 0;
     position: relative;
-  }
-  .case-box::before {
-    content: "🧩 AI编拟·综合案例";
+}
+
+.ai-case-box::before {
+  content: "🤖 AI编拟综合案例题";
     position: absolute;
     top: -12px;
-    left: 18px;
+    left: 16px;
     background: #8e44ad;
-    color: white;
-    font-weight: 700;
-    font-size: 0.78em;
-    padding: 3px 16px;
-    border-radius: 14px;
-    letter-spacing: 0.5px;
-  }
-  .case-box h4 { color: #6c3483; margin: 12px 0 6px; }
-  .case-box .case-detail { margin: 8px 0; }
-  .case-box .case-score {
-    background: #6c3483;
-    color: white;
-    display: inline-block;
-    font-size: 0.75em;
-    padding: 1px 12px;
-    border-radius: 8px;
-    margin-right: 6px;
-  }
-  .case-box ol, .case-box ul { padding-left: 22px; margin: 6px 0; }
-
-  /* ===== TOC ===== */
-  .toc-box {
-    background: var(--card-bg);
+    color: #fff;
+    padding: 2px 14px;
     border-radius: 12px;
-    padding: 22px 28px;
-    margin-bottom: 24px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-  }
-  .toc-box h3 { color: var(--primary); margin-bottom: 12px; }
-  .toc-box ul { list-style: none; padding: 0; column-count: 2; column-gap: 20px; }
-  .toc-box li { padding: 4px 0; break-inside: avoid; }
-  .toc-box a {
-    color: var(--primary-light);
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.2s;
-  }
-  .toc-box a:hover { color: var(--accent); text-decoration: underline; }
+    font-size: 0.78em;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
 
-  /* ===== FORMULA ===== */
-  .formula {
-    background: #f7f9fc;
+.ai-case-box .case-meta {
+  font-size: 0.82em;
+    color: #7d3c98;
+    margin-bottom: 8px;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.ai-case-box .case-meta span {
+  background: #e8daef; padding: 1px 10px; border-radius: 10px;
+}
+
+.ai-case-box h4 {
+  color: #6c3483; margin: 10px 0 6px;
+}
+
+.ai-case-box .ai-answer {
+  background: #f8f5fa;
+    border-left: 3px solid #8e44ad;
+    padding: 10px 14px;
+    margin-top: 8px;
+    border-radius: 0 6px 6px 0;
+    font-size: 0.92em;
+}
+
+.chapter-section {
+  background: var(--card-bg);
+    border-radius: 12px;
+    padding: 30px;
+    margin: 24px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.chapter-section h2 {
+  color: var(--primary);
+    border-bottom: 3px solid var(--primary-light);
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+}
+
+.chapter-section h3 {
+  color: var(--primary-light);
+    margin: 20px 0 10px;
+}
+
+.chapter-section h4 {
+  color: var(--text);
+    margin: 14px 0 6px;
+    font-weight: 600;
+}
+
+.chapter-section p, .chapter-section li {
+  margin-bottom: 8px;
+    text-align: justify;
+}
+
+.chapter-section ul, .chapter-section ol {
+  padding-left: 24px;
+    margin-bottom: 12px;
+}
+
+.chapter-section table {
+  width: 100%;
+    border-collapse: collapse;
+    margin: 12px 0;
+    font-size: 0.95em;
+}
+
+.chapter-section th {
+  background: var(--primary);
+    color: white;
+    padding: 10px;
+    text-align: left;
+}
+
+.chapter-section td {
+  padding: 8px 10px;
+    border: 1px solid #ddd;
+}
+
+.chapter-section tr:nth-child(even) {
+  background: #f8f9fa;
+}
+
+.formula {
+  background: #f7f9fc;
     border: 1px solid var(--border);
     border-radius: 6px;
     padding: 8px 14px;
@@ -731,133 +674,53 @@ h2.ovv{background:#2e7d32}
     font-family: 'Times New Roman', serif;
     text-align: center;
     font-size: 1.02em;
-  }
-
-  /* ===== RESPONSIVE ===== */
-  @media (max-width: 640px) {
-    body { padding: 16px 10px; }
-    .section-card { padding: 16px; }
-    .topic-header { padding: 20px; }
-    .topic-header h2 { font-size: 1.2em; }
-    .toc-box ul { column-count: 1; }
-  }
-
-
-
-/* === NORMALIZE: All fragment structures === */
-
-/* Priority boxes - ensure text is readable */
-.priority-box.core, .priority-box.imp, .priority-box.ovv {
-  color: #fff !important;
-  font-weight: 700;
-  font-size: 0.78em;
-  padding: 3px 10px;
-  border-radius: 12px;
-  display: inline-block;
-}
-.priority-box.core { background: #c62828 !important; }
-.priority-box.imp { background: #e65100 !important; }
-.priority-box.ovv { background: #2e7d32 !important; }
-
-/* t6_9 fragment: priority-tag, priority-body */
-.priority-tag {
-  display: inline-block !important;
-  font-size: 0.78em !important;
-  padding: 3px 10px !important;
-  border-radius: 12px !important;
-  color: #fff !important;
-  font-weight: 700;
-}
-.priority-tag[class*="CORE"], .priority-tag:has(+ span:contains(CORE)) { background: #c62828 !important; }
-.priority-body { margin: 8px 0; }
-
-/* t6_9 fragment: topic headers */
-.topic-header.core, .topic-header.imp, .topic-header.ovv {
-  padding: 12px 16px;
-  border-radius: 10px;
-  margin: 10px 0;
-}
-.topic-header.core { background: #ffebee; border-left: 4px solid #c62828; }
-.topic-header.imp { background: #fff3e0; border-left: 4px solid #e65100; }
-.topic-header.ovv { background: #e8f5e9; border-left: 4px solid #2e7d32; }
-
-/* t10_13 fragment: container, toc-box */
-.toc-box { 
-  background: #fff; 
-  border-radius: 12px; 
-  padding: 18px; 
-  margin: 18px 0; 
-  box-shadow: 0 2px 8px rgba(0,0,0,0.06); 
 }
 
-/* Knowledge point blocks - normalize across fragments */
-.zb, .kp-item, .kp, .knowledge-point {
-  background: #fff !important;
-  border: 1px solid #e0e0e0 !important;
-  border-left: 4px solid #ff6f00 !important;
-  padding: 12px 16px !important;
-  margin: 10px 0 !important;
-  border-radius: 0 8px 8px 0 !important;
-  font-size: 0.93em !important;
-  color: #222 !important;
+.key-point {
+  background: #eaf2f8;
+    border-left: 4px solid var(--primary-light);
+    padding: 10px 16px;
+    margin: 10px 0;
+    border-radius: 0 6px 6px 0;
 }
 
-/* Examples - normalize */
-.ex, .case-box {
-  background: #fff !important;
-  border: 1px solid #e0e0e0 !important;
-  border-radius: 12px !important;
-  padding: 18px !important;
-  margin: 20px 0 !important;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04) !important;
+.key-point strong {
+  color: var(--primary);
 }
 
-/* Questions - normalize */
-.q, .case-question {
-  background: #f5f5f5 !important;
-  border-radius: 8px !important;
-  padding: 10px 14px !important;
-  margin: 10px 0 4px !important;
-  font-weight: 600 !important;
-  border-left: 4px solid #1565c0 !important;
-  color: #333 !important;
+.wrong-approach {
+  background: var(--wrong-bg);
+    border-left: 4px solid var(--wrong-border);
+    padding: 12px 16px;
+    margin: 10px 0;
+    border-radius: 6px;
 }
 
-/* Confusion tables - normalize */
-.confusion {
-  background: #fff3e0 !important;
-  border: 1px solid #ffe0b2 !important;
-  border-radius: 10px !important;
-  padding: 14px !important;
-  margin: 18px 0 !important;
+.wrong-approach h5 {
+  color: var(--accent); margin-bottom: 6px;
 }
 
-/* Speed boxes - normalize */
-.speed-box {
-  background: #e8eaf6 !important;
-  border: 2px solid #1a237e !important;
-  border-radius: 10px !important;
-  padding: 14px !important;
-  margin: 20px 0 !important;
+.correct-approach {
+  background: var(--correct-bg);
+    border-left: 4px solid var(--correct-border);
+    padding: 12px 16px;
+    margin: 10px 0;
+    border-radius: 6px;
 }
 
-/* Ensure all question text is dark */
-.q, .q *, .case-question, .case-question * {
-  color: #222 !important;
-}
-.q .tag { color: inherit !important; }
-
-/* Fix dark-text-on-dark-background issues */
-body, .container, .zb, .ex, .confusion, .speed-box, .a, .step-text, p, div {
-  color: #222;
+.correct-approach h5 {
+  color: var(--correct-border); margin-bottom: 6px;
 }
 
-/* Ensure all buttons have readable text */
-.s, button.s, .s-btn {
-  color: #fff !important;
+.tricky-box {
+  background: var(--card-bg);
+    border-radius: 12px;
+    padding: 24px;
+    margin: 16px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    border-left: 4px solid var(--accent);
 }
 
-/* CLEAN label - make it readable */
 .clean-label {
   display: inline-block !important;
   font-size: 0.7em !important;
@@ -869,7 +732,369 @@ body, .container, .zb, .ex, .confusion, .speed-box, .a, .step-text, p, div {
   margin-left: 6px !important;
 }
 
-/* AI case box */
+.star-rating {
+  color: var(--gold); font-size: 1.1em; letter-spacing: 1px;
+}
+
+hr.section-divider {
+  border: none;
+    height: 3px;
+    background: linear-gradient(to right, transparent, var(--primary-light), transparent);
+    margin: 30px 0;
+}
+
+.header {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.header h1 {
+  font-size: 2em; margin-bottom: 10px;
+}
+
+.header p {
+  opacity: 0.9; font-size: 1.1em;
+}
+
+@media (max-width: 600px) {
+  .chapter-section { padding: 16px; }
+    .header h1 { font-size: 1.5em; }
+}
+
+.topic-header {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+    color: white;
+    border-radius: 14px;
+    padding: 28px 32px;
+    margin: 36px 0 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.topic-header h2 {
+  font-size: 1.6em;
+    margin-bottom: 6px;
+    letter-spacing: 1px;
+}
+
+.topic-header .topic-meta {
+  display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 12px;
+    align-items: center;
+}
+
+.topic-header .topic-meta span {
+  display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: rgba(255,255,255,0.15);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 0.85em;
+    backdrop-filter: blur(4px);
+}
+
+.topic-header .topic-meta .stars {
+  color: #f1c40f; letter-spacing: 2px;
+}
+
+.speed-box h4 {
+  color: #e94560; margin-bottom: 8px; font-size: 0.95em;
+}
+
+.section-card {
+  background: var(--card-bg);
+    border-radius: 12px;
+    padding: 24px 28px;
+    margin: 18px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.section-card h3 {
+  color: var(--primary);
+    font-size: 1.15em;
+    border-bottom: 2px solid var(--primary-light);
+    padding-bottom: 6px;
+    margin-bottom: 14px;
+}
+
+.section-card h4 {
+  color: var(--primary-light);
+    margin: 16px 0 6px;
+    font-size: 1em;
+}
+
+.kp {
+  display: inline-block;
+    background: #eaf2f8;
+    color: var(--primary);
+    padding: 1px 10px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 0.88em;
+    margin-right: 4px;
+}
+
+.exam-tag {
+  display: inline-block;
+    font-size: 0.7em;
+    font-weight: 700;
+    padding: 1px 10px;
+    border-radius: 10px;
+    margin: 0 3px;
+}
+
+.exam-tag.t {
+  background: #3498db; color: #fff;
+}
+
+.exam-tag.c {
+  background: #9b59b6; color: #fff;
+}
+
+.exam-tag.ca {
+  background: #27ae60; color: #fff;
+}
+
+.exam-tag.s {
+  background: #e74c3c; color: #fff;
+}
+
+.exam-tag.j {
+  background: #f39c12; color: #fff;
+}
+
+.teacher-q {
+  background: #f0f4f8;
+    border-left: 4px solid var(--primary-light);
+    padding: 14px 18px;
+    margin: 14px 0;
+    border-radius: 0 8px 8px 0;
+    font-size: 0.92em;
+}
+
+.teacher-q .q-label {
+  font-weight: 700;
+    color: var(--primary);
+}
+
+.teacher-q .exam-types {
+  display: inline-flex;
+    gap: 4px;
+    margin-left: 8px;
+}
+
+.confusion-table {
+  width: 100%;
+    border-collapse: collapse;
+    margin: 12px 0;
+    font-size: 0.9em;
+}
+
+.confusion-table th {
+  background: var(--primary);
+    color: white;
+    padding: 10px 12px;
+    text-align: left;
+}
+
+.confusion-table td {
+  padding: 10px 12px;
+    border: 1px solid var(--border);
+    vertical-align: top;
+}
+
+.confusion-table tr:nth-child(even) {
+  background: #f8f9fa;
+}
+
+.confusion-table .concept-a {
+  background: #eafaf1;
+}
+
+.confusion-table .concept-b {
+  background: #fdedec;
+}
+
+.confusion-table .careful {
+  background: #fef9e7;
+    font-weight: 600;
+}
+
+.case-box {
+  background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+    border: 2px solid #8e44ad;
+    border-radius: 12px;
+    padding: 22px 26px;
+    margin: 20px 0;
+    position: relative;
+}
+
+.case-box::before {
+  content: "🧩 AI编拟·综合案例";
+    position: absolute;
+    top: -12px;
+    left: 18px;
+    background: #8e44ad;
+    color: white;
+    font-weight: 700;
+    font-size: 0.78em;
+    padding: 3px 16px;
+    border-radius: 14px;
+    letter-spacing: 0.5px;
+}
+
+.case-box h4 {
+  color: #6c3483; margin: 12px 0 6px;
+}
+
+.case-box .case-detail {
+  margin: 8px 0;
+}
+
+.case-box .case-score {
+  background: #6c3483;
+    color: white;
+    display: inline-block;
+    font-size: 0.75em;
+    padding: 1px 12px;
+    border-radius: 8px;
+    margin-right: 6px;
+}
+
+.case-box ol, .case-box ul {
+  padding-left: 22px; margin: 6px 0;
+}
+
+.toc-box {
+  background: #fff; 
+  border-radius: 12px; 
+  padding: 18px; 
+  margin: 18px 0; 
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.toc-box h3 {
+  color: var(--primary); margin-bottom: 12px;
+}
+
+.toc-box ul {
+  list-style: none; padding: 0; column-count: 2; column-gap: 20px;
+}
+
+.toc-box li {
+  padding: 4px 0; break-inside: avoid;
+}
+
+.toc-box a {
+  color: var(--primary-light);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.toc-box a:hover {
+  color: var(--accent); text-decoration: underline;
+}
+
+@media (max-width: 640px) {
+  body { padding: 16px 10px; }
+    .section-card { padding: 16px; }
+    .topic-header { padding: 20px; }
+    .topic-header h2 { font-size: 1.2em; }
+    .toc-box ul { column-count: 1; }
+}
+
+.priority-box.core, .priority-box.imp, .priority-box.ovv {
+  color: #fff !important;
+  font-weight: 700;
+  font-size: 0.78em;
+  padding: 3px 10px;
+  border-radius: 12px;
+  display: inline-block;
+}
+
+.priority-tag {
+  display: inline-block !important;
+  font-size: 0.78em !important;
+  padding: 3px 10px !important;
+  border-radius: 12px !important;
+  color: #fff !important;
+  font-weight: 700;
+}
+
+.priority-tag[class*="CORE"], .priority-tag:has(+ span:contains(CORE)) {
+  background: #c62828 !important;
+}
+
+.priority-body {
+  margin: 8px 0;
+}
+
+.topic-header.core, .topic-header.imp, .topic-header.ovv {
+  padding: 12px 16px;
+  border-radius: 10px;
+  margin: 10px 0;
+}
+
+.topic-header.core {
+  background: #ffebee; border-left: 4px solid #c62828;
+}
+
+.topic-header.imp {
+  background: #fff3e0; border-left: 4px solid #e65100;
+}
+
+.topic-header.ovv {
+  background: #e8f5e9; border-left: 4px solid #2e7d32;
+}
+
+.zb, .kp-item, .kp, .knowledge-point {
+  background: #fff !important;
+  border: 1px solid #e0e0e0 !important;
+  border-left: 4px solid #ff6f00 !important;
+  padding: 12px 16px !important;
+  margin: 10px 0 !important;
+  border-radius: 0 8px 8px 0 !important;
+  font-size: 0.93em !important;
+  color: #222 !important;
+}
+
+.ex, .case-box {
+  background: #fff !important;
+  border: 1px solid #e0e0e0 !important;
+  border-radius: 12px !important;
+  padding: 18px !important;
+  margin: 20px 0 !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04) !important;
+}
+
+.q, .case-question {
+  background: #f5f5f5 !important;
+  border-radius: 8px !important;
+  padding: 10px 14px !important;
+  margin: 10px 0 4px !important;
+  font-weight: 600 !important;
+  border-left: 4px solid #1565c0 !important;
+  color: #333 !important;
+}
+
+.q, .q *, .case-question, .case-question * {
+  color: #222 !important;
+}
+
+body, .container, .zb, .ex, .confusion, .speed-box, .a, .step-text, p, div {
+  color: #222;
+}
+
+.s, button.s, .s-btn {
+  color: #fff !important;
+}
+
 .ai-case-box, .ai-case {
   background: #fce4ec !important;
   border: 1px solid #f8bbd0 !important;
@@ -878,52 +1103,43 @@ body, .container, .zb, .ex, .confusion, .speed-box, .a, .step-text, p, div {
   margin: 10px 0 !important;
 }
 
-/* Metadata and source labels */
 .case-source, .source-label {
   font-size: 0.82em !important;
   color: #888 !important;
 }
 
-/* Comparison tables - fix white text */
 .compare-table th, .compare-table td {
   color: #222 !important;
 }
+
 .compare-table th {
   background: #fff8e1 !important;
   font-weight: 700 !important;
 }
 
-/* Answer text */
 .answer, .a {
   color: #222 !important;
 }
+
 .answer-hint, .hint {
   color: #555 !important;
   font-size: 0.88em !important;
 }
 
-/* Topic meta info */
 .topic-meta {
   padding: 8px 0;
   margin: 6px 0;
 }
 
-/* All text inside panels should be dark */
 [style*="background:#fff"], [style*="background: white"] {
   color: #222;
 }
 
-/* Override any white-on-light patterns */
 .priority-box:not(.core):not(.imp):not(.ovv),
 [class*="badge"], [class*="label"], [class*="tag"] {
   color: #222 !important;
 }
 
-
-
-/* === STRONG OVERRIDES: Force content uniformity === */
-
-/* Force all knowledge points to use same style */
 .zb, .kp-item, [class*="knowledge"], [class*="kp-"], [class*="key-point"] {
   background: #fff !important;
   border: 1px solid #e0e0e0 !important;
@@ -935,19 +1151,19 @@ body, .container, .zb, .ex, .confusion, .speed-box, .a, .step-text, p, div {
   color: #222 !important;
 }
 
-/* Force all topic headers to same style */
 [class*="topic-header"], [class*="priority-body"], [class*="topic-meta"] {
   margin: 8px 0 !important;
   color: #222 !important;
 }
 
-/* Force background fix for any white-on-light issues */
 [style*="color:#fff"], [style*="color: #fff"], [style*="color:white"] {
   /* Only keep white text on dark backgrounds */
 }
-h2, h2 * { color: #fff !important; }
 
-/* Force all section heading labels consistent */
+h2, h2 * {
+  color: #fff !important;
+}
+
 .learn-header, .section-title, [class*="section-head"] {
   font-size: 1.3em !important;
   font-weight: 700 !important;
@@ -957,81 +1173,60 @@ h2, h2 * { color: #fff !important; }
   padding-bottom: 5px !important;
 }
 
-/* Fix white text on CLEAN warning */
 [style*="background:#fff3e0"] b, [style*="background:#fff3e0"] {
   color: #222 !important;
 }
+
 [style*="background:#fff3e0"] b {
   color: #e65100 !important;
 }
 
-/* Force table text dark */
 table, table td, table th, [class*="table"] td, [class*="table"] th {
   color: #222 !important;
 }
+
 table th, [class*="table"] th {
   background: #fff8e1 !important;
 }
 
-/* Ensure body text is always dark */
 body, body * {
   color: #222;
 }
+
 h1, h1 *, h2, h2 *, h3, h3 *, h4, h4 *, h5, h5 * {
   color: inherit;
 }
+
 h2[class*="core"], h2[class*="core"] *,
 h2[class*="imp"], h2[class*="imp"] *,
 h2[class*="ovv"], h2[class*="ovv"] * {
   color: #fff !important;
 }
 
-/* Fix priority tag readability */
 .priority-tag, [class*="priority"] {
   font-size: 0.78em !important;
   padding: 3px 10px !important;
   border-radius: 12px !important;
   font-weight: 700 !important;
 }
+
 [class*="CORE"], [class*="core"] {
   background: #c62828 !important;
   color: #fff !important;
 }
 
-
-/* Left sidebar + main content layout */
-
 @media (max-width: 768px) {
   #topNav .topic-links { display: none; }
   #topNav .mobile-menu-btn { display: block !important; }
 }
 
-
-
-/* === AUTHORITATIVE LAYOUT (v2) === */
-
-
-
-
-
-
-@media (max-width: 768px) {
-  #topNav .topic-links { display: none; }
-  #topNav .mobile-menu-btn { display: block !important; }
-}
-
-/* Back-to-top button below the AI panel buttons */
 #backToTop {
   position: fixed !important;
   bottom: 210px !important;
   right: 20px !important;
-  z-index: 9997 !important;
+  z-index: 106 !important;
 }
 
-
-/* === NORMALIZE: All fragment types → unified look === */
-
-/* Topic headers - unified */
 h2[class*="core"], h2[class*="imp"], h2[class*="ovv"],
 [class*="topic-header"],
 [class*="priority-body"] {
@@ -1041,7 +1236,6 @@ h2[class*="core"], h2[class*="imp"], h2[class*="ovv"],
   margin: 0 !important;
 }
 
-/* Topic heading color - override fragment inline styles */
 h2, h2[class] {
   color: #fff !important;
   padding: 15px 20px !important;
@@ -1049,20 +1243,30 @@ h2, h2[class] {
   margin: 40px 0 20px !important;
   font-size: 1.3em !important;
 }
-h2.core, h2[class*="core"] { background: #c62828 !important; }
-h2.imp, h2[class*="imp"] { background: #e65100 !important; }
-h2.ovv, h2[class*="ovv"] { background: #2e7d32 !important; }
 
-/* Remove extra nested wrappers from fragments */
-[class*="topic-header"] h2 { margin: 0 !important; }
-[class*="topic-header"] { 
+h2.core, h2[class*="core"] {
+  background: #c62828 !important;
+}
+
+h2.imp, h2[class*="imp"] {
+  background: #e65100 !important;
+}
+
+h2.ovv, h2[class*="ovv"] {
+  background: #2e7d32 !important;
+}
+
+[class*="topic-header"] h2 {
+  margin: 0 !important;
+}
+
+[class*="topic-header"] {
   background: transparent !important; 
   border: none !important; 
   padding: 0 !important; 
-  margin: 0 !important; 
+  margin: 0 !important;
 }
 
-/* Priority badges - normalize */
 .priority-box, [class*="priority-tag"] {
   font-size: 0.78em !important;
   padding: 3px 10px !important;
@@ -1072,7 +1276,6 @@ h2.ovv, h2[class*="ovv"] { background: #2e7d32 !important; }
   margin: 8px 0 !important;
 }
 
-/* Section 0/1/2 headers */
 .learn-header, [class*="section-title"], [class*="section-head"] {
   font-size: 1.3em !important;
   font-weight: 700 !important;
@@ -1082,7 +1285,6 @@ h2.ovv, h2[class*="ovv"] { background: #2e7d32 !important; }
   padding-bottom: 5px !important;
 }
 
-/* Knowledge points - all fragment types */
 .zb, [class*="kp-"], [class*="knowledge"], [class*="key-point"],
 [class*="chapter-section"] {
   background: #fff !important;
@@ -1096,7 +1298,6 @@ h2.ovv, h2[class*="ovv"] { background: #2e7d32 !important; }
   line-height: 1.8 !important;
 }
 
-/* Examples - normalize */
 .ex, [class*="case-box"], [class*="example-box"] {
   background: #fff !important;
   border: 1px solid #e0e0e0 !important;
@@ -1106,7 +1307,6 @@ h2.ovv, h2[class*="ovv"] { background: #2e7d32 !important; }
   box-shadow: 0 2px 8px rgba(0,0,0,0.04) !important;
 }
 
-/* Questions - normalize all types */
 .q, [class*="question"], [class*="case-question"] {
   background: #f5f5f5 !important;
   border-radius: 8px !important;
@@ -1118,7 +1318,6 @@ h2.ovv, h2[class*="ovv"] { background: #2e7d32 !important; }
   font-size: 0.93em !important;
 }
 
-/* All answer areas */
 .a, [class*="answer"], [class*="solution"] {
   background: #fafafa !important;
   border: 1px dashed #1565c0 !important;
@@ -1128,20 +1327,6 @@ h2.ovv, h2[class*="ovv"] { background: #2e7d32 !important; }
   color: #222 !important;
 }
 
-/* Steps */
-.step {
-  display: flex !important;
-  align-items: flex-start !important;
-  padding: 5px 0 !important;
-  border-bottom: 1px solid #eee !important;
-  font-size: 0.9em !important;
-}
-.step:last-child { border-bottom: none !important; }
-.step-num { min-width: 52px !important; font-weight: 700 !important; color: #1565c0 !important; }
-.step-label { min-width: 60px !important; color: #e65100 !important; font-weight: 600 !important; font-size: 0.85em !important; }
-.step-text { flex: 1 !important; color: #222 !important; }
-
-/* Confusion tables */
 .confusion, [class*="confusion"] {
   background: #fff3e0 !important;
   border: 1px solid #ffe0b2 !important;
@@ -1150,10 +1335,11 @@ h2.ovv, h2[class*="ovv"] { background: #2e7d32 !important; }
   margin: 18px 0 !important;
   color: #222 !important;
 }
-.confusion table, .confusion td, .confusion th { color: #222 !important; }
-.confusion h5 { color: #e65100 !important; margin-bottom: 8px !important; }
 
-/* Speed boxes - unify */
+.confusion table, .confusion td, .confusion th {
+  color: #222 !important;
+}
+
 .speed-box, [class*="speed"] {
   background: #e8eaf6 !important;
   border: 2px solid #1a237e !important;
@@ -1163,7 +1349,6 @@ h2.ovv, h2[class*="ovv"] { background: #2e7d32 !important; }
   color: #222 !important;
 }
 
-/* Short-answer template boxes */
 [class*="confusion"][style*="#e8f5e9"],
 .confusion[style*="background:#e8f5e9"] {
   background: #e8f5e9 !important;
@@ -1171,7 +1356,6 @@ h2.ovv, h2[class*="ovv"] { background: #2e7d32 !important; }
   color: #222 !important;
 }
 
-/* Weight boxes */
 .weight-box, [class*="weight"] {
   background: #fff9c4 !important;
   border: 1px solid #f9a825 !important;
@@ -1183,15 +1367,10 @@ h2.ovv, h2[class*="ovv"] { background: #2e7d32 !important; }
   color: #222 !important;
 }
 
-/* CLEAN warning boxes */
 [style*="background:#fff3e0"][style*="border:2px solid #e65100"] {
   color: #222 !important;
 }
-[style*="background:#fff3e0"] b {
-  color: #e65100 !important;
-}
 
-/* Buttons - unify */
 .s, .s-btn, button.s, button[class*="btn"] {
   background: #1565c0 !important;
   color: #fff !important;
@@ -1203,39 +1382,24 @@ h2.ovv, h2[class*="ovv"] { background: #2e7d32 !important; }
   margin: 5px 0 !important;
 }
 
-/* Force ALL text to be dark unless on dark bg */
-body, body * { color: #222; }
-h1, h1 * { color: #1a237e !important; }
-h2, h2 * { color: #fff !important; }
-h2.core, h2.imp, h2.ovv { color: #fff !important; }
+h1, h1 * {
+  color: #1a237e !important;
+}
 
-/* Fix labels and badges */
-.tag-teacher { background: #e3f2fd !important; color: #1565c0 !important; }
-.tag-ai { background: #fce4ec !important; color: #c62828 !important; }
-.tag-single { background: #fff8e1 !important; color: #e65100 !important; }
-.tag-judge { background: #f3e5f5 !important; color: #6a1b9a !important; }
-.tag-short { background: #e8f5e9 !important; color: #2e7d32 !important; }
-.tag-case { background: #ffebee !important; color: #c62828 !important; }
+h2.core, h2.imp, h2.ovv {
+  color: #fff !important;
+}
 
-/* Table cells */
-td, th { color: #222 !important; padding: 8px !important; }
+td, th {
+  color: #222 !important; padding: 8px !important;
+}
 
-
-/* === UNIVERSAL FORMAT NORMALIZATION (all fragments) === */
-
-/* TOPIC HEADERS - all fragments */
-h2 { color: #fff !important; padding: 15px 20px !important; 
-     border-radius: 12px !important; margin: 40px 0 20px !important; 
-     font-size: 1.3em !important; border: none !important; }
-
-/* SECTION HEADERS (第0节/第1节/第2节) - all fragments */
 .learn-header, .section-title, [class*=section-head], [class*=section-title] {
   font-size: 1.3em !important; font-weight: 700 !important;
   color: #1a237e !important; margin: 30px 0 15px !important;
   border-bottom: 3px solid #1a237e !important; padding-bottom: 5px !important;
 }
 
-/* KNOWLEDGE POINTS - all fragments (.zb, .knowledge-point, .key-point, .kp, etc.) */
 .zb, .knowledge-point, .key-point, .kp, .principle-item, .conseq-card,
 .method-item, .model-type-box, .diag-compare, .consequence-item,
 .kp-item, [class*=chapter-section], .highlight-box, .stata-output,
@@ -1252,7 +1416,6 @@ h2 { color: #fff !important; padding: 15px 20px !important;
   line-height: 1.8 !important;
 }
 
-/* EXAMPLE / CASE BOXES - all fragments */
 .ex, .example-box, .case-box, .ai-case-box, .problem-card, .tricky-box,
 .case-detail, [class*=case-container], .case-wrapper {
   background: #fff !important;
@@ -1262,13 +1425,12 @@ h2 { color: #fff !important; padding: 15px 20px !important;
   margin: 20px 0 !important;
   box-shadow: 0 2px 8px rgba(0,0,0,0.04) !important;
 }
-/* Nested elements inside example boxes should be clean */
+
 .ex h4, .example-box h4, .case-box h4, .problem-card h4,
 .ai-case-box h4, .tricky-box h4 {
   color: #1a237e !important; font-size: 1.1em !important; margin-bottom: 8px !important;
 }
 
-/* QUESTIONS - all fragments */
 .q, .problem-card .problem-body, .problem-type, .case,
 .teacher-q, [class*=exam-question], .case-question,
 .case-scenario, [class*=question-text] {
@@ -1282,14 +1444,12 @@ h2 { color: #fff !important; padding: 15px 20px !important;
   font-size: 0.93em !important;
 }
 
-/* CASE SCENARIOS - keep readable but distinct */
 .case-scenario, .case-detail .case-scenario {
   background: #fafafa !important;
   border-left-color: #4caf50 !important;
   font-weight: normal !important;
 }
 
-/* ANSWERS - all fragments */
 .a, .answer, .ai-answer, .answer-hint, [class*=solution],
 .case-questions .answer, .problem-card .answer {
   background: #fafafa !important;
@@ -1300,7 +1460,6 @@ h2 { color: #fff !important; padding: 15px 20px !important;
   color: #222 !important;
 }
 
-/* STEPS - normalize all step-like structures */
 .step, [class*=step-item], [class*=step-row] {
   display: flex !important;
   align-items: flex-start !important;
@@ -1308,18 +1467,20 @@ h2 { color: #fff !important; padding: 15px 20px !important;
   border-bottom: 1px solid #eee !important;
   font-size: 0.9em !important;
 }
+
 .step-num, [class*=step-num] {
   min-width: 52px !important; font-weight: 700 !important; color: #1565c0 !important;
 }
+
 .step-label, [class*=step-label] {
   min-width: 60px !important; color: #e65100 !important; font-weight: 600 !important;
   font-size: 0.85em !important;
 }
+
 .step-text, [class*=step-text] {
   flex: 1 !important; color: #222 !important;
 }
 
-/* BUTTONS - all fragments */
 .s, .s-btn, button.s, [class*=toggle-btn], [class*=show-btn] {
   background: #1565c0 !important; color: #fff !important;
   border: none !important; padding: 8px 18px !important;
@@ -1327,7 +1488,6 @@ h2 { color: #fff !important; padding: 15px 20px !important;
   font-size: 0.9em !important; margin: 5px 0 !important;
 }
 
-/* CONFUSION TABLES - all fragments */
 .confusion, .confusion-table-wrap, .compare-table-wrapper, .compare-table,
 [class*=comparison], [class*=contrast], .diagnosis-table,
 .remedy-table, .model-types {
@@ -1338,13 +1498,19 @@ h2 { color: #fff !important; padding: 15px 20px !important;
   margin: 18px 0 !important;
   color: #222 !important;
 }
+
 .confusion h5, [class*=confusion] h5, .compare-table h5 {
   color: #e65100 !important; margin-bottom: 8px !important;
 }
-table, td, th { color: #222 !important; padding: 8px !important; }
-table th, .compare-table th { background: #fff8e1 !important; font-weight: 700 !important; }
 
-/* SPEED BOXES */
+table, td, th {
+  color: #222 !important; padding: 8px !important;
+}
+
+table th, .compare-table th {
+  background: #fff8e1 !important; font-weight: 700 !important;
+}
+
 .speed-box, .speed-body, .speed-header, [class*=speed-card] {
   background: #e8eaf6 !important;
   border: 2px solid #1a237e !important;
@@ -1354,7 +1520,6 @@ table th, .compare-table th { background: #fff8e1 !important; font-weight: 700 !
   color: #222 !important;
 }
 
-/* WEIGHT / PRIORITY BOXES */
 .weight-box, .weight-body, .weight-header, [class*=weight-card],
 .priority-box, .topic-meta {
   background: #fff9c4 !important;
@@ -1367,7 +1532,6 @@ table th, .compare-table th { background: #fff8e1 !important; font-weight: 700 !
   color: #222 !important;
 }
 
-/* BADGES - normalize across fragments */
 .badge-core, .badge-imp, .badge-star, [class*=badge] {
   display: inline-block !important;
   font-size: 0.75em !important;
@@ -1376,10 +1540,15 @@ table th, .compare-table th { background: #fff8e1 !important; font-weight: 700 !
   font-weight: 700 !important;
   color: #fff !important;
 }
-.badge-core { background: #c62828 !important; }
-.badge-imp { background: #e65100 !important; }
 
-/* EXAM TYPE TAGS */
+.badge-core {
+  background: #c62828 !important;
+}
+
+.badge-imp {
+  background: #e65100 !important;
+}
+
 .exam-tag, .exam-tag-inline, .exam-type, .exam_types,
 [class*=exam-type], [class*=exam-tag] {
   display: inline-block !important;
@@ -1389,9 +1558,11 @@ table th, .compare-table th { background: #fff8e1 !important; font-weight: 700 !
   margin: 2px !important;
   font-weight: normal !important;
 }
-.exam-tag[class*=choice], .exam-tag-inline[class*=choice] { background: #fff8e1 !important; color: #e65100 !important; }
 
-/* SOURCE LABELS */
+.exam-tag[class*=choice], .exam-tag-inline[class*=choice] {
+  background: #fff8e1 !important; color: #e65100 !important;
+}
+
 .source-teacher, [class*=source-teacher], .case-source,
 .problem-source, .q-label {
   display: inline-block !important;
@@ -1401,7 +1572,6 @@ table th, .compare-table th { background: #fff8e1 !important; font-weight: 700 !
   margin-right: 4px !important;
 }
 
-/* FORMULAS */
 .formula-display, [class*=formula], .formula {
   font-family: 'Courier New', monospace !important;
   background: #f9f9f9 !important;
@@ -1412,61 +1582,36 @@ table th, .compare-table th { background: #fff8e1 !important; font-weight: 700 !
   font-size: 0.92em !important;
 }
 
-/* SHORT ANSWER TEMPLATES (green boxes) */
 [style*="background:#e8f5e9"], .confusion[style*="background:#e8f5e9"] {
   background: #e8f5e9 !important;
   border-color: #2e7d32 !important;
   color: #222 !important;
 }
 
-/* CLEAN LABEL */
-.clean-label {
-  display: inline-block !important;
-  font-size: 0.7em !important;
-  padding: 1px 8px !important;
-  border-radius: 10px !important;
-  background: #ffcdd2 !important;
-  color: #c62828 !important;
-  font-weight: 700 !important;
-  margin-left: 6px !important;
+.topic-header, .topic-meta, .priority-body {
+  background: transparent !important; border: none !important; padding: 0 !important; margin: 0 !important;
 }
 
-/* COLORS - fix any white-on-light */
-body, body * { color: #222; }
-h1, h1 * { color: #1a237e !important; }
-h2, h2 * { color: #fff !important; }
-.tag-teacher { background: #e3f2fd !important; color: #1565c0 !important; }
-.tag-ai { background: #fce4ec !important; color: #c62828 !important; }
-.tag-single { background: #fff8e1 !important; color: #e65100 !important; }
-.tag-judge { background: #f3e5f5 !important; color: #6a1b9a !important; }
-.tag-short { background: #e8f5e9 !important; color: #2e7d32 !important; }
-.tag-case { background: #ffebee !important; color: #c62828 !important; }
-
-/* Remove extra unwanted borders from nested elements */
-.topic-header, .topic-meta, .priority-body { background: transparent !important; border: none !important; padding: 0 !important; margin: 0 !important; }
-
-/* CONSEQUENCE lists - normalize */
 .consequence-list, .consequence-grid, .method-list, .principle-list {
   list-style: none !important; padding: 0 !important; margin: 10px 0 !important;
 }
+
 .consequence-item, .method-item, .principle-item {
   margin: 6px 0 !important; padding: 8px 12px !important;
 }
 
-/* Chow test steps, BP steps etc */
 .chow-steps, .bp-steps, [class*="steps"] ol {
   padding-left: 24px !important; margin: 10px 0 !important;
 }
+
 .chow-steps li, [class*="steps"] li {
   margin: 6px 0 !important; line-height: 1.6 !important;
 }
 
-/* Original problems sections */
 .original-problems, .ai-case {
   margin: 15px 0 !important;
 }
 
-/* Speed highlights */
 .speed-highlight, [class*="speed-highlight"] {
   background: #fff !important;
   border: 1px solid #1a237e !important;
@@ -1475,16 +1620,10 @@ h2, h2 * { color: #fff !important; }
   font-size: 0.9em !important;
 }
 
-/* Floating panel (speed panel) */
-.floating-panel { z-index: 9995 !important; }
+.topic-divider {
+  margin: 30px 0 !important; border: none !important; border-top: 2px solid #e0e0e0 !important;
+}
 
-/* Topic dividers */
-.topic-divider { margin: 30px 0 !important; border: none !important; border-top: 2px solid #e0e0e0 !important; }
-
-/* Container - ensure no left margin conflict */
-
-
-/* === SINGLE AUTHORITATIVE CONTAINER === */
 .container {
   max-width: 1000px !important;
   margin: 0 auto !important;
@@ -1504,6 +1643,7 @@ table, .compare-table, .confusion table {
   overflow-x: auto !important;
   display: block !important;
 }
+
 table th, .compare-table th, .confusion th {
   background: #1a237e !important;
   color: #fff !important;
@@ -1512,24 +1652,25 @@ table th, .compare-table th, .confusion th {
   font-weight: 700 !important;
   border: 1px solid #303f9f !important;
 }
+
 table td, .compare-table td, .confusion td {
   padding: 8px 12px !important;
   border: 1px solid #e0e0e0 !important;
   color: #222 !important;
 }
+
 table tr:nth-child(even), .compare-table tr:nth-child(even), .confusion tr:nth-child(even) {
   background: #f8f9fa !important;
 }
+
 table tr:nth-child(odd), .compare-table tr:nth-child(odd), .confusion tr:nth-child(odd) {
   background: #fff !important;
 }
+
 table tr:hover, .compare-table tr:hover, .confusion tr:hover {
   background: #e3f2fd !important;
 }
 
-/* ============================================================
-   FIX 3: Code blocks
-   ============================================================ */
 code, pre, .formula-display, .stata-output {
   font-family: 'Courier New', Consolas, monospace !important;
   background: #f5f5f5 !important;
@@ -1539,6 +1680,7 @@ code, pre, .formula-display, .stata-output {
   font-size: 0.9em !important;
   color: #333 !important;
 }
+
 pre, .stata-output {
   display: block !important;
   padding: 12px !important;
@@ -1547,21 +1689,37 @@ pre, .stata-output {
   line-height: 1.5 !important;
 }
 
-/* ============================================================
-   FIX 4: List normalization
-   ============================================================ */
 ul, ol {
   padding-left: 24px !important;
   margin: 8px 0 !important;
 }
+
 li {
   margin: 4px 0 !important;
   line-height: 1.6 !important;
 }
+
+/* Topic links overrides (from fragment merge) */
+.topic-links { overflow-x: auto; }
+.topic-links::-webkit-scrollbar { display: none; }
+.topic-links a { font-size: 0.7em; padding: 4px 5px; }
+
+
+/* From merged second style block */
+/* Top nav: topic links scrollbar hidden */
+.topic-links::-webkit-scrollbar { display: none; }
+/* Container top padding for fixed nav */
+
+@media (max-width: 768px) {
+  .topic-links { overflow-x: auto !important; }
+  .topic-links a { font-size: 0.7em !important; padding: 4px 5px !important; }
+}
 </style>
 </head><body>
+<main id="main-content">
+
 <!-- 固定顶部导航栏 -->
-<div id="topNav" style="position:fixed;top:0;left:0;right:0;height:52px;background:#1a237e;z-index:99999;display:flex;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,0.2);padding:0 16px">
+<div id="topNav" style="position:fixed;top:0;left:0;right:0;height:52px;background:#1a237e;z-index:199;display:flex;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,0.2);padding:0 16px">
   <div style="color:#fff;font-size:1em;font-weight:700;white-space:nowrap;margin-right:20px">📊 计量·冲刺</div>
   <div class="topic-links" style="display:flex;gap:0;overflow-x:auto;flex:1;scrollbar-width:none;align-items:center">
     <span style="color:#ffcdd2;font-size:0.7em;font-weight:700;margin-right:6px;white-space:nowrap">🔴</span>
@@ -1589,7 +1747,7 @@ li {
 document.querySelectorAll('#topNav a').forEach(function(a){
   a.addEventListener('click',function(e){
     e.preventDefault();
-    var target = document.querySelector(this.getAttribute('href'));
+    let target = document.querySelector(this.getAttribute('href'));
     if(target) {
       target.scrollIntoView({behavior:'smooth', block:'start'});
       document.getElementById('topicIndicator').textContent = this.textContent.trim();
@@ -1598,26 +1756,17 @@ document.querySelectorAll('#topNav a').forEach(function(a){
 });
 // Add padding-top to first topic to account for fixed navbar
 window.addEventListener('load',function(){
-  var firstTopic = document.querySelector('.topic, [id^="t"]');
+  let firstTopic = document.querySelector('.topic, [id^="t"]');
   if(firstTopic) firstTopic.style.scrollMarginTop = '70px';
 });
 // Add scroll margin to all topic anchors
 document.querySelectorAll('[id^="t"]').forEach(function(el){el.style.scrollMarginTop = '80px'; el.style.paddingTop = '0 !important'});
 </script>
 
-<style>
-/* Top nav: topic links scrollbar hidden */
-.topic-links::-webkit-scrollbar { display: none; }
-/* Container top padding for fixed nav */
 
-@media (max-width: 768px) {
-  .topic-links { overflow-x: auto !important; }
-  .topic-links a { font-size: 0.7em !important; padding: 4px 5px !important; }
-}
-</style>
 
 <!-- 左侧导航侧栏<!-- 侧栏折叠按钮（手机/窄屏用） -->
-<div onclick="" style="display:none;position:fixed;top:10px;left:10px;z-index:9999;background:#1a237e;color:#fff;width:40px;height:40px;border-radius:8px;cursor:pointer;align-items:center;justify-content:center;font-size:1.2em" id="sidebarToggle">☰</div>
+<div  style="display:none;position:fixed;top:10px;left:10px;z-index:109;background:#1a237e;color:#fff;width:40px;height:40px;border-radius:8px;cursor:pointer;align-items:center;justify-content:center;font-size:1.2em" id="sidebarToggle">☰</div>
 
 <script>
 // Auto-hide sidebar on small screens
@@ -1639,7 +1788,7 @@ document.querySelectorAll('[id^="t"]').forEach(function(el){el.style.scrollMargi
 </div>
 
 <div class="learning-path">
-<h3>🎯 建议学习路径（按考试权重排序）</h3>
+<h2>🎯 建议学习路径（按考试权重排序）</h2>
 <p style="font-size:0.88em;color:#555">先攻案例分析高频专题，再补单选/判断/简答基础</p>
 <div class="step-path">
 <span style="background:#ffebee;color:#c62828;border-color:#c62828">🔴 第1步：核心专题(1/2/6/9/4/5)</span>
@@ -1649,8 +1798,8 @@ document.querySelectorAll('[id^="t"]').forEach(function(el){el.style.scrollMargi
 <p style="font-size:0.85em;color:#888;margin-top:8px">📌 标记说明：<span class="tag-teacher" style="padding:2px 8px">📖</span> = 教师原题 <span class="tag-ai" style="padding:2px 8px">✏️</span> = AI编拟综合案例 <span class="tag-single" style="padding:2px 6px">单选</span><span class="tag-judge" style="padding:2px 6px">判断</span><span class="tag-short" style="padding:2px 6px">简答</span><span class="tag-case" style="padding:2px 6px">案例</span> = 题型标记</p>
 </div>
 <div class="toc">
-<h3 style="margin-bottom:10px">📑 目录</h3>
-<div class="toc-group core"><h4>🔴 核心专题（案例分析高频｜建议优先）</h4>
+<h2 style="margin-bottom:10px">📑 目录</h2>
+<div class="toc-group core"><h3>🔴 核心专题（案例分析高频｜建议优先）</h3>
 <a href="#t1">📖 专题1：对数模型与参数解释</a>
 <a href="#t2">📖 专题2：虚拟变量与结构变化</a>
 <a href="#t4">📖 专题4：异方差性检验与处理</a>
@@ -1660,68 +1809,68 @@ document.querySelectorAll('[id^="t"]').forEach(function(el){el.style.scrollMargi
 <a href="#t11">📖 专题11：面板数据模型</a>
 <a href="#t12">📖 专题12：时间序列与平稳性</a>
 </div>
-<div class="toc-group imp"><h4>🟡 重要专题（单选/简答常考｜其次）</h4>
+<div class="toc-group imp"><h3>🟡 重要专题（单选/简答常考｜其次）</h3>
 <a href="#t3">📖 专题3：多重共线性诊断与处理</a>
 <a href="#t7">📖 专题7：随机误差项与残差</a>
 </div>
-<div class="toc-group ovv"><h4>🟢 了解专题（偶尔出现｜有余力再看）</h4>
+<div class="toc-group ovv"><h3>🟢 了解专题（偶尔出现｜有余力再看）</h3>
 <a href="#t8">📖 专题8：Probit与Logit模型</a>
 <a href="#t10">📖 专题10：工具变量与内生性</a>
 <a href="#t13">📖 专题13：模型设定与函数形式</a>
 </div>
 </div>
-id="t1"><h2 class="core">专题1：对数模型与参数解释（Logarithmic Models）</h2><span class="priority-box core">🔴 核心专题 ★★★★★</span><div class="clr"></div><p class="ref">📖 第2章(简单回归)、第4章(多元回归分析：推断)</p><div class="core-box"><strong>📌 核心内容</strong><br>双对数模型中斜率参数表示<strong>弹性</strong>；半对数模型中参数表示<strong>增长率或半弹性</strong>。Cobb-Douglas函数取对数后，截距的指数为效率参数A。</div><div class="weight-box">🎯 考试权重：★★★☆☆（案例分析高频）<br>📝 单选常考弹性解释 · ✍ 简答常考Cobb-Douglas变换 · 📋 案例常考工资方程综合</div><div class="learn-header">📖 第0节 · 学习前的准备</div><div class="zb"><b>0.1 什么是回归方程？</b><br>计量最常见的工作：用原因预测结果。<br><b>公式</b>：Y = β₀ + β₁X + u<br>· Y=结果(被解释变量) · X=原因(解释变量) · β₁=斜率：X↑1单位→Y平均变化β₁ · β₀=截距 · u=误差项</div><div class="zb"><b>0.2 什么是自然对数ln？</b><br>① ln(A×B)=lnA+lnB（乘法变加法）　② ln(X^k)=k·lnX　③ <b>关键</b>：ΔlnX ≈ ΔX/X（百分比变化）<br>ln(1.05)≈0.05=5%——对数的变化量≈原变量的百分比变化</div><div class="zb"><b>0.3 什么时候该取对数？</b><br>· 变量是正数且右偏（如工资、收入）<br>· 想解释「百分比变化」而非「绝对变化」<br>· 变量之间可能是乘法关系（如Cobb-Douglas生产函数）</div><div class="learn-header">📖 第1节 · 核心知识点精讲</div><div class="exam-marker-group"><span class="exam-marker tag-single">单选</span> <span class="exam-marker tag-judge">判断</span> <span class="exam-marker tag-short">简答</span> <span class="exam-marker tag-case">案例</span> 本节内容覆盖全部题型</div><div class="zb"><b>1.1 双对数模型——系数是弹性</b> <span class="exam-marker tag-single">单选</span> <span class="exam-marker tag-case">案例</span><br>形式：<b>lnY = β₀ + β₁lnX + u</b><br>β₁叫<b>弹性</b>：X变化1%，Y变化β₁%。<br><b>推导</b>：ΔlnY≈β₁·ΔlnX，ΔlnY≈ΔY/Y，ΔX/X≈1%时ΔY/Y≈β₁·1%=β₁%。<br><b>简单记</b>：两边都有ln → 百分比对百分比</div><div class="zb"><b>1.2 半对数模型(A)——lnY对X</b> <span class="exam-marker tag-single">单选</span> <span class="exam-marker tag-judge">判断</span> <span class="exam-marker tag-short">简答</span><br>形式：<b>lnY = β₀ + β₁X + u</b><br>β₁×100%叫<b>半弹性</b>：X↑1单位→Y变化约(β₁×100)%。<br><b>例子</b>：ln(工资)=0.584+0.083×educ → 多读1年书工资增约8.3%<br>⚠ <b>精确公式</b>：%ΔY=100×[exp(β₁ΔX)-1]</div><div class="zb"><b>1.3 半对数模型(B)——Y对lnX</b> <span class="exam-marker tag-single">单选</span> <span class="exam-marker tag-judge">判断</span><br>形式：<b>Y = β₀ + β₁lnX + u</b><br>β₁/100的含义：X变化1%，Y变化β₁/100个单位。</div><div class="zb"><b>1.4 Cobb-Douglas生产函数变换</b> <span class="exam-marker tag-short">简答</span> <span class="exam-marker tag-case">案例</span><br>原始：Y = A·K^α·L^β·e^u → lnY=lnA+αlnK+βlnL+u<br>α=资本弹性，β=劳动弹性。Â = e^{截距}</div><div class="confusion"><h5>⚠ 易混淆辨析：对数模型形式</h5><table><tr><th>概念A</th><th>概念B</th><th>核心区别</th></tr><tr><td>lnY = β₀ + β₁lnX + u</td><td>双对数模型</td><td>系数β₁=弹性：%对%</td></tr><tr><td>lnY = β₀ + β₁X + u</td><td>半对数模型(A)</td><td>系数β₁×100%=增长率：单位对%</td></tr><tr><td>Y = β₀ + β₁lnX + u</td><td>半对数模型(B)</td><td>系数β₁/100=半弹性：%对单位</td></tr></table></div><div class="learn-header">📖 第2节 · 例题精讲与案例分析</div><p style='font-size:0.9em;color:#666;margin:10px 0'>以下为教师给出的教材例题：</p><div class="ex"><h4>📝 1.1 工资方程（教师原题）</h4><p>$$\ln (wage)=0.584+0.083 educ +0.036 exper +0.003 exper^{2}$$</p><p class="d">wage=小时工资(USD)，educ=教育年数，exper=工作年数</p><div class="q"><span class="tag tag-teacher">📖 教师原题</span> <span class="exam-marker tag-single">单选</span> <span class="exam-marker tag-judge">判断</span> (1) 解释educ系数0.083的含义</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示详细解答</button><div class="a"><div class="step"><span class="step-num">📌 分析</span><span class="step-label">[思路]</span><span class="step-text">本题是综合案例分析。先整体阅读回归输出表，识别模型形式和各系数的统计显著性，再逐问分析。注意把多个知识点串联起来。</span></div>
+id="t1"><h2 class="core">专题1：对数模型与参数解释（Logarithmic Models）</h2><span class="priority-box core">🔴 核心专题 ★★★★★</span><div class="clr"></div><p class="ref">📖 第2章(简单回归)、第4章(多元回归分析：推断)</p><div class="core-box"><strong>📌 核心内容</strong><br>双对数模型中斜率参数表示<strong>弹性</strong>；半对数模型中参数表示<strong>增长率或半弹性</strong>。Cobb-Douglas函数取对数后，截距的指数为效率参数A。</div><div class="weight-box">🎯 考试权重：★★★☆☆（案例分析高频）<br>📝 单选常考弹性解释 · ✍ 简答常考Cobb-Douglas变换 · 📋 案例常考工资方程综合</div><div class="learn-header">📖 第0节 · 学习前的准备</div><div class="zb"><b>0.1 什么是回归方程？</b><br>计量最常见的工作：用原因预测结果。<br><b>公式</b>：Y = β₀ + β₁X + u<br>· Y=结果(被解释变量) · X=原因(解释变量) · β₁=斜率：X↑1单位→Y平均变化β₁ · β₀=截距 · u=误差项</div><div class="zb"><b>0.2 什么是自然对数ln？</b><br>① ln(A×B)=lnA+lnB（乘法变加法）　② ln(X^k)=k·lnX　③ <b>关键</b>：ΔlnX ≈ ΔX/X（百分比变化）<br>ln(1.05)≈0.05=5%——对数的变化量≈原变量的百分比变化</div><div class="zb"><b>0.3 什么时候该取对数？</b><br>· 变量是正数且右偏（如工资、收入）<br>· 想解释「百分比变化」而非「绝对变化」<br>· 变量之间可能是乘法关系（如Cobb-Douglas生产函数）</div><div class="learn-header">📖 第1节 · 核心知识点精讲</div><div class="exam-marker-group"><span class="exam-marker tag-single">单选</span> <span class="exam-marker tag-judge">判断</span> <span class="exam-marker tag-short">简答</span> <span class="exam-marker tag-case">案例</span> 本节内容覆盖全部题型</div><div class="zb"><b>1.1 双对数模型——系数是弹性</b> <span class="exam-marker tag-single">单选</span> <span class="exam-marker tag-case">案例</span><br>形式：<b>lnY = β₀ + β₁lnX + u</b><br>β₁叫<b>弹性</b>：X变化1%，Y变化β₁%。<br><b>推导</b>：ΔlnY≈β₁·ΔlnX，ΔlnY≈ΔY/Y，ΔX/X≈1%时ΔY/Y≈β₁·1%=β₁%。<br><b>简单记</b>：两边都有ln → 百分比对百分比</div><div class="zb"><b>1.2 半对数模型(A)——lnY对X</b> <span class="exam-marker tag-single">单选</span> <span class="exam-marker tag-judge">判断</span> <span class="exam-marker tag-short">简答</span><br>形式：<b>lnY = β₀ + β₁X + u</b><br>β₁×100%叫<b>半弹性</b>：X↑1单位→Y变化约(β₁×100)%。<br><b>例子</b>：ln(工资)=0.584+0.083×educ → 多读1年书工资增约8.3%<br>⚠ <b>精确公式</b>：%ΔY=100×[exp(β₁ΔX)-1]</div><div class="zb"><b>1.3 半对数模型(B)——Y对lnX</b> <span class="exam-marker tag-single">单选</span> <span class="exam-marker tag-judge">判断</span><br>形式：<b>Y = β₀ + β₁lnX + u</b><br>β₁/100的含义：X变化1%，Y变化β₁/100个单位。</div><div class="zb"><b>1.4 Cobb-Douglas生产函数变换</b> <span class="exam-marker tag-short">简答</span> <span class="exam-marker tag-case">案例</span><br>原始：Y = A·K^α·L^β·e^u → lnY=lnA+αlnK+βlnL+u<br>α=资本弹性，β=劳动弹性。Â = e^{截距}</div><div class="confusion"><h3>⚠ 易混淆辨析：对数模型形式</h3><table><tr><th>概念A</th><th>概念B</th><th>核心区别</th></tr><tr><td>lnY = β₀ + β₁lnX + u</td><td>双对数模型</td><td>系数β₁=弹性：%对%</td></tr><tr><td>lnY = β₀ + β₁X + u</td><td>半对数模型(A)</td><td>系数β₁×100%=增长率：单位对%</td></tr><tr><td>Y = β₀ + β₁lnX + u</td><td>半对数模型(B)</td><td>系数β₁/100=半弹性：%对单位</td></tr></table></div><div class="learn-header">📖 第2节 · 例题精讲与案例分析</div><p style='font-size:0.9em;color:#666;margin:10px 0'>以下为教师给出的教材例题：</p><div class="ex"><h4>📝 1.1 工资方程（教师原题）</h4><p>$$\ln (wage)=0.584+0.083 educ +0.036 exper +0.003 exper^{2}$$</p><p class="d">wage=小时工资(USD)，educ=教育年数，exper=工作年数</p><div class="q"><span class="tag tag-teacher">📖 教师原题</span> <span class="exam-marker tag-single">单选</span> <span class="exam-marker tag-judge">判断</span> (1) 解释educ系数0.083的含义</div><button class="s answer-toggle-btn" data-toggle="answer" aria-label="显示详细解答">🔍 显示详细解答</button><div class="a"><div class="step"><span class="step-num">📌 分析</span><span class="step-label">[思路]</span><span class="step-text">本题是综合案例分析。先整体阅读回归输出表，识别模型形式和各系数的统计显著性，再逐问分析。注意把多个知识点串联起来。</span></div>
 <div class="step"><span class="step-num">步骤1</span><span class="step-label">[判断]</span><span class="step-text">半对数模型(lnY对X)，系数×100%=变化的百分比</span></div>
 <div class="step"><span class="step-num">步骤2</span><span class="step-label">[计算]</span><span class="step-text">0.083×100%=8.3%</span></div>
 <div class="step"><span class="step-num">步骤3</span><span class="step-label">[结论]</span><span class="step-text">教育每多1年，工资增长约8.3%</span></div>
-</div><div class="q"><span class="tag tag-teacher">📖 教师原题</span> <span class="exam-marker tag-single">单选</span> <span class="exam-marker tag-case">案例</span> (2) 教育从12年到16年，工资变化百分比？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示详细解答</button><div class="a"><div class="step"><span class="step-num">📌 分析</span><span class="step-label">[思路]</span><span class="step-text">本题是综合案例分析。先整体阅读回归输出表，识别模型形式和各系数的统计显著性，再逐问分析。注意把多个知识点串联起来。</span></div>
+</div><div class="q"><span class="tag tag-teacher">📖 教师原题</span> <span class="exam-marker tag-single">单选</span> <span class="exam-marker tag-case">案例</span> (2) 教育从12年到16年，工资变化百分比？</div><button class="s answer-toggle-btn" data-toggle="answer" aria-label="显示详细解答">🔍 显示详细解答</button><div class="a"><div class="step"><span class="step-num">📌 分析</span><span class="step-label">[思路]</span><span class="step-text">本题是综合案例分析。先整体阅读回归输出表，识别模型形式和各系数的统计显著性，再逐问分析。注意把多个知识点串联起来。</span></div>
 <div class="step"><span class="step-num">步骤1</span><span class="step-label">[变化量]</span><span class="step-text">Δeduc=16-12=4</span></div>
 <div class="step"><span class="step-num">步骤2</span><span class="step-label">[近似]</span><span class="step-text">0.083×4×100%=33.2%</span></div>
 <div class="step"><span class="step-num">步骤3</span><span class="step-label">[精确]</span><span class="step-text">exp(0.083×4)-1=exp(0.332)-1≈39.37%</span></div>
 <div class="step"><span class="step-num">步骤4</span><span class="step-label">[结论]</span><span class="step-text">变化跨度大时精确算法更准</span></div>
-</div><div class="q"><span class="tag tag-teacher">📖 教师原题</span> <span class="exam-marker tag-short">简答</span> <span class="exam-marker tag-case">案例</span> (3) 工作几年时工资最高？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示详细解答</button><div class="a"><div class="step"><span class="step-num">📌 分析</span><span class="step-label">[思路]</span><span class="step-text">本题是综合案例分析。先整体阅读回归输出表，识别模型形式和各系数的统计显著性，再逐问分析。注意把多个知识点串联起来。</span></div>
+</div><div class="q"><span class="tag tag-teacher">📖 教师原题</span> <span class="exam-marker tag-short">简答</span> <span class="exam-marker tag-case">案例</span> (3) 工作几年时工资最高？</div><button class="s answer-toggle-btn" data-toggle="answer" aria-label="显示详细解答">🔍 显示详细解答</button><div class="a"><div class="step"><span class="step-num">📌 分析</span><span class="step-label">[思路]</span><span class="step-text">本题是综合案例分析。先整体阅读回归输出表，识别模型形式和各系数的统计显著性，再逐问分析。注意把多个知识点串联起来。</span></div>
 <div class="step"><span class="step-num">步骤1</span><span class="step-label">[思路]</span><span class="step-text">最高点→导数=0</span></div>
 <div class="step"><span class="step-num">步骤2</span><span class="step-label">[求导]</span><span class="step-text">∂ln(wage)/∂exper=0.036+2×0.003×exper=0.036+0.006×exper</span></div>
 <div class="step"><span class="step-num">步骤3</span><span class="step-label">[令=0]</span><span class="step-text">0.036+0.006×exper=0 → exper=-6（不可能）</span></div>
 <div class="step"><span class="step-num">步骤4</span><span class="step-label">[结论]</span><span class="step-text">二次项系数应为负才能产生倒U型，此处系数为正→工资随经验一直上升</span></div>
-</div></div><div class="ex"><h4>📝 1.2 Cobb-Douglas生产函数（教师原题）</h4><p>$$\ln\hat{Y}=1.845+0.512\ln K+0.398\ln L,\ R^{2}=0.96,\ n=30$$</p><div class="q"><span class="tag tag-teacher">📖 教师原题</span> <span class="exam-marker tag-single">单选</span> <span class="exam-marker tag-case">案例</span> (1) 求A的估计值</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示详细解答</button><div class="a"><div class="step"><span class="step-num">📌 分析</span><span class="step-label">[思路]</span><span class="step-text">本题是综合案例分析。先整体阅读回归输出表，识别模型形式和各系数的统计显著性，再逐问分析。注意把多个知识点串联起来。</span></div>
+</div></div><div class="ex"><h4>📝 1.2 Cobb-Douglas生产函数（教师原题）</h4><p>$$\ln\hat{Y}=1.845+0.512\ln K+0.398\ln L,\ R^{2}=0.96,\ n=30$$</p><div class="q"><span class="tag tag-teacher">📖 教师原题</span> <span class="exam-marker tag-single">单选</span> <span class="exam-marker tag-case">案例</span> (1) 求A的估计值</div><button class="s answer-toggle-btn" data-toggle="answer" aria-label="显示详细解答">🔍 显示详细解答</button><div class="a"><div class="step"><span class="step-num">📌 分析</span><span class="step-label">[思路]</span><span class="step-text">本题是综合案例分析。先整体阅读回归输出表，识别模型形式和各系数的统计显著性，再逐问分析。注意把多个知识点串联起来。</span></div>
 <div class="step"><span class="step-num">步骤1</span><span class="step-label">[识别]</span><span class="step-text">截距1.845=lnÂ</span></div>
 <div class="step"><span class="step-num">步骤2</span><span class="step-label">[计算]</span><span class="step-text">Â=e^{1.845}≈6.33</span></div>
-</div><div class="q"><span class="tag tag-teacher">📖 教师原题</span> <span class="exam-marker tag-judge">判断</span> <span class="exam-marker tag-short">简答</span> (2) 检验规模报酬不变H₀:α+β=1</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示详细解答</button><div class="a"><div class="step"><span class="step-num">📌 分析</span><span class="step-label">[思路]</span><span class="step-text">本题是综合案例分析。先整体阅读回归输出表，识别模型形式和各系数的统计显著性，再逐问分析。注意把多个知识点串联起来。</span></div>
+</div><div class="q"><span p"><span class="step-num">📌 分析</span><span class="step-label">[思路]</span><span class="step-text">本题是综合案例分析。先整体阅读回归输出表，识别模型形式和各系数的统计显著性，再逐问分析。注意把多个知识点串联起来。</span></div>
 <div class="step"><span class="step-num">步骤1</span><span class="step-label">[计算]</span><span class="step-text">α̂+β̂=0.512+0.398=0.910</span></div>
 <div class="step"><span class="step-num">步骤2</span><span class="step-label">[判断]</span><span class="step-text">样本点估计呈递减。正式检验需标准误：t=(0.910-1)/se</span></div>
-</div><div class="q"><span class="tag tag-teacher">📖 教师原题</span> <span class="exam-marker tag-single">单选</span> <span class="exam-marker tag-judge">判断</span> (3) α和β含义</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示详细解答</button><div class="a"><div class="step"><span class="step-num">📌 分析</span><span class="step-label">[思路]</span><span class="step-text">本题是综合案例分析。先整体阅读回归输出表，识别模型形式和各系数的统计显著性，再逐问分析。注意把多个知识点串联起来。</span></div>
+</div><div class="q"><span class="tag tag-teacher">📖 教师原题</span> <span class="exam-marker tag-single">单选</span> <span class="exam-marker tag-judge">判断</span> (3) α和β含义</div><button class="s answer-toggle-btn" data-toggle="answer" aria-label="显示详细解答">🔍 显示详细解答</button><div class="a"><div class="step"><span class="step-num">📌 分析</span><span class="step-label">[思路]</span><span class="step-text">本题是综合案例分析。先整体阅读回归输出表，识别模型形式和各系数的统计显著性，再逐问分析。注意把多个知识点串联起来。</span></div>
 <div class="step"><span class="step-num">步骤1</span><span class="step-label">[α]</span><span class="step-text">0.512=资本弹性：资本↑1%→产出↑0.512%</span></div>
 <div class="step"><span class="step-num">步骤2</span><span class="step-label">[β]</span><span class="step-text">0.398=劳动弹性：劳动↑1%→产出↑0.398%</span></div>
-</div></div><div class="ex"><h4>📝 1.3 销售额广告（教师原题）</h4><p>$$\ln S=3.2+0.45\ln A$$</p><div class="q"><span class="tag tag-teacher">📖 教师原题</span> <span class="exam-marker tag-single">单选</span> <span class="exam-marker tag-judge">判断</span> (1) 广告↑1%，销售额↑？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示详细解答</button><div class="a"><div class="step"><span class="step-num">📌 分析</span><span class="step-label">[思路]</span><span class="step-text">本题是综合案例分析。先整体阅读回归输出表，识别模型形式和各系数的统计显著性，再逐问分析。注意把多个知识点串联起来。</span></div>
+</div></div><div class="ex"><h4>📝 1.3 销售额广告（教师原题）</h4><p>$$\ln S=3.2+0.45\ln A$$</p><div class="q"><span class="tag tag-teacher">📖 教师原题</span> <span class="exam-marker tag-single">单选</span> <span class="exam-marker tag-judge">判断</span> (1) 广告↑1%，销售额↑？</div><button class="s answer-toggle-btn" data-toggle="answer" aria-label="显示详细解答">🔍 显示详细解答</button><div class="a"><div class="step"><span class="step-num">📌 分析</span><span class="step-label">[思路]</span><span class="step-text">本题是综合案例分析。先整体阅读回归输出表，识别模型形式和各系数的统计显著性，再逐问分析。注意把多个知识点串联起来。</span></div>
 <div class="step"><span class="step-num">步骤1</span><span class="step-label">[识别]</span><span class="step-text">双对数模型，系数0.45=弹性</span></div>
 <div class="step"><span class="step-num">步骤2</span><span class="step-label">[结论]</span><span class="step-text">广告↑1%→销售额↑0.45%</span></div>
-</div><div class="q"><span class="tag tag-teacher">📖 教师原题</span> <span class="exam-marker tag-single">单选</span> (2) 100万→110万，销售额变化？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示详细解答</button><div class="a"><div class="step"><span class="step-num">📌 分析</span><span class="step-label">[思路]</span><span class="step-text">本题是综合案例分析。先整体阅读回归输出表，识别模型形式和各系数的统计显著性，再逐问分析。注意把多个知识点串联起来。</span></div>
+</div><div class="q"><span class="tag tag-teacher">📖 教师原题</span> <span class="exam-marker tag-single">单选</span> (2) 100万→110万，销售额变化？</div><button class="s answer-toggle-btn" data-toggle="answer" aria-label="显示详细解答">🔍 显示详细解答</button><div class="a"><div class="step"><span class="step-num">📌 分析</span><span class="step-label">[思路]</span><span class="step-text">本题是综合案例分析。先整体阅读回归输出表，识别模型形式和各系数的统计显著性，再逐问分析。注意把多个知识点串联起来。</span></div>
 <div class="step"><span class="step-num">步骤1</span><span class="step-label">[变化率]</span><span class="step-text">(110-100)/100=10%</span></div>
 <div class="step"><span class="step-num">步骤2</span><span class="step-label">[计算]</span><span class="step-text">0.45×10%=4.5%</span></div>
-</div><div class="q"><span class="tag tag-teacher">📖 教师原题</span> <span class="exam-marker tag-judge">判断</span> <span class="exam-marker tag-short">简答</span> (3) A=0时销售额为正？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示详细解答</button><div class="a"><div class="step"><span class="step-num">📌 分析</span><span class="step-label">[思路]</span><span class="step-text">本题是综合案例分析。先整体阅读回归输出表，识别模型形式和各系数的统计显著性，再逐问分析。注意把多个知识点串联起来。</span></div>
+</div><div class="q"><span class="tag tag-teacher">📖 教师原题</span> <span class="exam-marker tag-judge">判断</span> <span class="exam-marker tag-short">简答</span> (3) A=0时销售额为正？</div><button class="s answer-toggle-btn" data-toggle="answer" aria-label="显示详细解答">🔍 显示详细解答</button><div class="a"><div class="step"><span class="step-num">📌 分析</span><span class="step-label">[思路]</span><span class="step-text">本题是综合案例分析。先整体阅读回归输出表，识别模型形式和各系数的统计显著性，再逐问分析。注意把多个知识点串联起来。</span></div>
 <div class="step"><span class="step-num">步骤1</span><span class="step-label">[分析]</span><span class="step-text">A=0→lnA无定义</span></div>
 <div class="step"><span class="step-num">步骤2</span><span class="step-label">[结论]</span><span class="step-text">模型本身不能预测A=0的情况（外推问题）</span></div>
 </div></div><p style='font-size:0.9em;color:#c62828;margin:15px 0 5px'>以下为AI编拟的综合案例分析（模拟考试第四大题形式）：</p><div class="ex"><h4>📝 1.4 【✏️ 综合案例分析】工资决定方程回归输出</h4><p class="d">某研究者收集了500名劳动者的数据，用OLS估计了以下工资方程：
 $$\ln(wage)=0.420+0.092\,educ+0.045\,exper-0.001\,exper^2+0.035\,female+0.015\,(female\cdot educ)$$
-其中female=1女0男。回归R²=0.312，n=500。</p><div class="q"><span class="tag tag-ai">✏️ AI编拟综合案例</span> <span class="exam-marker tag-single">单选</span> <span class="exam-marker tag-short">简答</span> (1) 解释educ的系数0.092。如果改用wage对educ做回归（不取对数），系数会有什么不同？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示详细解答</button><div class="a"><div class="step"><span class="step-num">📌 分析</span><span class="step-label">[思路]</span><span class="step-text">本题是综合案例分析。先整体阅读回归输出表，识别模型形式和各系数的统计显著性，再逐问分析。注意把多个知识点串联起来。</span></div>
+其中female=1女0男。回归R²=0.312，n=500。</p><div class="q"><span class="tag tag-ai">✏️ AI编拟综合案例</span> <span class="exam-marker tag-single">单选</span> <span class="exam-marker tag-short">简答</span> (1) 解释educ的系数0.092。如果改用wage对educ做回归（不取对数），系数会有什么不同？</div><button class="s answer-toggle-btn" data-toggle="answer" aria-label="显示详细解答">🔍 显示详细解答</button><div class="a"><div class="step"><span class="step-num">📌 分析</span><span class="step-label">[思路]</span><span class="step-text">本题是综合案例分析。先整体阅读回归输出表，识别模型形式和各系数的统计显著性，再逐问分析。注意把多个知识点串联起来。</span></div>
 <div class="step"><span class="step-num">步骤1</span><span class="step-label">[第1问]</span><span class="step-text">半对数模型：0.092×100%=9.2%。教育每多1年，工资增约9.2%</span></div>
 <div class="step"><span class="step-num">步骤2</span><span class="step-label">[第2问]</span><span class="step-text">水平模型系数是「元/年」而非「%/年」。通常取对数后系数更稳定（缓解异方差）</span></div>
-</div><div class="q"><span class="tag tag-ai">✏️ AI编拟综合案例</span> <span class="exam-marker tag-short">简答</span> <span class="exam-marker tag-case">案例</span> (2) female的系数0.035和交乘项female×educ的系数0.015分别代表什么？男性的工资方程是什么？女性的呢？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示详细解答</button><div class="a"><div class="step"><span class="step-num">📌 分析</span><span class="step-label">[思路]</span><span class="step-text">本题是综合案例分析。先整体阅读回归输出表，识别模型形式和各系数的统计显著性，再逐问分析。注意把多个知识点串联起来。</span></div>
+</div><div class="q"><span class="tag tag-ai">✏️ AI编拟综合案例</span> <span class="exam-marker tag-short">简答</span> <span class="exam-marker tag-case">案例</span> (2) female的系数0.035和交乘项female×educ的系数0.015分别代表什么？男性的工资方程是什么？女性的呢？</div><button class="s answer-toggle-btn" data-toggle="answer" aria-label="显示详细解答">🔍 显示详细解答</button><div class="a"><div class="step"><span class="step-num">📌 分析</span><span class="step-label">[思路]</span><span class="step-text">本题是综合案例分析。先整体阅读回归输出表，识别模型形式和各系数的统计显著性，再逐问分析。注意把多个知识点串联起来。</span></div>
 <div class="step"><span class="step-num">步骤1</span><span class="step-label">[男性]</span><span class="step-text">female=0 → ln(wage)=0.420+0.092educ+0.045exper-0.001exper²</span></div>
 <div class="step"><span class="step-num">步骤2</span><span class="step-label">[女性]</span><span class="step-text">female=1 → ln(wage)=(0.420+0.035)+(0.092+0.015)educ+0.045exper-0.001exper²</span></div>
 <div class="step"><span class="step-num">步骤3</span><span class="step-label">[β_female]</span><span class="step-text">女性在截距上多3.5%（但t检验可能不显著，取决于标准误）</span></div>
 <div class="step"><span class="step-num">步骤4</span><span class="step-label">[β_interact]</span><span class="step-text">女性教育回报率比男性高1.5%/年（若显著，说明存在性别斜率差异）</span></div>
-</div><div class="q"><span class="tag tag-ai">✏️ AI编拟综合案例</span> <span class="exam-marker tag-judge">判断</span> <span class="exam-marker tag-short">简答</span> <span class="exam-marker tag-case">案例</span> (3) 研究者怀疑model存在异方差。请设计检验方案，并说明如果存在应如何处理。</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示详细解答</button><div class="a"><div class="step"><span class="step-num">📌 分析</span><span class="step-label">[思路]</span><span class="step-text">本题是综合案例分析。先整体阅读回归输出表，识别模型形式和各系数的统计显著性，再逐问分析。注意把多个知识点串联起来。</span></div>
+</div><div class="q"><span class="tag tag-ai">✏️ AI编拟综合案例</span> <span class="exam-marker tag-judge">判断</span> <span class="exam-marker tag-short">简答</span> <span class="exam-marker tag-case">案例</span> (3) 研究者怀疑model存在异方差。请设计检验方案，并说明如果存在应如何处理。</div><button class="s answer-toggle-btn" data-toggle="answer" aria-label="显示详细解答">🔍 显示详细解答</button><div class="a"><div class="step"><span class="step-num">📌 分析</span><span class="step-label">[思路]</span><span class="step-text">本题是综合案例分析。先整体阅读回归输出表，识别模型形式和各系数的统计显著性，再逐问分析。注意把多个知识点串联起来。</span></div>
 <div class="step"><span class="step-num">步骤1</span><span class="step-label">[检验]</span><span class="step-text">BP检验：先OLS得残差û，再回归û²对所有X，LM=n·R²_û ~ χ²(5)</span></div>
 <div class="step"><span class="step-num">步骤2</span><span class="step-label">[判断]</span><span class="step-text">若LM>临界值→拒绝同方差</span></div>
 <div class="step"><span class="step-num">步骤3</span><span class="step-label">[处理]</span><span class="step-text">① 使用异方差稳健标准误(White/HC) ② 若已知异方差形式可用WLS</span></div>
-</div><div class="q"><span class="tag tag-ai">✏️ AI编拟综合案例</span> <span class="exam-marker tag-judge">判断</span> <span class="exam-marker tag-case">案例</span> (4) 该模型R²=0.312，是否说明模型很差？为什么？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示详细解答</button><div class="a"><div class="step"><span class="step-num">📌 分析</span><span class="step-label">[思路]</span><span class="step-text">本题是综合案例分析。先整体阅读回归输出表，识别模型形式和各系数的统计显著性，再逐问分析。注意把多个知识点串联起来。</span></div>
+</div><div class="q"><span class="tag tag-ai">✏️ AI编拟综合案例</span> <span class="exam-marker tag-judge">判断</span> <span class="exam-marker tag-case">案例</span> (4) 该模型R²=0.312，是否说明模型很差？为什么？</div><button class="s answer-toggle-btn" data-toggle="answer" aria-label="显示详细解答">🔍 显示详细解答</button><div class="a"><div class="step"><span class="step-num">📌 分析</span><span class="step-label">[思路]</span><span class="step-text">本题是综合案例分析。先整体阅读回归输出表，识别模型形式和各系数的统计显著性，再逐问分析。注意把多个知识点串联起来。</span></div>
 <div class="step"><span class="step-num">步骤1</span><span class="step-label">[分析]</span><span class="step-text">横截面微观数据的R²通常在0.1-0.4之间，0.312属正常</span></div>
 <div class="step"><span class="step-num">步骤2</span><span class="step-label">[判断]</span><span class="step-text">关键是系数显著性（t/F检验）和理论一致性，而非R²高低</span></div>
 <div class="step"><span class="step-num">步骤3</span><span class="step-label">[结论]</span><span class="step-text">不能说模型很差，需结合其他诊断统计量综合判断</span></div>
-</div></div><div class="speed-box" id="<div class="confusion" style="background:#e8f5e9;border-color:#2e7d32"><h5>💡 简答话术模板 · 对数模型解释</h5><p><b>📌 典型简答：解释半对数模型 lnY=β₀+β₁X 中β₁的含义</b></p><p><b>话术结构：</b>① 判断模型类型 → ② 写出公式 → ③ 代入数字 → ④ 给出结论</p><p><b>示范答案：</b></p><p>「这是一个半对数模型（因为lnY对X回归，不是lnY对lnX）。β₁的估计值为0.083。在半对数模型中，β₁×100%表示X每增加1个单位，Y变化的百分比。所以教育年限每增加1年，小时工资平均增加约8.3%。如果需要精确值，可以用公式%ΔY=100×[exp(β₁ΔX)-1]计算。J」</p><p style="margin-top:8px"><b>得分点：</b>指出模型类型(2分)+写出公式(2分)+正确解释(3分)+精确vs近似(1分)</p></div>
-speed-1"><h5>⏱ 考前5分钟必记 · 对数模型与参数解释</h5><p><b>核心公式：</b><span class="formula">lnY=β₀+β₁lnX → 弹性=β₁</span> <span class="formula">lnY=β₀+β₁X → %ΔY=100β₁ΔX</span> <span class="formula">Â=e^{截距}</span> </p><p><b>必会题型：</b>给出工资方程回归结果，解释各系数含义并诊断异方差</p></div></div>
+</div></div><div class="speed-box" id="<div class="confusion" style="background:#e8f5e9;border-color:#2e7d32"><h4>💡 简答话术模板 · 对数模型解释</h4><p><b>📌 典型简答：解释半对数模型 lnY=β₀+β₁X 中β₁的含义</b></p><p><b>话术结构：</b>① 判断模型类型 → ② 写出公式 → ③ 代入数字 → ④ 给出结论</p><p><b>示范答案：</b></p><p>「这是一个半对数模型（因为lnY对X回归，不是lnY对lnX）。β₁的估计值为0.083。在半对数模型中，β₁×100%表示X每增加1个单位，Y变化的百分比。所以教育年限每增加1年，小时工资平均增加约8.3%。如果需要精确值，可以用公式%ΔY=100×[exp(β₁ΔX)-1]计算。J」</p><p style="margin-top:8px"><b>得分点：</b>指出模型类型(2分)+写出公式(2分)+正确解释(3分)+精确vs近似(1分)</p></div>
+speed-1"><h4>⏱ 考前5分钟必记 · 对数模型与参数解释</h4><p><b>核心公式：</b><span class="formula">lnY=β₀+β₁lnX → 弹性=β₁</span> <span class="formula">lnY=β₀+β₁X → %ΔY=100β₁ΔX</span> <span class="formula">Â=e^{截距}</span> </p><p><b>必会题型：</b>给出工资方程回归结果，解释各系数含义并诊断异方差</p></div></div>
 
 <!-- ============================================================ -->
 <!-- V6增强 HTML - Topic 2 虚拟变量 ～ Topic 5 自相关           -->
@@ -2055,7 +2204,7 @@ speed-1"><h5>⏱ 考前5分钟必记 · 对数模型与参数解释</h5><p><b>�
 
 <!-- ========== Topic 3: 多重共线性 (Multicollinearity) ========== -->
 <div class="priority-box" data-level="imp" data-stars="3">
-  <div class="topic-header imp" <div class="confusion" style="background:#e8f5e9;border-color:#2e7d32"><h5>💡 简答话术模板 · 虚拟变量解释</h5><p><b>📌 典型简答：解释模型 Y=β₀+δD+β₁X+γ(D·X)+u 中δ和γ的含义</b></p><p><b>话术结构：</b>① 写出两组方程 → ② 分别解释δ和γ</p><p><b>示范答案：</b></p><p>「将D=0（基准组）和D=1（比较组）代入方程：</p><p>D=0组：Y=β₀+β₁X+u</p><p>D=1组：Y=(β₀+δ)+(β₁+γ)X+u</p><p>δ是两组在截距上的差异——在X=0时，D=1组比D=0组平均高出δ个单位。</p><p>γ是两组在斜率上的差异——D=1组每增加1单位X，Y的变化比D=0组多γ个单位。」</p><p style="margin-top:8px"><b>得分点：</b>写出两个方程(3分)+解释δ(2分)+解释γ(3分)</p></div>
+  <div class="topic-header imp" <div class="confusion" style="background:#e8f5e9;border-color:#2e7d32"><h4>💡 简答话术模板 · 虚拟变量解释</h4><p><b>📌 典型简答：解释模型 Y=β₀+δD+β₁X+γ(D·X)+u 中δ和γ的含义</b></p><p><b>话术结构：</b>① 写出两组方程 → ② 分别解释δ和γ</p><p><b>示范答案：</b></p><p>「将D=0（基准组）和D=1（比较组）代入方程：</p><p>D=0组：Y=β₀+β₁X+u</p><p>D=1组：Y=(β₀+δ)+(β₁+γ)X+u</p><p>δ是两组在截距上的差异——在X=0时，D=1组比D=0组平均高出δ个单位。</p><p>γ是两组在斜率上的差异——D=1组每增加1单位X，Y的变化比D=0组多γ个单位。」</p><p style="margin-top:8px"><b>得分点：</b>写出两个方程(3分)+解释δ(2分)+解释γ(3分)</p></div>
 id="t3">
     <h2 class="imp">专题3：多重共线性诊断与处理（Multicollinearity）</h2>
     <div class="topic-meta"><span class="badge-imp">重要章节</span><span class="badge-star">★★★</span></div>
@@ -2426,7 +2575,7 @@ id="t3">
 
 <!-- ========== Topic 4: 异方差 (Heteroscedasticity) ========== -->
 <div class="priority-box" data-level="core" data-stars="4">
-  <div class="topic-header core" <div class="confusion" style="background:#e8f5e9;border-color:#2e7d32"><h5>💡 简答话术模板 · VIF解释</h5><p><b>📌 典型简答：VIF是什么意思？VIF=12.5说明什么问题？</b></p><p><b>话术结构：</b>① 定义 → ② 公式 → ③ 阈值 → ④ 结论</p><p><b>示范答案：</b></p><p>「VIF是方差膨胀因子，衡量多重共线性的严重程度。</p><p>公式：VIFⱼ=1/(1-R²ⱼ)，其中R²ⱼ是把第j个解释变量对其他所有解释变量回归的拟合优度。</p><p>经验规则：VIF>10表示存在严重多重共线性。</p><p>VIF=12.5>10，说明该变量存在严重多重共线性——参数估计的方差被膨胀了12.5倍，导致t统计量变小，系数可能不显著。」</p><p style="margin-top:8px"><b>得分点：</b>全称(1分)+公式(2分)+阈值(2分)+具体解释(3分)</p></div>
+  <div class="topic-header core" <div class="confusion" style="background:#e8f5e9;border-color:#2e7d32"><h4>💡 简答话术模板 · VIF解释</h4><p><b>📌 典型简答：VIF是什么意思？VIF=12.5说明什么问题？</b></p><p><b>话术结构：</b>① 定义 → ② 公式 → ③ 阈值 → ④ 结论</p><p><b>示范答案：</b></p><p>「VIF是方差膨胀因子，衡量多重共线性的严重程度。</p><p>公式：VIFⱼ=1/(1-R²ⱼ)，其中R²ⱼ是把第j个解释变量对其他所有解释变量回归的拟合优度。</p><p>经验规则：VIF>10表示存在严重多重共线性。</p><p>VIF=12.5>10，说明该变量存在严重多重共线性——参数估计的方差被膨胀了12.5倍，导致t统计量变小，系数可能不显著。」</p><p style="margin-top:8px"><b>得分点：</b>全称(1分)+公式(2分)+阈值(2分)+具体解释(3分)</p></div>
 id="t4">
     <h2 class="core">专题4：异方差性检验与处理（Heteroscedasticity）</h2>
     <div class="topic-meta"><span class="badge-core">核心章节</span><span class="badge-star">★★★★</span></div>
@@ -2777,7 +2926,7 @@ id="t4">
 
 <!-- ========== Topic 5: 自相关 (Autocorrelation) ========== -->
 <div class="priority-box" data-level="core" data-stars="4">
-  <div class="topic-header core" <div class="confusion" style="background:#e8f5e9;border-color:#2e7d32"><h5>💡 简答话术模板 · 异方差检验步骤</h5><p><b>📌 典型简答：简述Breusch-Pagan检验的步骤</b></p><p><b>话术结构：</b>① 步骤概述 → ② 辅助回归 → ③ 统计量 → ④ 判断</p><p><b>示范答案：</b></p><p>「BP检验用于检验是否存在异方差。步骤：</p><p>第一步，用OLS估计原模型，得到残差ûᵢ。</p><p>第二步，做辅助回归：ûᵢ² = δ₀ + δ₁x₁ᵢ + ... + δₖxₖᵢ + vᵢ</p><p>第三步，计算LM统计量：LM=n×R²_û，在H₀下服从χ²(k)分布。</p><p>第四步，若LM > χ²_α(k)，拒绝同方差原假设，认为存在异方差。」</p><p style="margin-top:8px"><b>得分点：</b>第一步OLS(2分)+辅助回归(3分)+LM公式(2分)+判断准则(1分)</p></div>
+  <div class="topic-header core" <div class="confusion" style="background:#e8f5e9;border-color:#2e7d32"><h4>💡 简答话术模板 · 异方差检验步骤</h4><p><b>📌 典型简答：简述Breusch-Pagan检验的步骤</b></p><p><b>话术结构：</b>① 步骤概述 → ② 辅助回归 → ③ 统计量 → ④ 判断</p><p><b>示范答案：</b></p><p>「BP检验用于检验是否存在异方差。步骤：</p><p>第一步，用OLS估计原模型，得到残差ûᵢ。</p><p>第二步，做辅助回归：ûᵢ² = δ₀ + δ₁x₁ᵢ + ... + δₖxₖᵢ + vᵢ</p><p>第三步，计算LM统计量：LM=n×R²_û，在H₀下服从χ²(k)分布。</p><p>第四步，若LM > χ²_α(k)，拒绝同方差原假设，认为存在异方差。」</p><p style="margin-top:8px"><b>得分点：</b>第一步OLS(2分)+辅助回归(3分)+LM公式(2分)+判断准则(1分)</p></div>
 id="t5">
     <h2 class="core">专题5：序列相关检验与处理（Autocorrelation）</h2>
     <div class="topic-meta"><span class="badge-core">核心章节</span><span class="badge-star">★★★★</span></div>
@@ -3223,7 +3372,7 @@ id="t5">
 
 
 <div class="header">
-  <h1>📊 计量经济学 Topics 6-9 v6 增强版</h1>
+  <h2 >📊 计量经济学 Topics 6-9 v6 增强版</h1>>📊 计量经济学 Topics 6-9 v6 增强版</h2>
   <p>F检验 · 误差项vs残差 · Probit/Logit · OLS假设 · 四川农业大学</p>
 </div>
 
@@ -3239,7 +3388,7 @@ id="t5">
     <div class="priority-icon">🔥</div>
     <div class="priority-body">
       <span class="priority-tag">CORE · 核心必考</span>
-      <div class="confusion" style="background:#e8f5e9;border-color:#2e7d32"><h5>💡 简答话术模板 · DW检验判断</h5><p><b>📌 典型简答：DW统计量d=0.85，d_L=1.55，d_U=1.62，请判断自相关</b></p><p><b>话术结构：</b>① 给出比较规则 → ② 比较数据 → ③ 结论</p><p><b>示范答案：</b></p><p>「DW检验的判断规则是：</p><p>① 若d < d_L → 存在正自相关</p><p>② 若d > d_U → 无自相关</p><p>③ 若d_L ≤ d ≤ d_U → 无法判定（灰色区）</p><p>本题：d=0.85 < d_L=1.55，所以存在正自相关。</p><p>由于d接近0，自相关系数ρ̂≈1-d/2=1-0.425=0.575，属于中等偏强正自相关。」</p><p style="margin-top:8px"><b>得分点：</b>给出规则(3分)+正确比较(2分)+补充ρ̂估计(3分)</p></div>
+      <div class="confusion" style="background:#e8f5e9;border-color:#2e7d32"><h3>💡 简答话术模板 · DW检验判断</h3><p><b>📌 典型简答：DW统计量d=0.85，d_L=1.55，d_U=1.62，请判断自相关</b></p><p><b>话术结构：</b>① 给出比较规则 → ② 比较数据 → ③ 结论</p><p><b>示范答案：</b></p><p>「DW检验的判断规则是：</p><p>① 若d < d_L → 存在正自相关</p><p>② 若d > d_U → 无自相关</p><p>③ 若d_L ≤ d ≤ d_U → 无法判定（灰色区）</p><p>本题：d=0.85 < d_L=1.55，所以存在正自相关。</p><p>由于d接近0，自相关系数ρ̂≈1-d/2=1-0.425=0.575，属于中等偏强正自相关。」</p><p style="margin-top:8px"><b>得分点：</b>给出规则(3分)+正确比较(2分)+补充ρ̂估计(3分)</p></div>
 <h2 id="t6">专题6：F检验与回归显著性检验（F-Test）</h2>
       <p style="margin:4px 0 0 0;font-size:0.92em;color:#555;">
         联合显著性检验 · 模型整体检验 · 约束检验 · Chow检验 · 方差分析
@@ -3444,7 +3593,7 @@ id="t5">
     <p><strong>(3)</strong> 若R²=0.08，重新计算F值并判断。</p>
 
     <div class="correct-approach">
-      <h5>✅ 解答：</h5>
+      <h4>✅ 解答：</h4>
       <p><strong>(1)</strong> F = R²/k ÷ (1−R²)/(n−k−1) = 0.45/3 ÷ 0.55/60 = 0.15 ÷ 0.00917 = <strong>16.36</strong></p>
       <p><strong>(2)</strong> F<sub>0.05</sub>(3,60) ≈ 2.76。16.36 &gt; 2.76 → <strong>拒绝H₀</strong>，模型整体显著。</p>
       <p><strong>(3)</strong> F = 0.08/3 ÷ 0.92/60 = 0.0267 ÷ 0.01533 = <strong>1.74</strong></p>
@@ -3467,7 +3616,7 @@ id="t5">
     <div class="priority-icon">📌</div>
     <div class="priority-body">
       <span class="priority-tag">IMPORTANT · 重要考点</span>
-      <div class="confusion" style="background:#e8f5e9;border-color:#2e7d32"><h5>💡 简答话术模板 · F检验与t检验的区别</h5><p><b>📌 典型简答：F检验和t检验有什么区别？什么时候用哪个？</b></p><p><b>话术结构：</b>① 各自用途 → ② 统计量形式 → ③ 选择规则</p><p><b>示范答案：</b></p><p>「t检验用于检验单个回归系数是否显著不为零：H₀:βⱼ=0。</p><p>F检验用于检验一组系数是否同时为零：H₀:β₁=β₂=...=βₖ=0。</p><p>如果只检验一个系数，t² = F(1, n-k-1)，两者等价。</p><p>如果检验多个系数（如β₁=β₂=0或β₁=β₂），必须用F检验。</p><p>另外，检验整个回归方程的显著性用F检验，检验单个解释变量的重要性用t检验。」</p><p style="margin-top:8px"><b>得分点：</b>t检验用途(2分)+F检验用途(2分)+关系(2分)+选择规则(2分)</p></div>
+      <div class="confusion" style="background:#e8f5e9;border-color:#2e7d32"><h4>💡 简答话术模板 · F检验与t检验的区别</h4><p><b>📌 典型简答：F检验和t检验有什么区别？什么时候用哪个？</b></p><p><b>话术结构：</b>① 各自用途 → ② 统计量形式 → ③ 选择规则</p><p><b>示范答案：</b></p><p>「t检验用于检验单个回归系数是否显著不为零：H₀:βⱼ=0。</p><p>F检验用于检验一组系数是否同时为零：H₀:β₁=β₂=...=βₖ=0。</p><p>如果只检验一个系数，t² = F(1, n-k-1)，两者等价。</p><p>如果检验多个系数（如β₁=β₂=0或β₁=β₂），必须用F检验。</p><p>另外，检验整个回归方程的显著性用F检验，检验单个解释变量的重要性用t检验。」</p><p style="margin-top:8px"><b>得分点：</b>t检验用途(2分)+F检验用途(2分)+关系(2分)+选择规则(2分)</p></div>
 <h2 id="t7">专题7：随机误差项与残差（Error Term vs Residual）</h2>
       <p style="margin:4px 0 0 0;font-size:0.92em;color:#555;">
         概念辨析 · 性质差异 · 在OLS假设中的角色 · 诊断应用
@@ -3600,7 +3749,7 @@ id="t5">
     <div class="priority-icon">📖</div>
     <div class="priority-body">
       <span class="priority-tag">OVERVIEW · 了解即可</span>
-      <div class="confusion" style="background:#e8f5e9;border-color:#2e7d32"><h5>💡 简答话术模板 · 误差项vs残差</h5><p><b>📌 典型简答：误差项uᵢ和残差ûᵢ有什么区别和联系？</b></p><p><b>话术结构：</b>① 定义区别 → ② 数学关系 → ③ OLS性质</p><p><b>示范答案：</b></p><p>「误差项uᵢ是总体模型Yᵢ=β₀+β₁Xᵢ+uᵢ中的随机项，不可观测。</p><p>残差ûᵢ是样本估计的：ûᵢ=Yᵢ-Ŷᵢ，是可计算、可检验的。</p><p>联系：ûᵢ是uᵢ的样本估计量——我们用残差去推断误差项的性质。</p><p>重要区别：OLS保证Σûᵢ=0（这是估计结果），但Σuᵢ=0是假设（零条件均值假设的一部分），不是必然成立的。」</p><p style="margin-top:8px"><b>得分点：</b>误差项定义(2分)+残差定义(2分)+联系(2分)+关键区别(2分)</p></div>
+      <div class="confusion" style="background:#e8f5e9;border-color:#2e7d32"><h4>💡 简答话术模板 · 误差项vs残差</h4><p><b>📌 典型简答：误差项uᵢ和残差ûᵢ有什么区别和联系？</b></p><p><b>话术结构：</b>① 定义区别 → ② 数学关系 → ③ OLS性质</p><p><b>示范答案：</b></p><p>「误差项uᵢ是总体模型Yᵢ=β₀+β₁Xᵢ+uᵢ中的随机项，不可观测。</p><p>残差ûᵢ是样本估计的：ûᵢ=Yᵢ-Ŷᵢ，是可计算、可检验的。</p><p>联系：ûᵢ是uᵢ的样本估计量——我们用残差去推断误差项的性质。</p><p>重要区别：OLS保证Σûᵢ=0（这是估计结果），但Σuᵢ=0是假设（零条件均值假设的一部分），不是必然成立的。」</p><p style="margin-top:8px"><b>得分点：</b>误差项定义(2分)+残差定义(2分)+联系(2分)+关键区别(2分)</p></div>
 <h2 id="t8">专题8：Probit与Logit模型（Binary Choice Models）</h2>
 <div style="background:#fff3e0;border:2px solid #e65100;border-radius:8px;padding:10px 14px;margin:10px 0;font-size:0.9em">
 <b>⚠️ 考试权重提示</b>：本专题考试权重极低（约2-4分），<b>建议优先学完核心专题(1/2/4/5/6/9/11/12)后再回看</b>。若时间紧迫，可直接跳到考前速记部分。
@@ -3705,7 +3854,7 @@ id="t5">
     <p><strong>(3)</strong> 能否直接用系数的比值（如0.06/0.35）比较age和educ的重要性？为什么？</p>
 
     <div class="correct-approach">
-      <h5>✅ 解答：</h5>
+      <h4>✅ 解答：</h4>
       <p><strong>(1)</strong> age (+)：年龄越大参与概率越高；kids (−)：孩子数越多参与概率越低；educ (+)：教育越高参与概率越高。</p>
       <p><strong>(2)</strong> 先计算xβ = −0.8 + 0.06×40 − 0.12×1 + 0.35×12 = −0.8 + 2.4 − 0.12 + 4.2 = 5.68</p>
       <p>φ(5.68) = (1/√(2π))·exp(−5.68²/2) ≈ 极小的值（实际上5.68已经很大了，φ≈0.000034）</p>
@@ -3732,7 +3881,7 @@ id="t5">
     <div class="priority-icon">🔥</div>
     <div class="priority-body">
       <span class="priority-tag">CORE · 核心必考</span>
-      <div class="confusion" style="background:#e8f5e9;border-color:#2e7d32"><h5>💡 简答话术模板（通用）</h5><p><b>📌 通用简答结构：</b></p><p><b>第一步</b> — 下定义：用一句话说清楚概念是什么。</p><p><b>第二步</b> — 给公式：写出相关公式或模型设定。</p><p><b>第三步</b> — 作解释：逐一解释关键符号的经济含义。</p><p><b>第四步</b> — 举例子：给一个具体场景让概念落地。</p><p><b>第五步</b> — 下结论：一句话总结，呼应问题。</p><p style="margin-top:8px"><b>得分技巧</b>：公式+解释各占50%分。</p></div>
+      <div class="confusion" style="background:#e8f5e9;border-color:#2e7d32"><h4>💡 简答话术模板（通用）</h4><p><b>📌 通用简答结构：</b></p><p><b>第一步</b> — 下定义：用一句话说清楚概念是什么。</p><p><b>第二步</b> — 给公式：写出相关公式或模型设定。</p><p><b>第三步</b> — 作解释：逐一解释关键符号的经济含义。</p><p><b>第四步</b> — 举例子：给一个具体场景让概念落地。</p><p><b>第五步</b> — 下结论：一句话总结，呼应问题。</p><p style="margin-top:8px"><b>得分技巧</b>：公式+解释各占50%分。</p></div>
 <h2 id="t9">专题9：多元线性回归假设与OLS性质（Gauss-Markov）</h2>
       <p style="margin:4px 0 0 0;font-size:0.92em;color:#555;">
         六大经典假设 · BLUE性质 · 假设违背与后果 · 诊断与修正
@@ -3947,7 +4096,7 @@ id="t5">
     <p><strong>(3)</strong> 通常报告的t统计量是否可靠？如何修正？</p>
 
     <div class="correct-approach">
-      <h5>✅ 解答：</h5>
+      <h4>✅ 解答：</h4>
       <p><strong>(1)</strong> <strong>仍然无偏</strong>。无偏性只依赖MLR.4（E(u|X)=0），不依赖同方差假设。证明：E(β̂|X) = β + (X'X)⁻¹X'E(u|X) = β。</p>
       <p><strong>(2)</strong> <strong>不是BLUE</strong>。BLUE需要MLR.1~MLR.5都成立。异方差下，虽然OLS仍线性无偏，但存在其他线性无偏估计量（如WLS）方差更小。Var(β̂<sub>OLS</sub>) ≠ σ²(X'X)⁻¹。</p>
       <p><strong>(3)</strong> <strong>不可靠</strong>。通常报告的t统计量用了错误的方差估计。应使用<strong>White/Huber稳健标准误</strong>修正。在Stata中用<code>reg y x, robust</code>；在R中用<code>coeftest(model, vcov=vcovHC)</code>。</p>
@@ -3959,7 +4108,7 @@ id="t5">
     <p>判断以下说法是否正确并说明理由：\"只要样本量足够大，即使E(u|X)≠0，OLS估计量也是一致的\"。</p>
 
     <div class="correct-approach">
-      <h5>✅ 解答：</h5>
+      <h4>✅ 解答：</h4>
       <p><strong>错误。</strong>OLS的一致性需要两个条件：① E(X'u)=0（正交条件）② rank(X'X)→∞。当E(u|X)≠0时，必然有E(X'u)≠0（因为E(X'u)=E[E(X'u|X)]=E[X'E(u|X)]），正交条件不成立，所以<strong>即使n→∞，β̂也不收敛到β</strong>。</p>
       <p>💡 大样本能解决的问题：异方差、非正态性。大样本<strong>不能</strong>解决的问题：内生性（遗漏变量、反向因果、测量误差）。</p>
     </div>
@@ -3992,7 +4141,7 @@ id="t5">
 <!-- ============================================================ -->
 <!-- TOPIC 10: 工具变量法 (OVV, CLEAN) -->
 <!-- ============================================================ -->
-<div <div class="confusion" style="background:#e8f5e9;border-color:#2e7d32"><h5>💡 简答话术模板 · OLS无偏性证明思路</h5><p><b>📌 典型简答：简要说明OLS估计量在什么条件下无偏？为什么？</b></p><p><b>话术结构：</b>① 列出条件 → ② 证明思路 → ③ 关键假设</p><p><b>示范答案：</b></p><p>「OLS估计量无偏需要满足高斯-马尔可夫假设，其中最关键的假设是零条件均值假设：E(u|X)=0，即误差项与解释变量不相关。</p><p>证明思路：将Y=β₀+β₁X+u代入β̂₁的公式，得到β̂₁=β₁+Σ(Xᵢ-Ȳ)uᵢ/SST。取条件期望后，第二项的分子中出现E(uᵢ|X)。如果E(u|X)=0，则第二项期望为零，E(β̂₁|X)=β₁，证明无偏。」</p><p style="margin-top:8px"><b>得分点：</b>列出假设(3分)+代入推导(3分)+指出外生性关键(2分)</p></div>
+<div <div class="confusion" style="background:#e8f5e9;border-color:#2e7d32"><h4>💡 简答话术模板 · OLS无偏性证明思路</h4><p><b>📌 典型简答：简要说明OLS估计量在什么条件下无偏？为什么？</b></p><p><b>话术结构：</b>① 列出条件 → ② 证明思路 → ③ 关键假设</p><p><b>示范答案：</b></p><p>「OLS估计量无偏需要满足高斯-马尔可夫假设，其中最关键的假设是零条件均值假设：E(u|X)=0，即误差项与解释变量不相关。</p><p>证明思路：将Y=β₀+β₁X+u代入β̂₁的公式，得到β̂₁=β₁+Σ(Xᵢ-Ȳ)uᵢ/SST。取条件期望后，第二项的分子中出现E(uᵢ|X)。如果E(u|X)=0，则第二项期望为零，E(β̂₁|X)=β₁，证明无偏。」</p><p style="margin-top:8px"><b>得分点：</b>列出假设(3分)+代入推导(3分)+指出外生性关键(2分)</p></div>
 id="t10" class="topic-header">
   <h2>专题10：工具变量与内生性（Instrumental Variables）</h2>
 <div style="background:#fff3e0;border:2px solid #e65100;border-radius:8px;padding:10px 14px;margin:10px 0;font-size:0.9em">
@@ -4139,7 +4288,7 @@ id="t10" class="topic-header">
 <!-- ============================================================ -->
 <!-- TOPIC 11: 面板数据模型 (CORE) -->
 <!-- ============================================================ -->
-<div <div class="confusion" style="background:#e8f5e9;border-color:#2e7d32"><h5>💡 简答话术模板（通用）</h5><p><b>📌 通用简答结构：</b></p><p><b>第一步</b> — 下定义：用一句话说清楚概念是什么。</p><p><b>第二步</b> — 给公式：写出相关公式或模型设定。</p><p><b>第三步</b> — 作解释：逐一解释关键符号的经济含义。</p><p><b>第四步</b> — 举例子：给一个具体场景让概念落地。</p><p><b>第五步</b> — 下结论：一句话总结，呼应问题。</p><p style="margin-top:8px"><b>得分技巧</b>：公式+解释各占50%分。</p></div>
+<div <div class="confusion" style="background:#e8f5e9;border-color:#2e7d32"><h4>💡 简答话术模板（通用）</h4><p><b>📌 通用简答结构：</b></p><p><b>第一步</b> — 下定义：用一句话说清楚概念是什么。</p><p><b>第二步</b> — 给公式：写出相关公式或模型设定。</p><p><b>第三步</b> — 作解释：逐一解释关键符号的经济含义。</p><p><b>第四步</b> — 举例子：给一个具体场景让概念落地。</p><p><b>第五步</b> — 下结论：一句话总结，呼应问题。</p><p style="margin-top:8px"><b>得分技巧</b>：公式+解释各占50%分。</p></div>
 id="t11" class="topic-header">
   <h2>专题11：面板数据模型（Panel Data）</h2>
   <p>Panel Data Models — Fixed Effects · Random Effects · Dynamic Panel</p>
@@ -4304,7 +4453,7 @@ id="t11" class="topic-header">
 <!-- ============================================================ -->
 <!-- TOPIC 12: 时间序列分析 (CORE) -->
 <!-- ============================================================ -->
-<div <div class="confusion" style="background:#e8f5e9;border-color:#2e7d32"><h5>💡 简答话术模板 · 固定效应vs随机效应</h5><p><b>📌 典型简答：固定效应模型和随机效应模型的区别，如何选择？</b></p><p><b>话术结构：</b>① 假设差异 → ② 估计方法 → ③ 选择标准</p><p><b>示范答案：</b></p><p>「固定效应(FE)模型不要求个体效应aᵢ与解释变量不相关，通过组内去均值消除aᵢ。</p><p>随机效应(RE)模型假设aᵢ与解释变量不相关，用GLS估计，更有效。</p><p>选择标准——Hausman检验：原假设H₀为RE成立(aᵢ与X不相关)。</p><p>若拒绝H₀，说明RE不一致，应选FE；若不拒绝，RE更有效，选RE。」</p><p style="margin-top:8px"><b>得分点：</b>FE假设(2分)+RE假设(2分)+Hausman原假设(2分)+结论(2分)</p></div>
+<div <div class="confusion" style="background:#e8f5e9;border-color:#2e7d32"><h4>💡 简答话术模板 · 固定效应vs随机效应</h4><p><b>📌 典型简答：固定效应模型和随机效应模型的区别，如何选择？</b></p><p><b>话术结构：</b>① 假设差异 → ② 估计方法 → ③ 选择标准</p><p><b>示范答案：</b></p><p>「固定效应(FE)模型不要求个体效应aᵢ与解释变量不相关，通过组内去均值消除aᵢ。</p><p>随机效应(RE)模型假设aᵢ与解释变量不相关，用GLS估计，更有效。</p><p>选择标准——Hausman检验：原假设H₀为RE成立(aᵢ与X不相关)。</p><p>若拒绝H₀，说明RE不一致，应选FE；若不拒绝，RE更有效，选RE。」</p><p style="margin-top:8px"><b>得分点：</b>FE假设(2分)+RE假设(2分)+Hausman原假设(2分)+结论(2分)</p></div>
 id="t12" class="topic-header">
   <h2>专题12：时间序列与平稳性（Time Series）</h2>
   <p>Time Series Analysis — Stationarity · ARIMA · Cointegration · Granger Causality</p>
@@ -4490,7 +4639,7 @@ id="t12" class="topic-header">
 <!-- ============================================================ -->
 <!-- TOPIC 13: 模型设定与诊断 (OVV, CLEAN) -->
 <!-- ============================================================ -->
-<div <div class="confusion" style="background:#e8f5e9;border-color:#2e7d32"><h5>💡 简答话术模板 · 伪回归解释</h5><p><b>📌 典型简答：什么是伪回归？如何避免？</b></p><p><b>话术结构：</b>① 定义 → ② 原因 → ③ 诊断 → ④ 处理</p><p><b>示范答案：</b></p><p>「伪回归是指对两个相互独立但非平稳的时间序列进行回归时，得到显著的t统计量和很高的R²，但结果毫无经济意义。</p><p>原因：非平稳序列有共同的时间趋势，导致虚假相关。</p><p>诊断方法：ADF单位根检验。若序列非平稳，不能直接回归。</p><p>处理方法：① 差分到平稳后再回归 ② 检验协整关系（若协整存在，可直接回归且结果有意义）。」</p><p style="margin-top:8px"><b>得分点：</b>定义(3分)+原因(2分)+ADF(2分)+协整(1分)</p></div>
+<div <div class="confusion" style="background:#e8f5e9;border-color:#2e7d32"><h4>💡 简答话术模板 · 伪回归解释</h4><p><b>📌 典型简答：什么是伪回归？如何避免？</b></p><p><b>话术结构：</b>① 定义 → ② 原因 → ③ 诊断 → ④ 处理</p><p><b>示范答案：</b></p><p>「伪回归是指对两个相互独立但非平稳的时间序列进行回归时，得到显著的t统计量和很高的R²，但结果毫无经济意义。</p><p>原因：非平稳序列有共同的时间趋势，导致虚假相关。</p><p>诊断方法：ADF单位根检验。若序列非平稳，不能直接回归。</p><p>处理方法：① 差分到平稳后再回归 ② 检验协整关系（若协整存在，可直接回归且结果有意义）。」</p><p style="margin-top:8px"><b>得分点：</b>定义(3分)+原因(2分)+ADF(2分)+协整(1分)</p></div>
 id="t13" class="topic-header">
   <h2>专题13：模型设定与函数形式（Model Specification）</h2>
 <div style="background:#fff3e0;border:2px solid #e65100;border-radius:8px;padding:10px 14px;margin:10px 0;font-size:0.9em">
@@ -4640,9 +4789,9 @@ id="t13" class="topic-header">
 
 </div><!-- /.container -->
 
-<div class="<div class="confusion" style="background:#e8f5e9;border-color:#2e7d32"><h5>💡 简答话术模板（通用）</h5><p><b>📌 通用简答结构：</b></p><p><b>第一步</b> — 下定义<br><b>第二步</b> — 给公式<br><b>第三步</b> — 作解释<br><b>第四步</b> — 举例子<br><b>第五步</b> — 下结论</p><p style="margin-top:8px"><b>得分技巧</b>：公式+解释各占50%分。</p></div>
+<div class="<div class="confusion" style="background:#e8f5e9;border-color:#2e7d32"><h4>💡 简答话术模板（通用）</h4><p><b>📌 通用简答结构：</b></p><p><b>第一步</b> — 下定义<br><b>第二步</b> — 给公式<br><b>第三步</b> — 作解释<br><b>第四步</b> — 举例子<br><b>第五步</b> — 下结论</p><p style="margin-top:8px"><b>得分技巧</b>：公式+解释各占50%分。</p></div>
 floating-btn">
-<button onclick="toggleAI()" title="考前5分钟速记">⏱</button>
+<button data-toggle="toggle-ai" aria-label="切换AI功能" title="考前5分钟速记">⏱</button>
 </div>
 <div class="floating-panel" id="speedPanel">
 <div class="header">⏱ 考前5分钟速记</div>
@@ -4650,39 +4799,39 @@ floating-btn">
 </div>
 </div>
 <script>
-document.addEventListener('click',function(e){var p=document.getElementById('speedPanel');if(!p.contains(e.target)&&!e.target.closest('.floating-btn button'))p&&p.classList.remove('show')});
+document.addEventListener('click',function(e){let p=document.getElementById('speedPanel');if(!p.contains(e.target)&&!e.target.closest('.floating-btn button'))p&&p.classList.remove('show')});
 </script>
 
 </div>
 <!-- AI 学习助手侧边栏 -->
 <div 
 <!-- 回到顶部 -->
-<div onclick="window.scrollTo({top:0,behavior:'smooth'})" style="position:fixed;bottom:210px;right:20px;width:44px;height:44px;border-radius:50%;background:#1a237e;color:#fff;border:none;cursor:pointer;z-index:9997;display:flex;align-items:center;justify-content:center;font-size:1.1em;box-shadow:0 4px 12px rgba(0,0,0,0.15);opacity:0.7">⬆</div>
+<div data-toggle="scrolltop" aria-label="回到顶部" style="position:fixed;bottom:210px;right:20px;width:44px;height:44px;border-radius:50%;background:#1a237e;color:#fff;border:none;cursor:pointer;z-index:107;display:flex;align-items:center;justify-content:center;font-size:1.1em;box-shadow:0 4px 12px rgba(0,0,0,0.15);opacity:0.7">⬆</div>
 
-id="aiPanel" style="position:fixed;top:60px;right:0;width:340px;max-height:90vh;background:#fff;border-radius:12px 0 0 12px;box-shadow:-4px 0 20px rgba(0,0,0,0.15);z-index:9999;display:flex;flex-direction:column;font-size:0.88em;overflow:hidden;border:1px solid #e0e0e0;border-right:none">
+id="aiPanel" style="position:fixed;top:60px;right:0;width:340px;max-height:90vh;background:#fff;border-radius:12px 0 0 12px;box-shadow:-4px 0 20px rgba(0,0,0,0.15);z-index:109;display:flex;flex-direction:column;font-size:0.88em;overflow:hidden;border:1px solid #e0e0e0;border-right:none">
 <div style="background:#1a237e;color:#fff;padding:12px 14px;display:flex;justify-content:space-between;align-items:center">
 <span style="font-weight:700;font-size:1em">🤖 AI 学习助手</span>
-<span onclick="document.getElementById('aiPanel').style.display='none'" style="cursor:pointer;font-size:1.2em;padding:0 6px">✕</span>
+<span data-toggle="close-ai-panel" aria-label="关闭AI面板" style="cursor:pointer;font-size:1.2em;padding:0 6px">✕</span>
 </div>
 <div style="padding:12px;overflow-y:auto;flex:1;display:flex;flex-direction:column;gap:8px">
 <p style="font-size:0.82em;color:#888">选中文本自动填入，或直接输入问题</p>
 <textarea id="aiq" placeholder="选中文本自动填入…" style="width:100%;height:60px;border:1px solid #ccc;border-radius:6px;padding:8px;font-size:0.88em;resize:vertical"></textarea>
 <div style="display:flex;gap:6px">
 <input id="apikey" type="password" placeholder="输入DeepSeek API Key" style="flex:1;padding:7px;border:1px solid #ccc;border-radius:6px;font-size:0.85em">
-<button onclick="askAI()" style="background:#1565c0;color:#fff;border:none;padding:7px 16px;border-radius:6px;cursor:pointer;font-weight:600;font-size:0.88em">🚀 提问</button>
+<button data-toggle="ask-ai" aria-label="向AI提问" style="background:#1565c0;color:#fff;border:none;padding:7px 16px;border-radius:6px;cursor:pointer;font-weight:600;font-size:0.88em">🚀 提问</button>
 </div>
 <div id="aires" style="background:#f5f5f5;border-radius:8px;padding:10px;min-height:80px;max-height:300px;overflow-y:auto;white-space:pre-wrap;font-size:0.85em;line-height:1.6;color:#333">💡 输入问题后点击提问</div>
 </div>
 </div>
 
 <!-- 浮动机器人按钮（一直在右下角） -->
-<div id="aiToggleBtn" onclick="var p=document.getElementById('aiPanel');p.style.display=p.style.display==='none'?'flex':'none'" style="position:fixed;bottom:150px;right:20px;width:50px;height:50px;border-radius:50%;background:#1a237e;color:#fff;border:none;cursor:pointer;z-index:9998;display:flex;align-items:center;justify-content:center;font-size:1.3em;box-shadow:0 4px 12px rgba(0,0,0,0.2)">🤖</div>
+<div id="aiToggleBtn" data-toggle="toggle-ai-panel" aria-label="切换AI面板" style="position:fixed;bottom:150px;right:20px;width:50px;height:50px;border-radius:50%;background:#1a237e;color:#fff;border:none;cursor:pointer;z-index:108;display:flex;align-items:center;justify-content:center;font-size:1.3em;box-shadow:0 4px 12px rgba(0,0,0,0.2)">🤖</div>
 
 <script>
 function askAI(){
-  var q=document.getElementById('aiq').value.trim();
-  var key=document.getElementById('apikey').value.trim();
-  var res=document.getElementById('aires');
+  let q=document.getElementById('aiq').value.trim();
+  let key=document.getElementById('apikey').value.trim();
+  let res=document.getElementById('aires');
   if(!q){res.innerText='⚠ 请先输入问题';return}
   if(!key){res.innerText='⚠ 请先输入DeepSeek API Key';return}
   res.innerText='⏳ 思考中…';
@@ -4703,8 +4852,8 @@ function askAI(){
 }
 // Auto-capture selected text
 document.addEventListener('mouseup',function(){
-  var s=window.getSelection().toString().trim();
-  if(s){var inp=document.getElementById('aiq');if(inp)inp.value=s}
+  let s=window.getSelection().toString().trim();
+  if(s){let inp=document.getElementById('aiq');if(inp)inp.value=s}
 });
 </script>
 
@@ -4714,7 +4863,7 @@ document.addEventListener('mouseup',function(){
 // For every answer/solution area across all fragment types, prepend an analysis step
 document.addEventListener('DOMContentLoaded', function() {
   // Topic-specific analysis texts
-  var topicAnalyses = {
+  let topicAnalyses = {
     1: '先判断模型是双对数、半对数(A)还是半对数(B)，再根据对应规则解释系数。注意区分近似百分比与精确百分比变化。',
     2: '先写出基准组(D=0)和比较组(D=1)的方程，再分别分析截距差异(加法项)和斜率差异(乘法项)的经济含义。',
     3: '先计算VIF或分析相关系数矩阵判断共线性严重程度。VIF>10为严重，注意F显著但t不显著的多重共线性典型症状。',
@@ -4733,7 +4882,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Find which topic this element belongs to by checking id
   function getTopicId(el) {
     while(el) {
-      for(var t=1; t<=13; t++) {
+      for(let t=1; t<=13; t++) {
         if(el.id === 't' + t) return t;
       }
       el = el.parentElement;
@@ -4742,7 +4891,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   
   // Find all answer/solution areas across all fragment types
-  var answerSelectors = [
+  let answerSelectors = [
     '.a',                // Topic 1 format
     '.answer',           // t6_9 format
     '.ai-answer',        // AI case answers
@@ -4756,18 +4905,18 @@ document.addEventListener('DOMContentLoaded', function() {
       if(el.querySelector('.step-num') && el.innerHTML.indexOf('📌 分析') >= 0) return;
       
       // Find topic id
-      var tid = getTopicId(el);
+      let tid = getTopicId(el);
       if(!tid) return;
       
-      var analysisText = topicAnalyses[tid] || '先阅读题目明确问题类型，再选择对应的计量方法，最后按步骤计算和解释。';
+      let analysisText = topicAnalyses[tid] || '先阅读题目明确问题类型，再选择对应的计量方法，最后按步骤计算和解释。';
       
       // Create analysis step
-      var analysisDiv = document.createElement('div');
+      let analysisDiv = document.createElement('div');
       analysisDiv.className = 'step';
       analysisDiv.innerHTML = '<span class="step-num">📌 分析</span><span class="step-label">[思路]</span><span class="step-text">' + analysisText + '</span>';
       
       // Insert as first step
-      var firstStep = el.querySelector('.step');
+      let firstStep = el.querySelector('.step');
       if(firstStep) {
         el.insertBefore(analysisDiv, firstStep);
       } else {
@@ -4779,16 +4928,54 @@ document.addEventListener('DOMContentLoaded', function() {
   // Also handle ordered-list style steps (Topics 2-5 format)
   document.querySelectorAll('.chow-steps ol, .bp-steps ol, .goldfeld-steps ol, .breusch-godfrey ol, .adf-steps ol').forEach(function(ol) {
     // Find the parent topic
-    var tid = getTopicId(ol);
+    let tid = getTopicId(ol);
     if(!tid) return;
     
-    var analysisText = topicAnalyses[tid] || '按步骤逐步分析。';
-    var p = document.createElement('p');
+    let analysisText = topicAnalyses[tid] || '按步骤逐步分析。';
+    let p = document.createElement('p');
     p.style.cssText = 'color:#1565c0;font-weight:600;margin:8px 0;font-size:0.9em';
     p.innerHTML = '📌 分析思路：' + analysisText;
     
     ol.parentNode.insertBefore(p, ol);
   });
+});
+</script>
+
+
+</main>
+
+<script>
+// Event delegation for all data-toggle interactions
+document.addEventListener('click', function(e) {
+  let btn = e.target.closest('[data-toggle]');
+  if (!btn) return;
+  let action = btn.getAttribute('data-toggle');
+  
+  switch (action) {
+    case 'answer':
+      let answerPanel = btn.nextElementSibling;
+      if (answerPanel && answerPanel.classList.contains('a')) {
+        answerPanel.style.display = 'block';
+        btn.style.display = 'none';
+      }
+      break;
+    case 'scrolltop':
+      window.scrollTo({top: 0, behavior: 'smooth'});
+      break;
+    case 'close-ai-panel':
+      document.getElementById('aiPanel').style.display = 'none';
+      break;
+    case 'toggle-ai-panel':
+      let p = document.getElementById('aiPanel');
+      p.style.display = p.style.display === 'none' ? 'flex' : 'none';
+      break;
+    case 'ask-ai':
+      askAI();
+      break;
+    case 'toggle-ai':
+      toggleAI();
+      break;
+  }
 });
 </script>
 
