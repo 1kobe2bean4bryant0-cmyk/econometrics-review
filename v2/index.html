@@ -4481,11 +4481,25 @@ id="t13" class="topic-header"&gt;
 </div>
 <!-- /.container -->
 <div class="confusion" style="background:#e8f5e9;border-color:#2e7d32"><h4>💡 简答话术模板（通用）</h4><p><b>📌 通用简答结构：</b></p><p><b>第一步</b> — 下定义<br/><b>第二步</b> — 给公式<br/><b>第三步</b> — 作解释<br/><b>第四步</b> — 举例子<br/><b>第五步</b> — 下结论</p><p style="margin-top:8px"><b>得分技巧</b>：公式+解释各占50%分。</p></div>
-<div class="floating-btn">
-<button onclick="var p=document.getElementById('speedPanel');p.classList.toggle('show')" style="width:56px;height:56px;border-radius:50%;background:#1a237e;color:#fff;border:none;font-size:1.3em;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,0.2)" title="考前5分钟速记">⏱</button>
+<div <div class="floating-btn" style="position:fixed;bottom:80px;right:20px;z-index:99999">
+<button onclick="var p=document.getElementById('speedPanel');p.style.display=p.style.display==='block'?'none':'block'" style="width:56px;height:56px;border-radius:50%;background:#1a237e;color:#fff;border:none;font-size:1.3em;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,0.2)" title="考前5分钟速记">⏱</button>
 </div>
-<div class="floating-panel" id="speedPanel">
-<div class="header">⏱ 考前5分钟速记</div>
+<div class="floating-panel" <div class="floating-panel" id="speedPanel" style="display:none;position:fixed;bottom:80px;right:90px;width:300px;max-height:500px;background:#fff;border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,0.2);z-index:99999;overflow:hidden;border:1px solid #e0e0e0">
+<div style="background:#1a237e;color:#fff;padding:10px 14px;font-size:0.9em;font-weight:700">⏱ 考前5分钟速记</div>
+<div style="padding:10px 14px;overflow-y:auto;font-size:0.82em;max-height:440px">
+<p style="color:#1a237e;font-weight:700;margin:0 0 6px 0;border-bottom:1px solid #1a237e;padding-bottom:4px">P0必记公式</p>
+<p style="margin:3px 0"><b>弹性</b>: lnY=+lnX = %Y/%X</p>
+<p style="margin:3px 0"><b>半弹性</b>: lnY=+X = %Y=100X</p>
+<p style="margin:3px 0"><b>VIF</b>: VIF=1/(1-R), VIF>10=严重</p>
+<p style="margin:3px 0"><b>DW</b>: d2(1-), d&lt;dL=正自相关</p>
+<p style="margin:3px 0"><b>BP检验</b>: LM=nR ~ (k)</p>
+<p style="margin:3px 0"><b>Hausman</b>: p&lt;0.05FE, p&gt;0.05RE</p>
+<p style="margin:3px 0"><b>ADF</b>: H:=(不平稳), 统计量&lt;临界值才平稳</p>
+<p style="margin:3px 0"><b>ECM</b>: 修正项系数&lt;0</p>
+<p style="margin:3px 0"><b>DID</b>: Y=+Treat+Post+(TreatPost)</p>
+<p style="margin:6px 0 0 0;border-top:1px solid #ccc;padding-top:4px;color:#c62828;font-weight:600">实证设计模板: 面板DID控制变量固定效应+平行趋势</p>
+</div>
+</div>/div>
 <div class="body" id="speedBody" style="padding:10px 14px;overflow-y:auto;font-size:0.82em">
 <p style="color:#1a237e;font-weight:700;margin:0 0 6px 0;border-bottom:1px solid #1a237e;padding-bottom:4px">🔴 P0必记公式</p>
 <p style="margin:3px 0"><b>弹性</b>: lnY=β₀+β₁lnX → β₁ = %ΔY/%ΔX</p>
