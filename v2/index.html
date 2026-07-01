@@ -1007,6 +1007,237 @@ h2[class*="ovv"], h2[class*="ovv"] * {
   #sidebarToggle { display: flex !important; }
 }
 
+
+
+/* === AUTHORITATIVE LAYOUT (v2) === */
+html, body { margin: 0; padding: 0; overflow-x: hidden; }
+
+#leftSidebar {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 220px !important;
+  height: 100vh !important;
+  background: #1a237e !important;
+  z-index: 9998 !important;
+  overflow-y: auto !important;
+  box-shadow: 2px 0 12px rgba(0,0,0,0.2) !important;
+  display: block !important;
+}
+
+.container {
+  max-width: 900px !important;
+  margin: 0 !important;
+  margin-left: 240px !important;
+  padding: 20px !important;
+  box-sizing: border-box !important;
+}
+
+@media (max-width: 768px) {
+  #leftSidebar { display: none !important; }
+  .container { margin-left: 0 !important; }
+  #sidebarToggle { display: flex !important; }
+}
+
+/* Back-to-top button below the AI panel buttons */
+#backToTop {
+  position: fixed !important;
+  bottom: 210px !important;
+  right: 20px !important;
+  z-index: 9997 !important;
+}
+
+
+/* === NORMALIZE: All fragment types → unified look === */
+
+/* Topic headers - unified */
+h2[class*="core"], h2[class*="imp"], h2[class*="ovv"],
+[class*="topic-header"],
+[class*="priority-body"] {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Topic heading color - override fragment inline styles */
+h2, h2[class] {
+  color: #fff !important;
+  padding: 15px 20px !important;
+  border-radius: 12px !important;
+  margin: 40px 0 20px !important;
+  font-size: 1.3em !important;
+}
+h2.core, h2[class*="core"] { background: #c62828 !important; }
+h2.imp, h2[class*="imp"] { background: #e65100 !important; }
+h2.ovv, h2[class*="ovv"] { background: #2e7d32 !important; }
+
+/* Remove extra nested wrappers from fragments */
+[class*="topic-header"] h2 { margin: 0 !important; }
+[class*="topic-header"] { 
+  background: transparent !important; 
+  border: none !important; 
+  padding: 0 !important; 
+  margin: 0 !important; 
+}
+
+/* Priority badges - normalize */
+.priority-box, [class*="priority-tag"] {
+  font-size: 0.78em !important;
+  padding: 3px 10px !important;
+  border-radius: 12px !important;
+  font-weight: 700 !important;
+  display: inline-block !important;
+  margin: 8px 0 !important;
+}
+
+/* Section 0/1/2 headers */
+.learn-header, [class*="section-title"], [class*="section-head"] {
+  font-size: 1.3em !important;
+  font-weight: 700 !important;
+  color: #1a237e !important;
+  margin: 30px 0 15px !important;
+  border-bottom: 3px solid #1a237e !important;
+  padding-bottom: 5px !important;
+}
+
+/* Knowledge points - all fragment types */
+.zb, [class*="kp-"], [class*="knowledge"], [class*="key-point"],
+[class*="chapter-section"] {
+  background: #fff !important;
+  border: 1px solid #e0e0e0 !important;
+  border-left: 4px solid #ff6f00 !important;
+  padding: 12px 16px !important;
+  margin: 10px 0 !important;
+  border-radius: 0 8px 8px 0 !important;
+  font-size: 0.93em !important;
+  color: #222 !important;
+  line-height: 1.8 !important;
+}
+
+/* Examples - normalize */
+.ex, [class*="case-box"], [class*="example-box"] {
+  background: #fff !important;
+  border: 1px solid #e0e0e0 !important;
+  border-radius: 12px !important;
+  padding: 18px !important;
+  margin: 20px 0 !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04) !important;
+}
+
+/* Questions - normalize all types */
+.q, [class*="question"], [class*="case-question"] {
+  background: #f5f5f5 !important;
+  border-radius: 8px !important;
+  padding: 12px 15px !important;
+  margin: 12px 0 4px !important;
+  font-weight: 600 !important;
+  color: #333 !important;
+  border-left: 4px solid #1565c0 !important;
+  font-size: 0.93em !important;
+}
+
+/* All answer areas */
+.a, [class*="answer"], [class*="solution"] {
+  background: #fafafa !important;
+  border: 1px dashed #1565c0 !important;
+  border-radius: 8px !important;
+  padding: 12px !important;
+  margin: 8px 0 15px !important;
+  color: #222 !important;
+}
+
+/* Steps */
+.step {
+  display: flex !important;
+  align-items: flex-start !important;
+  padding: 5px 0 !important;
+  border-bottom: 1px solid #eee !important;
+  font-size: 0.9em !important;
+}
+.step:last-child { border-bottom: none !important; }
+.step-num { min-width: 52px !important; font-weight: 700 !important; color: #1565c0 !important; }
+.step-label { min-width: 60px !important; color: #e65100 !important; font-weight: 600 !important; font-size: 0.85em !important; }
+.step-text { flex: 1 !important; color: #222 !important; }
+
+/* Confusion tables */
+.confusion, [class*="confusion"] {
+  background: #fff3e0 !important;
+  border: 1px solid #ffe0b2 !important;
+  border-radius: 10px !important;
+  padding: 14px !important;
+  margin: 18px 0 !important;
+  color: #222 !important;
+}
+.confusion table, .confusion td, .confusion th { color: #222 !important; }
+.confusion h5 { color: #e65100 !important; margin-bottom: 8px !important; }
+
+/* Speed boxes - unify */
+.speed-box, [class*="speed"] {
+  background: #e8eaf6 !important;
+  border: 2px solid #1a237e !important;
+  border-radius: 10px !important;
+  padding: 14px !important;
+  margin: 20px 0 !important;
+  color: #222 !important;
+}
+
+/* Short-answer template boxes */
+[class*="confusion"][style*="#e8f5e9"],
+.confusion[style*="background:#e8f5e9"] {
+  background: #e8f5e9 !important;
+  border-color: #2e7d32 !important;
+  color: #222 !important;
+}
+
+/* Weight boxes */
+.weight-box, [class*="weight"] {
+  background: #fff9c4 !important;
+  border: 1px solid #f9a825 !important;
+  border-radius: 8px !important;
+  padding: 10px 14px !important;
+  margin: 10px 0 !important;
+  display: inline-block !important;
+  font-size: 0.88em !important;
+  color: #222 !important;
+}
+
+/* CLEAN warning boxes */
+[style*="background:#fff3e0"][style*="border:2px solid #e65100"] {
+  color: #222 !important;
+}
+[style*="background:#fff3e0"] b {
+  color: #e65100 !important;
+}
+
+/* Buttons - unify */
+.s, .s-btn, button.s, button[class*="btn"] {
+  background: #1565c0 !important;
+  color: #fff !important;
+  border: none !important;
+  padding: 8px 18px !important;
+  border-radius: 6px !important;
+  cursor: pointer !important;
+  font-size: 0.9em !important;
+  margin: 5px 0 !important;
+}
+
+/* Force ALL text to be dark unless on dark bg */
+body, body * { color: #222; }
+h1, h1 * { color: #1a237e !important; }
+h2, h2 * { color: #fff !important; }
+h2.core, h2.imp, h2.ovv { color: #fff !important; }
+
+/* Fix labels and badges */
+.tag-teacher { background: #e3f2fd !important; color: #1565c0 !important; }
+.tag-ai { background: #fce4ec !important; color: #c62828 !important; }
+.tag-single { background: #fff8e1 !important; color: #e65100 !important; }
+.tag-judge { background: #f3e5f5 !important; color: #6a1b9a !important; }
+.tag-short { background: #e8f5e9 !important; color: #2e7d32 !important; }
+.tag-case { background: #ffebee !important; color: #c62828 !important; }
+
+/* Table cells */
+td, th { color: #222 !important; padding: 8px !important; }
 </style>
 </head><body>
 <!-- 左侧导航侧栏 -->
@@ -1095,53 +1326,53 @@ document.querySelectorAll('#leftSidebar a').forEach(function(a){a.addEventListen
 <a href="#t13">📖 专题13：模型设定与函数形式</a>
 </div>
 </div>
-id="t1"><h2 class="core">专题1：对数模型与参数解释（Logarithmic Models）</h2><span class="priority-box core">🔴 核心专题 ★★★★★</span><div class="clr"></div><p class="ref">📖 第2章(简单回归)、第4章(多元回归分析：推断)</p><div class="core-box"><strong>📌 核心内容</strong><br>双对数模型中斜率参数表示<strong>弹性</strong>；半对数模型中参数表示<strong>增长率或半弹性</strong>。Cobb-Douglas函数取对数后，截距的指数为效率参数A。</div><div class="weight-box">🎯 考试权重：★★★☆☆（案例分析高频）<br>📝 单选常考弹性解释 · ✍ 简答常考Cobb-Douglas变换 · 📋 案例常考工资方程综合</div><div class="learn-header">📖 第0节 · 学习前的准备</div><div class="zb"><b>0.1 什么是回归方程？</b><br>计量最常见的工作：用原因预测结果。<br><b>公式</b>：Y = β₀ + β₁X + u<br>· Y=结果(被解释变量) · X=原因(解释变量) · β₁=斜率：X↑1单位→Y平均变化β₁ · β₀=截距 · u=误差项</div><div class="zb"><b>0.2 什么是自然对数ln？</b><br>① ln(A×B)=lnA+lnB（乘法变加法）　② ln(X^k)=k·lnX　③ <b>关键</b>：ΔlnX ≈ ΔX/X（百分比变化）<br>ln(1.05)≈0.05=5%——对数的变化量≈原变量的百分比变化</div><div class="zb"><b>0.3 什么时候该取对数？</b><br>· 变量是正数且右偏（如工资、收入）<br>· 想解释「百分比变化」而非「绝对变化」<br>· 变量之间可能是乘法关系（如Cobb-Douglas生产函数）</div><div class="learn-header">📖 第1节 · 核心知识点精讲</div><div class="exam-marker-group"><span class="exam-marker tag-single">单选</span> <span class="exam-marker tag-judge">判断</span> <span class="exam-marker tag-short">简答</span> <span class="exam-marker tag-case">案例</span> 本节内容覆盖全部题型</div><div class="zb"><b>1.1 双对数模型——系数是弹性</b> <span class="exam-marker tag-single">单选</span> <span class="exam-marker tag-case">案例</span><br>形式：<b>lnY = β₀ + β₁lnX + u</b><br>β₁叫<b>弹性</b>：X变化1%，Y变化β₁%。<br><b>推导</b>：ΔlnY≈β₁·ΔlnX，ΔlnY≈ΔY/Y，ΔX/X≈1%时ΔY/Y≈β₁·1%=β₁%。<br><b>简单记</b>：两边都有ln → 百分比对百分比</div><div class="zb"><b>1.2 半对数模型(A)——lnY对X</b> <span class="exam-marker tag-single">单选</span> <span class="exam-marker tag-judge">判断</span> <span class="exam-marker tag-short">简答</span><br>形式：<b>lnY = β₀ + β₁X + u</b><br>β₁×100%叫<b>半弹性</b>：X↑1单位→Y变化约(β₁×100)%。<br><b>例子</b>：ln(工资)=0.584+0.083×educ → 多读1年书工资增约8.3%<br>⚠ <b>精确公式</b>：%ΔY=100×[exp(β₁ΔX)-1]</div><div class="zb"><b>1.3 半对数模型(B)——Y对lnX</b> <span class="exam-marker tag-single">单选</span> <span class="exam-marker tag-judge">判断</span><br>形式：<b>Y = β₀ + β₁lnX + u</b><br>β₁/100的含义：X变化1%，Y变化β₁/100个单位。</div><div class="zb"><b>1.4 Cobb-Douglas生产函数变换</b> <span class="exam-marker tag-short">简答</span> <span class="exam-marker tag-case">案例</span><br>原始：Y = A·K^α·L^β·e^u → lnY=lnA+αlnK+βlnL+u<br>α=资本弹性，β=劳动弹性。Â = e^{截距}</div><div class="confusion"><h5>⚠ 易混淆辨析：对数模型形式</h5><table><tr><th>概念A</th><th>概念B</th><th>核心区别</th></tr><tr><td>lnY = β₀ + β₁lnX + u</td><td>双对数模型</td><td>系数β₁=弹性：%对%</td></tr><tr><td>lnY = β₀ + β₁X + u</td><td>半对数模型(A)</td><td>系数β₁×100%=增长率：单位对%</td></tr><tr><td>Y = β₀ + β₁lnX + u</td><td>半对数模型(B)</td><td>系数β₁/100=半弹性：%对单位</td></tr></table></div><div class="learn-header">📖 第2节 · 例题精讲与案例分析</div><p style='font-size:0.9em;color:#666;margin:10px 0'>以下为教师给出的教材例题：</p><div class="ex"><h4>📝 1.1 工资方程（教师原题）</h4><p>$$\ln (wage)=0.584+0.083 educ +0.036 exper +0.003 exper^{2}$$</p><p class="d">wage=小时工资(USD)，educ=教育年数，exper=工作年数</p><div class="q"><span class="tag tag-teacher">📖 教师原题</span> <span class="exam-marker tag-single">单选</span> <span class="exam-marker tag-judge">判断</span> (1) 解释educ系数0.083的含义</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示详细解答</button><div class="a">
+id="t1"><h2 class="core">专题1：对数模型与参数解释（Logarithmic Models）</h2><span class="priority-box core">🔴 核心专题 ★★★★★</span><div class="clr"></div><p class="ref">📖 第2章(简单回归)、第4章(多元回归分析：推断)</p><div class="core-box"><strong>📌 核心内容</strong><br>双对数模型中斜率参数表示<strong>弹性</strong>；半对数模型中参数表示<strong>增长率或半弹性</strong>。Cobb-Douglas函数取对数后，截距的指数为效率参数A。</div><div class="weight-box">🎯 考试权重：★★★☆☆（案例分析高频）<br>📝 单选常考弹性解释 · ✍ 简答常考Cobb-Douglas变换 · 📋 案例常考工资方程综合</div><div class="learn-header">📖 第0节 · 学习前的准备</div><div class="zb"><b>0.1 什么是回归方程？</b><br>计量最常见的工作：用原因预测结果。<br><b>公式</b>：Y = β₀ + β₁X + u<br>· Y=结果(被解释变量) · X=原因(解释变量) · β₁=斜率：X↑1单位→Y平均变化β₁ · β₀=截距 · u=误差项</div><div class="zb"><b>0.2 什么是自然对数ln？</b><br>① ln(A×B)=lnA+lnB（乘法变加法）　② ln(X^k)=k·lnX　③ <b>关键</b>：ΔlnX ≈ ΔX/X（百分比变化）<br>ln(1.05)≈0.05=5%——对数的变化量≈原变量的百分比变化</div><div class="zb"><b>0.3 什么时候该取对数？</b><br>· 变量是正数且右偏（如工资、收入）<br>· 想解释「百分比变化」而非「绝对变化」<br>· 变量之间可能是乘法关系（如Cobb-Douglas生产函数）</div><div class="learn-header">📖 第1节 · 核心知识点精讲</div><div class="exam-marker-group"><span class="exam-marker tag-single">单选</span> <span class="exam-marker tag-judge">判断</span> <span class="exam-marker tag-short">简答</span> <span class="exam-marker tag-case">案例</span> 本节内容覆盖全部题型</div><div class="zb"><b>1.1 双对数模型——系数是弹性</b> <span class="exam-marker tag-single">单选</span> <span class="exam-marker tag-case">案例</span><br>形式：<b>lnY = β₀ + β₁lnX + u</b><br>β₁叫<b>弹性</b>：X变化1%，Y变化β₁%。<br><b>推导</b>：ΔlnY≈β₁·ΔlnX，ΔlnY≈ΔY/Y，ΔX/X≈1%时ΔY/Y≈β₁·1%=β₁%。<br><b>简单记</b>：两边都有ln → 百分比对百分比</div><div class="zb"><b>1.2 半对数模型(A)——lnY对X</b> <span class="exam-marker tag-single">单选</span> <span class="exam-marker tag-judge">判断</span> <span class="exam-marker tag-short">简答</span><br>形式：<b>lnY = β₀ + β₁X + u</b><br>β₁×100%叫<b>半弹性</b>：X↑1单位→Y变化约(β₁×100)%。<br><b>例子</b>：ln(工资)=0.584+0.083×educ → 多读1年书工资增约8.3%<br>⚠ <b>精确公式</b>：%ΔY=100×[exp(β₁ΔX)-1]</div><div class="zb"><b>1.3 半对数模型(B)——Y对lnX</b> <span class="exam-marker tag-single">单选</span> <span class="exam-marker tag-judge">判断</span><br>形式：<b>Y = β₀ + β₁lnX + u</b><br>β₁/100的含义：X变化1%，Y变化β₁/100个单位。</div><div class="zb"><b>1.4 Cobb-Douglas生产函数变换</b> <span class="exam-marker tag-short">简答</span> <span class="exam-marker tag-case">案例</span><br>原始：Y = A·K^α·L^β·e^u → lnY=lnA+αlnK+βlnL+u<br>α=资本弹性，β=劳动弹性。Â = e^{截距}</div><div class="confusion"><h5>⚠ 易混淆辨析：对数模型形式</h5><table><tr><th>概念A</th><th>概念B</th><th>核心区别</th></tr><tr><td>lnY = β₀ + β₁lnX + u</td><td>双对数模型</td><td>系数β₁=弹性：%对%</td></tr><tr><td>lnY = β₀ + β₁X + u</td><td>半对数模型(A)</td><td>系数β₁×100%=增长率：单位对%</td></tr><tr><td>Y = β₀ + β₁lnX + u</td><td>半对数模型(B)</td><td>系数β₁/100=半弹性：%对单位</td></tr></table></div><div class="learn-header">📖 第2节 · 例题精讲与案例分析</div><p style='font-size:0.9em;color:#666;margin:10px 0'>以下为教师给出的教材例题：</p><div class="ex"><h4>📝 1.1 工资方程（教师原题）</h4><p>$$\ln (wage)=0.584+0.083 educ +0.036 exper +0.003 exper^{2}$$</p><p class="d">wage=小时工资(USD)，educ=教育年数，exper=工作年数</p><div class="q"><span class="tag tag-teacher">📖 教师原题</span> <span class="exam-marker tag-single">单选</span> <span class="exam-marker tag-judge">判断</span> (1) 解释educ系数0.083的含义</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示详细解答</button><div class="a"><div class="step"><span class="step-num">📌 分析</span><span class="step-label">[思路]</span><span class="step-text">本题是综合案例分析。先整体阅读回归输出表，识别模型形式和各系数的统计显著性，再逐问分析。注意把多个知识点串联起来。</span></div>
 <div class="step"><span class="step-num">步骤1</span><span class="step-label">[判断]</span><span class="step-text">半对数模型(lnY对X)，系数×100%=变化的百分比</span></div>
 <div class="step"><span class="step-num">步骤2</span><span class="step-label">[计算]</span><span class="step-text">0.083×100%=8.3%</span></div>
 <div class="step"><span class="step-num">步骤3</span><span class="step-label">[结论]</span><span class="step-text">教育每多1年，工资增长约8.3%</span></div>
-</div><div class="q"><span class="tag tag-teacher">📖 教师原题</span> <span class="exam-marker tag-single">单选</span> <span class="exam-marker tag-case">案例</span> (2) 教育从12年到16年，工资变化百分比？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示详细解答</button><div class="a">
+</div><div class="q"><span class="tag tag-teacher">📖 教师原题</span> <span class="exam-marker tag-single">单选</span> <span class="exam-marker tag-case">案例</span> (2) 教育从12年到16年，工资变化百分比？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示详细解答</button><div class="a"><div class="step"><span class="step-num">📌 分析</span><span class="step-label">[思路]</span><span class="step-text">本题是综合案例分析。先整体阅读回归输出表，识别模型形式和各系数的统计显著性，再逐问分析。注意把多个知识点串联起来。</span></div>
 <div class="step"><span class="step-num">步骤1</span><span class="step-label">[变化量]</span><span class="step-text">Δeduc=16-12=4</span></div>
 <div class="step"><span class="step-num">步骤2</span><span class="step-label">[近似]</span><span class="step-text">0.083×4×100%=33.2%</span></div>
 <div class="step"><span class="step-num">步骤3</span><span class="step-label">[精确]</span><span class="step-text">exp(0.083×4)-1=exp(0.332)-1≈39.37%</span></div>
 <div class="step"><span class="step-num">步骤4</span><span class="step-label">[结论]</span><span class="step-text">变化跨度大时精确算法更准</span></div>
-</div><div class="q"><span class="tag tag-teacher">📖 教师原题</span> <span class="exam-marker tag-short">简答</span> <span class="exam-marker tag-case">案例</span> (3) 工作几年时工资最高？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示详细解答</button><div class="a">
+</div><div class="q"><span class="tag tag-teacher">📖 教师原题</span> <span class="exam-marker tag-short">简答</span> <span class="exam-marker tag-case">案例</span> (3) 工作几年时工资最高？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示详细解答</button><div class="a"><div class="step"><span class="step-num">📌 分析</span><span class="step-label">[思路]</span><span class="step-text">本题是综合案例分析。先整体阅读回归输出表，识别模型形式和各系数的统计显著性，再逐问分析。注意把多个知识点串联起来。</span></div>
 <div class="step"><span class="step-num">步骤1</span><span class="step-label">[思路]</span><span class="step-text">最高点→导数=0</span></div>
 <div class="step"><span class="step-num">步骤2</span><span class="step-label">[求导]</span><span class="step-text">∂ln(wage)/∂exper=0.036+2×0.003×exper=0.036+0.006×exper</span></div>
 <div class="step"><span class="step-num">步骤3</span><span class="step-label">[令=0]</span><span class="step-text">0.036+0.006×exper=0 → exper=-6（不可能）</span></div>
 <div class="step"><span class="step-num">步骤4</span><span class="step-label">[结论]</span><span class="step-text">二次项系数应为负才能产生倒U型，此处系数为正→工资随经验一直上升</span></div>
-</div></div><div class="ex"><h4>📝 1.2 Cobb-Douglas生产函数（教师原题）</h4><p>$$\ln\hat{Y}=1.845+0.512\ln K+0.398\ln L,\ R^{2}=0.96,\ n=30$$</p><div class="q"><span class="tag tag-teacher">📖 教师原题</span> <span class="exam-marker tag-single">单选</span> <span class="exam-marker tag-case">案例</span> (1) 求A的估计值</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示详细解答</button><div class="a">
+</div></div><div class="ex"><h4>📝 1.2 Cobb-Douglas生产函数（教师原题）</h4><p>$$\ln\hat{Y}=1.845+0.512\ln K+0.398\ln L,\ R^{2}=0.96,\ n=30$$</p><div class="q"><span class="tag tag-teacher">📖 教师原题</span> <span class="exam-marker tag-single">单选</span> <span class="exam-marker tag-case">案例</span> (1) 求A的估计值</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示详细解答</button><div class="a"><div class="step"><span class="step-num">📌 分析</span><span class="step-label">[思路]</span><span class="step-text">本题是综合案例分析。先整体阅读回归输出表，识别模型形式和各系数的统计显著性，再逐问分析。注意把多个知识点串联起来。</span></div>
 <div class="step"><span class="step-num">步骤1</span><span class="step-label">[识别]</span><span class="step-text">截距1.845=lnÂ</span></div>
 <div class="step"><span class="step-num">步骤2</span><span class="step-label">[计算]</span><span class="step-text">Â=e^{1.845}≈6.33</span></div>
-</div><div class="q"><span class="tag tag-teacher">📖 教师原题</span> <span class="exam-marker tag-judge">判断</span> <span class="exam-marker tag-short">简答</span> (2) 检验规模报酬不变H₀:α+β=1</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示详细解答</button><div class="a">
+</div><div class="q"><span class="tag tag-teacher">📖 教师原题</span> <span class="exam-marker tag-judge">判断</span> <span class="exam-marker tag-short">简答</span> (2) 检验规模报酬不变H₀:α+β=1</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示详细解答</button><div class="a"><div class="step"><span class="step-num">📌 分析</span><span class="step-label">[思路]</span><span class="step-text">本题是综合案例分析。先整体阅读回归输出表，识别模型形式和各系数的统计显著性，再逐问分析。注意把多个知识点串联起来。</span></div>
 <div class="step"><span class="step-num">步骤1</span><span class="step-label">[计算]</span><span class="step-text">α̂+β̂=0.512+0.398=0.910</span></div>
 <div class="step"><span class="step-num">步骤2</span><span class="step-label">[判断]</span><span class="step-text">样本点估计呈递减。正式检验需标准误：t=(0.910-1)/se</span></div>
-</div><div class="q"><span class="tag tag-teacher">📖 教师原题</span> <span class="exam-marker tag-single">单选</span> <span class="exam-marker tag-judge">判断</span> (3) α和β含义</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示详细解答</button><div class="a">
+</div><div class="q"><span class="tag tag-teacher">📖 教师原题</span> <span class="exam-marker tag-single">单选</span> <span class="exam-marker tag-judge">判断</span> (3) α和β含义</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示详细解答</button><div class="a"><div class="step"><span class="step-num">📌 分析</span><span class="step-label">[思路]</span><span class="step-text">本题是综合案例分析。先整体阅读回归输出表，识别模型形式和各系数的统计显著性，再逐问分析。注意把多个知识点串联起来。</span></div>
 <div class="step"><span class="step-num">步骤1</span><span class="step-label">[α]</span><span class="step-text">0.512=资本弹性：资本↑1%→产出↑0.512%</span></div>
 <div class="step"><span class="step-num">步骤2</span><span class="step-label">[β]</span><span class="step-text">0.398=劳动弹性：劳动↑1%→产出↑0.398%</span></div>
-</div></div><div class="ex"><h4>📝 1.3 销售额广告（教师原题）</h4><p>$$\ln S=3.2+0.45\ln A$$</p><div class="q"><span class="tag tag-teacher">📖 教师原题</span> <span class="exam-marker tag-single">单选</span> <span class="exam-marker tag-judge">判断</span> (1) 广告↑1%，销售额↑？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示详细解答</button><div class="a">
+</div></div><div class="ex"><h4>📝 1.3 销售额广告（教师原题）</h4><p>$$\ln S=3.2+0.45\ln A$$</p><div class="q"><span class="tag tag-teacher">📖 教师原题</span> <span class="exam-marker tag-single">单选</span> <span class="exam-marker tag-judge">判断</span> (1) 广告↑1%，销售额↑？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示详细解答</button><div class="a"><div class="step"><span class="step-num">📌 分析</span><span class="step-label">[思路]</span><span class="step-text">本题是综合案例分析。先整体阅读回归输出表，识别模型形式和各系数的统计显著性，再逐问分析。注意把多个知识点串联起来。</span></div>
 <div class="step"><span class="step-num">步骤1</span><span class="step-label">[识别]</span><span class="step-text">双对数模型，系数0.45=弹性</span></div>
 <div class="step"><span class="step-num">步骤2</span><span class="step-label">[结论]</span><span class="step-text">广告↑1%→销售额↑0.45%</span></div>
-</div><div class="q"><span class="tag tag-teacher">📖 教师原题</span> <span class="exam-marker tag-single">单选</span> (2) 100万→110万，销售额变化？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示详细解答</button><div class="a">
+</div><div class="q"><span class="tag tag-teacher">📖 教师原题</span> <span class="exam-marker tag-single">单选</span> (2) 100万→110万，销售额变化？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示详细解答</button><div class="a"><div class="step"><span class="step-num">📌 分析</span><span class="step-label">[思路]</span><span class="step-text">本题是综合案例分析。先整体阅读回归输出表，识别模型形式和各系数的统计显著性，再逐问分析。注意把多个知识点串联起来。</span></div>
 <div class="step"><span class="step-num">步骤1</span><span class="step-label">[变化率]</span><span class="step-text">(110-100)/100=10%</span></div>
 <div class="step"><span class="step-num">步骤2</span><span class="step-label">[计算]</span><span class="step-text">0.45×10%=4.5%</span></div>
-</div><div class="q"><span class="tag tag-teacher">📖 教师原题</span> <span class="exam-marker tag-judge">判断</span> <span class="exam-marker tag-short">简答</span> (3) A=0时销售额为正？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示详细解答</button><div class="a">
+</div><div class="q"><span class="tag tag-teacher">📖 教师原题</span> <span class="exam-marker tag-judge">判断</span> <span class="exam-marker tag-short">简答</span> (3) A=0时销售额为正？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示详细解答</button><div class="a"><div class="step"><span class="step-num">📌 分析</span><span class="step-label">[思路]</span><span class="step-text">本题是综合案例分析。先整体阅读回归输出表，识别模型形式和各系数的统计显著性，再逐问分析。注意把多个知识点串联起来。</span></div>
 <div class="step"><span class="step-num">步骤1</span><span class="step-label">[分析]</span><span class="step-text">A=0→lnA无定义</span></div>
 <div class="step"><span class="step-num">步骤2</span><span class="step-label">[结论]</span><span class="step-text">模型本身不能预测A=0的情况（外推问题）</span></div>
 </div></div><p style='font-size:0.9em;color:#c62828;margin:15px 0 5px'>以下为AI编拟的综合案例分析（模拟考试第四大题形式）：</p><div class="ex"><h4>📝 1.4 【✏️ 综合案例分析】工资决定方程回归输出</h4><p class="d">某研究者收集了500名劳动者的数据，用OLS估计了以下工资方程：
 $$\ln(wage)=0.420+0.092\,educ+0.045\,exper-0.001\,exper^2+0.035\,female+0.015\,(female\cdot educ)$$
-其中female=1女0男。回归R²=0.312，n=500。</p><div class="q"><span class="tag tag-ai">✏️ AI编拟综合案例</span> <span class="exam-marker tag-single">单选</span> <span class="exam-marker tag-short">简答</span> (1) 解释educ的系数0.092。如果改用wage对educ做回归（不取对数），系数会有什么不同？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示详细解答</button><div class="a">
+其中female=1女0男。回归R²=0.312，n=500。</p><div class="q"><span class="tag tag-ai">✏️ AI编拟综合案例</span> <span class="exam-marker tag-single">单选</span> <span class="exam-marker tag-short">简答</span> (1) 解释educ的系数0.092。如果改用wage对educ做回归（不取对数），系数会有什么不同？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示详细解答</button><div class="a"><div class="step"><span class="step-num">📌 分析</span><span class="step-label">[思路]</span><span class="step-text">本题是综合案例分析。先整体阅读回归输出表，识别模型形式和各系数的统计显著性，再逐问分析。注意把多个知识点串联起来。</span></div>
 <div class="step"><span class="step-num">步骤1</span><span class="step-label">[第1问]</span><span class="step-text">半对数模型：0.092×100%=9.2%。教育每多1年，工资增约9.2%</span></div>
 <div class="step"><span class="step-num">步骤2</span><span class="step-label">[第2问]</span><span class="step-text">水平模型系数是「元/年」而非「%/年」。通常取对数后系数更稳定（缓解异方差）</span></div>
-</div><div class="q"><span class="tag tag-ai">✏️ AI编拟综合案例</span> <span class="exam-marker tag-short">简答</span> <span class="exam-marker tag-case">案例</span> (2) female的系数0.035和交乘项female×educ的系数0.015分别代表什么？男性的工资方程是什么？女性的呢？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示详细解答</button><div class="a">
+</div><div class="q"><span class="tag tag-ai">✏️ AI编拟综合案例</span> <span class="exam-marker tag-short">简答</span> <span class="exam-marker tag-case">案例</span> (2) female的系数0.035和交乘项female×educ的系数0.015分别代表什么？男性的工资方程是什么？女性的呢？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示详细解答</button><div class="a"><div class="step"><span class="step-num">📌 分析</span><span class="step-label">[思路]</span><span class="step-text">本题是综合案例分析。先整体阅读回归输出表，识别模型形式和各系数的统计显著性，再逐问分析。注意把多个知识点串联起来。</span></div>
 <div class="step"><span class="step-num">步骤1</span><span class="step-label">[男性]</span><span class="step-text">female=0 → ln(wage)=0.420+0.092educ+0.045exper-0.001exper²</span></div>
 <div class="step"><span class="step-num">步骤2</span><span class="step-label">[女性]</span><span class="step-text">female=1 → ln(wage)=(0.420+0.035)+(0.092+0.015)educ+0.045exper-0.001exper²</span></div>
 <div class="step"><span class="step-num">步骤3</span><span class="step-label">[β_female]</span><span class="step-text">女性在截距上多3.5%（但t检验可能不显著，取决于标准误）</span></div>
 <div class="step"><span class="step-num">步骤4</span><span class="step-label">[β_interact]</span><span class="step-text">女性教育回报率比男性高1.5%/年（若显著，说明存在性别斜率差异）</span></div>
-</div><div class="q"><span class="tag tag-ai">✏️ AI编拟综合案例</span> <span class="exam-marker tag-judge">判断</span> <span class="exam-marker tag-short">简答</span> <span class="exam-marker tag-case">案例</span> (3) 研究者怀疑model存在异方差。请设计检验方案，并说明如果存在应如何处理。</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示详细解答</button><div class="a">
+</div><div class="q"><span class="tag tag-ai">✏️ AI编拟综合案例</span> <span class="exam-marker tag-judge">判断</span> <span class="exam-marker tag-short">简答</span> <span class="exam-marker tag-case">案例</span> (3) 研究者怀疑model存在异方差。请设计检验方案，并说明如果存在应如何处理。</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示详细解答</button><div class="a"><div class="step"><span class="step-num">📌 分析</span><span class="step-label">[思路]</span><span class="step-text">本题是综合案例分析。先整体阅读回归输出表，识别模型形式和各系数的统计显著性，再逐问分析。注意把多个知识点串联起来。</span></div>
 <div class="step"><span class="step-num">步骤1</span><span class="step-label">[检验]</span><span class="step-text">BP检验：先OLS得残差û，再回归û²对所有X，LM=n·R²_û ~ χ²(5)</span></div>
 <div class="step"><span class="step-num">步骤2</span><span class="step-label">[判断]</span><span class="step-text">若LM>临界值→拒绝同方差</span></div>
 <div class="step"><span class="step-num">步骤3</span><span class="step-label">[处理]</span><span class="step-text">① 使用异方差稳健标准误(White/HC) ② 若已知异方差形式可用WLS</span></div>
-</div><div class="q"><span class="tag tag-ai">✏️ AI编拟综合案例</span> <span class="exam-marker tag-judge">判断</span> <span class="exam-marker tag-case">案例</span> (4) 该模型R²=0.312，是否说明模型很差？为什么？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示详细解答</button><div class="a">
+</div><div class="q"><span class="tag tag-ai">✏️ AI编拟综合案例</span> <span class="exam-marker tag-judge">判断</span> <span class="exam-marker tag-case">案例</span> (4) 该模型R²=0.312，是否说明模型很差？为什么？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示详细解答</button><div class="a"><div class="step"><span class="step-num">📌 分析</span><span class="step-label">[思路]</span><span class="step-text">本题是综合案例分析。先整体阅读回归输出表，识别模型形式和各系数的统计显著性，再逐问分析。注意把多个知识点串联起来。</span></div>
 <div class="step"><span class="step-num">步骤1</span><span class="step-label">[分析]</span><span class="step-text">横截面微观数据的R²通常在0.1-0.4之间，0.312属正常</span></div>
 <div class="step"><span class="step-num">步骤2</span><span class="step-label">[判断]</span><span class="step-text">关键是系数显著性（t/F检验）和理论一致性，而非R²高低</span></div>
 <div class="step"><span class="step-num">步骤3</span><span class="step-label">[结论]</span><span class="step-text">不能说模型很差，需结合其他诊断统计量综合判断</span></div>
@@ -4130,6 +4361,90 @@ function askAI(){
 document.addEventListener('mouseup',function(){
   var s=window.getSelection().toString().trim();
   if(s){var inp=document.getElementById('aiq');if(inp)inp.value=s}
+});
+</script>
+
+
+<script>
+// Universal Analysis Injector - runs on page load
+// For every answer/solution area across all fragment types, prepend an analysis step
+document.addEventListener('DOMContentLoaded', function() {
+  // Topic-specific analysis texts
+  var topicAnalyses = {
+    1: '先判断模型是双对数、半对数(A)还是半对数(B)，再根据对应规则解释系数。注意区分近似百分比与精确百分比变化。',
+    2: '先写出基准组(D=0)和比较组(D=1)的方程，再分别分析截距差异(加法项)和斜率差异(乘法项)的经济含义。',
+    3: '先计算VIF或分析相关系数矩阵判断共线性严重程度。VIF>10为严重，注意F显著但t不显著的多重共线性典型症状。',
+    4: '先通过残差图或BP/White检验确认异方差是否存在，再选择处理方法——已知形式用WLS，未知形式用稳健标准误。',
+    5: '先计算DW统计量并与dL/dU临界值比较。d<dL为正自相关，d>dU为无自相关。ρ̂≈1-d/2估计自相关强度。',
+    6: '先确定检验类型（整体显著性/约束检验），再写出对应F统计量公式。注意区分F检验和t检验的适用场景。',
+    7: '先明确误差项是总体概念不可观测，残差是样本概念可计算。从定义、性质和OLS一阶条件三个角度对比分析。',
+    8: '先确定用Probit还是Logit，再计算线性指数Xβ的值，然后通过相应CDF转换为概率。注意边际效应=β_j×PDF。',
+    9: '先列出高斯-马尔可夫六大假设，再分析哪个假设保证什么性质。无偏性靠E(u|X)=0，有效性靠同方差+无自相关。',
+    10: '先判断内生性来源，再检查工具变量是否满足相关性(Cor(Z,X)≠0)和外生性(Cor(Z,u)=0)两个条件。',
+    11: '先判断面板数据结构，再通过Hausman检验选择FE或RE。FE不要求a_i与X不相关，但无法估计不随时间变化的变量。',
+    12: '先做ADF单位根检验判断平稳性。非平稳序列不能直接回归；若I(1)序列存在协整关系，可建立ECM模型。',
+    13: '先判断问题类型——遗漏变量导致有偏，无关变量导致方差增大但不偏，测量误差导致衰减偏误。',
+  };
+  
+  // Find which topic this element belongs to by checking id
+  function getTopicId(el) {
+    while(el) {
+      for(var t=1; t<=13; t++) {
+        if(el.id === 't' + t) return t;
+      }
+      el = el.parentElement;
+    }
+    return null;
+  }
+  
+  // Find all answer/solution areas across all fragment types
+  var answerSelectors = [
+    '.a',                // Topic 1 format
+    '.answer',           // t6_9 format
+    '.ai-answer',        // AI case answers
+    '.solution',         // generic
+    '[class*="answer"]',  // any class containing 'answer'
+  ];
+  
+  answerSelectors.forEach(function(sel) {
+    document.querySelectorAll(sel).forEach(function(el) {
+      // Check if already has analysis
+      if(el.querySelector('.step-num') && el.innerHTML.indexOf('📌 分析') >= 0) return;
+      
+      // Find topic id
+      var tid = getTopicId(el);
+      if(!tid) return;
+      
+      var analysisText = topicAnalyses[tid] || '先阅读题目明确问题类型，再选择对应的计量方法，最后按步骤计算和解释。';
+      
+      // Create analysis step
+      var analysisDiv = document.createElement('div');
+      analysisDiv.className = 'step';
+      analysisDiv.innerHTML = '<span class="step-num">📌 分析</span><span class="step-label">[思路]</span><span class="step-text">' + analysisText + '</span>';
+      
+      // Insert as first step
+      var firstStep = el.querySelector('.step');
+      if(firstStep) {
+        el.insertBefore(analysisDiv, firstStep);
+      } else {
+        el.insertBefore(analysisDiv, el.firstChild);
+      }
+    });
+  });
+  
+  // Also handle ordered-list style steps (Topics 2-5 format)
+  document.querySelectorAll('.chow-steps ol, .bp-steps ol, .goldfeld-steps ol, .breusch-godfrey ol, .adf-steps ol').forEach(function(ol) {
+    // Find the parent topic
+    var tid = getTopicId(ol);
+    if(!tid) return;
+    
+    var analysisText = topicAnalyses[tid] || '按步骤逐步分析。';
+    var p = document.createElement('p');
+    p.style.cssText = 'color:#1565c0;font-weight:600;margin:8px 0;font-size:0.9em';
+    p.innerHTML = '📌 分析思路：' + analysisText;
+    
+    ol.parentNode.insertBefore(p, ol);
+  });
 });
 </script>
 
