@@ -919,6 +919,85 @@ body, .container, .zb, .ex, .confusion, .speed-box, .a, .step-text, p, div {
   color: #222 !important;
 }
 
+
+
+/* === STRONG OVERRIDES: Force content uniformity === */
+
+/* Force all knowledge points to use same style */
+.zb, .kp-item, [class*="knowledge"], [class*="kp-"], [class*="key-point"] {
+  background: #fff !important;
+  border: 1px solid #e0e0e0 !important;
+  border-left: 4px solid #ff6f00 !important;
+  padding: 12px 16px !important;
+  margin: 10px 0 !important;
+  border-radius: 0 8px 8px 0 !important;
+  font-size: 0.93em !important;
+  color: #222 !important;
+}
+
+/* Force all topic headers to same style */
+[class*="topic-header"], [class*="priority-body"], [class*="topic-meta"] {
+  margin: 8px 0 !important;
+  color: #222 !important;
+}
+
+/* Force background fix for any white-on-light issues */
+[style*="color:#fff"], [style*="color: #fff"], [style*="color:white"] {
+  /* Only keep white text on dark backgrounds */
+}
+h2, h2 * { color: #fff !important; }
+
+/* Force all section heading labels consistent */
+.learn-header, .section-title, [class*="section-head"] {
+  font-size: 1.3em !important;
+  font-weight: 700 !important;
+  color: #1a237e !important;
+  margin: 30px 0 15px !important;
+  border-bottom: 3px solid #1a237e !important;
+  padding-bottom: 5px !important;
+}
+
+/* Fix white text on CLEAN warning */
+[style*="background:#fff3e0"] b, [style*="background:#fff3e0"] {
+  color: #222 !important;
+}
+[style*="background:#fff3e0"] b {
+  color: #e65100 !important;
+}
+
+/* Force table text dark */
+table, table td, table th, [class*="table"] td, [class*="table"] th {
+  color: #222 !important;
+}
+table th, [class*="table"] th {
+  background: #fff8e1 !important;
+}
+
+/* Ensure body text is always dark */
+body, body * {
+  color: #222;
+}
+h1, h1 *, h2, h2 *, h3, h3 *, h4, h4 *, h5, h5 * {
+  color: inherit;
+}
+h2[class*="core"], h2[class*="core"] *,
+h2[class*="imp"], h2[class*="imp"] *,
+h2[class*="ovv"], h2[class*="ovv"] * {
+  color: #fff !important;
+}
+
+/* Fix priority tag readability */
+.priority-tag, [class*="priority"] {
+  font-size: 0.78em !important;
+  padding: 3px 10px !important;
+  border-radius: 12px !important;
+  font-weight: 700 !important;
+}
+[class*="CORE"], [class*="core"] {
+  background: #c62828 !important;
+  color: #fff !important;
+}
+
 </style>
 </head><body>
 <div class=container>
@@ -3948,30 +4027,28 @@ floating-btn">
 document.addEventListener('click',function(e){var p=document.getElementById('speedPanel');if(!p.contains(e.target)&&!e.target.closest('.floating-btn button'))p&&p.classList.remove('show')});
 </script>
 
-</div></body></html>
-<!-- AI 学习助手 -->
-<div id="aiPanel" class="ai-panel" style="position:fixed;bottom:145px;right:86px;width:320px;max-height:480px;background:#fff;border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,0.15);z-index:999;display:none;flex-direction:column;font-size:0.88em;overflow:hidden">
-<div style="background:#1a237e;color:#fff;padding:10px 14px;border-radius:12px 12px 0 0;cursor:pointer;display:flex;justify-content:space-between" onclick="var b=document.getElementById('aiBody');b.style.display=b.style.display==='none'?'block':'none'">
-<span>🤖 AI 学习助手</span><span>_</span></div>
-<div id="aiBody" style="padding:12px;overflow-y:auto">
-<p style="font-size:0.82em;color:#888;margin-bottom:8px">选中文本自动填入，或直接输入问题</p>
-<textarea id="aiq" placeholder="选中文本自动填入…" style="width:100%;height:60px;border:1px solid #ccc;border-radius:6px;padding:6px;font-size:0.88em;resize:vertical"></textarea>
-<div style="display:flex;gap:6px;margin:6px 0">
-<button onclick="askAI()" style="flex:1;background:#1565c0;color:#fff;border:none;padding:7px;border-radius:6px;cursor:pointer;font-size:0.88em">🚀 提问</button>
-<button onclick="var k=document.getElementById('aikey');k.style.display=k.style.display==='none'?'block':'none'" style="background:#e0e0e0;border:none;padding:7px 10px;border-radius:6px;cursor:pointer;font-size:0.88em">🔑</button>
 </div>
-<div id="aikey" style="display:none;margin:4px 0">
-<input id="apikey" type="password" placeholder="输入DeepSeek API Key" style="width:100%;padding:6px;border:1px solid #ccc;border-radius:4px;font-size:0.85em">
+<!-- AI 学习助手侧边栏 -->
+<div id="aiPanel" style="position:fixed;top:60px;right:0;width:340px;max-height:90vh;background:#fff;border-radius:12px 0 0 12px;box-shadow:-4px 0 20px rgba(0,0,0,0.15);z-index:9999;display:flex;flex-direction:column;font-size:0.88em;overflow:hidden;border:1px solid #e0e0e0;border-right:none">
+<div style="background:#1a237e;color:#fff;padding:12px 14px;display:flex;justify-content:space-between;align-items:center">
+<span style="font-weight:700;font-size:1em">🤖 AI 学习助手</span>
+<span onclick="document.getElementById('aiPanel').style.display='none'" style="cursor:pointer;font-size:1.2em;padding:0 6px">✕</span>
 </div>
-<div id="aires" style="background:#f5f5f5;border-radius:6px;padding:8px;margin:4px 0;max-height:200px;overflow-y:auto;white-space:pre-wrap;font-size:0.85em;min-height:30px">💡 输入问题后点击提问</div>
-</div></div>
+<div style="padding:12px;overflow-y:auto;flex:1;display:flex;flex-direction:column;gap:8px">
+<p style="font-size:0.82em;color:#888">选中文本自动填入，或直接输入问题</p>
+<textarea id="aiq" placeholder="选中文本自动填入…" style="width:100%;height:60px;border:1px solid #ccc;border-radius:6px;padding:8px;font-size:0.88em;resize:vertical"></textarea>
+<div style="display:flex;gap:6px">
+<input id="apikey" type="password" placeholder="输入DeepSeek API Key" style="flex:1;padding:7px;border:1px solid #ccc;border-radius:6px;font-size:0.85em">
+<button onclick="askAI()" style="background:#1565c0;color:#fff;border:none;padding:7px 16px;border-radius:6px;cursor:pointer;font-weight:600;font-size:0.88em">🚀 提问</button>
+</div>
+<div id="aires" style="background:#f5f5f5;border-radius:8px;padding:10px;min-height:80px;max-height:300px;overflow-y:auto;white-space:pre-wrap;font-size:0.85em;line-height:1.6;color:#333">💡 输入问题后点击提问</div>
+</div>
+</div>
 
-<style>
-/* AI panel toggle via floating button */
-</style>
+<!-- 浮动机器人按钮（一直在右下角） -->
+<div id="aiToggleBtn" onclick="var p=document.getElementById('aiPanel');p.style.display=p.style.display==='none'?'flex':'none'" style="position:fixed;bottom:150px;right:20px;width:50px;height:50px;border-radius:50%;background:#1a237e;color:#fff;border:none;cursor:pointer;z-index:9998;display:flex;align-items:center;justify-content:center;font-size:1.3em;box-shadow:0 4px 12px rgba(0,0,0,0.2)">🤖</div>
+
 <script>
-function toggleAI(){var p=document.getElementById('aiPanel');p.style.display=p.style.display==='none'?'flex':'none'}
-
 function askAI(){
   var q=document.getElementById('aiq').value.trim();
   var key=document.getElementById('apikey').value.trim();
@@ -3994,22 +4071,11 @@ function askAI(){
     res.innerText=d.choices?.[0]?.message?.content||'❌ 无响应，请检查API Key';
   }).catch(function(e){res.innerText='❌ 请求失败: '+e.message});
 }
-
 // Auto-capture selected text
 document.addEventListener('mouseup',function(){
   var s=window.getSelection().toString().trim();
   if(s){var inp=document.getElementById('aiq');if(inp)inp.value=s}
 });
-
-// Open AI panel when clicking floating button - modify the existing button
-window.addEventListener('load',function(){
-  var btns=document.querySelectorAll('.floating-btn button');
-  if(btns.length>0){
-    btns[0].onclick=toggleAI;
-    // Also keep the speed panel toggle on the existing button
-    btns[0].innerHTML='⚡';
-  }
-});
 </script>
 
-
+</body></html>
