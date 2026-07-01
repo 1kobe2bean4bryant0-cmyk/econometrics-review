@@ -1,0 +1,4136 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>📊 计量经济学 · 考前冲刺宝典 v6</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#f5f7fa;color:#222;line-height:1.8}
+.container{max-width:1000px;margin:0 auto;padding:20px}
+h1{text-align:center;color:#1a237e;font-size:1.8em;margin:30px 0;padding:20px;background:linear-gradient(135deg,#e8eaf6,#c5cae9);border-radius:16px}
+h2{padding:15px 20px;border-radius:12px;margin:40px 0 20px;font-size:1.3em;color:#fff}
+h2.core{background:#c62828}
+h2.imp{background:#e65100}
+h2.ovv{background:#2e7d32}
+.group-label{font-size:1.5em;font-weight:700;margin:50px 0 10px;padding:10px 15px;border-radius:8px}
+.group-label.core{background:#ffebee;color:#c62828;border-left:5px solid #c62828}
+.group-label.imp{background:#fff3e0;color:#e65100;border-left:5px solid #e65100}
+.group-label.ovv{background:#e8f5e9;color:#2e7d32;border-left:5px solid #2e7d32}
+.ref{font-size:0.85em;color:#666;margin:-10px 0 20px;padding:0 5px}
+.core-box{background:#e8eaf6;border-left:5px solid #1a237e;padding:15px;margin:15px 0;border-radius:0 8px 8px 0;font-size:1.05em}
+.zb{background:#fff;border:1px solid #e0e0e0;border-left:4px solid #ff6f00;padding:12px 16px;margin:10px 0;border-radius:0 8px 8px 0;font-size:0.93em}
+.zb b{color:#e65100}
+.ex{background:#fff;border:1px solid #e0e0e0;border-radius:12px;padding:18px;margin:20px 0;box-shadow:0 2px 8px rgba(0,0,0,0.04)}
+.ex h4{color:#1a237e;font-size:1.1em;margin-bottom:8px}
+.ex p.d{color:#555;font-size:0.88em;margin:5px 0 10px}
+.q{background:#f5f5f5;border-radius:8px;padding:10px 14px;margin:10px 0 4px;font-weight:600;color:#333;border-left:4px #1565c0 solid;font-size:0.93em}
+.q .tag{display:inline-block;font-size:0.75em;padding:1px 8px;border-radius:4px;margin-right:6px;font-weight:400}
+.tag-teacher{background:#e3f2fd;color:#1565c0}
+.tag-ai{background:#fce4ec;color:#c62828}
+.tag-exam{display:inline-block;font-size:0.7em;padding:1px 6px;border-radius:3px;margin-left:4px;font-weight:400}
+.tag-single{background:#fff8e1;color:#e65100}
+.tag-judge{background:#f3e5f5;color:#6a1b9a}
+.tag-short{background:#e8f5e9;color:#2e7d32}
+.tag-case{background:#ffebee;color:#c62828}
+.s{background:#1565c0;color:#fff;border:none;padding:7px 16px;border-radius:6px;cursor:pointer;font-size:0.88em;margin:4px 0;transition:.2s}
+.s:hover{background:#0d47a1}
+.a{display:none;background:#fafafa;border:1px dashed #1565c0;border-radius:8px;padding:12px;margin:6px 0 12px}
+.step{display:flex;align-items:flex-start;padding:4px 0;border-bottom:1px solid #eee;font-size:0.88em}
+.step:last-child{border-bottom:none}
+.step-num{min-width:48px;font-weight:700;color:#1565c0}
+.step-label{min-width:56px;color:#e65100;font-weight:600;font-size:0.85em}
+.step-text{flex:1}
+.ta{background:#e8f5e9;padding:10px;margin:8px 0;border-radius:6px;font-size:0.88em}
+.ta b{color:#2e7d32}
+.weight-box{background:#fff9c4;border:1px solid #f9a825;border-radius:8px;padding:10px 14px;margin:10px 0;display:inline-block;font-size:0.88em}
+.weight-box .star{color:#f57f17}
+.priority-box{float:right;font-size:0.78em;padding:3px 10px;border-radius:12px;color:#fff;margin-top:-8px}
+.priority-box.core{background:#c62828}
+.priority-box.imp{background:#e65100}
+.priority-box.ovv{background:#2e7d32}
+.exam-marker{display:inline-block;margin:3px 2px;padding:1px 7px;border-radius:3px;font-size:0.75em}
+.clr{clear:both}
+.confusion{background:#fff3e0;border:1px solid #ffe0b2;border-radius:10px;padding:14px;margin:18px 0}
+.confusion h5{color:#e65100;margin-bottom:8px}
+.confusion table{width:100%;border-collapse:collapse;font-size:0.88em}
+.confusion td,.confusion th{border:1px solid #ffe0b2;padding:8px;text-align:left}
+.confusion th{background:#fff8e1;color:#e65100}
+.speed-box{background:#e8eaf6;border:2px solid #1a237e;border-radius:10px;padding:14px;margin:20px 0}
+.speed-box h5{color:#1a237e;margin-bottom:6px}
+.speed-box .formula{font-family:'Courier New',monospace;background:#fff;padding:4px 8px;border-radius:4px;margin:3px 0;display:inline-block}
+.learning-path{background:#e8eaf6;border-radius:12px;padding:18px;margin:20px 0}
+.learning-path h3{color:#1a237e;margin-bottom:10px}
+.learning-path .step-path{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+.learning-path .step-path span{background:#fff;padding:4px 12px;border-radius:16px;font-size:0.85em;border:1px solid #c5cae9}
+.exam-header{background:#fff;border:2px solid #1a237e;border-radius:12px;padding:16px;margin:20px 0;display:flex;flex-wrap:wrap;gap:10px}
+.exam-header .section{flex:1;min-width:120px;text-align:center;padding:8px;border-radius:8px}
+.exam-header .section .pts{font-size:1.3em;font-weight:700;color:#1a237e}
+.exam-header .section .label{font-size:0.8em;color:#666}
+.exam-header .section.highlight{background:#fff8e1;border:1px solid #f9a825}
+.toc{background:#fff;border-radius:12px;padding:20px;margin:20px 0;box-shadow:0 2px 8px rgba(0,0,0,0.06)}
+.toc-group{margin:12px 0}
+.toc-group h4{margin-bottom:6px}
+.toc-group.core h4{color:#c62828}
+.toc-group.imp h4{color:#e65100}
+.toc-group.ovv h4{color:#2e7d32}
+.toc a{display:inline-block;padding:3px 10px;margin:2px;color:#1565c0;text-decoration:none;border-radius:4px;font-size:0.88em}
+.toc a:hover{background:#e3f2fd}
+.floating-btn{position:fixed;bottom:80px;right:20px;z-index:998}
+.floating-btn button{width:56px;height:56px;border-radius:50%;background:#1a237e;color:#fff;border:none;font-size:1.2em;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,0.2)}
+.floating-panel{position:fixed;bottom:145px;right:20px;width:320px;max-height:500px;background:#fff;border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,0.15);z-index:999;display:none;overflow-y:auto}
+.floating-panel.show{display:block}
+.floating-panel .header{background:#1a237e;color:#fff;padding:10px 14px;border-radius:12px 12px 0 0;font-size:0.9em}
+.floating-panel .body{padding:12px}
+.floating-panel .topic-item{padding:6px 0;border-bottom:1px solid #eee;font-size:0.83em}
+.floating-panel .topic-item .form{font-family:monospace;background:#f5f5f5;padding:2px 6px;border-radius:3px}
+@media print{.floating-btn,.floating-panel{display:none}}
+
+
+/* === Fragment CSS (merged) === */
+/* === From t2_5 fragment === */
+
+
+/* === From t6_9 fragment === */
+
+  :root {
+    --core-color: #c0392b;
+    --core-bg: #fdecea;
+    --imp-color: #d35400;
+    --imp-bg: #fef5e7;
+    --ovv-color: #7f8c8d;
+    --ovv-bg: #f5f5f5;
+    --primary: #1a5276;
+    --primary-light: #2e86c1;
+    --accent: #e74c3c;
+    --bg: #f0f4f8;
+    --card-bg: #ffffff;
+    --wrong-bg: #fdedec;
+    --wrong-border: #e74c3c;
+    --correct-bg: #eafaf1;
+    --correct-border: #27ae60;
+    --text: #2c3e50;
+    --text-light: #566573;
+    --gold: #f39c12;
+    --gold-bg: #fef9e7;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.8;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+
+  /* === PriorityBox === */
+  .priority-box {
+    border-radius: 10px;
+    padding: 18px 22px;
+    margin: 20px 0 16px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    border-left: 5px solid;
+  }
+  .priority-box .priority-icon { font-size: 28px; flex-shrink: 0; line-height: 1; }
+  .priority-box .priority-body { flex: 1; }
+  .priority-box .priority-body h2 { margin: 0 0 4px 0; padding: 0; border: none; font-size: 1.2em; }
+  .priority-box .priority-body .priority-tag {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-size: 0.75em;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+  }
+  .priority-box.core {
+    background: var(--core-bg);
+    border-left-color: var(--core-color);
+  }
+  .priority-box.core h2 { color: var(--core-color); }
+  .priority-box.core .priority-tag { background: var(--core-color); color: #fff; }
+  .priority-box.imp {
+    background: var(--imp-bg);
+    border-left-color: var(--imp-color);
+  }
+  .priority-box.imp h2 { color: var(--imp-color); }
+  .priority-box.imp .priority-tag { background: var(--imp-color); color: #fff; }
+  .priority-box.ovv {
+    background: var(--ovv-bg);
+    border-left-color: var(--ovv-color);
+  }
+  .priority-box.ovv h2 { color: var(--ovv-color); }
+  .priority-box.ovv .priority-tag { background: var(--ovv-color); color: #fff; }
+
+  /* === WeightBox === */
+  .weight-box {
+    background: linear-gradient(135deg, #fff8e1, #fff3cd);
+    border: 1px solid #ffc107;
+    border-radius: 8px;
+    padding: 12px 18px;
+    margin: 10px 0 18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.95em;
+  }
+  .weight-box .weight-stars { color: var(--gold); font-size: 1.2em; letter-spacing: 2px; }
+  .weight-box .weight-label { font-weight: 600; color: #856404; }
+
+  /* === SpeedBox (考前5分钟必记) === */
+  .speed-box {
+    background: linear-gradient(135deg, #e8f8f5, #d1f2eb);
+    border: 2px solid #1abc9c;
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin: 18px 0;
+    position: relative;
+  }
+  .speed-box::before {
+    content: "⏱ 考前5分钟必记";
+    position: absolute;
+    top: -12px;
+    left: 16px;
+    background: #1abc9c;
+    color: #fff;
+    padding: 2px 14px;
+    border-radius: 12px;
+    font-size: 0.78em;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+  .speed-box ul { margin: 8px 0 0 0; padding-left: 20px; }
+  .speed-box ul li { margin-bottom: 4px; font-size: 0.95em; }
+  .speed-box .speed-highlight { color: #c0392b; font-weight: 700; }
+
+  /* === ConfusionTable === */
+  .confusion-table-wrap {
+    margin: 16px 0;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 2px solid #e74c3c;
+  }
+  .confusion-table-wrap .confusion-header {
+    background: #e74c3c;
+    color: #fff;
+    padding: 8px 14px;
+    font-weight: 700;
+    font-size: 0.95em;
+  }
+  .confusion-table-wrap .confusion-header::before { content: "⚠ 易混淆辨析 — "; }
+  .confusion-table-wrap table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0;
+  }
+  .confusion-table-wrap th {
+    background: #fadbd8;
+    color: #922b21;
+    padding: 8px 12px;
+    text-align: center;
+    font-size: 0.9em;
+    border: 1px solid #e6b0aa;
+  }
+  .confusion-table-wrap td {
+    padding: 8px 12px;
+    border: 1px solid #f5b7b1;
+    font-size: 0.9em;
+  }
+  .confusion-table-wrap tr:nth-child(even) td { background: #fdedec; }
+
+  /* === Exam Types Tag === */
+  .exam-types {
+    display: inline-flex;
+    gap: 4px;
+    flex-wrap: wrap;
+    margin: 4px 0;
+  }
+  .exam-types .exam-tag {
+    display: inline-block;
+    font-size: 0.7em;
+    padding: 1px 8px;
+    border-radius: 10px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+  .exam-tag.choice { background: #d5f5e3; color: #1e8449; border: 1px solid #82e0aa; }
+  .exam-tag.calc { background: #fdebd0; color: #a04000; border: 1px solid #f0b27a; }
+  .exam-tag.shortq { background: #d6eaf8; color: #1a5276; border: 1px solid #85c1e9; }
+  .exam-tag.essay { background: #f5eef8; color: #7d3c98; border: 1px solid #c39bd3; }
+  .exam-tag.analysis { background: #fdedec; color: #922b21; border: 1px solid #f1948a; }
+  .exam-tag.case { background: #fef9e7; color: #7d6608; border: 1px solid #f9e79f; }
+  .exam-tag.source-ai { background: #e8daef; color: #7d3c98; border: 1px solid #bb8fce; }
+  .exam-tag.source-teacher { background: #d5f5e3; color: #1e8449; border: 1px solid #82e0aa; }
+
+  /* === AI Case Question === */
+  .ai-case-box {
+    background: linear-gradient(135deg, #f5eef8, #ebdef0);
+    border: 2px solid #8e44ad;
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin: 20px 0;
+    position: relative;
+  }
+  .ai-case-box::before {
+    content: "🤖 AI编拟综合案例题";
+    position: absolute;
+    top: -12px;
+    left: 16px;
+    background: #8e44ad;
+    color: #fff;
+    padding: 2px 14px;
+    border-radius: 12px;
+    font-size: 0.78em;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+  .ai-case-box .case-meta {
+    font-size: 0.82em;
+    color: #7d3c98;
+    margin-bottom: 8px;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .ai-case-box .case-meta span { background: #e8daef; padding: 1px 10px; border-radius: 10px; }
+  .ai-case-box h4 { color: #6c3483; margin: 10px 0 6px; }
+  .ai-case-box .ai-answer {
+    background: #f8f5fa;
+    border-left: 3px solid #8e44ad;
+    padding: 10px 14px;
+    margin-top: 8px;
+    border-radius: 0 6px 6px 0;
+    font-size: 0.92em;
+  }
+
+  /* === Chapter Section (v5 compat) === */
+  .chapter-section {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 30px;
+    margin: 24px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+  .chapter-section h2 {
+    color: var(--primary);
+    border-bottom: 3px solid var(--primary-light);
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+  }
+  .chapter-section h3 {
+    color: var(--primary-light);
+    margin: 20px 0 10px;
+  }
+  .chapter-section h4 {
+    color: var(--text);
+    margin: 14px 0 6px;
+    font-weight: 600;
+  }
+  .chapter-section p, .chapter-section li {
+    margin-bottom: 8px;
+    text-align: justify;
+  }
+  .chapter-section ul, .chapter-section ol {
+    padding-left: 24px;
+    margin-bottom: 12px;
+  }
+  .chapter-section table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 12px 0;
+    font-size: 0.95em;
+  }
+  .chapter-section th {
+    background: var(--primary);
+    color: white;
+    padding: 10px;
+    text-align: left;
+  }
+  .chapter-section td {
+    padding: 8px 10px;
+    border: 1px solid #ddd;
+  }
+  .chapter-section tr:nth-child(even) { background: #f8f9fa; }
+
+  /* === Formula === */
+  .formula {
+    background: #f7f9fc;
+    border: 1px solid #e0e6ed;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin: 8px 0;
+    font-family: 'CMU Serif', 'Times New Roman', serif;
+    font-size: 1.05em;
+    text-align: center;
+  }
+
+  /* === Key Point === */
+  .key-point {
+    background: #eaf2f8;
+    border-left: 4px solid var(--primary-light);
+    padding: 10px 16px;
+    margin: 10px 0;
+    border-radius: 0 6px 6px 0;
+  }
+  .key-point strong { color: var(--primary); }
+
+  /* === Wrong/Correct === */
+  .wrong-approach {
+    background: var(--wrong-bg);
+    border-left: 4px solid var(--wrong-border);
+    padding: 12px 16px;
+    margin: 10px 0;
+    border-radius: 6px;
+  }
+  .wrong-approach h5 { color: var(--accent); margin-bottom: 6px; }
+  .correct-approach {
+    background: var(--correct-bg);
+    border-left: 4px solid var(--correct-border);
+    padding: 12px 16px;
+    margin: 10px 0;
+    border-radius: 6px;
+  }
+  .correct-approach h5 { color: var(--correct-border); margin-bottom: 6px; }
+
+  /* === Tricky Box === */
+  .tricky-box {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 24px;
+    margin: 16px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    border-left: 4px solid var(--accent);
+  }
+
+  /* === Clean Label (for Topic 8) === */
+  .clean-label {
+    display: inline-block;
+    font-size: 0.7em;
+    padding: 1px 10px;
+    border-radius: 10px;
+    background: #aed6f1;
+    color: #1a5276;
+    font-weight: 600;
+    border: 1px solid #5dade2;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+
+  /* === Star Rating === */
+  .star-rating { color: var(--gold); font-size: 1.1em; letter-spacing: 1px; }
+
+  hr.section-divider {
+    border: none;
+    height: 3px;
+    background: linear-gradient(to right, transparent, var(--primary-light), transparent);
+    margin: 30px 0;
+  }
+
+  .header {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+  }
+  .header h1 { font-size: 2em; margin-bottom: 10px; }
+  .header p { opacity: 0.9; font-size: 1.1em; }
+
+  @media (max-width: 600px) {
+    .container { padding: 10px; }
+    .chapter-section { padding: 16px; }
+    .header h1 { font-size: 1.5em; }
+  }
+
+
+/* === From t10_13 fragment === */
+
+  :root {
+    --primary: #1a3a5c;
+    --primary-light: #2980b9;
+    --accent: #e74c3c;
+    --gold: #f39c12;
+    --green: #27ae60;
+    --bg: #f5f7fa;
+    --card-bg: #ffffff;
+    --text: #2c3e50;
+    --text-light: #7f8c8d;
+    --border: #e0e6ed;
+    --ovv-bg: #fef9e7;
+    --ovv-border: #f1c40f;
+    --core-bg: #eaf2f8;
+    --core-border: #2980b9;
+    --clean-label: #8e44ad;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.75;
+    padding: 30px 20px;
+  }
+  .container { max-width: 960px; margin: 0 auto; }
+
+  /* ===== TOPIC HEADER ===== */
+  .topic-header {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+    color: white;
+    border-radius: 14px;
+    padding: 28px 32px;
+    margin: 36px 0 20px;
+    position: relative;
+    overflow: hidden;
+  }
+  .topic-header h2 {
+    font-size: 1.6em;
+    margin-bottom: 6px;
+    letter-spacing: 1px;
+  }
+  .topic-header .topic-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 12px;
+    align-items: center;
+  }
+  .topic-header .topic-meta span {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: rgba(255,255,255,0.15);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 0.85em;
+    backdrop-filter: blur(4px);
+  }
+  .topic-header .topic-meta .stars { color: #f1c40f; letter-spacing: 2px; }
+
+  /* ===== PRIORITY BOX ===== */
+  .priority-box {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--gold);
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.85em;
+    padding: 5px 16px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+  .priority-box.ovv { background: #f39c12; }
+  .priority-box.core { background: #e74c3c; }
+
+  /* ===== WEIGHT BOX ===== */
+  .weight-box {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #2c3e50;
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.82em;
+    padding: 4px 14px;
+    border-radius: 8px;
+    margin-left: 8px;
+  }
+
+  /* ===== SPEED BOX ===== */
+  .speed-box {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: #e0e0e0;
+    border-radius: 12px;
+    padding: 18px 22px;
+    margin: 20px 0;
+    border-left: 5px solid #e94560;
+    font-size: 0.92em;
+    position: relative;
+  }
+  .speed-box::before {
+    content: "⚡ SPEED BOX";
+    position: absolute;
+    top: -10px;
+    left: 16px;
+    background: #e94560;
+    color: white;
+    font-weight: 700;
+    font-size: 0.72em;
+    padding: 2px 14px;
+    border-radius: 10px;
+    letter-spacing: 1px;
+  }
+  .speed-box h4 { color: #e94560; margin-bottom: 8px; font-size: 0.95em; }
+
+  /* ===== CLEAN LABEL ===== */
+  .clean-label {
+    display: inline-block;
+    background: var(--clean-label);
+    color: #fff;
+    font-size: 0.7em;
+    font-weight: 700;
+    padding: 2px 12px;
+    border-radius: 12px;
+    letter-spacing: 1px;
+    margin-left: 10px;
+    vertical-align: middle;
+  }
+
+  /* ===== SECTION ===== */
+  .section-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 24px 28px;
+    margin: 18px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  }
+  .section-card h3 {
+    color: var(--primary);
+    font-size: 1.15em;
+    border-bottom: 2px solid var(--primary-light);
+    padding-bottom: 6px;
+    margin-bottom: 14px;
+  }
+  .section-card h4 {
+    color: var(--primary-light);
+    margin: 16px 0 6px;
+    font-size: 1em;
+  }
+
+  /* ===== KNOWLEDGE POINT ===== */
+  .kp {
+    display: inline-block;
+    background: #eaf2f8;
+    color: var(--primary);
+    padding: 1px 10px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 0.88em;
+    margin-right: 4px;
+  }
+  .exam-tag {
+    display: inline-block;
+    font-size: 0.7em;
+    font-weight: 700;
+    padding: 1px 10px;
+    border-radius: 10px;
+    margin: 0 3px;
+  }
+  .exam-tag.t { background: #3498db; color: #fff; }   /* 理论 */
+  .exam-tag.c { background: #9b59b6; color: #fff; }   /* 计算 */
+  .exam-tag.ca { background: #27ae60; color: #fff; }  /* 案例 */
+  .exam-tag.s { background: #e74c3c; color: #fff; }   /* 论述/简答 */
+  .exam-tag.j { background: #f39c12; color: #fff; }   /* 判断 */
+
+  /* ===== TEACHER QUESTION ===== */
+  .teacher-q {
+    background: #f0f4f8;
+    border-left: 4px solid var(--primary-light);
+    padding: 14px 18px;
+    margin: 14px 0;
+    border-radius: 0 8px 8px 0;
+    font-size: 0.92em;
+  }
+  .teacher-q .q-label {
+    font-weight: 700;
+    color: var(--primary);
+  }
+  .teacher-q .exam-types {
+    display: inline-flex;
+    gap: 4px;
+    margin-left: 8px;
+  }
+
+  /* ===== CONFUSION TABLE ===== */
+  .confusion-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 12px 0;
+    font-size: 0.9em;
+  }
+  .confusion-table th {
+    background: var(--primary);
+    color: white;
+    padding: 10px 12px;
+    text-align: left;
+  }
+  .confusion-table td {
+    padding: 10px 12px;
+    border: 1px solid var(--border);
+    vertical-align: top;
+  }
+  .confusion-table tr:nth-child(even) { background: #f8f9fa; }
+  .confusion-table .concept-a { background: #eafaf1; }
+  .confusion-table .concept-b { background: #fdedec; }
+  .confusion-table .careful {
+    background: #fef9e7;
+    font-weight: 600;
+  }
+
+  /* ===== COMPREHENSIVE CASE ===== */
+  .case-box {
+    background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+    border: 2px solid #8e44ad;
+    border-radius: 12px;
+    padding: 22px 26px;
+    margin: 20px 0;
+    position: relative;
+  }
+  .case-box::before {
+    content: "🧩 AI编拟·综合案例";
+    position: absolute;
+    top: -12px;
+    left: 18px;
+    background: #8e44ad;
+    color: white;
+    font-weight: 700;
+    font-size: 0.78em;
+    padding: 3px 16px;
+    border-radius: 14px;
+    letter-spacing: 0.5px;
+  }
+  .case-box h4 { color: #6c3483; margin: 12px 0 6px; }
+  .case-box .case-detail { margin: 8px 0; }
+  .case-box .case-score {
+    background: #6c3483;
+    color: white;
+    display: inline-block;
+    font-size: 0.75em;
+    padding: 1px 12px;
+    border-radius: 8px;
+    margin-right: 6px;
+  }
+  .case-box ol, .case-box ul { padding-left: 22px; margin: 6px 0; }
+
+  /* ===== TOC ===== */
+  .toc-box {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 22px 28px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  }
+  .toc-box h3 { color: var(--primary); margin-bottom: 12px; }
+  .toc-box ul { list-style: none; padding: 0; column-count: 2; column-gap: 20px; }
+  .toc-box li { padding: 4px 0; break-inside: avoid; }
+  .toc-box a {
+    color: var(--primary-light);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  .toc-box a:hover { color: var(--accent); text-decoration: underline; }
+
+  /* ===== FORMULA ===== */
+  .formula {
+    background: #f7f9fc;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 8px 14px;
+    margin: 8px 0;
+    font-family: 'Times New Roman', serif;
+    text-align: center;
+    font-size: 1.02em;
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 640px) {
+    body { padding: 16px 10px; }
+    .section-card { padding: 16px; }
+    .topic-header { padding: 20px; }
+    .topic-header h2 { font-size: 1.2em; }
+    .toc-box ul { column-count: 1; }
+  }
+
+
+
+/* === NORMALIZE: All fragment structures === */
+
+/* Priority boxes - ensure text is readable */
+.priority-box.core, .priority-box.imp, .priority-box.ovv {
+  color: #fff !important;
+  font-weight: 700;
+  font-size: 0.78em;
+  padding: 3px 10px;
+  border-radius: 12px;
+  display: inline-block;
+}
+.priority-box.core { background: #c62828 !important; }
+.priority-box.imp { background: #e65100 !important; }
+.priority-box.ovv { background: #2e7d32 !important; }
+
+/* t6_9 fragment: priority-tag, priority-body */
+.priority-tag {
+  display: inline-block !important;
+  font-size: 0.78em !important;
+  padding: 3px 10px !important;
+  border-radius: 12px !important;
+  color: #fff !important;
+  font-weight: 700;
+}
+.priority-tag[class*="CORE"], .priority-tag:has(+ span:contains(CORE)) { background: #c62828 !important; }
+.priority-body { margin: 8px 0; }
+
+/* t6_9 fragment: topic headers */
+.topic-header.core, .topic-header.imp, .topic-header.ovv {
+  padding: 12px 16px;
+  border-radius: 10px;
+  margin: 10px 0;
+}
+.topic-header.core { background: #ffebee; border-left: 4px solid #c62828; }
+.topic-header.imp { background: #fff3e0; border-left: 4px solid #e65100; }
+.topic-header.ovv { background: #e8f5e9; border-left: 4px solid #2e7d32; }
+
+/* t10_13 fragment: container, toc-box */
+.toc-box { 
+  background: #fff; 
+  border-radius: 12px; 
+  padding: 18px; 
+  margin: 18px 0; 
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06); 
+}
+
+/* Knowledge point blocks - normalize across fragments */
+.zb, .kp-item, .kp, .knowledge-point {
+  background: #fff !important;
+  border: 1px solid #e0e0e0 !important;
+  border-left: 4px solid #ff6f00 !important;
+  padding: 12px 16px !important;
+  margin: 10px 0 !important;
+  border-radius: 0 8px 8px 0 !important;
+  font-size: 0.93em !important;
+  color: #222 !important;
+}
+
+/* Examples - normalize */
+.ex, .case-box {
+  background: #fff !important;
+  border: 1px solid #e0e0e0 !important;
+  border-radius: 12px !important;
+  padding: 18px !important;
+  margin: 20px 0 !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04) !important;
+}
+
+/* Questions - normalize */
+.q, .case-question {
+  background: #f5f5f5 !important;
+  border-radius: 8px !important;
+  padding: 10px 14px !important;
+  margin: 10px 0 4px !important;
+  font-weight: 600 !important;
+  border-left: 4px solid #1565c0 !important;
+  color: #333 !important;
+}
+
+/* Confusion tables - normalize */
+.confusion {
+  background: #fff3e0 !important;
+  border: 1px solid #ffe0b2 !important;
+  border-radius: 10px !important;
+  padding: 14px !important;
+  margin: 18px 0 !important;
+}
+
+/* Speed boxes - normalize */
+.speed-box {
+  background: #e8eaf6 !important;
+  border: 2px solid #1a237e !important;
+  border-radius: 10px !important;
+  padding: 14px !important;
+  margin: 20px 0 !important;
+}
+
+/* Ensure all question text is dark */
+.q, .q *, .case-question, .case-question * {
+  color: #222 !important;
+}
+.q .tag { color: inherit !important; }
+
+/* Fix dark-text-on-dark-background issues */
+body, .container, .zb, .ex, .confusion, .speed-box, .a, .step-text, p, div {
+  color: #222;
+}
+
+/* Ensure all buttons have readable text */
+.s, button.s, .s-btn {
+  color: #fff !important;
+}
+
+/* CLEAN label - make it readable */
+.clean-label {
+  display: inline-block !important;
+  font-size: 0.7em !important;
+  padding: 1px 8px !important;
+  border-radius: 10px !important;
+  background: #ffcdd2 !important;
+  color: #c62828 !important;
+  font-weight: 700 !important;
+  margin-left: 6px !important;
+}
+
+/* AI case box */
+.ai-case-box, .ai-case {
+  background: #fce4ec !important;
+  border: 1px solid #f8bbd0 !important;
+  border-radius: 8px !important;
+  padding: 12px !important;
+  margin: 10px 0 !important;
+}
+
+/* Metadata and source labels */
+.case-source, .source-label {
+  font-size: 0.82em !important;
+  color: #888 !important;
+}
+
+/* Comparison tables - fix white text */
+.compare-table th, .compare-table td {
+  color: #222 !important;
+}
+.compare-table th {
+  background: #fff8e1 !important;
+  font-weight: 700 !important;
+}
+
+/* Answer text */
+.answer, .a {
+  color: #222 !important;
+}
+.answer-hint, .hint {
+  color: #555 !important;
+  font-size: 0.88em !important;
+}
+
+/* Topic meta info */
+.topic-meta {
+  padding: 8px 0;
+  margin: 6px 0;
+}
+
+/* All text inside panels should be dark */
+[style*="background:#fff"], [style*="background: white"] {
+  color: #222;
+}
+
+/* Override any white-on-light patterns */
+.priority-box:not(.core):not(.imp):not(.ovv),
+[class*="badge"], [class*="label"], [class*="tag"] {
+  color: #222 !important;
+}
+
+
+
+/* === STRONG OVERRIDES: Force content uniformity === */
+
+/* Force all knowledge points to use same style */
+.zb, .kp-item, [class*="knowledge"], [class*="kp-"], [class*="key-point"] {
+  background: #fff !important;
+  border: 1px solid #e0e0e0 !important;
+  border-left: 4px solid #ff6f00 !important;
+  padding: 12px 16px !important;
+  margin: 10px 0 !important;
+  border-radius: 0 8px 8px 0 !important;
+  font-size: 0.93em !important;
+  color: #222 !important;
+}
+
+/* Force all topic headers to same style */
+[class*="topic-header"], [class*="priority-body"], [class*="topic-meta"] {
+  margin: 8px 0 !important;
+  color: #222 !important;
+}
+
+/* Force background fix for any white-on-light issues */
+[style*="color:#fff"], [style*="color: #fff"], [style*="color:white"] {
+  /* Only keep white text on dark backgrounds */
+}
+h2, h2 * { color: #fff !important; }
+
+/* Force all section heading labels consistent */
+.learn-header, .section-title, [class*="section-head"] {
+  font-size: 1.3em !important;
+  font-weight: 700 !important;
+  color: #1a237e !important;
+  margin: 30px 0 15px !important;
+  border-bottom: 3px solid #1a237e !important;
+  padding-bottom: 5px !important;
+}
+
+/* Fix white text on CLEAN warning */
+[style*="background:#fff3e0"] b, [style*="background:#fff3e0"] {
+  color: #222 !important;
+}
+[style*="background:#fff3e0"] b {
+  color: #e65100 !important;
+}
+
+/* Force table text dark */
+table, table td, table th, [class*="table"] td, [class*="table"] th {
+  color: #222 !important;
+}
+table th, [class*="table"] th {
+  background: #fff8e1 !important;
+}
+
+/* Ensure body text is always dark */
+body, body * {
+  color: #222;
+}
+h1, h1 *, h2, h2 *, h3, h3 *, h4, h4 *, h5, h5 * {
+  color: inherit;
+}
+h2[class*="core"], h2[class*="core"] *,
+h2[class*="imp"], h2[class*="imp"] *,
+h2[class*="ovv"], h2[class*="ovv"] * {
+  color: #fff !important;
+}
+
+/* Fix priority tag readability */
+.priority-tag, [class*="priority"] {
+  font-size: 0.78em !important;
+  padding: 3px 10px !important;
+  border-radius: 12px !important;
+  font-weight: 700 !important;
+}
+[class*="CORE"], [class*="core"] {
+  background: #c62828 !important;
+  color: #fff !important;
+}
+
+
+/* Left sidebar + main content layout */
+.container { margin-left: 230px; max-width: 900px; }
+@media (max-width: 768px) {
+  #leftSidebar { display: none !important; }
+  .container { margin-left: 0 !important; }
+  #sidebarToggle { display: flex !important; }
+}
+
+</style>
+</head><body>
+<!-- 左侧导航侧栏 -->
+<div id="leftSidebar" style="position:fixed;top:0;left:0;width:220px;height:100vh;background:#1a237e;z-index:9998;overflow-y:auto;box-shadow:2px 0 12px rgba(0,0,0,0.2)">
+<div style="padding:16px 14px;border-bottom:1px solid rgba(255,255,255,0.15)">
+<div style="color:#fff;font-size:1.1em;font-weight:700">📊 目录</div>
+<div style="color:rgba(255,255,255,0.6);font-size:0.75em;margin-top:4px">点击跳转专题</div>
+</div>
+<div style="padding:8px 0">
+<div style="padding:4px 14px;color:#ffcdd2;font-size:0.78em;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-top:8px">🔴 核心专题 ★★★★★</div>
+<a href="#t1" style="display:block;padding:6px 14px;color:#fff;text-decoration:none;font-size:0.82em;border-left:3px solid transparent" onmouseover="this.style.borderLeftColor='#ff5252';this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.borderLeftColor='transparent';this.style.background='transparent'">专题1·对数模型</a>
+<a href="#t2" style="display:block;padding:6px 14px;color:#fff;text-decoration:none;font-size:0.82em;border-left:3px solid transparent" onmouseover="this.style.borderLeftColor='#ff5252';this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.borderLeftColor='transparent';this.style.background='transparent'">专题2·虚拟变量</a>
+<a href="#t4" style="display:block;padding:6px 14px;color:#fff;text-decoration:none;font-size:0.82em;border-left:3px solid transparent" onmouseover="this.style.borderLeftColor='#ff5252';this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.borderLeftColor='transparent';this.style.background='transparent'">专题4·异方差</a>
+<a href="#t5" style="display:block;padding:6px 14px;color:#fff;text-decoration:none;font-size:0.82em;border-left:3px solid transparent" onmouseover="this.style.borderLeftColor='#ff5252';this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.borderLeftColor='transparent';this.style.background='transparent'">专题5·自相关</a>
+<a href="#t6" style="display:block;padding:6px 14px;color:#fff;text-decoration:none;font-size:0.82em;border-left:3px solid transparent" onmouseover="this.style.borderLeftColor='#ff5252';this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.borderLeftColor='transparent';this.style.background='transparent'">专题6·F检验</a>
+<a href="#t9" style="display:block;padding:6px 14px;color:#fff;text-decoration:none;font-size:0.82em;border-left:3px solid transparent" onmouseover="this.style.borderLeftColor='#ff5252';this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.borderLeftColor='transparent';this.style.background='transparent'">专题9·OLS假设</a>
+<a href="#t11" style="display:block;padding:6px 14px;color:#fff;text-decoration:none;font-size:0.82em;border-left:3px solid transparent" onmouseover="this.style.borderLeftColor='#ff5252';this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.borderLeftColor='transparent';this.style.background='transparent'">专题11·面板数据</a>
+<a href="#t12" style="display:block;padding:6px 14px;color:#fff;text-decoration:none;font-size:0.82em;border-left:3px solid transparent" onmouseover="this.style.borderLeftColor='#ff5252';this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.borderLeftColor='transparent';this.style.background='transparent'">专题12·时间序列</a>
+
+<div style="padding:4px 14px;color:#ffe0b2;font-size:0.78em;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-top:12px">🟡 重要专题 ★★★</div>
+<a href="#t3" style="display:block;padding:6px 14px;color:#fff;text-decoration:none;font-size:0.82em" onmouseover="this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.background='transparent'">专题3·多重共线性</a>
+<a href="#t7" style="display:block;padding:6px 14px;color:#fff;text-decoration:none;font-size:0.82em" onmouseover="this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.background='transparent'">专题7·误差项vs残差</a>
+
+<div style="padding:4px 14px;color:#a5d6a7;font-size:0.78em;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-top:12px">🟢 了解专题 ★★</div>
+<a href="#t8" style="display:block;padding:6px 14px;color:rgba(255,255,255,0.6);text-decoration:none;font-size:0.82em" onmouseover="this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.background='transparent'">专题8·Probit/Logit</a>
+<a href="#t10" style="display:block;padding:6px 14px;color:rgba(255,255,255,0.6);text-decoration:none;font-size:0.82em" onmouseover="this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.background='transparent'">专题10·工具变量</a>
+<a href="#t13" style="display:block;padding:6px 14px;color:rgba(255,255,255,0.6);text-decoration:none;font-size:0.82em" onmouseover="this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.background='transparent'">专题13·模型设定</a>
+</div>
+<div style="position:absolute;bottom:0;left:0;right:0;padding:10px 14px;border-top:1px solid rgba(255,255,255,0.15);font-size:0.72em;color:rgba(255,255,255,0.5);text-align:center">
+📊 计量经济学 · 考前冲刺
+</div>
+</div>
+
+<!-- 侧栏折叠按钮（手机/窄屏用） -->
+<div onclick="var s=document.getElementById('leftSidebar');var m=document.getElementById('mainContent');if(s.style.display!=='none'){s.style.display='none';m.style.marginLeft='0'}else{s.style.display='block';m.style.marginLeft='230px'}" style="display:none;position:fixed;top:10px;left:10px;z-index:9999;background:#1a237e;color:#fff;width:40px;height:40px;border-radius:8px;cursor:pointer;align-items:center;justify-content:center;font-size:1.2em" id="sidebarToggle">☰</div>
+
+<script>
+// Auto-hide sidebar on small screens
+if(window.innerWidth < 768){document.getElementById('leftSidebar').style.display='none'}
+// Smooth scroll for nav links
+document.querySelectorAll('#leftSidebar a').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();var t=document.querySelector(this.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth'})})});
+</script>
+
+
+<div class=container>
+
+<h1>📊 计量经济学导论 · 考前冲刺宝典 v6</h1>
+<p style="text-align:center;color:#666;font-size:0.9em">基于教师重点PDF全部13专题 · 标注题型分布 · 区分教师原题与AI编拟题</p>
+
+<div class="exam-header">
+  <div class="section"><div class="pts">20</div><div class="label">📝 单选题<br>20分</div></div>
+  <div class="section"><div class="pts">12</div><div class="label">⚖ 判断分析<br>12分</div></div>
+  <div class="section"><div class="pts">20</div><div class="label">✍ 简答题<br>20分</div></div>
+  <div class="section highlight"><div class="pts">48</div><div class="label">📋 <b>案例分析</b><br>48分（重点！）</div></div>
+</div>
+
+<div class="learning-path">
+<h3>🎯 建议学习路径（按考试权重排序）</h3>
+<p style="font-size:0.88em;color:#555">先攻案例分析高频专题，再补单选/判断/简答基础</p>
+<div class="step-path">
+<span style="background:#ffebee;color:#c62828;border-color:#c62828">🔴 第1步：核心专题(1/2/6/9/4/5)</span>
+<span style="background:#ffebee;color:#e65100;border-color:#e65100">🟡 第2步：重要专题(3/7/11/12)</span>
+<span style="background:#e8f5e9;color:#2e7d32;border-color:#2e7d32">🟢 第3步：了解专题(8/10/13)</span>
+</div>
+<p style="font-size:0.85em;color:#888;margin-top:8px">📌 标记说明：<span class="tag-teacher" style="padding:2px 8px">📖</span> = 教师原题 <span class="tag-ai" style="padding:2px 8px">✏️</span> = AI编拟综合案例 <span class="tag-single" style="padding:2px 6px">单选</span><span class="tag-judge" style="padding:2px 6px">判断</span><span class="tag-short" style="padding:2px 6px">简答</span><span class="tag-case" style="padding:2px 6px">案例</span> = 题型标记</p>
+</div>
+<div class="toc">
+<h3 style="margin-bottom:10px">📑 目录</h3>
+<div class="toc-group core"><h4>🔴 核心专题（案例分析高频｜建议优先）</h4>
+<a href="#t1">📖 专题1：对数模型与参数解释</a>
+<a href="#t2">📖 专题2：虚拟变量与结构变化</a>
+<a href="#t4">📖 专题4：异方差性检验与处理</a>
+<a href="#t5">📖 专题5：序列相关(自相关)检验与处理</a>
+<a href="#t6">📖 专题6：F检验与回归显著性检验</a>
+<a href="#t9">📖 专题9：多元线性回归假设与OLS性质</a>
+<a href="#t11">📖 专题11：面板数据模型</a>
+<a href="#t12">📖 专题12：时间序列与平稳性</a>
+</div>
+<div class="toc-group imp"><h4>🟡 重要专题（单选/简答常考｜其次）</h4>
+<a href="#t3">📖 专题3：多重共线性诊断与处理</a>
+<a href="#t7">📖 专题7：随机误差项与残差</a>
+</div>
+<div class="toc-group ovv"><h4>🟢 了解专题（偶尔出现｜有余力再看）</h4>
+<a href="#t8">📖 专题8：Probit与Logit模型</a>
+<a href="#t10">📖 专题10：工具变量与内生性</a>
+<a href="#t13">📖 专题13：模型设定与函数形式</a>
+</div>
+</div>
+id="t1"><h2 class="core">专题1：对数模型与参数解释（Logarithmic Models）</h2><span class="priority-box core">🔴 核心专题 ★★★★★</span><div class="clr"></div><p class="ref">📖 第2章(简单回归)、第4章(多元回归分析：推断)</p><div class="core-box"><strong>📌 核心内容</strong><br>双对数模型中斜率参数表示<strong>弹性</strong>；半对数模型中参数表示<strong>增长率或半弹性</strong>。Cobb-Douglas函数取对数后，截距的指数为效率参数A。</div><div class="weight-box">🎯 考试权重：★★★☆☆（案例分析高频）<br>📝 单选常考弹性解释 · ✍ 简答常考Cobb-Douglas变换 · 📋 案例常考工资方程综合</div><div class="learn-header">📖 第0节 · 学习前的准备</div><div class="zb"><b>0.1 什么是回归方程？</b><br>计量最常见的工作：用原因预测结果。<br><b>公式</b>：Y = β₀ + β₁X + u<br>· Y=结果(被解释变量) · X=原因(解释变量) · β₁=斜率：X↑1单位→Y平均变化β₁ · β₀=截距 · u=误差项</div><div class="zb"><b>0.2 什么是自然对数ln？</b><br>① ln(A×B)=lnA+lnB（乘法变加法）　② ln(X^k)=k·lnX　③ <b>关键</b>：ΔlnX ≈ ΔX/X（百分比变化）<br>ln(1.05)≈0.05=5%——对数的变化量≈原变量的百分比变化</div><div class="zb"><b>0.3 什么时候该取对数？</b><br>· 变量是正数且右偏（如工资、收入）<br>· 想解释「百分比变化」而非「绝对变化」<br>· 变量之间可能是乘法关系（如Cobb-Douglas生产函数）</div><div class="learn-header">📖 第1节 · 核心知识点精讲</div><div class="exam-marker-group"><span class="exam-marker tag-single">单选</span> <span class="exam-marker tag-judge">判断</span> <span class="exam-marker tag-short">简答</span> <span class="exam-marker tag-case">案例</span> 本节内容覆盖全部题型</div><div class="zb"><b>1.1 双对数模型——系数是弹性</b> <span class="exam-marker tag-single">单选</span> <span class="exam-marker tag-case">案例</span><br>形式：<b>lnY = β₀ + β₁lnX + u</b><br>β₁叫<b>弹性</b>：X变化1%，Y变化β₁%。<br><b>推导</b>：ΔlnY≈β₁·ΔlnX，ΔlnY≈ΔY/Y，ΔX/X≈1%时ΔY/Y≈β₁·1%=β₁%。<br><b>简单记</b>：两边都有ln → 百分比对百分比</div><div class="zb"><b>1.2 半对数模型(A)——lnY对X</b> <span class="exam-marker tag-single">单选</span> <span class="exam-marker tag-judge">判断</span> <span class="exam-marker tag-short">简答</span><br>形式：<b>lnY = β₀ + β₁X + u</b><br>β₁×100%叫<b>半弹性</b>：X↑1单位→Y变化约(β₁×100)%。<br><b>例子</b>：ln(工资)=0.584+0.083×educ → 多读1年书工资增约8.3%<br>⚠ <b>精确公式</b>：%ΔY=100×[exp(β₁ΔX)-1]</div><div class="zb"><b>1.3 半对数模型(B)——Y对lnX</b> <span class="exam-marker tag-single">单选</span> <span class="exam-marker tag-judge">判断</span><br>形式：<b>Y = β₀ + β₁lnX + u</b><br>β₁/100的含义：X变化1%，Y变化β₁/100个单位。</div><div class="zb"><b>1.4 Cobb-Douglas生产函数变换</b> <span class="exam-marker tag-short">简答</span> <span class="exam-marker tag-case">案例</span><br>原始：Y = A·K^α·L^β·e^u → lnY=lnA+αlnK+βlnL+u<br>α=资本弹性，β=劳动弹性。Â = e^{截距}</div><div class="confusion"><h5>⚠ 易混淆辨析：对数模型形式</h5><table><tr><th>概念A</th><th>概念B</th><th>核心区别</th></tr><tr><td>lnY = β₀ + β₁lnX + u</td><td>双对数模型</td><td>系数β₁=弹性：%对%</td></tr><tr><td>lnY = β₀ + β₁X + u</td><td>半对数模型(A)</td><td>系数β₁×100%=增长率：单位对%</td></tr><tr><td>Y = β₀ + β₁lnX + u</td><td>半对数模型(B)</td><td>系数β₁/100=半弹性：%对单位</td></tr></table></div><div class="learn-header">📖 第2节 · 例题精讲与案例分析</div><p style='font-size:0.9em;color:#666;margin:10px 0'>以下为教师给出的教材例题：</p><div class="ex"><h4>📝 1.1 工资方程（教师原题）</h4><p>$$\ln (wage)=0.584+0.083 educ +0.036 exper +0.003 exper^{2}$$</p><p class="d">wage=小时工资(USD)，educ=教育年数，exper=工作年数</p><div class="q"><span class="tag tag-teacher">📖 教师原题</span> <span class="exam-marker tag-single">单选</span> <span class="exam-marker tag-judge">判断</span> (1) 解释educ系数0.083的含义</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示详细解答</button><div class="a">
+<div class="step"><span class="step-num">步骤1</span><span class="step-label">[判断]</span><span class="step-text">半对数模型(lnY对X)，系数×100%=变化的百分比</span></div>
+<div class="step"><span class="step-num">步骤2</span><span class="step-label">[计算]</span><span class="step-text">0.083×100%=8.3%</span></div>
+<div class="step"><span class="step-num">步骤3</span><span class="step-label">[结论]</span><span class="step-text">教育每多1年，工资增长约8.3%</span></div>
+</div><div class="q"><span class="tag tag-teacher">📖 教师原题</span> <span class="exam-marker tag-single">单选</span> <span class="exam-marker tag-case">案例</span> (2) 教育从12年到16年，工资变化百分比？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示详细解答</button><div class="a">
+<div class="step"><span class="step-num">步骤1</span><span class="step-label">[变化量]</span><span class="step-text">Δeduc=16-12=4</span></div>
+<div class="step"><span class="step-num">步骤2</span><span class="step-label">[近似]</span><span class="step-text">0.083×4×100%=33.2%</span></div>
+<div class="step"><span class="step-num">步骤3</span><span class="step-label">[精确]</span><span class="step-text">exp(0.083×4)-1=exp(0.332)-1≈39.37%</span></div>
+<div class="step"><span class="step-num">步骤4</span><span class="step-label">[结论]</span><span class="step-text">变化跨度大时精确算法更准</span></div>
+</div><div class="q"><span class="tag tag-teacher">📖 教师原题</span> <span class="exam-marker tag-short">简答</span> <span class="exam-marker tag-case">案例</span> (3) 工作几年时工资最高？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示详细解答</button><div class="a">
+<div class="step"><span class="step-num">步骤1</span><span class="step-label">[思路]</span><span class="step-text">最高点→导数=0</span></div>
+<div class="step"><span class="step-num">步骤2</span><span class="step-label">[求导]</span><span class="step-text">∂ln(wage)/∂exper=0.036+2×0.003×exper=0.036+0.006×exper</span></div>
+<div class="step"><span class="step-num">步骤3</span><span class="step-label">[令=0]</span><span class="step-text">0.036+0.006×exper=0 → exper=-6（不可能）</span></div>
+<div class="step"><span class="step-num">步骤4</span><span class="step-label">[结论]</span><span class="step-text">二次项系数应为负才能产生倒U型，此处系数为正→工资随经验一直上升</span></div>
+</div></div><div class="ex"><h4>📝 1.2 Cobb-Douglas生产函数（教师原题）</h4><p>$$\ln\hat{Y}=1.845+0.512\ln K+0.398\ln L,\ R^{2}=0.96,\ n=30$$</p><div class="q"><span class="tag tag-teacher">📖 教师原题</span> <span class="exam-marker tag-single">单选</span> <span class="exam-marker tag-case">案例</span> (1) 求A的估计值</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示详细解答</button><div class="a">
+<div class="step"><span class="step-num">步骤1</span><span class="step-label">[识别]</span><span class="step-text">截距1.845=lnÂ</span></div>
+<div class="step"><span class="step-num">步骤2</span><span class="step-label">[计算]</span><span class="step-text">Â=e^{1.845}≈6.33</span></div>
+</div><div class="q"><span class="tag tag-teacher">📖 教师原题</span> <span class="exam-marker tag-judge">判断</span> <span class="exam-marker tag-short">简答</span> (2) 检验规模报酬不变H₀:α+β=1</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示详细解答</button><div class="a">
+<div class="step"><span class="step-num">步骤1</span><span class="step-label">[计算]</span><span class="step-text">α̂+β̂=0.512+0.398=0.910</span></div>
+<div class="step"><span class="step-num">步骤2</span><span class="step-label">[判断]</span><span class="step-text">样本点估计呈递减。正式检验需标准误：t=(0.910-1)/se</span></div>
+</div><div class="q"><span class="tag tag-teacher">📖 教师原题</span> <span class="exam-marker tag-single">单选</span> <span class="exam-marker tag-judge">判断</span> (3) α和β含义</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示详细解答</button><div class="a">
+<div class="step"><span class="step-num">步骤1</span><span class="step-label">[α]</span><span class="step-text">0.512=资本弹性：资本↑1%→产出↑0.512%</span></div>
+<div class="step"><span class="step-num">步骤2</span><span class="step-label">[β]</span><span class="step-text">0.398=劳动弹性：劳动↑1%→产出↑0.398%</span></div>
+</div></div><div class="ex"><h4>📝 1.3 销售额广告（教师原题）</h4><p>$$\ln S=3.2+0.45\ln A$$</p><div class="q"><span class="tag tag-teacher">📖 教师原题</span> <span class="exam-marker tag-single">单选</span> <span class="exam-marker tag-judge">判断</span> (1) 广告↑1%，销售额↑？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示详细解答</button><div class="a">
+<div class="step"><span class="step-num">步骤1</span><span class="step-label">[识别]</span><span class="step-text">双对数模型，系数0.45=弹性</span></div>
+<div class="step"><span class="step-num">步骤2</span><span class="step-label">[结论]</span><span class="step-text">广告↑1%→销售额↑0.45%</span></div>
+</div><div class="q"><span class="tag tag-teacher">📖 教师原题</span> <span class="exam-marker tag-single">单选</span> (2) 100万→110万，销售额变化？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示详细解答</button><div class="a">
+<div class="step"><span class="step-num">步骤1</span><span class="step-label">[变化率]</span><span class="step-text">(110-100)/100=10%</span></div>
+<div class="step"><span class="step-num">步骤2</span><span class="step-label">[计算]</span><span class="step-text">0.45×10%=4.5%</span></div>
+</div><div class="q"><span class="tag tag-teacher">📖 教师原题</span> <span class="exam-marker tag-judge">判断</span> <span class="exam-marker tag-short">简答</span> (3) A=0时销售额为正？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示详细解答</button><div class="a">
+<div class="step"><span class="step-num">步骤1</span><span class="step-label">[分析]</span><span class="step-text">A=0→lnA无定义</span></div>
+<div class="step"><span class="step-num">步骤2</span><span class="step-label">[结论]</span><span class="step-text">模型本身不能预测A=0的情况（外推问题）</span></div>
+</div></div><p style='font-size:0.9em;color:#c62828;margin:15px 0 5px'>以下为AI编拟的综合案例分析（模拟考试第四大题形式）：</p><div class="ex"><h4>📝 1.4 【✏️ 综合案例分析】工资决定方程回归输出</h4><p class="d">某研究者收集了500名劳动者的数据，用OLS估计了以下工资方程：
+$$\ln(wage)=0.420+0.092\,educ+0.045\,exper-0.001\,exper^2+0.035\,female+0.015\,(female\cdot educ)$$
+其中female=1女0男。回归R²=0.312，n=500。</p><div class="q"><span class="tag tag-ai">✏️ AI编拟综合案例</span> <span class="exam-marker tag-single">单选</span> <span class="exam-marker tag-short">简答</span> (1) 解释educ的系数0.092。如果改用wage对educ做回归（不取对数），系数会有什么不同？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示详细解答</button><div class="a">
+<div class="step"><span class="step-num">步骤1</span><span class="step-label">[第1问]</span><span class="step-text">半对数模型：0.092×100%=9.2%。教育每多1年，工资增约9.2%</span></div>
+<div class="step"><span class="step-num">步骤2</span><span class="step-label">[第2问]</span><span class="step-text">水平模型系数是「元/年」而非「%/年」。通常取对数后系数更稳定（缓解异方差）</span></div>
+</div><div class="q"><span class="tag tag-ai">✏️ AI编拟综合案例</span> <span class="exam-marker tag-short">简答</span> <span class="exam-marker tag-case">案例</span> (2) female的系数0.035和交乘项female×educ的系数0.015分别代表什么？男性的工资方程是什么？女性的呢？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示详细解答</button><div class="a">
+<div class="step"><span class="step-num">步骤1</span><span class="step-label">[男性]</span><span class="step-text">female=0 → ln(wage)=0.420+0.092educ+0.045exper-0.001exper²</span></div>
+<div class="step"><span class="step-num">步骤2</span><span class="step-label">[女性]</span><span class="step-text">female=1 → ln(wage)=(0.420+0.035)+(0.092+0.015)educ+0.045exper-0.001exper²</span></div>
+<div class="step"><span class="step-num">步骤3</span><span class="step-label">[β_female]</span><span class="step-text">女性在截距上多3.5%（但t检验可能不显著，取决于标准误）</span></div>
+<div class="step"><span class="step-num">步骤4</span><span class="step-label">[β_interact]</span><span class="step-text">女性教育回报率比男性高1.5%/年（若显著，说明存在性别斜率差异）</span></div>
+</div><div class="q"><span class="tag tag-ai">✏️ AI编拟综合案例</span> <span class="exam-marker tag-judge">判断</span> <span class="exam-marker tag-short">简答</span> <span class="exam-marker tag-case">案例</span> (3) 研究者怀疑model存在异方差。请设计检验方案，并说明如果存在应如何处理。</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示详细解答</button><div class="a">
+<div class="step"><span class="step-num">步骤1</span><span class="step-label">[检验]</span><span class="step-text">BP检验：先OLS得残差û，再回归û²对所有X，LM=n·R²_û ~ χ²(5)</span></div>
+<div class="step"><span class="step-num">步骤2</span><span class="step-label">[判断]</span><span class="step-text">若LM>临界值→拒绝同方差</span></div>
+<div class="step"><span class="step-num">步骤3</span><span class="step-label">[处理]</span><span class="step-text">① 使用异方差稳健标准误(White/HC) ② 若已知异方差形式可用WLS</span></div>
+</div><div class="q"><span class="tag tag-ai">✏️ AI编拟综合案例</span> <span class="exam-marker tag-judge">判断</span> <span class="exam-marker tag-case">案例</span> (4) 该模型R²=0.312，是否说明模型很差？为什么？</div><button class="s" onclick="var x=this.nextElementSibling;x.style.display='block';this.style.display='none'">🔍 显示详细解答</button><div class="a">
+<div class="step"><span class="step-num">步骤1</span><span class="step-label">[分析]</span><span class="step-text">横截面微观数据的R²通常在0.1-0.4之间，0.312属正常</span></div>
+<div class="step"><span class="step-num">步骤2</span><span class="step-label">[判断]</span><span class="step-text">关键是系数显著性（t/F检验）和理论一致性，而非R²高低</span></div>
+<div class="step"><span class="step-num">步骤3</span><span class="step-label">[结论]</span><span class="step-text">不能说模型很差，需结合其他诊断统计量综合判断</span></div>
+</div></div><div class="speed-box" id="<div class="confusion" style="background:#e8f5e9;border-color:#2e7d32"><h5>💡 简答话术模板 · 对数模型解释</h5><p><b>📌 典型简答：解释半对数模型 lnY=β₀+β₁X 中β₁的含义</b></p><p><b>话术结构：</b>① 判断模型类型 → ② 写出公式 → ③ 代入数字 → ④ 给出结论</p><p><b>示范答案：</b></p><p>「这是一个半对数模型（因为lnY对X回归，不是lnY对lnX）。β₁的估计值为0.083。在半对数模型中，β₁×100%表示X每增加1个单位，Y变化的百分比。所以教育年限每增加1年，小时工资平均增加约8.3%。如果需要精确值，可以用公式%ΔY=100×[exp(β₁ΔX)-1]计算。J」</p><p style="margin-top:8px"><b>得分点：</b>指出模型类型(2分)+写出公式(2分)+正确解释(3分)+精确vs近似(1分)</p></div>
+speed-1"><h5>⏱ 考前5分钟必记 · 对数模型与参数解释</h5><p><b>核心公式：</b><span class="formula">lnY=β₀+β₁lnX → 弹性=β₁</span> <span class="formula">lnY=β₀+β₁X → %ΔY=100β₁ΔX</span> <span class="formula">Â=e^{截距}</span> </p><p><b>必会题型：</b>给出工资方程回归结果，解释各系数含义并诊断异方差</p></div></div>
+
+<!-- ============================================================ -->
+<!-- V6增强 HTML - Topic 2 虚拟变量 ～ Topic 5 自相关           -->
+<!-- 生成依据：教师重点PDF + v5深度内容 + v6增强要求             -->
+<!-- ============================================================ -->
+
+<!-- ========== Topic 2: 虚拟变量 (Dummy Variables) ========== -->
+<div class="priority-box" data-level="core" data-stars="4">
+  <div class="topic-header core" id="t2">
+    <h2 class="core">专题2：虚拟变量与结构变化（Dummy Variables）</h2>
+    <div class="topic-meta"><span class="badge-core">核心章节</span><span class="badge-star">★★★★</span></div>
+  </div>
+</div>
+
+<div class="weight-box">
+  <div class="weight-header">📈 考试权重</div>
+  <div class="weight-body">
+    <div class="weight-item"><span class="weight-label">分值占比</span><span class="weight-value">约 8-12 分</span></div>
+    <div class="weight-item"><span class="weight-label">题型分布</span><span class="weight-value">单选 2-3 题 + 判断 1-2 题 + 简答 1 题 / 案例 1 问</span></div>
+    <div class="weight-item"><span class="weight-label">难度系数</span><span class="weight-value">★★★☆☆（中等偏易）</span></div>
+    <div class="weight-item"><span class="weight-label">核心要求</span><span class="weight-value">理解虚拟变量的设置原则、交互效应、季节调整、结构稳定性检验（邹检验）</span></div>
+  </div>
+</div>
+
+<!-- ===== 第1节：虚拟变量的基本概念与设置原则 ===== -->
+<div class="section-card core-section">
+  <h3>2.1 虚拟变量的基本概念与设置原则</h3>
+  <div class="exam-tags">
+    <span class="exam-type">📝 题型覆盖</span>
+    <span class="exam-tag" data-types="['单选','判断','简答','案例']">exam_types(['单选','判断','简答','案例'])</span>
+  </div>
+
+  <div class="knowledge-point">
+    <h4>2.1.1 虚拟变量的定义</h4>
+    <div class="exam-tag-inline" data-types="['单选','判断']">exam_types(['单选','判断'])</div>
+    <p><strong>虚拟变量（Dummy Variable）</strong>又称哑变量、指标变量、二元变量，是取值为 0 或 1 的人工变量，用于将<strong>定性因素</strong>（如性别、地区、季节、政策实施）<strong>量化</strong>引入回归模型。</p>
+    <div class="formula-display">
+      D = 1（具备某属性）&emsp;或&emsp; D = 0（不具备某属性）
+    </div>
+    <p>虚拟变量使回归模型能够捕捉到<strong>定性因素对被解释变量的影响</strong>，是计量经济学处理非定量信息的基本工具。</p>
+  </div>
+
+  <div class="knowledge-point">
+    <h4>2.1.2 虚拟变量的设置原则（核心考点）</h4>
+    <div class="exam-tag-inline" data-types="['单选','判断','简答']">exam_types(['单选','判断','简答'])</div>
+    <div class="principle-list">
+      <div class="principle-item">
+        <span class="principle-num">①</span>
+        <div>
+          <strong>"N-1" 原则（避免完全多重共线性——虚拟变量陷阱）</strong>
+          <p>如果一个定性因素有 <strong>m</strong> 个分类，则只能引入 <strong>m-1</strong> 个虚拟变量，否则会落入<strong>"虚拟变量陷阱"</strong>（Dummy Variable Trap）——即产生<strong>完全多重共线性</strong>，模型无法估计（X'X 不可逆）。</p>
+          <div class="example-box">
+            <strong>例：</strong>性别有男、女两类（m=2），只能设 1 个虚拟变量 D（如 D=1 表示女性，D=0 表示男性）。若同时引入 D<sub>男</sub> 和 D<sub>女</sub>，则 D<sub>男</sub> + D<sub>女</sub> = 1，与截距项完全共线。
+          </div>
+        </div>
+      </div>
+      <div class="principle-item">
+        <span class="principle-num">②</span>
+        <div>
+          <strong>基准组（Reference Group）选择</strong>
+          <p>被省略的分类（取 0 的那一组）称为<strong>基准组/参照组</strong>。虚拟变量的系数解释为：该组与基准组之间被解释变量的<strong>平均差异</strong>。基准组的选择不影响模型的拟合优度，但影响系数解释的方便性。</p>
+        </div>
+      </div>
+      <div class="principle-item">
+        <span class="principle-num">③</span>
+        <div>
+          <strong>互斥性与完备性</strong>
+          <p>每个样本点只能且必须属于一个分类。互斥保证不重叠，完备保证无遗漏。</p>
+        </div>
+      </div>
+      <div class="principle-item">
+        <span class="principle-num">④</span>
+        <div>
+          <strong>多种分类情景的处理</strong>
+          <p>多个定性因素应分别引入各自的虚拟变量组。例如研究工资的影响因素，同时考虑性别（1个虚拟变量）和学历（本科/硕士/博士→2个虚拟变量），共引入 3 个虚拟变量。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="knowledge-point">
+    <h4>2.1.3 虚拟变量的基本模型形式</h4>
+    <div class="exam-tag-inline" data-types="['单选','判断','简答']">exam_types(['单选','判断','简答'])</div>
+    <div class="model-types">
+      <div class="model-type-box">
+        <strong>加法模型（截距改变）</strong>
+        <p>Y<sub>i</sub> = β<sub>1</sub> + β<sub>2</sub>D<sub>i</sub> + β<sub>3</sub>X<sub>i</sub> + u<sub>i</sub></p>
+        <p>D=0 时：E(Y|D=0) = β<sub>1</sub> + β<sub>3</sub>X</p>
+        <p>D=1 时：E(Y|D=1) = (β<sub>1</sub>+β<sub>2</sub>) + β<sub>3</sub>X</p>
+        <p>β<sub>2</sub> 度量两组的截距差异（<strong>平均差异</strong>），斜率相同。（图解：两条平行线）</p>
+      </div>
+      <div class="model-type-box">
+        <strong>乘法模型（斜率改变）</strong>
+        <p>Y<sub>i</sub> = β<sub>1</sub> + β<sub>2</sub>X<sub>i</sub> + β<sub>3</sub>(D<sub>i</sub>×X<sub>i</sub>) + u<sub>i</sub></p>
+        <p>D=0 时：E(Y|D=0) = β<sub>1</sub> + β<sub>2</sub>X</p>
+        <p>D=1 时：E(Y|D=1) = β<sub>1</sub> + (β<sub>2</sub>+β<sub>3</sub>)X</p>
+        <p>β<sub>3</sub> 度量两组斜率差异（<strong>边际效应差异</strong>）。（图解：两条交叉线）</p>
+      </div>
+      <div class="model-type-box">
+        <strong>加法+乘法模型（截距与斜率同时改变）</strong>
+        <p>Y<sub>i</sub> = β<sub>1</sub> + β<sub>2</sub>D<sub>i</sub> + β<sub>3</sub>X<sub>i</sub> + β<sub>4</sub>(D<sub>i</sub>×X<sub>i</sub>) + u<sub>i</sub></p>
+        <p>β<sub>2</sub> 度量截距差异，β<sub>4</sub> 度量斜率差异。这是最灵活的设定，容许两组的回归线完全不同。</p>
+      </div>
+    </div>
+    <div class="highlight-box">
+      ⚠️ <strong>考试注意：</strong>单选题常问"加法模型与乘法模型的区别"——加法模型只改变截距（平行移动），乘法模型改变斜率（旋转），加乘并用同时改变两者。判断是否用加乘并用模型，取决于<strong>邹检验（Chow Test）</strong>的结果。
+    </div>
+  </div>
+
+  <div class="knowledge-point">
+    <h4>2.1.4 虚拟变量陷阱的数学本质</h4>
+    <div class="exam-tag-inline" data-types="['单选','判断']">exam_types(['单选','判断'])</div>
+    <p>设定性变量有 m 个分类，若引入全部 m 个虚拟变量 D<sub>1</sub>, D<sub>2</sub>, ..., D<sub>m</sub>，则对每个样本点有：</p>
+    <div class="formula-display">
+      D<sub>1</sub> + D<sub>2</sub> + ... + D<sub>m</sub> = 1
+    </div>
+    <p>在含有截距项的模型中，截距项对应一个元素全为 1 的列向量，恰好等于 m 个虚拟变量之和，因此产生<strong>完全多重共线性</strong>，设计矩阵 X 列秩小于列数，X'X 奇异，OLS 估计量不存在唯一解。</p>
+    <p><strong>解决方式：</strong>要么<strong>去掉截距项</strong>（可引入全部 m 个虚拟变量），要么<strong>遵循 N-1 原则</strong>保留截距项。实务中几乎总是选择后者。</p>
+  </div>
+</div>
+
+<!-- ===== 第2节：虚拟变量的应用 ===== -->
+<div class="section-card">
+  <h3>2.2 虚拟变量的主要应用场景</h3>
+  <div class="exam-tags">
+    <span class="exam-type">📝 题型覆盖</span>
+    <span class="exam-tag" data-types="['单选','判断','简答','案例']">exam_types(['单选','判断','简答','案例'])</span>
+  </div>
+
+  <div class="knowledge-point">
+    <h4>2.2.1 季节调整（Seasonal Adjustment）</h4>
+    <div class="exam-tag-inline" data-types="['单选','判断','简答']">exam_types(['单选','判断','简答'])</div>
+    <p>利用虚拟变量去除时间序列数据中的季节波动成分。季度数据设 3 个虚拟变量（Q<sub>2</sub>, Q<sub>3</sub>, Q<sub>4</sub>，以 Q<sub>1</sub> 为基准），月度数据设 11 个虚拟变量（以 1 月为基准）。</p>
+    <div class="formula-display">
+      Y<sub>t</sub> = β<sub>1</sub> + β<sub>2</sub>Q<sub>2t</sub> + β<sub>3</sub>Q<sub>3t</sub> + β<sub>4</sub>Q<sub>4t</sub> + β<sub>5</sub>X<sub>t</sub> + u<sub>t</sub>
+    </div>
+    <p><strong>虚拟变量季节调整的优势</strong>：比移动平均法更灵活，可以同时控制其他经济变量的影响，且可直接检验季节效应的统计显著性。</p>
+  </div>
+
+  <div class="knowledge-point">
+    <h4>2.2.2 分段回归与结构变化（Chow Test）</h4>
+    <div class="exam-tag-inline" data-types="['单选','判断','简答','案例']">exam_types(['单选','判断','简答','案例'])</div>
+    <p><strong>邹检验（Chow Test, 1960）</strong>检验回归模型在两个（或多个）子样本间是否存在<strong>结构变化</strong>。虚拟变量法是邹检验的等价实现——引入截距虚拟变量和斜率虚拟变量（即交互项），联合检验这些虚拟变量的系数是否全为零。</p>
+
+    <div class="chow-steps">
+      <p><strong>邹检验步骤：</strong></p>
+      <ol>
+        <li><strong>合并回归（有约束）：</strong>用全部样本估计 Y = β<sub>1</sub> + β<sub>2</sub>X + u，得到 RSS<sub>R</sub></li>
+        <li><strong>分样本回归（无约束）：</strong>分别用子样本1和子样本2估计，得到 RSS<sub>1</sub> 和 RSS<sub>2</sub>，RSS<sub>UR</sub> = RSS<sub>1</sub> + RSS<sub>2</sub></li>
+        <li><strong>构造 F 统计量：</strong>F = [(RSS<sub>R</sub> - RSS<sub>UR</sub>)/k] / [RSS<sub>UR</sub>/(N-2k)] ~ F(k, N-2k)，其中 k 为待估参数个数</li>
+        <li><strong>判断：</strong>若 F > F<sub>α</sub>(k, N-2k)，拒绝"结构稳定"原假设，认为存在结构变化</li>
+      </ol>
+    </div>
+    <div class="highlight-box">
+      ⚠️ <strong>邹检验的前提假设：</strong>① 两个子样本的随机误差项独立同分布（同方差） ② 误差项服从正态分布 ③ 若违反同方差假设，应使用<strong>修正邹检验</strong>或虚拟变量交互项法（White 异方差稳健标准误）。
+    </div>
+  </div>
+
+  <div class="knowledge-point">
+    <h4>2.2.3 交互效应分析</h4>
+    <div class="exam-tag-inline" data-types="['单选','判断','案例']">exam_types(['单选','判断','案例'])</div>
+    <p>两个虚拟变量（或一个虚拟变量与一个连续变量）的<strong>交互项</strong>捕捉它们之间的协同效应。例如研究教育回报率是否因性别而异：</p>
+    <div class="formula-display">
+      ln(Wage) = β<sub>1</sub> + β<sub>2</sub>Female + β<sub>3</sub>Edu + β<sub>4</sub>(Female×Edu) + u
+    </div>
+    <p>β<sub>4</sub> 度量女性与男性在教育回报率上的差异。若 β<sub>4</sub> < 0 且显著，说明女性的教育回报率低于男性。</p>
+  </div>
+
+  <div class="knowledge-point">
+    <h4>2.2.4 虚拟变量作为被解释变量（LPM 模型）</h4>
+    <div class="exam-tag-inline" data-types="['单选','判断','简答']">exam_types(['单选','判断','简答'])</div>
+    <p><strong>线性概率模型（Linear Probability Model, LPM）</strong>：当被解释变量 Y 本身是二值变量（0/1）时，OLS 回归可解释为条件概率：</p>
+    <div class="formula-display">
+      E(Y|X) = P(Y=1|X) = X'β
+    </div>
+    <p><strong>LPM 的缺陷：</strong></p>
+    <ul>
+      <li>拟合值可能超出 [0,1] 范围（非概率约束）</li>
+      <li><strong>异方差性</strong>：Var(Y|X) = X'β·(1-X'β)，依赖于 X（需使用异方差稳健标准误）</li>
+      <li>误差项非正态，非线性</li>
+      <li><strong>改进方法</strong>：Logit 或 Probit 模型（保证概率在 0-1 之间且非线性）</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ===== ConfusionTable：虚拟变量易混淆辨析 ===== -->
+<div class="confusion-table">
+  <h3>🧩 易混淆辨析：虚拟变量核心概念</h3>
+  <table>
+    <thead>
+      <tr><th width="18%">混淆对</th><th width="41%">概念 A</th><th width="41%">概念 B</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="conf-pair">加法模型 vs 乘法模型</span></td>
+        <td><strong>加法模型</strong>：Y=β₁+β₂D+β₃X+u，只改变截距（两组平行线），β₂反映平均差异</td>
+        <td><strong>乘法模型</strong>：Y=β₁+β₂X+β₃(D×X)+u，只改变斜率（两组交叉线），β₃反映边际效应差异</td>
+      </tr>
+      <tr>
+        <td><span class="conf-pair">N-1 原则 vs 去掉截距</span></td>
+        <td><strong>N-1 原则</strong>：m 类定性变量引入 m-1 个虚拟变量，保留截距项。系数解释为相对基准组的差异。实务首选</td>
+        <td><strong>去掉截距</strong>：引入全部 m 个虚拟变量，不含截距项。系数直接解释为各组均值。但模型拟合指标（R²）计算方式改变</td>
+      </tr>
+      <tr>
+        <td><span class="conf-pair">虚拟变量陷阱 vs 完全共线性</span></td>
+        <td><strong>虚拟变量陷阱</strong>：特指因违反 N-1 原则导致的完全多重共线性，所有虚拟变量之和等于截距列</td>
+        <td><strong>完全共线性</strong>：更一般的概念，指解释变量间存在精确线性关系。虚拟变量陷阱是完全共线性的一个特例</td>
+      </tr>
+      <tr>
+        <td><span class="conf-pair">邹检验 vs 虚拟变量法</span></td>
+        <td><strong>邹检验</strong>：分样本回归后构造 F 统计量检验结构稳定性。优点是计算简便传统，缺点需要同方差假设</td>
+        <td><strong>虚拟变量交互项法</strong>：引入截距虚拟变量和斜率交互项，用 t/F 检验系数显著性。优点可结合稳健标准误，且一次回归得到全部结果</td>
+      </tr>
+      <tr>
+        <td><span class="conf-pair">LPM vs Logit/Probit</span></td>
+        <td><strong>LPM（线性概率模型）</strong>：计算简单、解释直观，但存在拟合值越界、异方差、非线性不足等问题</td>
+        <td><strong>Logit/Probit</strong>：保证概率在 [0,1] 内，非线性S型曲线更合理。Logit 用逻辑分布，Probit 用正态分布，结果通常相似</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ===== 原题标记：教师题库 ===== -->
+<div class="original-problems">
+  <h3>📚 教师原题精选（Topic 2）</h3>
+
+  <div class="problem-card exam_types" data-types="['单选']">
+    <span class="problem-source tag-teacher">👨‍🏫 教师原题</span>
+    <span class="problem-type tag-choice">单选</span>
+    <div class="problem-body">
+      <p><strong>【2019 期末】</strong> 将定性因素引入回归模型时，如果定性因素有 m 个分类，在保留截距项的情况下，最多能引入的虚拟变量个数为：</p>
+      <p>A. m &emsp; B. m-1 &emsp; C. m+1 &emsp; D. 任意多个</p>
+      <p class="answer"><strong>答案：B</strong>（N-1 原则，避免虚拟变量陷阱）</p>
+    </div>
+  </div>
+
+  <div class="problem-card exam_types" data-types="['判断']">
+    <span class="problem-source tag-teacher">👨‍🏫 教师原题</span>
+    <span class="problem-type tag-judge">判断</span>
+    <div class="problem-body">
+      <p><strong>【2020 期中】</strong> 乘法形式的虚拟变量模型（仅含交互项）允许不同组的截距不同。</p>
+      <p class="answer"><strong>答案：×</strong>（错误。乘法模型仅改变斜率，截距不变。截距和斜率同时改变需要加法+乘法并用模型）</p>
+    </div>
+  </div>
+
+  <div class="problem-card exam_types" data-types="['简答']">
+    <span class="problem-source tag-teacher">👨‍🏫 教师原题</span>
+    <span class="problem-type tag-short">简答</span>
+    <div class="problem-body">
+      <p><strong>【2021 期末】</strong> 什么是"虚拟变量陷阱"？如何避免？请简要说明。</p>
+      <p class="answer"><strong>答案：</strong>虚拟变量陷阱指回归模型中引入全部 m 个虚拟变量导致完全多重共线性的现象。原因是在有截距项时，所有虚拟变量之和等于1，与截距项完全共线。避免方法：① 遵循 N-1 原则，m 类只引入 m-1 个虚拟变量；② 去掉截距项，直接引入全部 m 个虚拟变量。</p>
+    </div>
+  </div>
+
+  <div class="problem-card exam_types" data-types="['案例']">
+    <span class="problem-source tag-teacher">👨‍🏫 教师原题</span>
+    <span class="problem-type tag-case">案例</span>
+    <div class="problem-body">
+      <p><strong>【2022 期末案例】</strong> 研究者利用长三角 40 家制造企业 2015-2020 年面板数据，研究数字化转型对企业生产率的影响。其中关键变量包括：是否进行数字化改造的虚拟变量（Dig=1/0）、企业所有制虚拟变量（State=1 国企/0 非国企）。回归结果如下（稳健标准误）：</p>
+      <div class="regression-output">
+        ln(TFP) = 2.15 + 0.38Dig - 0.12State + 0.05(Dig×State) + 0.61ln(K/L) + 其他控制变量<br>
+        &emsp;&emsp;&emsp; (0.22) (0.09) (0.11) &emsp;(0.03) &emsp;&emsp;(0.08)<br>
+        &emsp;&emsp;&emsp; [***]&ensp;[**]&emsp;&emsp;[不显著]&emsp;[*]&emsp;&emsp;&emsp;[***]<br>
+        R²=0.72, N=240
+      </div>
+      <p><strong>问：</strong>（1）交互项 Dig×State 的系数如何解释？（2）国企的数字化转型效应是否显著异于非国企？（3）根据回归结果，非国企的数字化效应是多少？</p>
+      <p class="answer"><strong>答案：</strong>（1）交互项系数 0.05 且仅在 10% 水平显著，说明国企的数字化转型效应比非国企高 0.05，但统计显著性较弱。（2）在 5% 水平不显著（p>0.05），10% 水平边际显著。通常认为不存在显著差异。（3）非国企的数字化效应 = Dig 系数 = 0.38，即数字化转型使非国企 TFP 平均提高约 38%。</p>
+    </div>
+  </div>
+</div>
+
+<!-- ===== AI编拟综合案例题 ===== -->
+<div class="ai-case">
+  <div class="ai-badge">🤖 AI 编拟·综合案例</div>
+  <h3>📋 Topic 2 综合案例：教育回报率的性别与地区差异</h3>
+  <p class="case-source" data-source="ai">来源：AI 编拟 · 覆盖案例题型 · 分值约 8-10 分</p>
+
+  <div class="case-scenario">
+    <p><strong>背景：</strong>某研究团队利用 2023 年中国家庭收入调查（CHIP）数据，研究教育回报率在性别和城乡之间的差异。数据包含 5000 个样本，变量包括：ln(工资)、教育年限（Edu, 年）、性别虚拟变量（Female=1 女性）、户籍虚拟变量（Urban=1 城镇）、工作经验（Exp, 年）及其平方项（Exp²）。</p>
+
+    <p><strong>模型设定：</strong></p>
+    <div class="formula-display">
+      ln(Wage) = β₁ + β₂Female + β₃Urban + β₄Edu + β₅(Female×Edu) + β₆(Urban×Edu) + β₇Exp + β₈Exp² + u
+    </div>
+
+    <p><strong>STATA 回归结果（部分，稳健标准误）：</strong></p>
+    <div class="stata-output">
+      ln(Wage) | Coef. &emsp; Robust Std.Err. &emsp; t &emsp; P>|t|<br>
+      ─────────────────────────────────────────<br>
+      Female | -0.185 &emsp; 0.042 &emsp; -4.40 &emsp; 0.000<br>
+      Urban | 0.123 &emsp; 0.035 &emsp; 3.51 &emsp; 0.000<br>
+      Edu | 0.082 &emsp; 0.006 &emsp; 13.67 &emsp; 0.000<br>
+      Female×Edu | -0.015 &emsp; 0.007 &emsp; -2.14 &emsp; 0.032<br>
+      Urban×Edu | 0.021 &emsp; 0.008 &emsp; 2.63 &emsp; 0.009<br>
+      Exp | 0.031 &emsp; 0.005 &emsp; 6.20 &emsp; 0.000<br>
+      Exp² | -0.0005 &emsp; 0.0001 &emsp; -5.00 &emsp; 0.000<br>
+      _cons | 1.850 &emsp; 0.120 &emsp; 15.42 &emsp; 0.000<br>
+      ─────────────────────────────────────────<br>
+      R² = 0.385, &emsp; N = 5000
+    </div>
+  </div>
+
+  <div class="case-questions">
+    <p><strong>问题：</strong></p>
+    <ol>
+      <li><strong>（基础·2分）</strong>模型中引入了几个虚拟变量？需要引入几个虚拟变量才能避免虚拟变量陷阱？为什么没有引入"男性"和"农村"的虚拟变量？<br><span class="answer-hint">答：模型引入 2 个虚拟变量（Female和Urban）。性别有2类→需1个，户籍有2类→需1个，共2个。省略的类别（男性、农村）自动成为基准组。</span></li>
+      <li><strong>（计算·3分）</strong>计算城镇男性的教育回报率、城镇女性的教育回报率。教育每增加1年，城镇男性的工资增长百分之多少？<br><span class="answer-hint">答：城镇男性（Female=0, Urban=1）：回报率 = β₄ + β₆ = 0.082 + 0.021 = 0.103，即 10.3%。城镇女性（Female=1, Urban=1）：回报率 = β₄ + β₅ + β₆ = 0.082 - 0.015 + 0.021 = 0.088，即 8.8%。</span></li>
+      <li><strong>（推断·3分）</strong>在 5% 显著性水平下，性别对教育回报率的调节效应是否显著？城乡差异呢？交互项系数的经济学含义是什么？<br><span class="answer-hint">答：Female×Edu 的 p=0.032 < 0.05，显著。说明女性教育回报率显著低于男性（低 1.5%）。Urban×Edu 的 p=0.009 < 0.05，显著。说明城镇居民教育回报率显著高于农村（高 2.1%）。交互项系数度量了分组变量对连续变量边际效应的调节作用。</span></li>
+      <li><strong>（拓展·2分）</strong>如果研究者怀疑模型存在异方差问题，应该采取什么措施？本回归结果已使用稳健标准误，这对你的推断结论有何影响？<br><span class="answer-hint">答：应使用异方差稳健标准误（White标准误）。本结果已使用，若普通标准误与稳健标准误差异大，说明存在异方差，应以稳健标准误为准。</span></li>
+    </ol>
+  </div>
+</div>
+
+<!-- ===== SpeedBox：考前5分钟必记 ===== -->
+<div class="speed-box">
+  <div class="speed-header">⏱ 考前5分钟必记 · Topic 2</div>
+  <div class="speed-body">
+    <ul>
+      <li><strong>N-1 原则</strong>：m 类 → m-1 个虚拟变量，否则落入<strong>虚拟变量陷阱</strong>（完全多重共线性）</li>
+      <li><strong>加法模型</strong>：只改变截距 → 系数解释为"相对于基准组的平均差异"（平行线）</li>
+      <li><strong>乘法模型</strong>：只改变斜率 → 系数解释为"两组的边际效应差异"（交叉线）</li>
+      <li><strong>加乘并用</strong>：同时改变截距和斜率 → 两组回归线可完全不同（最灵活）</li>
+      <li><strong>邹检验</strong>：F = [(RSS<sub>R</sub> - RSS<sub>UR</sub>)/k] / [RSS<sub>UR</sub>/(N-2k)]，拒绝 H₀ 说明存在<strong>结构变化</strong></li>
+      <li><strong>LPM 三大问题</strong>：① 拟合值越界 ② 异方差 ③ 误差非正态 → 改用 Logit/Probit</li>
+      <li><strong>交互项</strong>：D×X 系数度量分组变量对 X 边际效应的调节作用</li>
+    </ul>
+  </div>
+</div>
+
+<hr class="topic-divider">
+
+<!-- ========== Topic 3: 多重共线性 (Multicollinearity) ========== -->
+<div class="priority-box" data-level="imp" data-stars="3">
+  <div class="topic-header imp" <div class="confusion" style="background:#e8f5e9;border-color:#2e7d32"><h5>💡 简答话术模板 · 虚拟变量解释</h5><p><b>📌 典型简答：解释模型 Y=β₀+δD+β₁X+γ(D·X)+u 中δ和γ的含义</b></p><p><b>话术结构：</b>① 写出两组方程 → ② 分别解释δ和γ</p><p><b>示范答案：</b></p><p>「将D=0（基准组）和D=1（比较组）代入方程：</p><p>D=0组：Y=β₀+β₁X+u</p><p>D=1组：Y=(β₀+δ)+(β₁+γ)X+u</p><p>δ是两组在截距上的差异——在X=0时，D=1组比D=0组平均高出δ个单位。</p><p>γ是两组在斜率上的差异——D=1组每增加1单位X，Y的变化比D=0组多γ个单位。」</p><p style="margin-top:8px"><b>得分点：</b>写出两个方程(3分)+解释δ(2分)+解释γ(3分)</p></div>
+id="t3">
+    <h2 class="imp">专题3：多重共线性诊断与处理（Multicollinearity）</h2>
+    <div class="topic-meta"><span class="badge-imp">重要章节</span><span class="badge-star">★★★</span></div>
+  </div>
+</div>
+
+<div class="weight-box">
+  <div class="weight-header">📈 考试权重</div>
+  <div class="weight-body">
+    <div class="weight-item"><span class="weight-label">分值占比</span><span class="weight-value">约 6-10 分</span></div>
+    <div class="weight-item"><span class="weight-label">题型分布</span><span class="weight-value">单选 1-2 题 + 判断 1 题 + 简答 1 题 / 案例 1 问</span></div>
+    <div class="weight-item"><span class="weight-label">难度系数</span><span class="weight-value">★★★☆☆（中等）</span></div>
+    <div class="weight-item"><span class="weight-label">核心要求</span><span class="weight-value">区分完全/不完全多重共线性、VIF 判断标准、后果与补救措施</span></div>
+  </div>
+</div>
+
+<!-- ===== 第1节：多重共线性的概念与分类 ===== -->
+<div class="section-card core-section">
+  <h3>3.1 多重共线性的概念与分类</h3>
+  <div class="exam-tags">
+    <span class="exam-type">📝 题型覆盖</span>
+    <span class="exam-tag" data-types="['单选','判断','简答','案例']">exam_types(['单选','判断','简答','案例'])</span>
+  </div>
+
+  <div class="knowledge-point">
+    <h4>3.1.1 定义</h4>
+    <div class="exam-tag-inline" data-types="['单选','判断']">exam_types(['单选','判断'])</div>
+    <p><strong>多重共线性（Multicollinearity）</strong>指线性回归模型中，两个或多个解释变量之间存在<strong>高度（但不完全）相关</strong>或<strong>精确线性相关</strong>的现象。</p>
+    <p>经典线性回归模型（CLRM）假定：<strong>不存在完全多重共线性</strong>，即设计矩阵 X 列满秩 rank(X) = k+1（其中 k 为解释变量个数）。</p>
+  </div>
+
+  <div class="knowledge-point">
+    <h4>3.1.2 完全多重共线性 vs 不完全多重共线性</h4>
+    <div class="exam-tag-inline" data-types="['单选','判断','简答']">exam_types(['单选','判断','简答'])</div>
+    <div class="compare-table-wrapper">
+      <table class="compare-table">
+        <thead>
+          <tr><th>维度</th><th>完全多重共线性</th><th>不完全多重共线性</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>线性关系</strong></td>
+            <td>存在精确线性关系：λ₁X₁ + λ₂X₂ + ... + λₖXₖ = 0（λ不全为0）</td>
+            <td>存在高度但不精确的相关关系：λ₁X₁ + λ₂X₂ + ... + λₖXₖ = v（v为随机误差）</td>
+          </tr>
+          <tr>
+            <td><strong>矩阵秩</strong></td>
+            <td>rank(X) &lt; k+1，X'X 奇异</td>
+            <td>rank(X) = k+1，但 X'X 接近奇异</td>
+          </tr>
+          <tr>
+            <td><strong>OLS 估计量</strong></td>
+            <td><strong>不存在唯一解</strong>（β̂ = (X'X)⁻¹X'Y 无法计算）</td>
+            <td><strong>存在唯一解</strong>，但方差非常大</td>
+          </tr>
+          <tr>
+            <td><strong>常见原因</strong></td>
+            <td>虚拟变量陷阱、恒等式（如 X₁+X₂=总收入）</td>
+            <td>经济变量共同趋势（时间序列）、变量构造（X² 与 X）、小样本</td>
+          </tr>
+          <tr>
+            <td><strong>解决方法</strong></td>
+            <td>删除产生共线性的变量；重新设定模型</td>
+            <td>VIF 诊断后选择补救措施（见3.3）</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="knowledge-point">
+    <h4>3.1.3 多重共线性的来源</h4>
+    <div class="exam-tag-inline" data-types="['单选','判断']">exam_types(['单选','判断'])</div>
+    <ol>
+      <li><strong>经济变量共同的变动趋势</strong>：如时间序列数据中 GDP、消费、投资都随时间增长，高度相关</li>
+      <li><strong>滞后变量的引入</strong>：Y<sub>t</sub> 与 Y<sub>t-1</sub> 通常高度相关</li>
+      <li><strong>变量构造方式</strong>：模型同时包含 X 和 X²（多项式项），或 X 和 X/其他变量的比例</li>
+      <li><strong>虚拟变量陷阱</strong>：违反 N-1 原则导致完全共线性</li>
+      <li><strong>样本容量过小</strong>：小样本中变量间可能呈现虚假的相关关系</li>
+      <li><strong>模型过度设定</strong>：包含大量无关或重复的解释变量</li>
+    </ol>
+  </div>
+</div>
+
+<!-- ===== 第2节：多重共线性的后果 ===== -->
+<div class="section-card">
+  <h3>3.2 多重共线性的后果</h3>
+  <div class="exam-tags">
+    <span class="exam-type">📝 题型覆盖</span>
+    <span class="exam-tag" data-types="['单选','判断','简答']">exam_types(['单选','判断','简答'])</span>
+  </div>
+
+  <div class="consequence-list">
+    <div class="consequence-item">
+      <span class="conseq-num">①</span>
+      <h4>方差增大，估计精度下降</h4>
+      <p>不完全多重共线性下，虽 β̂ 仍是 BLUE（最佳线性无偏估计量），但方差 Var(β̂ⱼ) 被<strong>方差膨胀因子（VIF）</strong>放大：</p>
+      <div class="formula-display">
+        Var(β̂ⱼ) = σ² / [(1-Rⱼ²) · Σ(xᵢⱼ - x̄ⱼ)²] = [σ² / Σ(xᵢⱼ - x̄ⱼ)²] × VIFⱼ
+      </div>
+      <p>其中 VIFⱼ = 1 / (1 - Rⱼ²)，Rⱼ² 为第 j 个解释变量对其他所有解释变量回归的拟合优度。</p>
+    </div>
+    <div class="consequence-item">
+      <span class="conseq-num">②</span>
+      <h4>t 统计量变小，系数不显著</h4>
+      <p>方差增大导致 t = β̂ⱼ / SE(β̂ⱼ) 变小，原本显著的变量可能变得<strong>不显著</strong>。这是多重共线性的典型症状：<strong>整体 F 检验显著但单个 t 检验不显著</strong>。</p>
+    </div>
+    <div class="consequence-item">
+      <span class="conseq-num">③</span>
+      <h4>系数估计值不稳定，对模型设定敏感</h4>
+      <p>β̂ 对<strong>微小数据变化</strong>（如增减一个观测值、增减一个变量）非常敏感。系数的<strong>符号可能不符合经济理论预期</strong>，且标准误很大。</p>
+    </div>
+    <div class="consequence-item">
+      <span class="conseq-num">④</span>
+      <h4>完全共线性时 OLS 完全失效</h4>
+      <p>X'X 不可逆，OLS 解不存在。但<strong>完全共线性是设定错误</strong>（如虚拟变量陷阱），而非随机问题，应通过修正模型设定解决。</p>
+    </div>
+  </div>
+
+  <div class="highlight-box">
+    ⚠️ <strong>特别注意：</strong>多重共线性<strong>不影响 OLS 的无偏性</strong>，也不影响模型的整体预测能力（R² 仍可很高）。它只影响<strong>个体系数的估计精度和统计推断</strong>。因此多重共线性本质上是"数据问题"而非"模型设定错误"——"毒药"的程度取决于研究目标。
+  </div>
+</div>
+
+<!-- ===== 第3节：诊断与补救 ===== -->
+<div class="section-card">
+  <h3>3.3 多重共线性的诊断与补救措施</h3>
+  <div class="exam-tags">
+    <span class="exam-type">📝 题型覆盖</span>
+    <span class="exam-tag" data-types="['单选','判断','简答','案例']">exam_types(['单选','判断','简答','案例'])</span>
+  </div>
+
+  <div class="knowledge-point">
+    <h4>3.3.1 诊断方法</h4>
+    <div class="exam-tag-inline" data-types="['单选','判断','简答']">exam_types(['单选','判断','简答'])</div>
+    <table class="diagnosis-table">
+      <thead>
+        <tr><th>方法</th><th>操作</th><th>判断标准</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>相关系数矩阵</strong></td>
+          <td>计算各解释变量间的 Pearson 相关系数</td>
+          <td>|r| > 0.8 提示可能存在严重共线性。但低相关系数不排除多重共线性（多个变量的线性组合相关）</td>
+        </tr>
+        <tr>
+          <td><strong>方差膨胀因子（VIF）</strong></td>
+          <td>VIFⱼ = 1/(1-Rⱼ²)，其中 Rⱼ² 为 Xⱼ 对其他变量回归的 R²</td>
+          <td><strong>VIF > 10</strong>（或严格时 > 5）表示严重多重共线性。容忍度 Tolerance = 1/VIF < 0.1</td>
+        </tr>
+        <tr>
+          <td><strong>特征根与条件指数（CI）</strong></td>
+          <td>对 X'X 进行特征根分解，CI = √(λₘₐₓ / λₘᵢₙ)</td>
+          <td>CI > 30 表示严重共线性；特征根值接近于 0 的个数指示共线性关系的数量</td>
+        </tr>
+        <tr>
+          <td><strong>辅助回归法</strong></td>
+          <td>分别以每个解释变量为被解释变量对其他变量做回归</td>
+          <td>若某个辅助回归的 F 统计量显著（R² 高），说明该变量与其他变量存在共线性</td>
+        </tr>
+        <tr>
+          <td><strong>Klein 规则</strong></td>
+          <td>比较辅助回归 R² 与整体模型 R²</td>
+          <td>若辅助回归 R² > 整体模型 R²，存在共线性问题</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="knowledge-point">
+    <h4>3.3.2 补救措施</h4>
+    <div class="exam-tag-inline" data-types="['单选','判断','简答','案例']">exam_types(['单选','判断','简答','案例'])</div>
+    <table class="remedy-table">
+      <thead>
+        <tr><th>措施</th><th>做法</th><th>代价/局限</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>1. 删除变量</strong></td>
+          <td>删除 VIF 最高的一个或多个变量</td>
+          <td>可能引发<strong>遗漏变量偏误</strong>（OVB），需在精度与偏误间权衡</td>
+        </tr>
+        <tr>
+          <td><strong>2. 增加样本容量</strong></td>
+          <td>收集更多数据</td>
+          <td>可降低方差但可能无法获得更多数据；新数据可能仍存在相同共线性结构</td>
+        </tr>
+        <tr>
+          <td><strong>3. 变量变换</strong></td>
+          <td>差分变换（ΔY, ΔX）、对数变换、比率变换（X₁/X₂）、标准化</td>
+          <td>差分可能丢失长期关系（协整）信息；比率变换可能产生解释困难</td>
+        </tr>
+        <tr>
+          <td><strong>4. 主成分分析（PCA）</strong></td>
+          <td>提取主成分替代原始变量</td>
+          <td>主成分的经济含义不直观，解释困难；损失部分信息</td>
+        </tr>
+        <tr>
+          <td><strong>5. 岭回归（Ridge Regression）</strong></td>
+          <td>β̂(λ) = (X'X + λI)⁻¹X'Y，牺牲无偏性换取更小方差</td>
+          <td>引入偏误，λ 的选择具有主观性，推断困难（无标准误）</td>
+        </tr>
+        <tr>
+          <td><strong>6. 逐步回归</strong></td>
+          <td>向前/向后/逐步筛选变量</td>
+          <td>可能导致过度拟合，标准误被低估，模型选择偏误</td>
+        </tr>
+        <tr>
+          <td><strong>7. 获取先验信息</strong></td>
+          <td>利用经济理论对参数施加约束（如规模报酬不变）</td>
+          <td>先验信息可能不对，约束可能错误</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ===== ConfusionTable：多重共线性易混淆辨析 ===== -->
+<div class="confusion-table">
+  <h3>🧩 易混淆辨析：多重共线性核心概念</h3>
+  <table>
+    <thead>
+      <tr><th width="18%">混淆对</th><th width="41%">概念 A</th><th width="41%">概念 B</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="conf-pair">完全 vs 不完全多重共线性</span></td>
+        <td><strong>完全</strong>：精确线性关系，X'X 奇异，OLS 不存在唯一解。属于设定错误，必须修正</td>
+        <td><strong>不完全</strong>：高度相关但非精确，OLS 存在解但方差大。属于数据问题，可补救</td>
+      </tr>
+      <tr>
+        <td><span class="conf-pair">多重共线性 vs 异方差</span></td>
+        <td><strong>多重共线性</strong>：解释变量间的相关关系，影响估计精度（方差），不影响无偏性和一致性</td>
+        <td><strong>异方差</strong>：误差项的方差随观测值变化，影响标准误和推断，但不影响一致性和无偏性</td>
+      </tr>
+      <tr>
+        <td><span class="conf-pair">VIF > 10 但 F 显著</span></td>
+        <td><strong>典型症状</strong>：整体模型 F 统计量高度显著（R² 高），但各变量的 t 统计量不显著或符号反常</td>
+        <td><strong>原因</strong>：共线性变量共同解释 Y 的变异，但无法精确分离各自贡献，导致各系数标准误大</td>
+      </tr>
+      <tr>
+        <td><span class="conf-pair">删除共线变量 vs 遗漏变量偏误</span></td>
+        <td><strong>删除</strong>：删除一个高度共线的变量降低 VIF，提高其他变量的估计精度</td>
+        <td><strong>遗漏偏误</strong>：若删除的变量是重要的解释变量且与保留变量相关，导致 β̂ 有偏且不一致</td>
+      </tr>
+      <tr>
+        <td><span class="conf-pair">多重共线性 vs 自相关</span></td>
+        <td><strong>多重共线性</strong>：截面或时间序列数据均可发生，X 变量间相关</td>
+        <td><strong>自相关</strong>：仅时间序列/面板数据发生，同一变量不同时期相关（误差项相关）</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ===== 原题标记：教师题库 ===== -->
+<div class="original-problems">
+  <h3>📚 教师原题精选（Topic 3）</h3>
+
+  <div class="problem-card exam_types" data-types="['单选']">
+    <span class="problem-source tag-teacher">👨‍🏫 教师原题</span>
+    <span class="problem-type tag-choice">单选</span>
+    <div class="problem-body">
+      <p><strong>【2019 期末】</strong> 在多元线性回归模型中，多重共线性主要影响的是：</p>
+      <p>A. OLS 估计量的无偏性 &emsp; B. OLS 估计量的方差<br>C. OLS 估计量的一致性 &emsp; D. 模型的整体显著性</p>
+      <p class="answer"><strong>答案：B</strong>（多重共线性增大系数估计量的方差，但不影响无偏性和一致性。整体模型 F 检验仍可能显著）</p>
+    </div>
+  </div>
+
+  <div class="problem-card exam_types" data-types="['判断']">
+    <span class="problem-source tag-teacher">👨‍🏫 教师原题</span>
+    <span class="problem-type tag-judge">判断</span>
+    <div class="problem-body">
+      <p><strong>【2020 期中】</strong> 如果两个解释变量之间的相关系数为 0，说明模型中不存在多重共线性。</p>
+      <p class="answer"><strong>答案：×</strong>（错误。两两相关系数低不能排除多重共线性——更一般的情形是多个变量之间存在线性组合的相关性。须用 VIF 或辅助回归全面诊断）</p>
+    </div>
+  </div>
+
+  <div class="problem-card exam_types" data-types="['简答']">
+    <span class="problem-source tag-teacher">👨‍🏫 教师原题</span>
+    <span class="problem-type tag-short">简答</span>
+    <div class="problem-body">
+      <p><strong>【2021 期末】</strong> 简述多重共线性的后果及诊断方法。</p>
+      <p class="answer"><strong>答案：</strong><strong>后果：</strong>① OLS 估计量方差增大，精度下降 ② t 值变小，系数不显著 ③ 系数对数据变化敏感，符号可能反常 ④ 完全共线性时 OLS 无唯一解。<strong>诊断：</strong>① 相关系数矩阵（|r|>0.8） ② VIF > 10 ③ 条件指数 CI > 30 ④ 辅助回归法（F 检验显著） ⑤ Klein 规则（辅助 R² > 整体 R²）</p>
+    </div>
+  </div>
+
+  <div class="problem-card exam_types" data-types="['案例']">
+    <span class="problem-source tag-teacher">👨‍🏫 教师原题</span>
+    <span class="problem-type tag-case">案例</span>
+    <div class="problem-body">
+      <p><strong>【2022 期末案例】</strong> 研究者使用 1990-2020 年中国宏观数据研究消费函数：C = β₁ + β₂GDP + β₃W + β₄r + u，其中 C 为总消费、GDP 为国内生产总值、W 为居民可支配收入总额、r 为利率。回归结果：R²=0.992，F=856.3（p=0.000），但各变量 t 值均不显著（|t|<1.2）。VIF 分别为 18.2（GDP）、22.5（W）、1.3（r）。</p>
+      <p><strong>问：</strong>（1）该回归存在什么问题？（2）GDP 和 W 的 VIF 值意味着什么？（3）请提出至少两种可行的补救方案。</p>
+      <p class="answer"><strong>答案：</strong>（1）存在严重多重共线性：R² 极高、F 极显著、但各 t 不显著，典型的"F 显著 t 不显著"症状。（2）VIF>10 表示严重多重共线性。W（收入）与 GDP 高度相关，二者几乎携带相同信息。（3）方案一：删除 GDP 或 W 之一（保留经济含义更直接的变量）；方案二：用人均指标如 C/N、GDP/N 替代总量；方案三：差分变换为 ΔC、ΔGDP、ΔW 消除共同趋势；方案四：增加样本信息量（使用省际面板数据）。</p>
+    </div>
+  </div>
+</div>
+
+<!-- ===== AI编拟综合案例题 ===== -->
+<div class="ai-case">
+  <div class="ai-badge">🤖 AI 编拟·综合案例</div>
+  <h3>📋 Topic 3 综合案例：房价影响因素的多重共线性诊断</h3>
+  <p class="case-source" data-source="ai">来源：AI 编拟 · 覆盖案例题型 · 分值约 8-10 分</p>
+
+  <div class="case-scenario">
+    <p><strong>背景：</strong>某城市房地产研究团队收集了 2020-2024 年 100 个城区板块的横截面数据，研究房价（Price, 元/m²）的影响因素。初步设定的模型包含：</p>
+    <div class="formula-display">
+      ln(Price) = β₁ + β₂FloorArea + β₃Bedrooms + β₄DistanceCBD + β₅SchoolRank + β₆ParkDist + β₇ln(Income) + β₈PopDensity + u
+    </div>
+    <p>其中 FloorArea = 建筑面积(m²)，Bedrooms = 卧室数，DistanceCBD = 距市中心距离(km)，SchoolRank = 周边学校质量评分(1-10)，ParkDist = 距最近公园距离(km)，Income = 板块人均可支配收入(万元)，PopDensity = 人口密度(人/km²)。</p>
+
+    <p><strong>STATA 输出（部分）：</strong></p>
+    <div class="stata-output">
+      Source | SS &emsp;&emsp;&emsp; df &emsp; MS &emsp;&emsp; Number of obs = 100<br>
+      ─────────────────────────────────────────<br>
+      Model | 12.847 &emsp; 7 &emsp; 1.835 &emsp; F(7,92) = 35.62<br>
+      Residual | 4.738 &emsp; 92 &emsp; 0.051 &emsp; Prob > F = 0.000<br>
+      ─────────────────────────────────────────<br>
+      R-squared = 0.7305, Adj R-squared = 0.7109<br>
+      ─────────────────────────────────────────<br>
+      &emsp;&emsp;&emsp;&emsp;&emsp; Coef. &emsp; Std.Err. &emsp; t &emsp; P>|t| &emsp; VIF<br>
+      FloorArea &emsp;| 0.003 &emsp; 0.002 &emsp; 1.50 &emsp; 0.137 &emsp; 1.42<br>
+      Bedrooms &emsp;| 0.058 &emsp; 0.041 &emsp; 1.41 &emsp; 0.161 &emsp; 8.75<br>
+      DistanceCBD | -0.045 &emsp; 0.011 &emsp; -4.09 &emsp; 0.000 &emsp; 2.13<br>
+      SchoolRank &emsp;| 0.082 &emsp; 0.038 &emsp; 2.16 &emsp; 0.033 &emsp; 1.67<br>
+      ParkDist &emsp;| -0.021 &emsp; 0.015 &emsp; -1.40 &emsp; 0.165 &emsp; 1.88<br>
+      ln(Income) &emsp;| 0.314 &emsp; 0.162 &emsp; 1.94 &emsp; 0.055 &emsp; 9.82<br>
+      PopDensity &emsp;| 0.008 &emsp; 0.006 &emsp; 1.33 &emsp; 0.186 &emsp; 3.25<br>
+      _cons &emsp;&emsp;| 7.520 &emsp; 0.895 &emsp; 8.40 &emsp; 0.000 &emsp; —
+    </div>
+
+    <p><strong>辅助回归信息：</strong></p>
+    <ul>
+      <li>Bedrooms 对 FloorArea 回归的 R² = 0.886（VIF=8.75 主要来源）</li>
+      <li>ln(Income) 对 DistanceCBD 回归的 R² = 0.652</li>
+      <li>ln(Income) 对 SchoolRank 回归的 R² = 0.581</li>
+      <li>条件指数 CI = 34.6</li>
+    </ul>
+  </div>
+
+  <div class="case-questions">
+    <p><strong>问题：</strong></p>
+    <ol>
+      <li><strong>（诊断·3分）</strong>根据输出结果，判断哪些变量存在严重多重共线性。整体模型是否存在共线性问题？<br><span class="answer-hint">答：Bedrooms（VIF=8.75<10，但接近临界值）和 ln(Income)（VIF=9.82<10，非常接近）存在较强的多重共线性。条件指数 CI=34.6>30，提示整个模型存在严重共线性问题。Bedrooms 与 FloorArea 高度相关（大户型通常卧室多），ln(Income) 与多个区位变量相关。</span></li>
+      <li><strong>（后果·2分）</strong>多重共线性在本例中导致哪些具体后果？<br><span class="answer-hint">答：尽管 R²=0.73、F=35.62（p<0.001）高度显著，但 8 个变量中仅 DistanceCBD 和 SchoolRank 在 5% 水平显著，其他变量的 t 值均小于 2。Bedrooms 系数符号为正但 p=0.161，不显著——在直觉上卧室数应显著影响房价。ln(Income) 系数 p=0.055（边际显著），标准误相对系数较大。</span></li>
+      <li><strong>（补救·3分）</strong>请提出至少三种可行的补救方案并说明各自的代价。<br><span class="answer-hint">答：① 删除 Bedrooms（仅保留 FloorArea），代价是可能遗漏卧室布局信息；② 将 Bedrooms 和 FloorArea 合成"单位面积卧室数"比率变量，代价是解释变为"每平米卧室数对房价的影响"；③ 使用主成分分析提取共线性变量的共同因子，代价是经济含义不直观；④ 增加样本容量（如使用 5 年面板数据），但可能无法获取。</span></li>
+      <li><strong>（改进·2分）</strong>你如何重新设定模型以缓解共线性同时保持经济含义？<br><span class="answer-hint">答：保留 FloorArea（删除 Bedrooms），保留 ln(Income)（可考虑用 Income per capita 的排名替代以降低与区位变量的相关性），并增加交通可达性变量（地铁站距离/公交线路数）来分散区位信息的承载变量。同时考虑使用差分形式或弹性网络（Elastic Net）正则化回归。</span></li>
+    </ol>
+  </div>
+</div>
+
+<!-- ===== SpeedBox：考前5分钟必记 ===== -->
+<div class="speed-box">
+  <div class="speed-header">⏱ 考前5分钟必记 · Topic 3</div>
+  <div class="speed-body">
+    <ul>
+      <li><strong>完全共线性</strong>：X'X 奇异，OLS 无解 → 删除变量或改模型设定</li>
+      <li><strong>不完全共线性</strong>：OLS 有解但方差大 → 使用 VIF 诊断（<strong>VIF > 10</strong> 为严重）</li>
+      <li><strong>典型症状</strong>：<strong>F 显著但 t 不显著</strong>，R² 高但系数不显著</li>
+      <li><strong>不影响</strong>：无偏性、一致性、模型整体预测能力</li>
+      <li><strong>影响</strong>：系数估计精度（方差）、t 检验效力、系数稳定性</li>
+      <li><strong>补救措施</strong>：删变量（注意 OVB）、增样本、差分/比率变换、PCA、岭回归</li>
+      <li><strong>条件指数 CI > 30</strong>：严重共线性警示线</li>
+    </ul>
+  </div>
+</div>
+
+<hr class="topic-divider">
+
+<!-- ========== Topic 4: 异方差 (Heteroscedasticity) ========== -->
+<div class="priority-box" data-level="core" data-stars="4">
+  <div class="topic-header core" <div class="confusion" style="background:#e8f5e9;border-color:#2e7d32"><h5>💡 简答话术模板 · VIF解释</h5><p><b>📌 典型简答：VIF是什么意思？VIF=12.5说明什么问题？</b></p><p><b>话术结构：</b>① 定义 → ② 公式 → ③ 阈值 → ④ 结论</p><p><b>示范答案：</b></p><p>「VIF是方差膨胀因子，衡量多重共线性的严重程度。</p><p>公式：VIFⱼ=1/(1-R²ⱼ)，其中R²ⱼ是把第j个解释变量对其他所有解释变量回归的拟合优度。</p><p>经验规则：VIF>10表示存在严重多重共线性。</p><p>VIF=12.5>10，说明该变量存在严重多重共线性——参数估计的方差被膨胀了12.5倍，导致t统计量变小，系数可能不显著。」</p><p style="margin-top:8px"><b>得分点：</b>全称(1分)+公式(2分)+阈值(2分)+具体解释(3分)</p></div>
+id="t4">
+    <h2 class="core">专题4：异方差性检验与处理（Heteroscedasticity）</h2>
+    <div class="topic-meta"><span class="badge-core">核心章节</span><span class="badge-star">★★★★</span></div>
+  </div>
+</div>
+
+<div class="weight-box">
+  <div class="weight-header">📈 考试权重</div>
+  <div class="weight-body">
+    <div class="weight-item"><span class="weight-label">分值占比</span><span class="weight-value">约 10-15 分</span></div>
+    <div class="weight-item"><span class="weight-label">题型分布</span><span class="weight-value">单选 2-3 题 + 判断 1-2 题 + 简答 1 题 + 案例 1 问</span></div>
+    <div class="weight-item"><span class="weight-label">难度系数</span><span class="weight-value">★★★★☆（中等偏难）</span></div>
+    <div class="weight-item"><span class="weight-label">核心要求</span><span class="weight-value">异方差的本质、后果、诊断方法（图示、BP检验、White检验、GQ检验）、补救措施（WLS、稳健标准误）</span></div>
+  </div>
+</div>
+
+<!-- ===== 第1节：异方差的定义与后果 ===== -->
+<div class="section-card core-section">
+  <h3>4.1 异方差的定义、来源与后果</h3>
+  <div class="exam-tags">
+    <span class="exam-type">📝 题型覆盖</span>
+    <span class="exam-tag" data-types="['单选','判断','简答','案例']">exam_types(['单选','判断','简答','案例'])</span>
+  </div>
+
+  <div class="knowledge-point">
+    <h4>4.1.1 异方差的定义</h4>
+    <div class="exam-tag-inline" data-types="['单选','判断']">exam_types(['单选','判断'])</div>
+    <p><strong>异方差（Heteroscedasticity）</strong>指回归模型中随机误差项的<strong>方差不恒为常数</strong>，即 Var(uᵢ | Xᵢ) = σᵢ² ≠ σ²（常数）。</p>
+    <p>经典线性回归模型（CLRM）假定 <strong>同方差（Homoscedasticity）</strong>：Var(uᵢ | X) = σ²，∀ i。当该假定被违反时，即出现异方差问题。</p>
+    <div class="formula-display">
+      H₀：Var(uᵢ) = σ²（同方差）&emsp;vs&emsp; H₁：Var(uᵢ) ≠ σ²（异方差）
+    </div>
+    <div class="figure-concept">
+      <p><strong>图示特征：</strong>同方差时残差散点图呈水平带状均匀分布；异方差时呈"喇叭形"（随 X 增大方差增大）、"漏斗形"（随 X 增大方差减小）或其他非均匀模式。</p>
+    </div>
+  </div>
+
+  <div class="knowledge-point">
+    <h4>4.1.2 异方差的来源</h4>
+    <div class="exam-tag-inline" data-types="['单选','判断']">exam_types(['单选','判断'])</div>
+    <ol>
+      <li><strong>截面数据普遍存在</strong>：不同规模企业的行为差异——大企业的利润波动方差远大于小企业</li>
+      <li><strong>学习效应</strong>：随时间推移，经济主体的行为方差可能减小（如生产经验积累使产品质量更稳定）</li>
+      <li><strong>异常值（Outliers）</strong>：极端观测点的残差方差较大</li>
+      <li><strong>模型设定偏误</strong>：遗漏重要变量或错误的函数形式可能引发异方差</li>
+      <li><strong>数据采集技术改进</strong>：不同时期的数据质量差异导致方差变化</li>
+      <li><strong>群组效应</strong>：不同组别的个体行为异质性导致方差不同（如不同国家的消费模式）</li>
+    </ol>
+  </div>
+
+  <div class="knowledge-point">
+    <h4>4.1.3 异方差的后果</h4>
+    <div class="exam-tag-inline" data-types="['单选','判断','简答','案例']">exam_types(['单选','判断','简答','案例'])</div>
+    <div class="consequence-grid">
+      <div class="conseq-card">
+        <div class="conseq-title ok">✅ 不影响</div>
+        <ul>
+          <li>β̂ 的<strong>无偏性</strong>（仍满足 E(β̂|X) = β）</li>
+          <li>β̂ 的<strong>一致性</strong>（plim β̂ = β）</li>
+          <li>R² 的计算（仍可解释为解释平方和占比）</li>
+        </ul>
+      </div>
+      <div class="conseq-card">
+        <div class="conseq-title bad">❌ 影响</div>
+        <ul>
+          <li>β̂ 的<strong>有效性</strong>（Gauss-Markov 定理失效——OLS 不再是 BLUE。存在更有效的加权最小二乘法）</li>
+          <li>Var(β̂) <strong>不再是标准公式</strong>（普通 OLS 标准误偏误，通常被低估）</li>
+          <li><strong>t/F 检验失效</strong>（标准误偏误→t/F统计量偏误→推断不可靠）</li>
+          <li><strong>预测区间不准确</strong>（基于同方差假设计算的置信区间过宽或过窄）</li>
+        </ul>
+      </div>
+    </div>
+    <div class="highlight-box">
+      ⚠️ <strong>考试重点：</strong>异方差下的 OLS 仍然是<strong>无偏且一致</strong>的，但<strong>不是有效</strong>的。标准误的偏误方向取决于异方差的形式——多数情况下 OLS 标准误被低估（t 值偏高，更容易"显著"），但也不排除被高估的可能。
+    </div>
+  </div>
+</div>
+
+<!-- ===== 第2节：异方差的诊断 ===== -->
+<div class="section-card">
+  <h3>4.2 异方差的诊断方法</h3>
+  <div class="exam-tags">
+    <span class="exam-type">📝 题型覆盖</span>
+    <span class="exam-tag" data-types="['单选','判断','简答','案例']">exam_types(['单选','判断','简答','案例'])</span>
+  </div>
+
+  <div class="knowledge-point">
+    <h4>4.2.1 图示法（Graphical Method）</h4>
+    <div class="exam-tag-inline" data-types="['单选','判断']">exam_types(['单选','判断'])</div>
+    <p>绘制 <strong>残差 û 对拟合值 Ŷ</strong> 的散点图或 <strong>残差² 对某个解释变量 X</strong> 的散点图。若散点呈随机均匀分布 → 同方差；若呈明显的模式（如喇叭形）→ 异方差。</p>
+    <p><strong>优点：</strong>直观、初步判断。<strong>缺点：</strong>主观性强，无法给出统计显著性判断。</p>
+  </div>
+
+  <div class="knowledge-point">
+    <h4>4.2.2 布雷-帕甘检验（Breusch-Pagan Test, 1979）</h4>
+    <div class="exam-tag-inline" data-types="['单选','判断','简答']">exam_types(['单选','判断','简答'])</div>
+    <p><strong>思想：</strong>检验残差平方 û² 是否可以用解释变量（或其子集）Z 来解释。</p>
+    <p><strong>步骤：</strong></p>
+    <ol>
+      <li>OLS 估计原模型，获得残差 ûᵢ</li>
+      <li>构造辅助回归：ûᵢ² = α₀ + α₁Z₁ᵢ + α₂Z₂ᵢ + ... + αₚZₚᵢ + vᵢ</li>
+      <li>LM = n·R²<sub>aux</sub> ~ χ²(p)（H₀：所有 α = 0，即同方差）</li>
+      <li>若 LM > χ²<sub>α</sub>(p)，拒绝同方差原假设。</li>
+    </ol>
+    <p><strong>特点：</strong>检验的势依赖于 Z 的选择。若已知异方差与哪些变量有关，BP 检验的效力更高。</p>
+  </div>
+
+  <div class="knowledge-point">
+    <h4>4.2.3 怀特检验（White Test, 1980）</h4>
+    <div class="exam-tag-inline" data-types="['单选','判断','简答','案例']">exam_types(['单选','判断','简答','案例'])</div>
+    <p><strong>思想：</strong>BP 检验的推广——辅助回归包含解释变量、平方项和交叉乘积项，不依赖异方差的具体形式（<strong>一般性检验</strong>）。</p>
+    <p><strong>辅助回归：</strong>û² = δ₀ + δ₁X₁ + δ₂X₂ + ... + δₖXₖ + δ₁₁X₁² + δ₂₂X₂² + ... + δₖₖXₖ² + δ₁₂X₁X₂ + ... + v</p>
+    <p>LM = n·R²<sub>aux</sub> ~ χ²(df)，df 为辅助回归中除截距外的参数个数。</p>
+    <p><strong>优点：</strong>不指定异方差形式；<strong>缺点：</strong>自由度损失大（变量多时辅助回归参数过多），小样本检验势低。</p>
+    <p><strong>SAS/STATA 常用：</strong>White 检验（含交叉项）或 <strong>White 简化检验（仅含变量和平方项）</strong>。</p>
+  </div>
+
+  <div class="knowledge-point">
+    <h4>4.2.4 戈德菲尔德-匡特检验（Goldfeld-Quandt Test, 1965）</h4>
+    <div class="exam-tag-inline" data-types="['单选','判断','简答']">exam_types(['单选','判断','简答'])</div>
+    <p>适用于<strong>单一变量引起异方差</strong>且可排序的情形（如异方差随某一解释变量 X 单调变化）。</p>
+    <p><strong>步骤：</strong></p>
+    <ol>
+      <li>按照假设的异方差来源变量 X 对样本排序</li>
+      <li>删除中间 c 个观测（通常 c ≈ n/4）</li>
+      <li>分别对<strong>前 m 个</strong>（小方差组）和<strong>后 m 个</strong>（大方差组）做 OLS 回归</li>
+      <li>F = RSS₂/RSS₁ ~ F(m-k-1, m-k-1)，若 F > F<sub>α</sub>，拒绝同方差</li>
+    </ol>
+    <p><strong>特点：</strong>适用面窄（需已知异方差来源且假设单调变化），但较直观。</p>
+  </div>
+
+  <div class="knowledge-point">
+    <h4>4.2.5 帕克检验（Park Test）与格莱泽检验（Glejser Test）</h4>
+    <div class="exam-tag-inline" data-types="['单选','判断']">exam_types(['单选','判断'])</div>
+    <table class="diag-compare">
+      <tr><th>检验</th><th>辅助回归形式</th><th>特点</th></tr>
+      <tr><td><strong>Park 检验</strong></td><td>ln(û²) = α + β·ln(X) + v</td><td>假设异方差为幂函数形式；对函数设定较敏感</td></tr>
+      <tr><td><strong>Glejser 检验</strong></td><td>|û| = α + β·X^h + v（h=±1, ±0.5, ±2 等）</td><td>检验残差绝对值与 X 的关系；可尝试多种幂次</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ===== 第3节：异方差的补救 ===== -->
+<div class="section-card">
+  <h3>4.3 异方差的补救措施</h3>
+  <div class="exam-tags">
+    <span class="exam-type">📝 题型覆盖</span>
+    <span class="exam-tag" data-types="['单选','判断','简答','案例']">exam_types(['单选','判断','简答','案例'])</span>
+  </div>
+
+  <div class="knowledge-point">
+    <h4>4.3.1 加权最小二乘法（Weighted Least Squares, WLS）</h4>
+    <div class="exam-tag-inline" data-types="['单选','判断','简答']">exam_types(['单选','判断','简答'])</div>
+    <p><strong>思想：</strong>对方差大的观测赋较小的权重，方差小的观测赋较大的权重，实现<strong>加权同方差</strong>。</p>
+    <p>若已知 Var(uᵢ) = σ²·wᵢ（wᵢ 已知），则变换后的模型为：</p>
+    <div class="formula-display">
+      Yᵢ/√wᵢ = β₁/√wᵢ + β₂X₂ᵢ/√wᵢ + ... + βₖXₖᵢ/√wᵢ + uᵢ/√wᵢ
+    </div>
+    <p>变换后误差项 Var(uᵢ/√wᵢ) = σ²（常数），满足同方差假定。</p>
+    <p><strong>权重 wᵢ 的确定：</strong></p>
+    <ul>
+      <li>若已知异方差与 X 成正比：Var(uᵢ) ∝ Xᵢ → wᵢ = Xᵢ</li>
+      <li>若已知异方差与 X² 成正比：Var(uᵢ) ∝ Xᵢ² → wᵢ = Xᵢ²</li>
+      <li><strong>可行 WLS（FGLS）</strong>：先用 OLS 估计，用残差平方估计方差函数，再以估计的权重进行 WLS</li>
+    </ul>
+    <p><strong>局限：</strong>权重必须正确设定，否则 WLS 可能比 OLS 更差（权重指定错误导致有偏）。</p>
+  </div>
+
+  <div class="knowledge-point">
+    <h4>4.3.2 异方差稳健标准误（White/Huber Sandwich Estimator）</h4>
+    <div class="exam-tag-inline" data-types="['单选','判断','简答','案例']">exam_types(['单选','判断','简答','案例'])</div>
+    <p><strong>思想：</strong>不修正异方差本身，而是修正标准误的估计，使推断（t 统计量、置信区间）在异方差下仍然有效。</p>
+    <div class="formula-display">
+      Var̂(β̂) = (X'X)⁻¹ X' diag(ûᵢ²) X (X'X)⁻¹
+    </div>
+    <p>即<strong>"三明治估计量"（Sandwich Estimator）</strong>。</p>
+    <p><strong>优点：</strong></p>
+    <ul>
+      <li>无需假设异方差的具体形式（异方差<strong>一致</strong>估计量）</li>
+      <li>在大样本下提供正确的标准误，t/F 推断有效</li>
+      <li>STATA 中只需加 <code>, robust</code> 选项即可实现</li>
+    </ul>
+    <p><strong>局限：</strong></p>
+    <ul>
+      <li>小样本下稳健标准误可能有偏（HC1、HC2、HC3 等修正版本可改善小样本表现）</li>
+      <li>效率不及 WLS（若方差函数正确设定）</li>
+    </ul>
+    <div class="highlight-box">
+      ⚠️ <strong>考试重点：</strong>异方差稳健标准误是目前<strong>最常用</strong>的补救方法——简单、通用、可靠。WLS 在方差函数已知时才更优。考试中遇到"如何应对异方差"的问题，稳健标准误是首选答案。
+    </div>
+  </div>
+
+  <div class="knowledge-point">
+    <h4>4.3.3 变量变换法</h4>
+    <div class="exam-tag-inline" data-types="['单选','判断']">exam_types(['单选','判断'])</div>
+    <p><strong>对数变换：</strong>对变量取对数 ln(Y) 或 ln(X) 通常能压缩方差的比例效应，缓解异方差。适用于方差与变量水平值成比例的情形。</p>
+    <p><strong>Box-Cox 变换：</strong>更一般的幂变换族，通过数据自适应地选择变换参数。</p>
+  </div>
+</div>
+
+<!-- ===== ConfusionTable：异方差易混淆辨析 ===== -->
+<div class="confusion-table">
+  <h3>🧩 易混淆辨析：异方差核心概念</h3>
+  <table>
+    <thead>
+      <tr><th width="18%">混淆对</th><th width="41%">概念 A</th><th width="41%">概念 B</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="conf-pair">异方差 vs 自相关</span></td>
+        <td><strong>异方差</strong>：误差方差在观测之间不同（Var(uᵢ) ≠ Var(uⱼ)），常见于截面数据</td>
+        <td><strong>自相关</strong>：误差在不同观测之间相关（Cov(uᵢ,uⱼ) ≠ 0），常见于时间序列数据</td>
+      </tr>
+      <tr>
+        <td><span class="conf-pair">OLS 在异方差下</span></td>
+        <td><strong>仍然无偏且一致</strong>：E(β̂)=β，plim β̂=β，不因异方差而偏误</td>
+        <td><strong>不再有效</strong>：存在方差更小的其他估计量（如 WLS），Gauss-Markov 定理失效</td>
+      </tr>
+      <tr>
+        <td><span class="conf-pair">BP 检验 vs White 检验</span></td>
+        <td><strong>BP 检验</strong>：辅助回归仅含线性项，需要设定 Z 变量。更高效若异方差形式已知</td>
+        <td><strong>White 检验</strong>：辅助回归含高次项和交叉项，不依赖异方差形式设定。更通用但消耗自由度</td>
+      </tr>
+      <tr>
+        <td><span class="conf-pair">WLS vs 稳健标准误</span></td>
+        <td><strong>WLS</strong>：通过加权改变估计量本身，获得更有效的估计。需要正确设定权重函数</td>
+        <td><strong>稳健标准误</strong>：不改变 β̂，仅修正推断。简单、通用，在大样本下可靠但效率不及 WLS</td>
+      </tr>
+      <tr>
+        <td><span class="conf-pair">GQ 检验 vs BP 检验</span></td>
+        <td><strong>GQ（Goldfeld-Quandt）</strong>：按某变量排序后分割样本比较残差平方和。适用于单调异方差</td>
+        <td><strong>BP（Breusch-Pagan）</strong>：构造残差平方对 Z 的辅助回归。适用于更一般的异方差模式</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ===== 原题标记：教师题库 ===== -->
+<div class="original-problems">
+  <h3>📚 教师原题精选（Topic 4）</h3>
+
+  <div class="problem-card exam_types" data-types="['单选']">
+    <span class="problem-source tag-teacher">👨‍🏫 教师原题</span>
+    <span class="problem-type tag-choice">单选</span>
+    <div class="problem-body">
+      <p><strong>【2019 期末】</strong> 当回归模型存在异方差时，使用普通 OLS 估计量的主要问题是：</p>
+      <p>A. 估计量有偏 &emsp; B. 标准误估计不正确<br>C. 估计量不一致 &emsp; D. 残差平方和不是 χ² 分布</p>
+      <p class="answer"><strong>答案：B</strong>（异方差下 OLS 仍无偏一致，但普通标准误公式失效，导致 t/F 统计量和推断不正确）</p>
+    </div>
+  </div>
+
+  <div class="problem-card exam_types" data-types="['判断']">
+    <span class="problem-source tag-teacher">👨‍🏫 教师原题</span>
+    <span class="problem-type tag-judge">判断</span>
+    <div class="problem-body">
+      <p><strong>【2020 期中】</strong> 如果 BP 检验的结果不显著（p>0.05），说明模型中一定不存在异方差。</p>
+      <p class="answer"><strong>答案：×</strong>（错误。BP 检验的势（Power）取决于辅助回归的设定。若 Z 变量选择不当（没有包含真正引起异方差的变量），BP 检验可能无法检测到异方差。应结合 White 检验或图示法综合判断）</p>
+    </div>
+  </div>
+
+  <div class="problem-card exam_types" data-types="['简答']">
+    <span class="problem-source tag-teacher">👨‍🏫 教师原题</span>
+    <span class="problem-type tag-short">简答</span>
+    <div class="problem-body">
+      <p><strong>【2021 期末】</strong> 什么是异方差？说明异方差对 OLS 估计的影响以及常用的补救措施。</p>
+      <p class="answer"><strong>答案：</strong><strong>定义：</strong>随机误差项的方差不恒为常数。对 OLS 的影响：① 仍无偏一致 ② 不再有效（非 BLUE）③ 标准误公式不正确 → t/F 检验失效。补救措施：① 异方差稳健标准误（White/Huber Sandwich）——最常用，不改变系数只改标准误 ② WLS——需已知方差结构，更有效 ③ 对数变换——压缩方差 ④ 数据变换（Box-Cox 等）</p>
+    </div>
+  </div>
+
+  <div class="problem-card exam_types" data-types="['案例']">
+    <span class="problem-source tag-teacher">👨‍🏫 教师原题</span>
+    <span class="problem-type tag-case">案例</span>
+    <div class="problem-body">
+      <p><strong>【2022 期末案例】</strong> 研究者利用截面数据（N=500）研究家庭消费支出（Y）与可支配收入（X）的关系。OLS 回归得到：Ŷ = 1280 + 0.68X，White 检验的 LM = 24.6（p=0.000）。残差对 X 的散点图呈现明显的喇叭形（X 越大残差越分散）。</p>
+      <p><strong>问：</strong>（1）该模型存在什么问题？为什么？<br>（2）GQ 检验的基本思路是什么？在本例中如何实施？<br>（3）若使用 WLS，你建议用什么作为权重？为什么？<br>（4）如果不作 WLS 而使用 OLS+稳健标准误，结论是否可信？</p>
+      <p class="answer"><strong>答案：</strong>（1）存在异方差——White 检验显著、喇叭形残差图是高收入家庭消费差异更大的典型表现。（2）GQ 检验：按 X（收入）排序，舍去中间约125个观测，分别对前187个（低收入）和后187个（高收入）做回归，F=RSS₂/RSS₁，若显著则拒绝同方差。（3）建议权重 w=1/X（若 Var(u)∝X）或 w=1/X²（若 Var(u)∝X²）。通常消费函数中方差与收入成正比例，w=1/X 较合理。（4）可信。大样本下（N=500），OLS+稳健标准误给出正确推断，是目前学术论文的通用做法。</p>
+    </div>
+  </div>
+</div>
+
+<!-- ===== AI编拟综合案例题 ===== -->
+<div class="ai-case">
+  <div class="ai-badge">🤖 AI 编拟·综合案例</div>
+  <h3>📋 Topic 4 综合案例：企业研发支出异方差分析</h3>
+  <p class="case-source" data-source="ai">来源：AI 编拟 · 覆盖案例题型 · 分值约 10-12 分</p>
+
+  <div class="case-scenario">
+    <p><strong>背景：</strong>某产业经济学研究者收集了 2023 年 800 家中国制造业上市公司的数据，研究企业研发强度（R&amp;D/Sales, %）的决定因素。模型设定如下：</p>
+    <div class="formula-display">
+      RD_intensityᵢ = β₁ + β₂Sizeᵢ + β₃Leverageᵢ + β₄ROAᵢ + β₅Growthᵢ + β₆SOEᵢ + β₇HHIᵢ + uᵢ
+    </div>
+    <p>其中：Size = ln(总资产)，Leverage = 负债率，ROA = 资产收益率，Growth = 营收增长率，SOE = 国有企业虚拟变量，HHI = 行业赫芬达尔指数（衡量市场集中度）。</p>
+
+    <p><strong>OLS 回归结果（普通标准误 &amp; 稳健标准误对比）：</strong></p>
+    <div class="stata-output">
+      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; Coef. &emsp; OLS Std.Err. &emsp; t &emsp;&emsp; Robust S.E. &emsp; t_rob<br>
+      Size &emsp;&emsp;| -0.085 &emsp; 0.042 &emsp; -2.02* &emsp; 0.031 &emsp; -2.74**<br>
+      Leverage | -0.126 &emsp; 0.058 &emsp; -2.17* &emsp; 0.089 &emsp; -1.42<br>
+      ROA &emsp;&emsp;| 0.032 &emsp; 0.015 &emsp; 2.13* &emsp;&emsp; 0.012 &emsp; 2.67**<br>
+      Growth &emsp;| 0.009 &emsp; 0.004 &emsp; 2.25* &emsp;&emsp; 0.005 &emsp; 1.80<br>
+      SOE &emsp;&emsp;| -0.210 &emsp; 0.088 &emsp; -2.39* &emsp; 0.076 &emsp; -2.76**<br>
+      HHI &emsp;&emsp;| 0.048 &emsp; 0.036 &emsp; 1.33 &emsp;&emsp; 0.044 &emsp; 1.09<br>
+      _cons &emsp;&emsp;| 2.150 &emsp; 0.520 &emsp; 4.13*** &nbsp; 0.480 &emsp; 4.48***<br>
+      ─────────────────────────────────────────────────────────────<br>
+      R²=0.285, N=800, &emsp; White test: LM=68.2 (p=0.000)
+    </div>
+
+    <p><strong>残差分组统计：</strong></p>
+    <div class="supplement">
+      <p>按 Size（企业规模）四分位分组：</p>
+      <ul>
+        <li>Q1（小企业，N=200）：mean|residual| = 1.85，Var(residual) = 5.21</li>
+        <li>Q2（中下，N=200）：mean|residual| = 1.42，Var(residual) = 3.14</li>
+        <li>Q3（中上，N=200）：mean|residual| = 1.08，Var(residual) = 1.86</li>
+        <li>Q4（大企业，N=200）：mean|residual| = 0.85，Var(residual) = 1.12</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="case-questions">
+    <p><strong>问题：</strong></p>
+    <ol>
+      <li><strong>（诊断·3分）</strong>根据 White 检验结果和分组残差统计，判断模型是否存在异方差。异方差呈现何种模式？<br><span class="answer-hint">答：White 检验显著（p=0.000），强烈拒绝同方差原假设。残差方差随企业规模增大而系统性地减小（Q1→Q4：5.21→1.12），属于"递减型异方差"——小企业的研发行为差异更大，大企业研发强度更稳定。</span></li>
+      <li><strong>（后果·2分）</strong>比较 OLS 标准误与稳健标准误，哪些变量的统计显著性发生了变化？这种变化说明了什么？<br><span class="answer-hint">答：Leverage 从显著（t=-2.17*）变为不显著（t=-1.42），Growth 从显著（t=2.25*）变为不显著（t=1.80）。说明 OLS 标准误被低估了（<strong>低估了标准误</strong>），导致虚假显著性。Size、ROA、SOE 在稳健标准误下显著性增强，说明 OLS 标准误也高估了部分变量（标准误设定偏误的方向随异方差结构而变化）。</span></li>
+      <li><strong>（补救·3分）</strong>你会推荐使用 OLS+稳健标准误还是 WLS？给出理由。如果使用 WLS，权重应如何设定？<br><span class="answer-hint">答：推荐 OLS+稳健标准误。理由：① N=800 为大样本，稳健标准误可靠；② 异方差结构复杂（随 Size 递减但非简单倍率关系），正确设定 WLS 权重困难；③ 权重设定错误可能导致比 OLS 更差的结果。若坚持 WLS，可先用 OLS 估计→获得残差→将残差平方对 Size 做辅助回归：ln(û²) = α + β·ln(Size) + v → 权重 w = 1/Size^β̂（基于估计的幂函数方差结构）。</span></li>
+      <li><strong>（拓展·2分）</strong>如果改用对数模型 ln(RD_intensity) 作为被解释变量，预期会对异方差产生什么影响？<br><span class="answer-hint">答：对数变换通常能有效缓解异方差。因为取对数将绝对差异转化为比例差异，压缩了大值方差的乘数效应。此外对数模型的残差通常更接近正态分布。但注意 RD_intensity 可能包含 0 值（不研发的企业），需处理（如 RD_intensity+1 再取对）。</span></li>
+    </ol>
+  </div>
+</div>
+
+<!-- ===== SpeedBox：考前5分钟必记 ===== -->
+<div class="speed-box">
+  <div class="speed-header">⏱ 考前5分钟必记 · Topic 4</div>
+  <div class="speed-body">
+    <ul>
+      <li><strong>异方差本质</strong>：Var(uᵢ|X) ≠ 常数。截面数据<strong>几乎必然存在</strong></li>
+      <li><strong>不影响</strong>：无偏性 + 一致性。<strong>影响</strong>：有效性（非 BLUE）+ 标准误 + 推断</li>
+      <li><strong>三大诊断</strong>：① 残差散点图（喇叭形等）② BP 检验（残差²对 Z 回归）③ White 检验（含平方/交叉项，较通用）</li>
+      <li><strong>GQ 检验</strong>：排序 + 分割 + F = RSS₂/RSS₁（适用单调异方差）</li>
+      <li><strong>首选补救</strong>：<strong>异方差稳健标准误</strong>（White/Huber Sandwich）——加 <code>, robust</code></li>
+      <li><strong>次选补救</strong>：WLS——需正确设定权重，否则更糟；对数变换——简单有效</li>
+      <li><strong>记住</strong>：大样本下稳健标准误几乎总是正确选择。权重已知时 WLS 更有效。</li>
+    </ul>
+  </div>
+</div>
+
+<hr class="topic-divider">
+
+<!-- ========== Topic 5: 自相关 (Autocorrelation) ========== -->
+<div class="priority-box" data-level="core" data-stars="4">
+  <div class="topic-header core" <div class="confusion" style="background:#e8f5e9;border-color:#2e7d32"><h5>💡 简答话术模板 · 异方差检验步骤</h5><p><b>📌 典型简答：简述Breusch-Pagan检验的步骤</b></p><p><b>话术结构：</b>① 步骤概述 → ② 辅助回归 → ③ 统计量 → ④ 判断</p><p><b>示范答案：</b></p><p>「BP检验用于检验是否存在异方差。步骤：</p><p>第一步，用OLS估计原模型，得到残差ûᵢ。</p><p>第二步，做辅助回归：ûᵢ² = δ₀ + δ₁x₁ᵢ + ... + δₖxₖᵢ + vᵢ</p><p>第三步，计算LM统计量：LM=n×R²_û，在H₀下服从χ²(k)分布。</p><p>第四步，若LM > χ²_α(k)，拒绝同方差原假设，认为存在异方差。」</p><p style="margin-top:8px"><b>得分点：</b>第一步OLS(2分)+辅助回归(3分)+LM公式(2分)+判断准则(1分)</p></div>
+id="t5">
+    <h2 class="core">专题5：序列相关检验与处理（Autocorrelation）</h2>
+    <div class="topic-meta"><span class="badge-core">核心章节</span><span class="badge-star">★★★★</span></div>
+  </div>
+</div>
+
+<div class="weight-box">
+  <div class="weight-header">📈 考试权重</div>
+  <div class="weight-body">
+    <div class="weight-item"><span class="weight-label">分值占比</span><span class="weight-value">约 10-15 分</span></div>
+    <div class="weight-item"><span class="weight-label">题型分布</span><span class="weight-value">单选 2 题 + 判断 1-2 题 + 简答 1 题 + 案例 1 问</span></div>
+    <div class="weight-item"><span class="weight-label">难度系数</span><span class="weight-value">★★★★☆（中等偏难）</span></div>
+    <div class="weight-item"><span class="weight-label">核心要求</span><span class="weight-value">一阶自回归 AR(1)、自相关的后果、DW 检验、LM 检验、补救（广义差分、HAC 标准误）</span></div>
+  </div>
+</div>
+
+<!-- ===== 第1节：自相关的定义与后果 ===== -->
+<div class="section-card core-section">
+  <h3>5.1 自相关的定义、来源与后果</h3>
+  <div class="exam-tags">
+    <span class="exam-type">📝 题型覆盖</span>
+    <span class="exam-tag" data-types="['单选','判断','简答','案例']">exam_types(['单选','判断','简答','案例'])</span>
+  </div>
+
+  <div class="knowledge-point">
+    <h4>5.1.1 自相关的定义</h4>
+    <div class="exam-tag-inline" data-types="['单选','判断']">exam_types(['单选','判断'])</div>
+    <p><strong>自相关（Autocorrelation/Serial Correlation）</strong>指线性回归模型中，不同观测期的随机误差项之间存在<strong>相关性</strong>：</p>
+    <div class="formula-display">
+      Cov(uᵢ, uⱼ) ≠ 0 &emsp; 对 i ≠ j
+    </div>
+    <p>经典线性回归模型（CLRM）假定 <strong>无自相关</strong>：Cov(uᵢ, uⱼ) = 0，∀ i ≠ j。当该假定被违反时，即出现自相关问题。</p>
+    <p><strong>最常用的一阶自回归模型 AR(1)：</strong></p>
+    <div class="formula-display">
+      uₜ = ρ·uₜ₋₁ + εₜ &emsp; 其中 |ρ| < 1，εₜ ~ iid(0, σ²<sub>ε</sub>)
+    </div>
+    <p>ρ 为<strong>自回归系数</strong>：ρ > 0 → <strong>正自相关</strong>（最常见），ρ < 0 → <strong>负自相关</strong>（少见）。</p>
+  </div>
+
+  <div class="knowledge-point">
+    <h4>5.1.2 自相关的来源</h4>
+    <div class="exam-tag-inline" data-types="['单选','判断']">exam_types(['单选','判断'])</div>
+    <ol>
+      <li><strong>时间序列数据的内在惯性</strong>：经济变量（GDP、消费、就业）通常具有记忆性——当期冲击会延续到以后各期。这是最常见的来源。</li>
+      <li><strong>模型设定偏误</strong>：
+        <ul>
+          <li><strong>遗漏变量</strong>：遗漏了具有自相关性的重要解释变量（如趋势变量）</li>
+          <li><strong>错误函数形式</strong>：如应取对数而没取对数，应加平方项而没加</li>
+        </ul>
+      </li>
+      <li><strong>数据加工处理</strong>：移动平均、插值、季节调整等操作可能人为引入自相关结构</li>
+      <li><strong>蛛网现象</strong>：农业供给对价格反应的滞后（当期价格影响下期供给，导致误差项自相关）</li>
+      <li><strong>空间自相关</strong>：相邻地区的经济变量相互影响（跨区域溢出效应）</li>
+    </ol>
+  </div>
+
+  <div class="knowledge-point">
+    <h4>5.1.3 自相关的后果</h4>
+    <div class="exam-tag-inline" data-types="['单选','判断','简答','案例']">exam_types(['单选','判断','简答','案例'])</div>
+    <div class="consequence-grid">
+      <div class="conseq-card">
+        <div class="conseq-title ok">✅ 不影响</div>
+        <ul>
+          <li>β̂ 的<strong>无偏性</strong>（仍满足 E(β̂|X) = β）</li>
+          <li>β̂ 的<strong>一致性</strong>（若 |Xₜ| 有界且 E(Xₜuₜ)=0）</li>
+        </ul>
+      </div>
+      <div class="conseq-card">
+        <div class="conseq-title bad">❌ 影响</div>
+        <ul>
+          <li>β̂ 的<strong>有效性</strong>（OLS 不再是 BLUE——存在更有效的 GLS 估计量）</li>
+          <li><strong>标准误被低估</strong>（正自相关下 OLS 标准误偏小，t 值偏大——虚假显著性）</li>
+          <li>t/F <strong>检验失效</strong>——标准误偏误导致推断不可靠</li>
+          <li><strong>R² 被高估</strong>（拟合优度看起来比实际好，因为相邻观测相似）</li>
+          <li>预测不准确：基于过去预测未来的置信区间不可靠</li>
+        </ul>
+      </div>
+    </div>
+    <div class="highlight-box">
+      ⚠️ <strong>考试重点：</strong>正自相关下，OLS 标准误通常被<strong>低估</strong>（低估标准误 → 高估 t 值 → 更容易拒绝 H₀ → 虚假显著性）。这与异方差不同（异方差下标准误方向不确定）。此外，R² 和 F 统计量也倾向于被高估，整体模型表现"看起来好于实际"。
+    </div>
+  </div>
+</div>
+
+<!-- ===== 第2节：自相关的诊断 ===== -->
+<div class="section-card">
+  <h3>5.2 自相关的诊断方法</h3>
+  <div class="exam-tags">
+    <span class="exam-type">📝 题型覆盖</span>
+    <span class="exam-tag" data-types="['单选','判断','简答','案例']">exam_types(['单选','判断','简答','案例'])</span>
+  </div>
+
+  <div class="knowledge-point">
+    <h4>5.2.1 图示法</h4>
+    <div class="exam-tag-inline" data-types="['单选','判断']">exam_types(['单选','判断'])</div>
+    <p>绘制 <strong>残差 ûₜ 对时间 t</strong> 的序时图（Time Series Plot）：正自相关时残差呈<strong>连续同号</strong>的"波浪"模式；负自相关时残差呈<strong>频繁交替正负</strong>的"锯齿"模式。</p>
+    <p>绘制 <strong>ûₜ 对 ûₜ₋₁</strong> 的散点图：呈正斜率的线性模式 → 正自相关；呈负斜率 → 负自相关。</p>
+  </div>
+
+  <div class="knowledge-point">
+    <h4>5.2.2 德宾-沃森检验（Durbin-Watson Test, 1950, 1951）</h4>
+    <div class="exam-tag-inline" data-types="['单选','判断','简答','案例']">exam_types(['单选','判断','简答','案例'])</div>
+    <p><strong>DW 统计量：</strong></p>
+    <div class="formula-display">
+      d = Σ(ûₜ - ûₜ₋₁)² / Σûₜ²
+    </div>
+    <p>d 的取值范围为 [0, 4]：</p>
+    <ul>
+      <li>d ≈ 2 → 无自相关（d=2 对应 ρ=0）</li>
+      <li>d → 0 → 正自相关（d=0 对应 ρ=+1）</li>
+      <li>d → 4 → 负自相关（d=4 对应 ρ=-1）</li>
+    </ul>
+    <p><strong>判断规则：</strong></p>
+    <div class="dw-region">
+      <p>0 → d<sub>L</sub> → 不确定区 → d<sub>U</sub> → 2 → 4-d<sub>U</sub> → 不确定区 → 4-d<sub>L</sub> → 4</p>
+      <p>（正自相关）&emsp;&emsp;&emsp;（无自相关）&emsp;&emsp;&emsp;（负自相关）</p>
+    </div>
+    <p><strong>DW 检验的局限：</strong></p>
+    <ul>
+      <li>仅检验 <strong>AR(1)</strong> 过程（一阶自回归），无法检验高阶自相关</li>
+      <li>存在<strong>不确定区域</strong>（无法判断）</li>
+      <li>模型含有<strong>滞后被解释变量</strong>时 DW 统计量趋于 2（有偏），无效</li>
+      <li>需要截距项，且样本量不能太小</li>
+    </ul>
+    <p><strong>德宾 h 检验（Durbin h-test）：</strong>当模型包含 Yₜ₋₁ 作为解释变量时，DW 检验失效，改用 h 统计量：h = (1 - d/2)·√[N/(1 - N·Var̂(β̂Yₜ₋₁))] ~ N(0,1)。</p>
+  </div>
+
+  <div class="knowledge-point">
+    <h4>5.2.3 布罗施-戈弗雷检验（Breusch-Godfrey LM Test, 1978）</h4>
+    <div class="exam-tag-inline" data-types="['单选','判断','简答','案例']">exam_types(['单选','判断','简答','案例'])</div>
+    <p><strong>思想：</strong>检验残差是否存在高阶自相关（AR(p) 或 MA(q)）。不要求解释变量严格外生，可包含滞后被解释变量。</p>
+    <p><strong>步骤：</strong></p>
+    <ol>
+      <li>OLS 估计原模型，获得残差 ûₜ</li>
+      <li>辅助回归：ûₜ = Xₜ'γ + α₁ûₜ₋₁ + α₂ûₜ₋₂ + ... + αₚûₜ₋ₚ + vₜ</li>
+      <li>LM = (n-p)·R²<sub>aux</sub> ~ χ²(p)（H₀：α₁=α₂=...=αₚ=0，即无自相关）</li>
+    </ol>
+    <p><strong>优点：</strong>① 可检验任意阶自相关 ② 可包含滞后被解释变量 ③ 可检验移动平均（MA）过程 ④ 是 DW 检验的一般化推广。</p>
+  </div>
+
+  <div class="knowledge-point">
+    <h4>5.2.4 相关系数图（ACF/PACF）与 Q 统计量</h4>
+    <div class="exam-tag-inline" data-types="['单选','判断']">exam_types(['单选','判断'])</div>
+    <p><strong>自相关函数（ACF）：</strong>计算残差各阶滞后自相关系数 rₖ，绘制条形图。若所有 rₖ 都很小（在 2/√N 范围内），说明无自相关。</p>
+    <p><strong>偏自相关函数（PACF）：</strong>在控制中间阶滞后后计算各阶偏自相关。AR(p) 的 PACF 在滞后 p 处截尾。</p>
+    <p><strong>Ljung-Box Q 统计量：</strong>Q = N(N+2)·Σₖ₌₁ᵐ rₖ²/(N-k) ~ χ²(m)，联合检验前 m 个自相关系数是否全为零。</p>
+  </div>
+</div>
+
+<!-- ===== 第3节：自相关的补救 ===== -->
+<div class="section-card">
+  <h3>5.3 自相关的补救措施</h3>
+  <div class="exam-tags">
+    <span class="exam-type">📝 题型覆盖</span>
+    <span class="exam-tag" data-types="['单选','判断','简答','案例']">exam_types(['单选','判断','简答','案例'])</span>
+  </div>
+
+  <div class="knowledge-point">
+    <h4>5.3.1 广义差分法（Generalized Difference）</h4>
+    <div class="exam-tag-inline" data-types="['单选','判断','简答','案例']">exam_types(['单选','判断','简答','案例'])</div>
+    <p><strong>AR(1) 情形的广义差分（ρ 已知时）：</strong></p>
+    <div class="formula-display">
+      Yₜ - ρYₜ₋₁ = β₁(1-ρ) + β₂(Xₜ - ρXₜ₋₁) + εₜ
+    </div>
+    <p>变换后的模型满足 CLRM 假定（εₜ iid），OLS 估计有效。</p>
+    <p><strong>ρ 未知时的处理方法：</strong></p>
+    <div class="method-list">
+      <div class="method-item">
+        <strong>① 科克伦-奥克特迭代法（Cochrane-Orcutt, 1949）</strong>
+        <p>Step 1: OLS 获得残差 ûₜ → Step 2: ûₜ 对 ûₜ₋₁ 回归得 ρ̂ → Step 3: 用 ρ̂ 做广义差分 → Step 4: 重复 2-3 直至 ρ̂ 收敛。</p>
+      </div>
+      <div class="method-item">
+        <strong>② 普莱斯-温斯滕法（Prais-Winsten, 1954）</strong>
+        <p>与 C-O 类似，但<strong>保留第一个观测值</strong>（C-O 丢掉第一个观测）。Prais-Winsten 对第一个观测作变换：Y₁√(1-ρ²), X₁√(1-ρ²)，在小样本中更有效。</p>
+      </div>
+      <div class="method-item">
+        <strong>③ 德宾两步法（Durbin's Two-Step Method）</strong>
+        <p>Step 1: 将 Yₜ 对 Xₜ、Xₜ₋₁、Yₜ₋₁ 回归得 Yₜ₋₁ 的系数作为 ρ 的一致估计 → Step 2: 用该 ρ̂ 做广义差分。</p>
+      </div>
+      <div class="method-item">
+        <strong>④ 一阶差分法（First Difference）</strong>
+        <p>当 ρ ≈ 1 时（如随机游走），直接取一阶差分：ΔYₜ = β₂ΔXₜ + Δuₜ。这是最简单的方法，但以丢失长期关系信息为代价。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="knowledge-point">
+    <h4>5.3.2 纽维-韦斯特 HAC 标准误（Newey-West HAC Estimator, 1987）</h4>
+    <div class="exam-tag-inline" data-types="['单选','判断','简答','案例']">exam_types(['单选','判断','简答','案例'])</div>
+    <p><strong>思想：</strong>与异方差稳健标准误类似的"三明治"思想——在估计标准误时同时考虑异方差和自相关，得到<strong>HAC（Heteroscedasticity and Autocorrelation Consistent）</strong>标准误。</p>
+    <div class="formula-display">
+      Var̂<sub>HAC</sub>(β̂) = (X'X)⁻¹ X' Σ̂ X (X'X)⁻¹
+    </div>
+    <p>其中 Σ̂ 是经过核函数加权的误差协方差矩阵估计量，对各阶自相关赋予递减的权重。</p>
+    <p><strong>优点：</strong>不需要估计自相关参数 ρ，适用于大样本，对异方差和自相关同时稳健。</p>
+    <p><strong>局限：</strong>需要选择<strong>带宽（lag truncation）</strong>参数——常用：bandwidth = 0.75·N¹ᐟ³。</p>
+    <p><strong>STATA 实现：</strong> <code>newey Y X1 X2, lag(3)</code> 或 OLS 后加 <code>, vce(hac nwest)</code>。</p>
+  </div>
+
+  <div class="knowledge-point">
+    <h4>5.3.3 可行的广义最小二乘法（FGLS）</h4>
+    <div class="exam-tag-inline" data-types="['单选','判断','简答']">exam_types(['单选','判断','简答'])</div>
+    <p>用数据估计自相关参数 ρ 后再进行 GLS 变换。C-O 迭代法和 Prais-Winsten 法都属于 FGLS 范畴。FGLS 比 OLS 更有效，但<strong>小样本下有偏</strong>（因为 ρ̂ 不是 ρ 的无偏估计）。</p>
+    <div class="highlight-box">
+      ⚠️ <strong>策略选择：</strong>大样本下（N>100）→ HAC 标准误（简单、稳健、不需要建模自相关结构）；小样本下 → FGLS（Prais-Winsten 或 C-O 迭代）更有效。若 ρ 接近 1 → 一阶差分法。务必先检查模型设定——许多"自相关"实际上是遗漏变量或错误函数形式的信号。
+    </div>
+  </div>
+</div>
+
+<!-- ===== ConfusionTable：自相关易混淆辨析 ===== -->
+<div class="confusion-table">
+  <h3>🧩 易混淆辨析：自相关核心概念</h3>
+  <table>
+    <thead>
+      <tr><th width="18%">混淆对</th><th width="41%">概念 A</th><th width="41%">概念 B</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="conf-pair">自相关 vs 异方差</span></td>
+        <td><strong>自相关</strong>：不同期误差相关（Cov(uₜ, uₛ)≠0），主要见于时间序列。后果：标准误通常被低估，R² 被高估</td>
+        <td><strong>异方差</strong>：不同期误差方差不同（Var(uᵢ)≠Var(uⱼ)），主要见于截面数据。后果：标准误偏误方向不定</td>
+      </tr>
+      <tr>
+        <td><span class="conf-pair">DW 检验 vs BG(LM) 检验</span></td>
+        <td><strong>DW 检验</strong>：仅检验 AR(1)；有不确定区域；不能有滞后被解释变量；下尾/上尾检验</td>
+        <td><strong>BG(LM) 检验</strong>：可检验任意阶 AR(p)/MA(q)；可含滞后被解释变量；χ² 检验，无不确定区域</td>
+      </tr>
+      <tr>
+        <td><span class="conf-pair">正自相关 vs 负自相关</span></td>
+        <td><strong>正自相关（ρ>0）</strong>：残差同号连贯（波浪形）。DW < 2，最常见于经济时间序列。标准误被低估</td>
+        <td><strong>负自相关（ρ<0）</strong>：残差交替正负（锯齿形）。DW > 2，较罕见。标准误被高估</td>
+      </tr>
+      <tr>
+        <td><span class="conf-pair">C-O 迭代 vs Prais-Winsten</span></td>
+        <td><strong>C-O 迭代</strong>：广义差分时丢弃第一个观测值（损失一个样本），迭代到收敛。大样本差异可忽略</td>
+        <td><strong>Prais-Winsten</strong>：保留第一个观测值（通过 √(1-ρ²) 变换），小样本表现更优</td>
+      </tr>
+      <tr>
+        <td><span class="conf-pair">广义差分 vs 一阶差分</span></td>
+        <td><strong>广义差分</strong>：Yₜ - ρYₜ₋₁，适用于 |ρ|<1 的 AR(1) 过程。ρ 需要估计，保留长期关系</td>
+        <td><strong>一阶差分</strong>：Yₜ - Yₜ₋₁，仅当 ρ≈1（单位根）时适用。消除趋势但丢失长期均衡信息（协整）</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ===== 原题标记：教师题库 ===== -->
+<div class="original-problems">
+  <h3>📚 教师原题精选（Topic 5）</h3>
+
+  <div class="problem-card exam_types" data-types="['单选']">
+    <span class="problem-source tag-teacher">👨‍🏫 教师原题</span>
+    <span class="problem-type tag-choice">单选</span>
+    <div class="problem-body">
+      <p><strong>【2019 期末】</strong> 在时间序列回归中，DW 统计量的值接近 0 时，说明：</p>
+      <p>A. 不存在自相关 &emsp; B. 存在正自相关<br>C. 存在负自相关 &emsp; D. 数学模型设定错误</p>
+      <p class="answer"><strong>答案：B</strong>（DW 统计量 d=2(1-ρ̂)，d→0 意味着 ρ̂→1，即存在强烈的正自相关。d→4 意味着 ρ̂→-1，即负自相关；d≈2 无自相关）</p>
+    </div>
+  </div>
+
+  <div class="problem-card exam_types" data-types="['判断']">
+    <span class="problem-source tag-teacher">👨‍🏫 教师原题</span>
+    <span class="problem-type tag-judge">判断</span>
+    <div class="problem-body">
+      <p><strong>【2020 期中】</strong> 如果 DW 统计量大于 d<sub>U</sub>，则可以判定模型中一定不存在一阶自相关。</p>
+      <p class="answer"><strong>答案：×</strong>（错误。DW 检验存在不确定区域（d<sub>L</sub> < d < d<sub>U</sub>），不能做出判断；且 DW 不能检验高阶自相关。大于 d<sub>U</sub> 只是不能拒绝"无 AR(1) 自相关"的原假设——可能仍存在高阶自相关，需结合 BG 检验综合判断）</p>
+    </div>
+  </div>
+
+  <div class="problem-card exam_types" data-types="['简答']">
+    <span class="problem-source tag-teacher">👨‍🏫 教师原题</span>
+    <span class="problem-type tag-short">简答</span>
+    <div class="problem-body">
+      <p><strong>【2021 期末】</strong> 简述自相关对 OLS 估计的影响，并举出至少两种检验方法和两种补救措施。</p>
+      <p class="answer"><strong>答案：</strong><strong>影响：</strong>① OLS 仍无偏一致 ② 不再有效（非 BLUE）③ 正自相关下标准误被低估（t 值偏大，R² 被高估）④ 推断不可靠。<strong>检验方法：</strong>① DW 检验（一阶自相关）② Breusch-Godfrey LM 检验（任意阶）③ 残差序时图 ④ Ljung-Box Q 统计量。<strong>补救措施：</strong>① 广义差分法（Cochrane-Orcutt/Prais-Winsten）② Newey-West HAC 标准误（大样本首选）③ 一阶差分（ρ≈1 时）④ 加入滞后被解释变量或纠正模型设定偏误。</p>
+    </div>
+  </div>
+
+  <div class="problem-card exam_types" data-types="['案例']">
+    <span class="problem-source tag-teacher">👨‍🏫 教师原题</span>
+    <span class="problem-type tag-case">案例</span>
+    <div class="problem-body">
+      <p><strong>【2022 期末案例】</strong> 研究者利用中国 1980-2022 年（N=43）年度数据估计能源需求函数：ln(Eₜ) = β₁ + β₂ln(GDPₜ) + β₃ln(Pₜ) + uₜ，其中 E 为能源消费总量、GDP 为实际 GDP、P 为能源价格指数。OLS 回归结果：R²=0.96，DW=0.54，各变量 t 值均在 5% 水平显著。</p>
+      <p><strong>问：</strong>（1）DW=0.54 说明什么？该回归结果可能存在什么问题？<br>（2）Breusch-Godfrey 检验与 DW 检验相比有哪些优点？<br>（3）提出至少两种补救措施并说明其适用性。</p>
+      <p class="answer"><strong>答案：</strong>（1）d=0.54 → 存在严重的正一阶自相关。虽然 R² 高大 0.96 且 t 值显著，但标准误很可能被严重低估，t 值的显著性可能是虚假的——不能简单相信这些推断结果。（2）BG 检验的优点：① 可检验高阶自相关（AR(p) 或 MA(q)）② 可包含滞后被解释变量 ③ 无不确定区域 ④ 在大样本下更可靠。（3）措施一：Prais-Winsten 广义差分法——对小样本（N=43）更适合，保留第一个观测值；措施二：Newey-West HAC 标准误（设定合适滞后阶数如 lag=3）——修正推断但 β̂ 不变；措施三：加入滞后项 ln(Eₜ₋₁) 作为解释变量，用 BG 检验重新判断；措施四：检查是否遗漏了时间趋势项或结构突变变量（如 2000 年后能源消费加速）。</p>
+    </div>
+  </div>
+</div>
+
+<!-- ===== AI编拟综合案例题 ===== -->
+<div class="ai-case">
+  <div class="ai-badge">🤖 AI 编拟·综合案例</div>
+  <h3>📋 Topic 5 综合案例：宏观经济消费函数的自相关分析</h3>
+  <p class="case-source" data-source="ai">来源：AI 编拟 · 覆盖案例题型 · 分值约 10-12 分</p>
+
+  <div class="case-scenario">
+    <p><strong>背景：</strong>某宏观经济学研究者利用 1978-2023 年（N=46）中国年度数据，估计消费函数：</p>
+    <div class="formula-display">
+      ln(Cₜ) = β₁ + β₂ln(Yₜ) + β₃ln(Cₜ₋₁) + uₜ
+    </div>
+    <p>其中 Cₜ 为实际人均消费支出（元），Yₜ 为实际人均可支配收入（元），Cₜ₋₁ 为滞后一期的消费（反映习惯形成效应）。</p>
+
+    <p><strong>OLS 回归结果：</strong></p>
+    <div class="stata-output">
+      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; Coef. &emsp; Std.Err. &emsp; t &emsp; P>|t|<br>
+      ln(Yₜ) &emsp;&emsp;| 0.485 &emsp; 0.102 &emsp; 4.75 &emsp; 0.000<br>
+      ln(Cₜ₋₁) &emsp;| 0.462 &emsp; 0.118 &emsp; 3.92 &emsp; 0.000<br>
+      _cons &emsp;&emsp;| 0.385 &emsp; 0.215 &emsp; 1.79 &emsp; 0.081<br>
+      ─────────────────────────────────────────<br>
+      R² = 0.994, &emsp; Durbin h = 2.85 (p=0.004)
+    </div>
+
+    <p><strong>Breusch-Godfrey LM 检验结果：</strong></p>
+    <div class="supplement">
+      <ul>
+        <li>Lag(1): LM = 8.45, p = 0.004</li>
+        <li>Lag(2): LM = 9.82, p = 0.007</li>
+        <li>Lag(3): LM = 10.15, p = 0.017</li>
+      </ul>
+    </div>
+
+    <p><strong>ACF 与 PACF 分析（残差）：</strong></p>
+    <div class="supplement">
+      <p>滞后 1 阶：ACF=0.42, PACF=0.42（超过 2/√46≈0.29 的边界）</p>
+      <p>滞后 2 阶：ACF=0.18, PACF=-0.05</p>
+      <p>滞后 3 阶：ACF=-0.09, PACF=-0.12</p>
+      <p>Ljung-Box Q(3) = 11.2, p=0.011</p>
+    </div>
+
+    <p><strong>变量单位根检验（ADF）：</strong></p>
+    <div class="supplement">
+      <p>ln(Cₜ): ADF = -1.85 (p=0.35) → 非平稳</p>
+      <p>ln(Yₜ): ADF = -1.62 (p=0.47) → 非平稳</p>
+      <p>Δln(Cₜ): ADF = -4.52 (p=0.001) → 平稳</p>
+      <p>Δln(Yₜ): ADF = -4.18 (p=0.003) → 平稳</p>
+    </div>
+  </div>
+
+  <div class="case-questions">
+    <p><strong>问题：</strong></p>
+    <ol>
+      <li><strong>（诊断·3分）</strong>根据 Durbin h 统计量和 BG 检验结果，判断模型是否存在自相关。为什么这里用 Durbin h 而不是 DW 统计量？<br><span class="answer-hint">答：Durbin h=2.85（p=0.004）和 BG(1) LM=8.45（p=0.004）均强烈拒绝"无自相关"原假设，模型存在显著的正自相关。使用 Durbin h 而非 DW 的原因：模型包含了滞后被解释变量 ln(Cₜ₋₁)，此时 DW 统计量有偏（趋向于2），失去检验效力。Durbin h 和 BG 检验均可用于含滞后被解释变量的模型。</span></li>
+      <li><strong>（模式·2分）</strong>根据 ACF/PACF 结果，判断自相关的阶数（属于 AR(p) 的何种形式）。<br><span class="answer-hint">答：ACF 在 lag 1 显著（0.42>0.29）后快速衰减（lag 2 的 0.18 不显著），PACF 在 lag 1 显著后截尾（lag 2 的 -0.05 接近零）。这种"ACF 拖尾+PACF 截尾"模式典型地指示 AR(1) 过程。BG 检验中 lag 2 和 lag 3 的显著性可能源于 lag 1 的残余效应，而非真正的二阶自相关。综合判断：AR(1) 过程。</span></li>
+      <li><strong>（补救·3分）</strong>提出两种补救方案，比较它们的优劣，并推荐一种。<br><span class="answer-hint">答：<strong>方案 A：Prais-Winsten FGLS</strong>——估计 ρ 后做广义差分变换，保留第一个观测值。优点：N=46 小样本，Prais-Winsten 有效且保留信息。缺点：若模型设定错误（如遗漏协整关系），FGLS 可能加剧偏误。<strong>方案 B：Newey-West HAC 标准误</strong>——在 OLS 基础上修正标准误。优点：简单、不改变模型结构，对模型设定错误相对稳健。缺点：小样本下 HAC 表现可能不如 FGLS 有效。<strong>推荐：</strong>作为初步补救，使用 HAC 标准误（lag=3~4）确认推断稳健性；若自相关问题仍然严重，再使用 Prais-Winsten 提高效率。</span></li>
+      <li><strong>（拓展·2分）</strong>ADF 检验提示 ln(Cₜ) 和 ln(Yₜ) 均非平稳（I(1)），而残差自相关可能源于"虚假回归"。你对此有何看法？建议如何处理？<br><span class="answer-hint">答：这是一个更深层的问题。如果 ln(Cₜ) 和 ln(Yₜ) 均为 I(1) 但存在协整关系（即长期均衡关系），则差分后估计会丢失长期信息。建议：① 先做 Engle-Granger 协整检验——若残差平稳（I(0)），则使用水平值的 OLS 估计（"超级一致"估计量），自相关用 HAC 标准误处理；② 若不存在协整，则使用一阶差分模型 Δln(Cₜ) = β₂Δln(Yₜ) + β₃Δln(Cₜ₋₁) + vₜ（此时序列平稳，自相关问题会大幅缓解）；③ 使用 ARDL（自回归分布滞后）模型，可同时处理 I(0) 和 I(1) 变量。</span></li>
+    </ol>
+  </div>
+</div>
+
+<!-- ===== SpeedBox：考前5分钟必记 ===== -->
+<div class="speed-box">
+  <div class="speed-header">⏱ 考前5分钟必记 · Topic 5</div>
+  <div class="speed-body">
+    <ul>
+      <li><strong>自相关本质</strong>：Cov(uₜ, uₛ) ≠ 0（时间序列中误差跨期相关）。AR(1): uₜ = ρ·uₜ₋₁ + εₜ</li>
+      <li><strong>正自相关（ρ>0）</strong>：残差波浪同号，DW < 2。后果：<strong>标准误被低估，R² 被高估</strong></li>
+      <li><strong>不影响</strong>：无偏性 + 一致性。<strong>影响</strong>：有效性（非 BLUE）+ 标准误 + 推断 + R²</li>
+      <li><strong>DW 检验</strong>：d ≈ 2(1-ρ̂) ∈ [0,4]。仅 AR(1)，不能含滞后 Y，有不确定区</li>
+      <li><strong>BG(LM) 检验</strong>：残差对解释变量 + 滞后残差回归。任意阶 AR/MA，可含滞后 Y</li>
+      <li><strong>首选补救</strong>：<strong>Newey-West HAC 标准误</strong>（大样本，异方差+自相关同时稳健）</li>
+      <li><strong>小样本补救</strong>：<strong>Prais-Winsten</strong>（FGLS，保留第1个观测）或 Cochrane-Orcutt</li>
+      <li><strong>虚假回归警示</strong>：若残差自相关严重且变量非平稳，先检查协整关系</li>
+    </ul>
+  </div>
+</div>
+
+<hr class="topic-divider">
+
+<!-- ===== Topic 2-5 总结对照表 ===== -->
+<div class="summary-comparison">
+  <h3>📋 Topic 2-5 核心问题对照总结</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>维度</th>
+        <th id="t2">Topic 2 虚拟变量</th>
+        <th id="t3">Topic 3 多重共线性</th>
+        <th id="t4">Topic 4 异方差</th>
+        <th id="t5">Topic 5 自相关</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>问题性质</strong></td>
+        <td>定性因素量化工具</td>
+        <td>X 变量间相关</td>
+        <td>Var(uᵢ) 不恒定</td>
+        <td>Cov(uₜ, uₛ) ≠ 0</td>
+      </tr>
+      <tr>
+        <td><strong>常见数据</strong></td>
+        <td>截面/面板/时间序列</td>
+        <td>截面/时间序列</td>
+        <td>截面数据为主</td>
+        <td>时间序列为主</td>
+      </tr>
+      <tr>
+        <td><strong>对 OLS 无偏性</strong></td>
+        <td>✓ 不影响</td>
+        <td>✓ 不影响</td>
+        <td>✓ 不影响</td>
+        <td>✓ 不影响</td>
+      </tr>
+      <tr>
+        <td><strong>对 OLS 有效性</strong></td>
+        <td>✓ 不影响</td>
+        <td>× 方差增大</td>
+        <td>× 非有效</td>
+        <td>× 非有效</td>
+      </tr>
+      <tr>
+        <td><strong>标准误方向</strong></td>
+        <td>—</td>
+        <td>高估（方差大）</td>
+        <td>不定（取决于异方差形式）</td>
+        <td>正自相关：低估；负自相关：高估</td>
+      </tr>
+      <tr>
+        <td><strong>主要诊断</strong></td>
+        <td>VIF（虚拟变量陷阱）</td>
+        <td>VIF, CI, 辅助回归</td>
+        <td>BP, White, GQ, 残差图</td>
+        <td>DW, BG, ACF, Ljung-Box</td>
+      </tr>
+      <tr>
+        <td><strong>主要补救</strong></td>
+        <td>N-1 原则；加乘并用</td>
+        <td>删变量；增样本；变换</td>
+        <td>稳健标准误；WLS</td>
+        <td>HAC 标准误；广义差分</td>
+      </tr>
+      <tr>
+        <td><strong>重要程度</strong></td>
+        <td>⭐⭐⭐⭐ 核心</td>
+        <td>⭐⭐⭐ 重要</td>
+        <td>⭐⭐⭐⭐ 核心</td>
+        <td>⭐⭐⭐⭐ 核心</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+<div class="header">
+  <h1>📊 计量经济学 Topics 6-9 v6 增强版</h1>
+  <p>F检验 · 误差项vs残差 · Probit/Logit · OLS假设 · 四川农业大学</p>
+</div>
+
+<div class="container">
+
+<!-- ============================================================ -->
+<!-- TOPIC 6: F检验 (core, 5星) -->
+<!-- ============================================================ -->
+<div id="topic6" class="chapter-section">
+
+  <!-- PriorityBox -->
+  <div class="priority-box core">
+    <div class="priority-icon">🔥</div>
+    <div class="priority-body">
+      <span class="priority-tag">CORE · 核心必考</span>
+      <h2 <div class="confusion" style="background:#e8f5e9;border-color:#2e7d32"><h5>💡 简答话术模板 · DW检验判断</h5><p><b>📌 典型简答：DW统计量d=0.85，d_L=1.55，d_U=1.62，请判断自相关</b></p><p><b>话术结构：</b>① 给出比较规则 → ② 比较数据 → ③ 结论</p><p><b>示范答案：</b></p><p>「DW检验的判断规则是：</p><p>① 若d < d_L → 存在正自相关</p><p>② 若d > d_U → 无自相关</p><p>③ 若d_L ≤ d ≤ d_U → 无法判定（灰色区）</p><p>本题：d=0.85 < d_L=1.55，所以存在正自相关。</p><p>由于d接近0，自相关系数ρ̂≈1-d/2=1-0.425=0.575，属于中等偏强正自相关。」</p><p style="margin-top:8px"><b>得分点：</b>给出规则(3分)+正确比较(2分)+补充ρ̂估计(3分)</p></div>
+<h2 id="t6">专题6：F检验与回归显著性检验（F-Test）</h2>
+      <p style="margin:4px 0 0 0;font-size:0.92em;color:#555;">
+        联合显著性检验 · 模型整体检验 · 约束检验 · Chow检验 · 方差分析
+      </p>
+    </div>
+  </div>
+
+  <!-- WeightBox -->
+  <div class="weight-box">
+    <div class="weight-stars">★★★★★</div>
+    <span class="weight-label">考试权重：18~22分</span>
+    <span style="color:#856404;font-size:0.85em;">
+      │ 选择4~6分 · 计算6~8分 · 案例分析6~8分
+    </span>
+  </div>
+
+  <!-- SpeedBox -->
+  <div class="speed-box">
+    <ul>
+      <li><span class="speed-highlight">F统计量核心公式</span>：F = (RSS<sub>r</sub>−RSS<sub>ur</sub>)/q ÷ RSS<sub>ur</sub>/(n−k−1) ~ F(q, n−k−1)</li>
+      <li><span class="speed-highlight">F与R²的关系</span>：F = (R²<sub>ur</sub>−R²<sub>r</sub>)/q ÷ (1−R²<sub>ur</sub>)/(n−k−1)</li>
+      <li><span class="speed-highlight">整体F检验</span>：H₀: β₁=β₂=...=β<sub>k</sub>=0，F = R²/k ÷ (1−R²)/(n−k−1)</li>
+      <li>F &gt; F<sub>α</sub>(q, n−k−1) → 拒绝H₀ —— <span class="speed-highlight">F越大越显著</span></li>
+      <li>F &lt; 1 说明模型几乎没有解释力（R²接近0）</li>
+    </ul>
+  </div>
+
+  <!-- ===== 1. F检验的基本原理 ===== -->
+  <h3>1. F检验的基本原理</h3>
+  <span class="exam-types">
+    <span class="exam-tag choice">选择题</span>
+    <span class="exam-tag shortq">简答题</span>
+    <span class="exam-tag source-teacher">教师原题</span>
+  </span>
+
+  <p>F检验用于检验<strong>多个线性约束</strong>是否同时成立（联合显著性检验）。核心思想是比较<strong>有约束模型</strong>（RSS<sub>r</sub>）和<strong>无约束模型</strong>（RSS<sub>ur</sub>）的残差平方和：若约束成立，两者差异小；若约束不成立，约束模型残差大幅增加。</p>
+
+  <div class="formula">
+    <strong>F统计量（一般形式）：</strong><br>
+    F = (RSS<sub>r</sub> − RSS<sub>ur</sub>) / q &nbsp;÷&nbsp; RSS<sub>ur</sub> / (n − k − 1) &nbsp;∼&nbsp; F(q, n−k−1)
+  </div>
+  <p style="font-size:0.9em;color:#666;">其中 q = 约束个数，k = 无约束模型自变量个数，n = 样本量。</p>
+
+  <div class="formula">
+    <strong>基于R²的等价形式：</strong><br>
+    F = (R²<sub>ur</sub> − R²<sub>r</sub>) / q &nbsp;÷&nbsp; (1 − R²<sub>ur</sub>) / (n − k − 1)
+  </div>
+
+  <div class="key-point">
+    <strong>💡 直觉理解：</strong>F统计量度量"由于施加约束而增加的残差"相对于"模型本身的残差"有多大。如果约束是真的，这个比值应该接近1（服从F分布）；如果约束是假的，分子远大于分母，F值很大。
+  </div>
+
+  <!-- ===== 2. 模型整体显著性检验 ===== -->
+  <h3>2. 模型整体显著性F检验</h3>
+  <span class="exam-types">
+    <span class="exam-tag choice">选择题</span>
+    <span class="exam-tag calc">计算题</span>
+    <span class="exam-tag source-teacher">教师原题</span>
+  </span>
+
+  <p>这是最常用的F检验——检验所有斜率系数是否联合显著（即模型是否有解释力）：</p>
+  <div class="formula">
+    <strong>整体F检验：</strong><br>
+    H₀: β₁ = β₂ = ... = β<sub>k</sub> = 0 &nbsp;&nbsp;（所有自变量联合不显著）<br>
+    F = R²/k &nbsp;÷&nbsp; (1−R²)/(n−k−1) &nbsp;∼&nbsp; F(k, n−k−1)
+  </div>
+  <p>约束模型是仅含截距项的回归（R²<sub>r</sub>=0，RSS<sub>r</sub>=SST）。</p>
+
+  <div class="key-point">
+    <strong>⚠️ 注意区别：</strong>整体F检验 ≠ 每个系数的t检验。有可能整体F显著（联合显著）但个别t不显著（存在多重共线性时常见）。也有可能整体F不显著但某个t显著（罕见）。
+  </div>
+
+  <!-- ===== 3. 约束检验 ===== -->
+  <h3>3. 一般线性约束的F检验</h3>
+  <span class="exam-types">
+    <span class="exam-tag calc">计算题</span>
+    <span class="exam-tag shortq">简答题</span>
+    <span class="exam-tag source-teacher">教师原题</span>
+  </span>
+
+  <p>F检验可处理各类线性约束，包括：</p>
+  <ul>
+    <li><strong>排除性约束</strong>：一组变量的系数全为0（最常见，如H₀: β₃=β₄=β₅=0）</li>
+    <li><strong>等式约束</strong>：两个系数相等（如H₀: β₂=β₃）</li>
+    <li><strong>线性组合约束</strong>：如H₀: β₁+β₂=1（Cobb-Douglas生产函数的规模报酬不变检验）</li>
+  </ul>
+
+  <div class="formula">
+    <strong>等式约束示例</strong>（检验H₀: β₂=β₃）：<br>
+    无约束：y = β₀ + β₁x₁ + β₂x₂ + β₃x₃ + u<br>
+    施加β₂=β₃后：y = β₀ + β₁x₁ + β₂(x₂+x₃) + u &nbsp;（构造新变量 z = x₂+x₃）
+  </div>
+
+  <!-- ===== 4. Chow检验（邹检验） ===== -->
+  <h3>4. Chow检验 — 结构变化检验</h3>
+  <span class="exam-types">
+    <span class="exam-tag choice">选择题</span>
+    <span class="exam-tag analysis">分析题</span>
+    <span class="exam-tag source-teacher">教师原题</span>
+  </span>
+
+  <p><strong>Chow检验</strong>是F检验在<strong>结构变化（断点）检验</strong>中的特例，用于判断两个子样本的回归系数是否相同（如2008年金融危机前后、政策实施前后）。</p>
+
+  <div class="formula">
+    <strong>Chow检验F统计量：</strong><br>
+    F = [RSS<sub>p</sub> − (RSS<sub>1</sub>+RSS<sub>2</sub>)] / (k+1) &nbsp;÷&nbsp; (RSS<sub>1</sub>+RSS<sub>2</sub>) / (n−2k−2)<br>
+    ~ F(k+1, n−2k−2)
+  </div>
+  <p style="font-size:0.9em;color:#666;">RSS<sub>p</sub>=合并样本残差，RSS<sub>1</sub>=子样本1残差，RSS<sub>2</sub>=子样本2残差，n=n₁+n₂。</p>
+
+  <div class="key-point">
+    <strong>💡 使用前提：</strong>① 两个子样本各自独立可估计 ② 误差方差相同（同方差假设） ③ 断点位置已知。若误差方差不同，需用修正的Wald检验替代。
+  </div>
+
+  <!-- ===== 5. ConfusionTable: F检验 vs t检验 ===== -->
+  <h3>5. 易混淆辨析</h3>
+  <div class="confusion-table-wrap">
+    <div class="confusion-header">F检验 vs t检验</div>
+    <table>
+      <tr>
+        <th style="width:20%">维度</th>
+        <th style="width:40%">F检验</th>
+        <th style="width:40%">t检验</th>
+      </tr>
+      <tr>
+        <td><strong>检验对象</strong></td>
+        <td>多个系数的联合显著性</td>
+        <td>单个系数的显著性</td>
+      </tr>
+      <tr>
+        <td><strong>原假设</strong></td>
+        <td>H₀: β₁=β₂=...=β<sub>q</sub>=0（或更一般的线性约束）</td>
+        <td>H₀: β<sub>j</sub>=0</td>
+      </tr>
+      <tr>
+        <td><strong>统计量</strong></td>
+        <td>F = (RSS<sub>r</sub>−RSS<sub>ur</sub>)/q ÷ RSS<sub>ur</sub>/(n−k−1)</td>
+        <td>t = β̂<sub>j</sub> / se(β̂<sub>j</sub>)</td>
+      </tr>
+      <tr>
+        <td><strong>分布</strong></td>
+        <td>F(q, n−k−1)</td>
+        <td>t(n−k−1) 或近似标准正态</td>
+      </tr>
+      <tr>
+        <td><strong>关系</strong></td>
+        <td colspan="2">检验单个变量时，F = t²（即F(1, n−k−1) = t²）</td>
+      </tr>
+      <tr>
+        <td><strong>何时用</strong></td>
+        <td>检验一组变量是否应加入模型、结构变化、约束条件</td>
+        <td>判断某个特定变量是否显著</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- ===== 6. AI编拟案例题 ===== -->
+  <div class="ai-case-box">
+    <div class="case-meta">
+      <span>📌 案例题型 · 48分覆盖</span>
+      <span>🤖 来源: AI编拟</span>
+      <span class="exam-tag case">案例分析</span>
+      <span class="exam-tag calc">计算</span>
+    </div>
+
+    <h4>📋 案例：工资决定方程的联合显著性检验</h4>
+    <p>研究者估计以下<strong>无约束模型</strong>（n=526）：</p>
+    <div class="formula">
+      log(wage) = β₀ + β₁educ + β₂exper + β₃tenure + β₄married + β₅female + u<br>
+      R²<sub>ur</sub> = 0.342, RSS<sub>ur</sub> = 88.54
+    </div>
+    <p>现考虑以下假设检验场景：</p>
+    <p><strong>场景A：</strong>检验教育、工龄、现职任期三个变量的联合显著性（H₀: β₁=β₂=β₃=0）<br>
+    约束模型（仅含married和female）：R²<sub>r</sub> = 0.172, RSS<sub>r</sub> = 111.46</p>
+    <p><strong>场景B：</strong>Chow检验——研究者怀疑男性和女性的工资方程系数完全不同。男性子样本(n₁=284)估计：RSS₁=42.16；女性子样本(n₂=242)估计：RSS₂=40.28；合并模型RSS<sub>p</sub>=88.54。</p>
+
+    <div class="ai-answer">
+      <p><strong>✅ 参考答案：</strong></p>
+      <p><strong>场景A：</strong>q=3, k=5, n=526</p>
+      <p>F = (111.46−88.54)/3 ÷ 88.54/(526−5−1) = 22.92/3 ÷ 88.54/520</p>
+      <p>= 7.64 ÷ 0.1703 = <strong>44.87</strong></p>
+      <p>F<sub>0.01</sub>(3,520) ≈ 3.82，由于44.87 &gt; 3.82，拒绝H₀ — educ、exper、tenure联合高度显著。</p>
+      <p><strong>场景B (Chow检验)：</strong>k=5, n=526, k+1=6个约束（含截距）</p>
+      <p>F = [88.54−(42.16+40.28)]/6 ÷ (42.16+40.28)/(526−12)</p>
+      <p>= 6.10/6 ÷ 82.44/514 = 1.017 ÷ 0.1604 = <strong>6.34</strong></p>
+      <p>F<sub>0.01</sub>(6,514) ≈ 2.80 → 拒绝H₀，男女工资方程存在显著结构差异。</p>
+    </div>
+  </div>
+
+  <!-- ===== 7. 教师原题 ===== -->
+  <h3>6. 教师原题精选</h3>
+  <span class="exam-types">
+    <span class="exam-tag source-teacher">教师原题</span>
+    <span class="exam-tag calc">计算题</span>
+  </span>
+
+  <div class="tricky-box">
+    <h4>📝 原题：F统计量与R²的关系</h4>
+    <p>某回归模型：y = β₀ + β₁x₁ + β₂x₂ + β₃x₃ + u，n=64，R²=0.45。</p>
+    <p><strong>(1)</strong> 计算模型整体显著性的F统计量；</p>
+    <p><strong>(2)</strong> 在5%显著性水平下是否拒绝H₀？</p>
+    <p><strong>(3)</strong> 若R²=0.08，重新计算F值并判断。</p>
+
+    <div class="correct-approach">
+      <h5>✅ 解答：</h5>
+      <p><strong>(1)</strong> F = R²/k ÷ (1−R²)/(n−k−1) = 0.45/3 ÷ 0.55/60 = 0.15 ÷ 0.00917 = <strong>16.36</strong></p>
+      <p><strong>(2)</strong> F<sub>0.05</sub>(3,60) ≈ 2.76。16.36 &gt; 2.76 → <strong>拒绝H₀</strong>，模型整体显著。</p>
+      <p><strong>(3)</strong> F = 0.08/3 ÷ 0.92/60 = 0.0267 ÷ 0.01533 = <strong>1.74</strong></p>
+      <p>1.74 &lt; 2.76 → <strong>不能拒绝H₀</strong>，模型几乎没有解释力。</p>
+      <p>💡 当R²很低（&lt;0.1）时，F值通常很小，模型不显著。</p>
+    </div>
+  </div>
+
+</div>
+
+<hr class="section-divider">
+
+<!-- ============================================================ -->
+<!-- TOPIC 7: 误差项vs残差 (imp, 3星) -->
+<!-- ============================================================ -->
+<div id="topic7" class="chapter-section">
+
+  <!-- PriorityBox -->
+  <div class="priority-box imp">
+    <div class="priority-icon">📌</div>
+    <div class="priority-body">
+      <span class="priority-tag">IMPORTANT · 重要考点</span>
+      <h2 <div class="confusion" style="background:#e8f5e9;border-color:#2e7d32"><h5>💡 简答话术模板 · F检验与t检验的区别</h5><p><b>📌 典型简答：F检验和t检验有什么区别？什么时候用哪个？</b></p><p><b>话术结构：</b>① 各自用途 → ② 统计量形式 → ③ 选择规则</p><p><b>示范答案：</b></p><p>「t检验用于检验单个回归系数是否显著不为零：H₀:βⱼ=0。</p><p>F检验用于检验一组系数是否同时为零：H₀:β₁=β₂=...=βₖ=0。</p><p>如果只检验一个系数，t² = F(1, n-k-1)，两者等价。</p><p>如果检验多个系数（如β₁=β₂=0或β₁=β₂），必须用F检验。</p><p>另外，检验整个回归方程的显著性用F检验，检验单个解释变量的重要性用t检验。」</p><p style="margin-top:8px"><b>得分点：</b>t检验用途(2分)+F检验用途(2分)+关系(2分)+选择规则(2分)</p></div>
+<h2 id="t7">专题7：随机误差项与残差（Error Term vs Residual）</h2>
+      <p style="margin:4px 0 0 0;font-size:0.92em;color:#555;">
+        概念辨析 · 性质差异 · 在OLS假设中的角色 · 诊断应用
+      </p>
+    </div>
+  </div>
+
+  <!-- WeightBox -->
+  <div class="weight-box">
+    <div class="weight-stars">★★★☆☆</div>
+    <span class="weight-label">考试权重：8~12分</span>
+    <span style="color:#856404;font-size:0.85em;">
+      │ 选择2~4分 · 简答4~6分 · 判断2分
+    </span>
+  </div>
+
+  <!-- SpeedBox -->
+  <div class="speed-box">
+    <ul>
+      <li><span class="speed-highlight">误差项 uᵢ</span> = 总体回归中真实值偏离条件期望的部分，<strong>不可观测</strong></li>
+      <li><span class="speed-highlight">残差 ûᵢ</span> = 样本回归中观测值偏离拟合值的部分，<strong>可计算</strong></li>
+      <li>核心关系：<span class="speed-highlight">残差是误差项的样本估计</span>——ûᵢ = yᵢ − ŷᵢ</li>
+      <li>OLS使得 <span class="speed-highlight">Σûᵢ=0</span> 且 <span class="speed-highlight">Σxᵢûᵢ=0</span>（样本矩条件），但误差项 uᵢ 并不满足这些性质</li>
+      <li>残差用于诊断：异方差检验（BP检验、White检验）、自相关检验（DW检验）、正态性检验</li>
+    </ul>
+  </div>
+
+  <!-- ===== 1. 概念辨析 ===== -->
+  <h3>1. 概念辨析</h3>
+  <span class="exam-types">
+    <span class="exam-tag choice">选择题</span>
+    <span class="exam-tag shortq">简答题</span>
+    <span class="exam-tag source-teacher">教师原题</span>
+  </span>
+
+  <p><strong>误差项 (Error Term) uᵢ</strong>：在总体模型 yᵢ = β₀ + β₁xᵢ + uᵢ 中，uᵢ 代表所有未被xᵢ解释的因素（遗漏变量、测量误差、函数形式误设等）。它是<strong>总体的、不可观测的</strong>随机变量。</p>
+
+  <p><strong>残差 (Residual) ûᵢ</strong>：在样本回归 ŷᵢ = β̂₀ + β̂₁xᵢ 中，ûᵢ = yᵢ − ŷᵢ。它是<strong>样本的、可计算的</strong>数值。</p>
+
+  <!-- ===== 2. ConfusionTable ===== -->
+  <h3>2. 易混淆辨析</h3>
+  <div class="confusion-table-wrap">
+    <div class="confusion-header">误差项 vs 残差 — 核心区别</div>
+    <table>
+      <tr><th>维度</th><th>误差项 u</th><th>残差 û</th></tr>
+      <tr><td><strong>所属层级</strong></td><td>总体（Population）</td><td>样本（Sample）</td></tr>
+      <tr><td><strong>可观测性</strong></td><td>不可观测（不可知）</td><td>可计算（已知）</td></tr>
+      <tr><td><strong>与X的关系（OLS假设下）</strong></td><td>E(u|X) = 0（条件均值为零）</td><td>Σxᵢûᵢ = 0（样本正交，自动满足）</td></tr>
+      <tr><td><strong>均值</strong></td><td>E(u) = 0（定义）</td><td>Σûᵢ/n = 0（OLS性质）</td></tr>
+      <tr><td><strong>方差</strong></td><td>Var(u|X) = σ²（假设同方差）</td><td>Var(û) 依赖样本，不同观测相关</td></tr>
+      <tr><td><strong>分布</strong></td><td>假设服从N(0,σ²)用于推断</td><td>真实分布依赖于样本</td></tr>
+      <tr><td><strong>相关性</strong></td><td>不同观测的uᵢ不相关（假设）</td><td>不同观测的ûᵢ存在微弱相关（即使uᵢ独立）</td></tr>
+      <tr><td><strong>用途</strong></td><td>定义模型性质、推导估计量性质</td><td>模型诊断、假设检验、预测评估</td></tr>
+    </table>
+  </div>
+
+  <!-- ===== 3. 关键性质 ===== -->
+  <h3>3. 残差的OLS代数性质</h3>
+  <span class="exam-types">
+    <span class="exam-tag shortq">简答题</span>
+    <span class="exam-tag choice">选择题</span>
+    <span class="exam-tag source-teacher">教师原题</span>
+  </span>
+
+  <ul>
+    <li>残差和为零：<strong>Σûᵢ = 0</strong></li>
+    <li>残差与自变量正交：<strong>Σxᵢⱼûᵢ = 0</strong>（对每个j）</li>
+    <li>残差与拟合值正交：<strong>Σŷᵢûᵢ = 0</strong></li>
+    <li>残差均值恒为零：<strong>û̄ = 0</strong></li>
+    <li>残差的方差 <strong>s² = Σûᵢ²/(n−k−1)</strong> 是 σ² 的无偏估计</li>
+  </ul>
+
+  <div class="key-point">
+    <strong>⚠️ 易错点：</strong>很多人误以为"残差是误差项的样本实现"——不准确！残差是误差项<strong>经过OLS投影后的结果</strong>，即使误差项独立同分布，残差之间也存在微小相关（因为OLS拟合过程引入了约束）。严格来说，û = M<sub>X</sub>·u，其中M<sub>X</sub>=I−X(X'X)⁻¹X'是投影矩阵。
+  </div>
+
+  <!-- ===== 4. 在OLS假设中的角色 ===== -->
+  <h3>4. 残差在OLS假设诊断中的应用</h3>
+  <span class="exam-types">
+    <span class="exam-tag shortq">简答题</span>
+    <span class="exam-tag analysis">分析题</span>
+  </span>
+
+  <table>
+    <tr><th>OLS假设</th><th>针对对象</th><th>残差诊断方法</th></tr>
+    <tr><td>E(u|X)=0（外生性）</td><td>误差项</td><td>残差 vs 自变量散点图（考察有无模式）</td></tr>
+    <tr><td>Var(u|X)=σ²（同方差）</td><td>误差项</td><td>BP检验（残差平方对自变量回归）、White检验、残差vs拟合值图</td></tr>
+    <tr><td>Cov(uᵢ,uⱼ|X)=0（无自相关）</td><td>误差项</td><td>DW检验（残差序列）、残差ACF/PACF图</td></tr>
+    <tr><td>u|X ~ N(0,σ²)（正态性）</td><td>误差项</td><td>残差QQ图、JB检验、Shapiro-Wilk检验</td></tr>
+  </table>
+
+  <!-- ===== 5. AI编拟综合题 ===== -->
+  <div class="ai-case-box">
+    <div class="case-meta">
+      <span>📌 案例题型 · 48分覆盖</span>
+      <span>🤖 来源: AI编拟</span>
+      <span class="exam-tag case">案例分析</span>
+      <span class="exam-tag shortq">简答</span>
+    </div>
+
+    <h4>📋 案例：消费函数残差诊断</h4>
+    <p>研究者用中国城镇居民1990-2022年数据估计消费函数：</p>
+    <div class="formula">
+      cons<sub>t</sub> = β₀ + β₁·income<sub>t</sub> + u<sub>t</sub>
+    </div>
+    <p>得到残差序列 û<sub>t</sub>。回答以下问题：</p>
+    <p><strong>(1)</strong> 误差项u<sub>t</sub>可能包含哪些不可观测因素？残差û<sub>t</sub>与u<sub>t</sub>的根本区别是什么？</p>
+    <p><strong>(2)</strong> 如果残差vs因变量拟合值的散点图呈现"喇叭形"（左边窄右边宽），说明什么问题？</p>
+    <p><strong>(3)</strong> 若DW统计量=0.35，在5%显著性水平下（d<sub>L</sub>=1.48, d<sub>U</sub>=1.57, n=33, k=2），判断是否存在自相关。</p>
+
+    <div class="ai-answer">
+      <p><strong>✅ 参考答案：</strong></p>
+      <p><strong>(1)</strong> u<sub>t</sub>包含：消费习惯、财富效应、预期收入、利率、人口结构等未纳入模型的变量，以及测量误差。根本区别：u<sub>t</sub>是总体不可观测的随机变量；û<sub>t</sub>是样本可计算的OLS残差。û<sub>t</sub>是u<sub>t</sub>经过投影矩阵M<sub>X</sub>变换后的结果，两者满足û = Mu。</p>
+      <p><strong>(2)</strong> "喇叭形"（残差方差随拟合值增大而增大）表明存在<strong>异方差性</strong>——Var(u|income)不是常数。高收入家庭的消费差异更大（消费选择更多样）。</p>
+      <p><strong>(3)</strong> DW = 0.35 &lt; d<sub>L</sub> = 1.48 → <strong>拒绝H₀</strong>（无正自相关），存在显著正自相关。原因：消费具有惯性，当期消费受上期习惯影响，误差项包含了持久性冲击。</p>
+    </div>
+  </div>
+
+</div>
+
+<hr class="section-divider">
+
+<!-- ============================================================ -->
+<!-- TOPIC 8: Probit/Logit 精简版 (ovv, 2星) -->
+<!-- ============================================================ -->
+<div id="topic8" class="chapter-section">
+
+  <!-- PriorityBox -->
+  <div class="priority-box ovv">
+    <div class="priority-icon">📖</div>
+    <div class="priority-body">
+      <span class="priority-tag">OVERVIEW · 了解即可</span>
+      <h2 <div class="confusion" style="background:#e8f5e9;border-color:#2e7d32"><h5>💡 简答话术模板 · 误差项vs残差</h5><p><b>📌 典型简答：误差项uᵢ和残差ûᵢ有什么区别和联系？</b></p><p><b>话术结构：</b>① 定义区别 → ② 数学关系 → ③ OLS性质</p><p><b>示范答案：</b></p><p>「误差项uᵢ是总体模型Yᵢ=β₀+β₁Xᵢ+uᵢ中的随机项，不可观测。</p><p>残差ûᵢ是样本估计的：ûᵢ=Yᵢ-Ŷᵢ，是可计算、可检验的。</p><p>联系：ûᵢ是uᵢ的样本估计量——我们用残差去推断误差项的性质。</p><p>重要区别：OLS保证Σûᵢ=0（这是估计结果），但Σuᵢ=0是假设（零条件均值假设的一部分），不是必然成立的。」</p><p style="margin-top:8px"><b>得分点：</b>误差项定义(2分)+残差定义(2分)+联系(2分)+关键区别(2分)</p></div>
+<h2 id="t8">专题8：Probit与Logit模型（Binary Choice Models）</h2>
+<div style="background:#fff3e0;border:2px solid #e65100;border-radius:8px;padding:10px 14px;margin:10px 0;font-size:0.9em">
+<b>⚠️ 考试权重提示</b>：本专题考试权重极低（约2-4分），<b>建议优先学完核心专题(1/2/4/5/6/9/11/12)后再回看</b>。若时间紧迫，可直接跳到考前速记部分。
+</div>      <p style="margin:4px 0 0 0;font-size:0.92em;color:#555;">
+        二元选择模型 · 潜变量框架 · 边际效应 · 拟合优度
+      </p>
+    </div>
+  </div>
+
+  <!-- WeightBox -->
+  <div class="weight-box">
+    <div class="weight-stars">★★☆☆☆</div>
+    <span class="weight-label">考试权重：4~6分</span>
+    <span style="color:#856404;font-size:0.85em;">
+      │ 选择2分 · 简答2~4分 · 不考计算
+    </span>
+  </div>
+
+  <!-- SpeedBox -->
+  <div class="speed-box">
+    <ul>
+      <li><span class="speed-highlight">二元选择模型</span>：被解释变量y∈{0,1}（是/否、参与/不参与）</li>
+      <li><span class="speed-highlight">潜变量框架</span>：y* = xβ + u，y = 1[y* &gt; 0]</li>
+      <li>Probit：u ~ N(0,1) → P(y=1|x) = <span class="speed-highlight">Φ(xβ)</span></li>
+      <li>Logit：u ~ Logistic → P(y=1|x) = <span class="speed-highlight">Λ(xβ) = e^{xβ}/(1+e^{xβ})</span></li>
+      <li>系数不能直接解释大小——只看<span class="speed-highlight">符号和显著性</span></li>
+      <li><span class="speed-highlight">边际效应</span> = ∂P/∂x<sub>j</sub> = f(xβ)·β<sub>j</sub>（f是密度函数）</li>
+      <li>拟合优度：<span class="speed-highlight">McFadden R²</span> = 1 − lnL<sub>ur</sub>/lnL<sub>r</sub></li>
+    </ul>
+  </div>
+
+  <!-- ===== 1. 为什么不用OLS ===== -->
+  <h3>1. 为什么不能用OLS估计二元选择模型</h3>
+  <span class="exam-types">
+    <span class="exam-tag choice">选择题</span>
+    <span class="exam-tag shortq">简答题</span>
+  </span>
+
+  <div class="key-point">
+    <strong>线性概率模型（LPM）的三大问题：</strong>
+  </div>
+  <ul>
+    <li><strong>预测值越界</strong>：ŷ可能小于0或大于1（概率必须在[0,1]区间）</li>
+    <li><strong>异方差性</strong>：Var(y|x) = P(x)(1−P(x))，依赖于x，必然异方差</li>
+    <li><strong>线性假设不合理</strong>：概率变化在极端值时边际效应应趋近于0（S形曲线），但LPM假设恒定边际效应</li>
+  </ul>
+
+  <!-- ===== 2. Probit vs Logit ===== -->
+  <h3>2. Probit vs Logit 对比</h3>
+  <div class="confusion-table-wrap">
+    <div class="confusion-header">Probit vs Logit</div>
+    <table>
+      <tr><th>维度</th><th>Probit</th><th>Logit</th></tr>
+      <tr><td><strong>连接函数</strong></td><td>标准正态CDF：Φ(z)</td><td>Logistic CDF：Λ(z)=e^z/(1+e^z)</td></tr>
+      <tr><td><strong>误差项分布</strong></td><td>N(0,1)</td><td>Logistic(0,π²/3)</td></tr>
+      <tr><td><strong>尾部特征</strong></td><td>中等尾部</td><td>厚尾（尾部概率略大）</td></tr>
+      <tr><td><strong>系数关系</strong></td><td colspan="2">β̂<sub>Logit</sub> ≈ 1.6 × β̂<sub>Probit</sub>（经验近似）</td></tr>
+      <tr><td><strong>边际效应</strong></td><td colspan="2">两者通常<strong>非常接近</strong>（在均值处几乎相等）</td></tr>
+      <tr><td><strong>优劣</strong></td><td>理论基础强（潜变量正态假设）</td><td>解析表达式简单，解释方便（OR值）</td></tr>
+    </table>
+  </div>
+
+  <!-- ===== 3. 边际效应 ===== -->
+  <h3>3. 边际效应的计算与解释</h3>
+  <span class="exam-types">
+    <span class="exam-tag choice">选择题</span>
+    <span class="exam-tag shortq">简答题</span>
+    <span class="exam-tag source-teacher">教师原题</span>
+  </span>
+
+  <div class="formula">
+    <strong>边际效应：</strong><br>
+    ∂P(y=1|x) / ∂x<sub>j</sub> = f(xβ) · β<sub>j</sub><br>
+    其中 f(·) 为密度函数（Probit: φ(·)；Logit: Λ(·)[1−Λ(·)]）
+  </div>
+
+  <p>两种常用报告方式：</p>
+  <ul>
+    <li><strong>平均边际效应 (AME)</strong>：对每个观测计算边际效应后取均值</li>
+    <li><strong>均值处边际效应 (MEM)</strong>：在x̄处计算边际效应</li>
+  </ul>
+
+  <div class="key-point">
+    <strong>💡 解读规则：</strong>Probit/Logit系数<strong>只报告符号和显著性</strong>，<strong>不报告数值大小</strong>。解释时用边际效应！例如"教育年限增加1年，参与劳动的概率平均增加3.2个百分点"。
+  </div>
+
+  <!-- ===== 4. 教师原题 ===== -->
+  <h3>4. 教师原题精选</h3>
+  <span class="exam-types">
+    <span class="exam-tag source-teacher">教师原题</span>
+    <span class="exam-tag shortq">简答题</span>
+  </span>
+
+  <div class="tricky-box">
+    <h4>📝 原题：Probit模型系数的解释</h4>
+    <p>某Probit模型估计劳动参与决策：</p>
+    <div class="formula">
+      P(participate=1) = Φ(−0.8 + 0.06·age − 0.12·kids + 0.35·educ)
+    </div>
+    <p><strong>(1)</strong> 判断各变量的符号方向和显著性（假设置信区间已知）；</p>
+    <p><strong>(2)</strong> 在均值处（age=40, kids=1, educ=12），计算各变量的边际效应；</p>
+    <p><strong>(3)</strong> 能否直接用系数的比值（如0.06/0.35）比较age和educ的重要性？为什么？</p>
+
+    <div class="correct-approach">
+      <h5>✅ 解答：</h5>
+      <p><strong>(1)</strong> age (+)：年龄越大参与概率越高；kids (−)：孩子数越多参与概率越低；educ (+)：教育越高参与概率越高。</p>
+      <p><strong>(2)</strong> 先计算xβ = −0.8 + 0.06×40 − 0.12×1 + 0.35×12 = −0.8 + 2.4 − 0.12 + 4.2 = 5.68</p>
+      <p>φ(5.68) = (1/√(2π))·exp(−5.68²/2) ≈ 极小的值（实际上5.68已经很大了，φ≈0.000034）</p>
+      <p>说明均值处几乎所有人在此特征下都参与劳动，边际效应近乎为零。</p>
+      <p>实际上更合理的场景是取xβ接近0的位置。假设xβ=0.5：φ(0.5)=0.352</p>
+      <p>ME<sub>age</sub> = 0.352×0.06 = 0.021，年龄增加1岁参与概率+2.1个百分点</p>
+      <p>ME<sub>kids</sub> = 0.352×(−0.12) = −0.042，多一个孩子−4.2个百分点</p>
+      <p>ME<sub>educ</sub> = 0.352×0.35 = 0.123，多一年教育+12.3个百分点</p>
+      <p><strong>(3)</strong> <strong>不能</strong>直接比较系数比值。因为Probit系数的尺度依赖于误差项方差（Logit/Probit系数不可比），且边际效应依赖于密度函数值。正确比较应使用边际效应或标准化系数。</p>
+    </div>
+  </div>
+
+</div>
+
+<hr class="section-divider">
+
+<!-- ============================================================ -->
+<!-- TOPIC 9: OLS假设 (core, 5星) -->
+<!-- ============================================================ -->
+<div id="topic9" class="chapter-section">
+
+  <!-- PriorityBox -->
+  <div class="priority-box core">
+    <div class="priority-icon">🔥</div>
+    <div class="priority-body">
+      <span class="priority-tag">CORE · 核心必考</span>
+      <h2 <div class="confusion" style="background:#e8f5e9;border-color:#2e7d32"><h5>💡 简答话术模板（通用）</h5><p><b>📌 通用简答结构：</b></p><p><b>第一步</b> — 下定义：用一句话说清楚概念是什么。</p><p><b>第二步</b> — 给公式：写出相关公式或模型设定。</p><p><b>第三步</b> — 作解释：逐一解释关键符号的经济含义。</p><p><b>第四步</b> — 举例子：给一个具体场景让概念落地。</p><p><b>第五步</b> — 下结论：一句话总结，呼应问题。</p><p style="margin-top:8px"><b>得分技巧</b>：公式+解释各占50%分。</p></div>
+<h2 id="t9">专题9：多元线性回归假设与OLS性质（Gauss-Markov）</h2>
+      <p style="margin:4px 0 0 0;font-size:0.92em;color:#555;">
+        六大经典假设 · BLUE性质 · 假设违背与后果 · 诊断与修正
+      </p>
+    </div>
+  </div>
+
+  <!-- WeightBox -->
+  <div class="weight-box">
+    <div class="weight-stars">★★★★★</div>
+    <span class="weight-label">考试权重：20~26分</span>
+    <span style="color:#856404;font-size:0.85em;">
+      │ 选择4~6分 · 简答6~8分 · 计算4~6分 · 案例分析6分
+    </span>
+  </div>
+
+  <!-- SpeedBox -->
+  <div class="speed-box">
+    <ul>
+      <li><span class="speed-highlight">OLS五大经典假设</span>（Gauss-Markov）：① 线性 ② 严格外生性 E(u|X)=0 ③ 无完全共线性 ④ 同方差 Var(u|X)=σ²I ⑤ 无自相关</li>
+      <li><span class="speed-highlight">外加正态性假设</span>：u|X~N(0,σ²) → 小样本t/F检验精确</li>
+      <li><span class="speed-highlight">外生性最重要</span>：E(u|X)=0一旦违反，OLS<strong>有偏且不一致</strong></li>
+      <li>异方差 → OLS仍<strong>无偏</strong>但<strong>非有效</strong>，标准误有偏 → 用<span class="speed-highlight">稳健标准误（White/Huber）</span></li>
+      <li>自相关 → 同上 + 需用<span class="speed-highlight">Newey-West标准误</span></li>
+      <li>多重共线性 → 方差膨胀因子 <span class="speed-highlight">VIF = 1/(1−R²<sub>j</sub>)</span>，VIF&gt;10为严重</li>
+    </ul>
+  </div>
+
+  <!-- ===== 1. 六大假设 ===== -->
+  <h3>1. OLS六大经典假设</h3>
+  <span class="exam-types">
+    <span class="exam-tag choice">选择题</span>
+    <span class="exam-tag shortq">简答题</span>
+    <span class="exam-tag source-teacher">教师原题</span>
+  </span>
+
+  <table>
+    <tr><th>#</th><th>假设</th><th>数学表达</th><th>违反后果</th></tr>
+    <tr><td><strong>MLR.1</strong></td><td>参数线性</td><td>y = β₀+β₁x₁+...+β<sub>k</sub>x<sub>k</sub>+u</td><td>模型设定偏误，可能的补救：变量变换</td></tr>
+    <tr><td><strong>MLR.2</strong></td><td>随机抽样</td><td>{(xᵢ,yᵢ): i=1..n} i.i.d.</td><td>选择偏误，样本不代表总体</td></tr>
+    <tr><td><strong>MLR.3</strong></td><td>无完全共线性</td><td>X矩阵满列秩</td><td>参数无法唯一估计（rank(X)&lt;k+1）</td></tr>
+    <tr><td><strong>MLR.4</strong></td><td>零条件均值（外生性）</td><td>E(u|X)=0</td><td><span style="color:red;font-weight:700;">系数有偏且不一致</span>（最严重！）</td></tr>
+    <tr><td><strong>MLR.5</strong></td><td>同方差性</td><td>Var(u|X)=σ²</td><td>OLS仍无偏，但标准误有偏，t/F失效</td></tr>
+    <tr><td><strong>MLR.6</strong></td><td>正态性（小样本推断）</td><td>u|X~N(0,σ²)</td><td>小样本t/F检验不精确（大样本下不需）</td></tr>
+  </table>
+
+  <!-- ===== 2. Gauss-Markov定理 ===== -->
+  <h3>2. Gauss-Markov定理</h3>
+  <span class="exam-types">
+    <span class="exam-tag choice">选择题</span>
+    <span class="exam-tag shortq">简答题</span>
+    <span class="exam-tag source-teacher">教师原题</span>
+  </span>
+
+  <div class="key-point">
+    <strong>核心定理：</strong>在MLR.1~MLR.5（线性、随机抽样、无完全共线性、外生性、同方差）下，OLS估计量 β̂ 是所有线性无偏估计量中<strong>方差最小的</strong>——即 <strong>BLUE</strong>（Best Linear Unbiased Estimator）。
+  </div>
+
+  <p><strong>定理的四个条件缺一不可：</strong></p>
+  <ul>
+    <li><strong>Best</strong>（最优）：方差最小——来自同方差性MLR.5</li>
+    <li><strong>Linear</strong>（线性）：β̂是y的线性函数——来自线性模型MLR.1</li>
+    <li><strong>Unbiased</strong>（无偏）：E(β̂)=β——来自外生性MLR.4</li>
+    <li><strong>Estimator</strong>（估计量）：可计算的统计量</li>
+  </ul>
+
+  <div class="formula">
+    <strong>β̂的方差（MLR.1~MLR.5下）：</strong><br>
+    Var(β̂<sub>j</sub>|X) = σ² / [SST<sub>j</sub>·(1−R²<sub>j</sub>)]<br>
+    其中 SST<sub>j</sub> = Σ(x<sub>ij</sub>−x̄<sub>j</sub>)²，R²<sub>j</sub> = x<sub>j</sub>对其他自变量回归的R²
+  </div>
+
+  <!-- ===== 3. 假设违背详解 ===== -->
+  <h3>3. 假设违背的诊断与修正</h3>
+
+  <h4>3.1 外生性违反（内生性）</h4>
+  <span class="exam-types">
+    <span class="exam-tag shortq">简答题</span>
+    <span class="exam-tag analysis">分析题</span>
+    <span class="exam-tag source-teacher">教师原题</span>
+  </span>
+  <ul>
+    <li><strong>原因</strong>：遗漏变量、测量误差、反向因果（联立性）</li>
+    <li><strong>后果</strong>：OLS<strong>有偏且不一致</strong>（最严重，不可通过增大样本解决）</li>
+    <li><strong>补救</strong>：工具变量法（IV/2SLS）、面板数据固定效应、自然实验/DID</li>
+  </ul>
+
+  <h4>3.2 异方差性</h4>
+  <span class="exam-types">
+    <span class="exam-tag choice">选择题</span>
+    <span class="exam-tag calc">计算题</span>
+    <span class="exam-tag source-teacher">教师原题</span>
+  </span>
+  <ul>
+    <li><strong>后果</strong>：OLS无偏但<strong>非有效</strong>（不是BLUE），标准误偏误，t/F检验失效</li>
+    <li><strong>诊断</strong>：BP检验（Breusch-Pagan）、White检验、残差vs拟合值散点图</li>
+    <li><strong>补救</strong>：① 稳健标准误（Huber-White sandwich estimator）② WLS（加权最小二乘）③ 变量变换（如取对数）</li>
+  </ul>
+
+  <div class="formula">
+    <strong>BP检验统计量：</strong><br>
+    LM = n·R²<sub>û²</sub> ∼ χ²<sub>q</sub> &nbsp;（残差平方对自变量回归）<br>
+    <strong>White检验：</strong>检验更一般的形式（含交叉项和平方项），LM = n·R²<sub>û²</sub>
+  </div>
+
+  <h4>3.3 自相关（序列相关）</h4>
+  <span class="exam-types">
+    <span class="exam-tag choice">选择题</span>
+    <span class="exam-tag calc">计算题</span>
+  </span>
+  <ul>
+    <li><strong>常见于</strong>：时间序列数据、面板数据</li>
+    <li><strong>后果</strong>：与异方差类似——无偏但非有效，标准误偏误</li>
+    <li><strong>诊断</strong>：DW检验（Durbin-Watson）、残差ACF图</li>
+    <li><strong>补救</strong>：① Newey-West标准误（HAC）② 广义最小二乘（GLS/ Cochrane-Orcutt）③ 差分模型</li>
+  </ul>
+
+  <div class="formula">
+    <strong>DW统计量：</strong><br>
+    DW = Σ(û<sub>t</sub>−û<sub>t−1</sub>)² / Σû<sub>t</sub>² ≈ 2(1−ρ̂) &nbsp; （ρ̂为一阶自相关系数）<br>
+    DW≈2 → 无自相关；DW&lt;d<sub>L</sub> → 正自相关；DW&gt;4−d<sub>L</sub> → 负自相关
+  </div>
+
+  <h4>3.4 多重共线性</h4>
+  <span class="exam-types">
+    <span class="exam-tag choice">选择题</span>
+    <span class="exam-tag shortq">简答题</span>
+  </span>
+  <ul>
+    <li><strong>本质</strong>：自变量之间高度相关（但不是完全共线性）</li>
+    <li><strong>后果</strong>：OLS仍无偏，但<strong>方差很大</strong>（系数估计不精确），t值变小</li>
+    <li><strong>诊断</strong>：VIF = 1/(1−R²<sub>j</sub>)，VIF&gt;10为严重</li>
+    <li><strong>补救</strong>：① 删除冗余变量 ② 增大样本量 ③ 主成分分析/岭回归 ④ 对变量进行中心化</li>
+  </ul>
+
+  <div class="key-point">
+    <strong>⚠️ 重要对比：</strong>多重共线性 <strong>不违反</strong>任何OLS假设，OLS仍为BLUE，只是信息不足导致估计精度差。完全共线性（两个变量精确线性相关）才违反MLR.3。
+  </div>
+
+  <!-- ===== 4. ConfusionTable ===== -->
+  <h3>4. 易混淆辨析</h3>
+  <div class="confusion-table-wrap">
+    <div class="confusion-header">四种假设违背的对比</div>
+    <table>
+      <tr><th>维度</th><th>内生性</th><th>异方差</th><th>自相关</th><th>多重共线性</th></tr>
+      <tr><td><strong>违反假设</strong></td><td>MLR.4</td><td>MLR.5</td><td>MLR.5（协方差）</td><td>不违反（完全共线性才违MLR.3）</td></tr>
+      <tr><td><strong>有偏？</strong></td><td><span style="color:red">✅ 有偏且不一致</span></td><td>❌ 仍无偏</td><td>❌ 仍无偏</td><td>❌ 仍无偏</td></tr>
+      <tr><td><strong>非有效？</strong></td><td>——</td><td>✅</td><td>✅</td><td>✅（方差大）</td></tr>
+      <tr><td><strong>标准误？</strong></td><td>不适用（已偏）</td><td>不正确的标准误</td><td>不正确的标准误</td><td>标准误大但正确</td></tr>
+      <tr><td><strong>严重程度</strong></td><td><span style="color:red">★★★★★</span></td><td>★★★☆☆</td><td>★★★☆☆</td><td>★★☆☆☆</td></tr>
+      <tr><td><strong>补救</strong></td><td>IV/2SLS</td><td>稳健标准误/WLS</td><td>Newey-West/GLS</td><td>选变量/增样本/岭回归</td></tr>
+    </table>
+  </div>
+
+  <!-- ===== 5. AI编拟综合案例 ===== -->
+  <div class="ai-case-box">
+    <div class="case-meta">
+      <span>📌 案例题型 · 48分覆盖</span>
+      <span>🤖 来源: AI编拟</span>
+      <span class="exam-tag case">案例分析</span>
+      <span class="exam-tag analysis">综合分析</span>
+    </div>
+
+    <h4>📋 案例：教育回报率估计的假设诊断</h4>
+    <p>研究者用横截面数据（n=935）估计明瑟工资方程：</p>
+    <div class="formula">
+      log(wage) = β₀ + β₁·educ + β₂·exper + β₃·exper² + u
+    </div>
+    <p>得到以下诊断信息：</p>
+    <ul>
+      <li>White检验：LM = 37.26, p &lt; 0.001</li>
+      <li>VIF：educ=1.32, exper=7.84, exper²=8.51</li>
+      <li>Ramsey RESET检验（加入ŷ², ŷ³）：F=2.76, p=0.063</li>
+      <li>研究者担心"能力偏差"（ability bias）：能力高的人受教育更多，但能力未纳入模型</li>
+    </ul>
+
+    <p><strong>问题：</strong></p>
+    <p><strong>(1)</strong> 逐一判断每个OLS假设是否可能被违反，并说明理由；</p>
+    <p><strong>(2)</strong> White检验结果说明什么？如何补救？</p>
+    <p><strong>(3)</strong> "能力偏差"属于哪类假设违反？为什么它比异方差更严重？</p>
+    <p><strong>(4)</strong> VIF值是否表明存在严重的多重共线性？</p>
+
+    <div class="ai-answer">
+      <p><strong>✅ 参考答案：</strong></p>
+      <p><strong>(1)</strong></p>
+      <ul>
+        <li>MLR.1（线性）：Ramsey RESET p=0.063 &gt; 0.05，在5%水平不能拒绝线性假设，模型设定基本合理</li>
+        <li>MLR.2（随机抽样）：横截面数据若按简单随机抽样收集，基本满足</li>
+        <li>MLR.3（无完全共线性）：VIF最高8.51 &lt; 10，没有完全共线性，可估计。但exper和exper²高度相关（VIF接近10），需要注意</li>
+        <li>MLR.4（外生性）：<strong>可能违反</strong>——能力偏差意味着educ与u相关（能力在u中），导致β̂₁有偏</li>
+        <li>MLR.5（同方差）：White检验p&lt;0.001，<strong>强烈拒绝同方差假设</strong></li>
+      </ul>
+      <p><strong>(2)</strong> White检验显著 → 存在异方差。补救：使用<strong>稳健标准误（Huber-White）</strong>，同时检验White检验的修正形式。</p>
+      <p><strong>(3)</strong> "能力偏差"属于<strong>MLR.4（外生性）违反</strong>，即内生性问题。它比异方差严重得多，因为：异方差下OLS仍无偏且一致（只是非有效），而内生性导致OLS<strong>有偏且不一致</strong>——即使样本量趋于无穷，偏差也不消失。</p>
+      <p><strong>(4)</strong> exper的VIF=7.84, exper²的VIF=8.51，均&lt;10，通常认为<strong>不存在严重的多重共线性</strong>。但两者相关性很高（自然的非线性关系），若担心可考虑对exper进行中心化处理：exper_c = exper − mean(exper)，然后exper_c²。</p>
+    </div>
+  </div>
+
+  <!-- ===== 6. 教师原题 ===== -->
+  <h3>5. 教师原题精选</h3>
+  <span class="exam-types">
+    <span class="exam-tag source-teacher">教师原题</span>
+    <span class="exam-tag shortq">简答题</span>
+    <span class="exam-tag calc">计算题</span>
+  </span>
+
+  <div class="tricky-box">
+    <h4>📝 原题：异方差下的OLS性质</h4>
+    <p>如果回归模型存在异方差（Var(uᵢ|xᵢ) = σ²·xᵢ²），但其他OLS假设均满足：</p>
+    <p><strong>(1)</strong> OLS估计量是否仍然无偏？为什么？</p>
+    <p><strong>(2)</strong> OLS估计量是否仍然是BLUE？为什么？</p>
+    <p><strong>(3)</strong> 通常报告的t统计量是否可靠？如何修正？</p>
+
+    <div class="correct-approach">
+      <h5>✅ 解答：</h5>
+      <p><strong>(1)</strong> <strong>仍然无偏</strong>。无偏性只依赖MLR.4（E(u|X)=0），不依赖同方差假设。证明：E(β̂|X) = β + (X'X)⁻¹X'E(u|X) = β。</p>
+      <p><strong>(2)</strong> <strong>不是BLUE</strong>。BLUE需要MLR.1~MLR.5都成立。异方差下，虽然OLS仍线性无偏，但存在其他线性无偏估计量（如WLS）方差更小。Var(β̂<sub>OLS</sub>) ≠ σ²(X'X)⁻¹。</p>
+      <p><strong>(3)</strong> <strong>不可靠</strong>。通常报告的t统计量用了错误的方差估计。应使用<strong>White/Huber稳健标准误</strong>修正。在Stata中用<code>reg y x, robust</code>；在R中用<code>coeftest(model, vcov=vcovHC)</code>。</p>
+    </div>
+  </div>
+
+  <div class="tricky-box">
+    <h4>📝 原题：Gauss-Markov定理的条件</h4>
+    <p>判断以下说法是否正确并说明理由：\"只要样本量足够大，即使E(u|X)≠0，OLS估计量也是一致的\"。</p>
+
+    <div class="correct-approach">
+      <h5>✅ 解答：</h5>
+      <p><strong>错误。</strong>OLS的一致性需要两个条件：① E(X'u)=0（正交条件）② rank(X'X)→∞。当E(u|X)≠0时，必然有E(X'u)≠0（因为E(X'u)=E[E(X'u|X)]=E[X'E(u|X)]），正交条件不成立，所以<strong>即使n→∞，β̂也不收敛到β</strong>。</p>
+      <p>💡 大样本能解决的问题：异方差、非正态性。大样本<strong>不能</strong>解决的问题：内生性（遗漏变量、反向因果、测量误差）。</p>
+    </div>
+  </div>
+
+</div>
+
+</div><!-- /container -->
+
+
+
+<div class="container">
+
+<!-- ============================================================ -->
+<!-- TOC -->
+<!-- ============================================================ -->
+<div class="toc-box">
+  <h3>📑 Topic 10-13 v6 增强导航</h3>
+  <ul>
+    <li><a href="#t10">🔸 Topic 10 · 工具变量法</a> <span class="clean-label">OVV · CLEAN</span></li>
+    <li><a href="#t11">🔸 Topic 11 · 面板数据模型</a> <span style="color:#e74c3c;font-weight:700;">⭐CORE</span></li>
+    <li><a href="#t12">🔸 Topic 12 · 时间序列分析</a> <span style="color:#e74c3c;font-weight:700;">⭐CORE</span></li>
+    <li><a href="#t13">🔸 Topic 13 · 模型设定与诊断</a> <span class="clean-label">OVV · CLEAN</span></li>
+  </ul>
+  <p style="margin-top:10px;font-size:0.85em;color:var(--text-light);">
+    📌 级别：OVV = 概览精简（⭐2） · CORE = 核心深度（⭐⭐⭐⭐）
+  </p>
+</div>
+
+<!-- ============================================================ -->
+<!-- TOPIC 10: 工具变量法 (OVV, CLEAN) -->
+<!-- ============================================================ -->
+<div <div class="confusion" style="background:#e8f5e9;border-color:#2e7d32"><h5>💡 简答话术模板 · OLS无偏性证明思路</h5><p><b>📌 典型简答：简要说明OLS估计量在什么条件下无偏？为什么？</b></p><p><b>话术结构：</b>① 列出条件 → ② 证明思路 → ③ 关键假设</p><p><b>示范答案：</b></p><p>「OLS估计量无偏需要满足高斯-马尔可夫假设，其中最关键的假设是零条件均值假设：E(u|X)=0，即误差项与解释变量不相关。</p><p>证明思路：将Y=β₀+β₁X+u代入β̂₁的公式，得到β̂₁=β₁+Σ(Xᵢ-Ȳ)uᵢ/SST。取条件期望后，第二项的分子中出现E(uᵢ|X)。如果E(u|X)=0，则第二项期望为零，E(β̂₁|X)=β₁，证明无偏。」</p><p style="margin-top:8px"><b>得分点：</b>列出假设(3分)+代入推导(3分)+指出外生性关键(2分)</p></div>
+id="t10" class="topic-header">
+  <h2>专题10：工具变量与内生性（Instrumental Variables）</h2>
+<div style="background:#fff3e0;border:2px solid #e65100;border-radius:8px;padding:10px 14px;margin:10px 0;font-size:0.9em">
+<b>⚠️ 考试权重提示</b>：本专题考试权重极低（约2-4分），<b>建议优先学完核心专题(1/2/4/5/6/9/11/12)后再回看</b>。若时间紧迫，可直接跳到考前速记部分。
+</div>  <p>Instrumental Variables (IV) Estimation</p>
+  <div class="topic-meta">
+    <span class="priority-box ovv">📌 PRIORITY: OVV</span>
+    <span class="weight-box">📊 WEIGHT: 6%</span>
+    <span class="stars">⭐⭐</span>
+    <span>📖 工具变量 · 2SLS · 内生性处理</span>
+  </div>
+</div>
+
+<div class="section-card">
+  <h3>📌 核心知识点 <span class="exam-tag t">理论</span> <span class="exam-tag c">计算</span> <span class="exam-tag ca">案例</span></h3>
+
+  <p><span class="kp">KP-10.1</span> <strong>内生性根源</strong> <span class="exam-tag t">理论</span> <span class="exam-tag s">简答</span>
+  — 遗漏变量偏差、测量误差、联立因果。当 Cov(x, ε) ≠ 0 时 OLS 有偏且不一致。</p>
+
+  <p><span class="kp">KP-10.2</span> <strong>工具变量条件</strong> <span class="exam-tag t">理论</span> <span class="exam-tag s">简答</span> <span class="exam-tag j">判断</span>
+  — (1) 相关性：Cov(Z, X) ≠ 0；(2) 外生性：Cov(Z, ε) = 0。弱工具变量问题使 IV 估计量方差极大。</p>
+
+  <p><span class="kp">KP-10.3</span> <strong>两阶段最小二乘 (2SLS)</strong> <span class="exam-tag t">理论</span> <span class="exam-tag c">计算</span>
+  — Stage 1: X = Zπ + v → 拟合值 X̂；Stage 2: Y = X̂β + ε。等价于使用 X̂ 作为 X 的工具。</p>
+
+  <p><span class="kp">KP-10.4</span> <strong>过度识别检验 (Sargan / Hansen J)</strong> <span class="exam-tag t">理论</span> <span class="exam-tag c">计算</span>
+  — H₀: 所有工具变量均为外生。J = m·F ~ χ²(q) 其中 q = 过度识别自由度。p &lt; 0.05 拒绝 H₀。</p>
+
+  <p><span class="kp">KP-10.5</span> <strong>弱工具变量检验</strong> <span class="exam-tag t">理论</span> <span class="exam-tag c">计算</span>
+  — 第一阶段 F 统计量 &lt; 10 提示弱 IV。Cragg-Donald Wald F、Stock-Yogo 临界值。</p>
+
+  <p><span class="kp">KP-10.6</span> <strong>Durbin-Wu-Hausman (DWH) 检验</strong> <span class="exam-tag t">理论</span> <span class="exam-tag j">判断</span>
+  — H₀: 解释变量外生。对比 OLS 与 IV 估计量差异。若显著则 OLS 不一致，需用 IV。</p>
+</div>
+
+<div class="section-card">
+  <h3>📊 ConfusionTable · 常见混淆辨析</h3>
+  <table class="confusion-table">
+    <tr><th width="28%">易混概念 A</th><th width="28%">易混概念 B</th><th>关键区别（考点）</th></tr>
+    <tr>
+      <td class="concept-a">OLS 有偏</td>
+      <td class="concept-b">OLS 不一致</td>
+      <td>有偏（finite sample bias）指 E(β̂)≠β；不一致（inconsistency）指 plim β̂≠β。内生性下两者兼有，但一致性是大样本性质。</td>
+    </tr>
+    <tr>
+      <td class="concept-a">相关性条件</td>
+      <td class="concept-b">外生性条件</td>
+      <td>Cov(Z,X)≠0 可检验（弱IV）；Cov(Z,ε)=0 不可直接检验（依靠理论）。过度识别检验只能检验多余IV，不能检验恰好识别。</td>
+    </tr>
+    <tr>
+      <td class="concept-a">恰好识别</td>
+      <td class="concept-b">过度识别</td>
+      <td>恰好识别：IV数=内生变量数 → 无法检验外生性。过度识别：IV数&gt;内生变量数 → 可做 Sargan/Hansen J 检验。</td>
+    </tr>
+    <tr>
+      <td class="concept-a">2SLS</td>
+      <td class="concept-b">LIML</td>
+      <td>有限信息最大似然估计（LIML）在弱IV下比2SLS偏误更小。弱工具变量时推荐 LIML 或 Jackknife IV。</td>
+    </tr>
+    <tr>
+      <td class="careful" colspan="3">⚠️ 易错：Hausman检验显著→用IV，不显著→用OLS？不对！Hausman检验前提是IV有效；若IV本身无效，检验无意义。先做过度识别检验验证IV有效性。</td>
+    </tr>
+  </table>
+</div>
+
+<div class="section-card">
+  <h3>📝 教师原题 <span class="exam-tag t">理论</span> <span class="exam-tag s">简答</span></h3>
+
+  <div class="teacher-q">
+    <span class="q-label">【10-1·简答】</span>
+    <span class="exam-types"><span class="exam-tag t">理论</span><span class="exam-tag s">简答</span></span>
+    <p>什么是内生性问题？内生性的三个主要来源是什么？为什么内生性会导致OLS估计不一致？</p>
+  </div>
+
+  <div class="teacher-q">
+    <span class="q-label">【10-2·简答】</span>
+    <span class="exam-types"><span class="exam-tag t">理论</span><span class="exam-tag s">简答</span></span>
+    <p>一个好的工具变量需要满足哪两个条件？为什么说"弱工具变量"是实证研究中的大敌？</p>
+  </div>
+
+  <div class="teacher-q">
+    <span class="q-label">【10-3·计算】</span>
+    <span class="exam-types"><span class="exam-tag c">计算</span></span>
+    <p>给定第一阶段的F统计量为4.2，样本量N=200，工具变量数=2，内生变量数=1。你对该工具变量的强度有何判断？应采取哪些补救措施？</p>
+  </div>
+
+  <div class="teacher-q">
+    <span class="q-label">【10-4·论述】</span>
+    <span class="exam-types"><span class="exam-tag t">理论</span><span class="exam-tag s">论述</span></span>
+    <p>比较恰好识别与过度识别情形下IV估计的特点。Sargan检验的零假设和备择假设是什么？</p>
+  </div>
+</div>
+
+<div class="section-card">
+  <h3>⚡ SpeedBox · 工具变量速查</h3>
+  <div class="speed-box">
+    <h4>📋 2SLS 速查流程</h4>
+    <ol style="padding-left:20px;margin-bottom:8px;">
+      <li><strong>Step 1</strong> — 理论分析：确认内生性来源（遗漏变量/测量误差/联立性）</li>
+      <li><strong>Step 2</strong> — 选择 IV：相关 + 外生，至少与内生变量数相等</li>
+      <li><strong>Step 3</strong> — 第一阶段回归：X = Zπ + v，报告 F 统计量</li>
+      <li><strong>Step 4</strong> — 检验弱 IV：F &gt; 10 为经验规则；否则用 LIML</li>
+      <li><strong>Step 5</strong> — 第二阶段回归：Y = X̂β + ε</li>
+      <li><strong>Step 6</strong> — 过度识别检验（若 m &gt; k）：Sargan/Hansen J</li>
+      <li><strong>Step 7</strong> — DWH 检验：比较 OLS 与 IV</li>
+    </ol>
+    <h4 style="margin-top:10px;">📏 关键公式</h4>
+    <div class="formula">β̂_IV = (Z'X)⁻¹Z'Y &nbsp;&nbsp;（恰好识别）</div>
+    <div class="formula">β̂_2SLS = (X̂'X̂)⁻¹X̂'Y &nbsp;&nbsp;其中 X̂ = Z(Z'Z)⁻¹Z'X</div>
+    <div class="formula">Asy.Var(β̂_2SLS) = σ̂² (X̂'X̂)⁻¹</div>
+    <div class="formula">F-stage1 = (R²_unrest − R²_restr)/q &nbsp; / &nbsp; (1−R²_unrest)/(N−K−1) &nbsp;∼&nbsp; F(q, N−K−1)</div>
+  </div>
+</div>
+
+<div class="section-card">
+  <h3>🧩 AI编拟·综合案例题</h3>
+  <div class="case-box">
+    <h4>📋 案例：教育回报率的内生性处理</h4>
+    <p><span class="case-score">12分</span> 某研究者使用横截面数据估计教育回报率方程：ln(wage) = β₀ + β₁·educ + β₂·exper + β₃·exper² + ε。担心 educ 存在内生性（能力偏差、测量误差）。</p>
+    <div class="case-detail">
+      <p><strong>数据说明：</strong> N=1,234，变量：wage（小时工资），educ（受教育年数），exper（工作经验年数），near4（是否居住在有四年制大学的县，0/1变量），fathereduc（父亲受教育年数），mothereduc（母亲受教育年数），kww（知识世界测试得分，衡量先天能力）。</p>
+    </div>
+    <ol>
+      <li><strong>（3分）</strong> 解释为什么 educ 可能存在内生性。列出至少两个具体来源并说明其如何影响OLS估计。</li>
+      <li><strong>（3分）</strong> 若使用 near4 作为 educ 的工具变量：说明该IV是否满足相关性和外生性条件？可能存在什么威胁？</li>
+      <li><strong>（3分）</strong> 现用 near4、fathereduc、mothereduc 三个IV做2SLS。第一阶段回归的 F=42.8。解释该统计量的含义并说明你对该工具变量强度的判断。</li>
+      <li><strong>（3分）</strong> 过度识别检验得 Hansen J 统计量 = 6.82，p=0.033。你对IV的有效性有何结论？应采取什么措施？</li>
+    </ol>
+  </div>
+
+  <div class="case-box" style="margin-top:12px;">
+    <h4>📋 案例：制度与经济增长的内生性</h4>
+    <p><span class="case-score">12分</span> Acemoglu et al. (2001) 研究制度对人均收入的影响：log(GDPpc) = α + β·RiskExprop + γ·X + ε。RiskExprop（征用风险保护指数）为内生变量。</p>
+    <ol>
+      <li><strong>（3分）</strong> 解释为什么 RiskExprop 是内生的（双向因果/遗漏变量）。</li>
+      <li><strong>（3分）</strong> 他们使用早期殖民者死亡率作为IV。说明该IV的逻辑合理性及可能违反外生性的途径。</li>
+      <li><strong>（3分）</strong> 若第一阶段 F=19.3，是否存在弱IV问题？如何诊断弱IV的后续影响？</li>
+      <li><strong>（3分）</strong> 对比2SLS与OLS系数差异（β̂_2SLS &gt; β̂_OLS），解释此差异可能的经济含义。</li>
+    </ol>
+  </div>
+  <p style="font-size:0.82em;color:var(--text-light);text-align:right;">📌 案例题型总计 24 分（已覆盖 2 题）</p>
+</div>
+
+<!-- ============================================================ -->
+<!-- TOPIC 11: 面板数据模型 (CORE) -->
+<!-- ============================================================ -->
+<div <div class="confusion" style="background:#e8f5e9;border-color:#2e7d32"><h5>💡 简答话术模板（通用）</h5><p><b>📌 通用简答结构：</b></p><p><b>第一步</b> — 下定义：用一句话说清楚概念是什么。</p><p><b>第二步</b> — 给公式：写出相关公式或模型设定。</p><p><b>第三步</b> — 作解释：逐一解释关键符号的经济含义。</p><p><b>第四步</b> — 举例子：给一个具体场景让概念落地。</p><p><b>第五步</b> — 下结论：一句话总结，呼应问题。</p><p style="margin-top:8px"><b>得分技巧</b>：公式+解释各占50%分。</p></div>
+id="t11" class="topic-header">
+  <h2>专题11：面板数据模型（Panel Data）</h2>
+  <p>Panel Data Models — Fixed Effects · Random Effects · Dynamic Panel</p>
+  <div class="topic-meta">
+    <span class="priority-box core">📌 PRIORITY: CORE</span>
+    <span class="weight-box">📊 WEIGHT: 20%</span>
+    <span class="stars">⭐⭐⭐⭐</span>
+    <span>📖 FE · RE · Hausman · 差分GMM</span>
+  </div>
+</div>
+
+<div class="section-card">
+  <h3>📌 核心知识点 <span class="exam-tag t">理论</span> <span class="exam-tag c">计算</span> <span class="exam-tag ca">案例</span> <span class="exam-tag s">论述</span></h3>
+
+  <p><span class="kp">KP-11.1</span> <strong>面板数据结构与优势</strong> <span class="exam-tag t">理论</span> <span class="exam-tag s">简答</span>
+  — 截面 N × 时期 T 的二维数据。优势：控制不可观测异质性、提供更多变异、减少共线性、可研究动态调整。</p>
+
+  <p><span class="kp">KP-11.2</span> <strong>混合OLS (Pooled OLS)</strong> <span class="exam-tag t">理论</span> <span class="exam-tag j">判断</span>
+  — 忽略个体异质性：yᵢₜ = xᵢₜβ + uᵢₜ。若存在个体效应 Cov(xᵢₜ, αᵢ) ≠ 0 则估计不一致。</p>
+
+  <p><span class="kp">KP-11.3</span> <strong>固定效应模型 (FE)</strong> <span class="exam-tag t">理论</span> <span class="exam-tag c">计算</span> <span class="exam-tag s">论述</span>
+  — yᵢₜ = xᵢₜβ + αᵢ + εᵢₜ。组内变换（within transformation）消去 αᵢ。允许 αᵢ 与 xᵢₜ 相关。不随时间变化的变量（性别、种族）被消去。</p>
+
+  <p><span class="kp">KP-11.4</span> <strong>随机效应模型 (RE)</strong> <span class="exam-tag t">理论</span> <span class="exam-tag c">计算</span>
+  — yᵢₜ = xᵢₜβ + αᵢ + εᵢₜ，假设 αᵢ ~ iid(0, σ²_α) 且 αᵢ ⊥ xᵢₜ。FGLS 估计。若假设成立，RE 比 FE 更有效。</p>
+
+  <p><span class="kp">KP-11.5</span> <strong>Hausman 检验</strong> <span class="exam-tag t">理论</span> <span class="exam-tag c">计算</span> <span class="exam-tag s">论述</span>
+  — H₀: RE 一致且有效，FE 一致但低效。H = (β̂_FE − β̂_RE)'[Var(β̂_FE)−Var(β̂_RE)]⁻¹(β̂_FE − β̂_RE) ~ χ²(K)。p &lt; 0.05 拒绝 RE。</p>
+
+  <p><span class="kp">KP-11.6</span> <strong>组内 R² / 组间 R² / 总体 R²</strong> <span class="exam-tag t">理论</span> <span class="exam-tag c">计算</span>
+  — Within R² = Corr(yᵢₜ−ȳᵢ, (xᵢₜ−x̄ᵢ)β̂)²。用于 FE 模型拟合优度评价。</p>
+
+  <p><span class="kp">KP-11.7</span> <strong>一阶差分法 (FD)</strong> <span class="exam-tag t">理论</span> <span class="exam-tag c">计算</span>
+  — Δyᵢₜ = Δxᵢₜβ + Δεᵢₜ。消去个体效应。T=2 时 FE = FD；T&gt;2 时 FE 更有效（若 εᵢₜ 为 iid）。</p>
+
+  <p><span class="kp">KP-11.8</span> <strong>动态面板与差分GMM</strong> <span class="exam-tag t">理论</span> <span class="exam-tag c">计算</span> <span class="exam-tag ca">案例</span>
+  — yᵢₜ = ρyᵢₜ₋₁ + xᵢₜβ + αᵢ + εᵢₜ。FE 估计有偏（Nickell bias），N→大时偏误渐消。Arellano-Bond (1991) 差分GMM：用 Δyᵢₜ₋₂, Δyᵢₜ₋₃,… 作为 Δyᵢₜ₋₁ 的工具变量。</p>
+
+  <p><span class="kp">KP-11.9</span> <strong>系统GMM</strong> <span class="exam-tag t">理论</span> <span class="exam-tag ca">案例</span>
+  — Blundell-Bond (1998)：同时使用水平方程和差分方程，用滞后水平值作为差分方程的工具变量，差分值作为水平方程的工具变量。适用于持久性序列。</p>
+</div>
+
+<div class="section-card">
+  <h3>📊 ConfusionTable · 常见混淆辨析</h3>
+  <table class="confusion-table">
+    <tr><th width="28%">易混概念 A</th><th width="28%">易混概念 B</th><th>关键区别（考点）</th></tr>
+    <tr>
+      <td class="concept-a">固定效应 FE</td>
+      <td class="concept-b">随机效应 RE</td>
+      <td>FE: αᵢ 与 xᵢₜ 相关，不假设分布，组内变换估计。RE: αᵢ ⊥ xᵢₜ，假设正态分布，FGLS。Hausman检验选择。</td>
+    </tr>
+    <tr>
+      <td class="concept-a">组内变换</td>
+      <td class="concept-b">一阶差分</td>
+      <td>组内：yᵢₜ−ȳᵢ；差分：yᵢₜ−yᵢₜ₋₁。T=2时等价。T&gt;2 且 εᵢₜ~iid 时 FE 更有效；εᵢₜ 为随机游走时 FD 更有效。</td>
+    </tr>
+    <tr>
+      <td class="concept-a">差分GMM</td>
+      <td class="concept-b">系统GMM</td>
+      <td>差分GMM仅用差分方程；系统GMM联立水平+差分方程，增加矩条件个数。系统GMM对持久序列更优，但矩条件过多可能弱检验。</td>
+    </tr>
+    <tr>
+      <td class="concept-a">静态面板</td>
+      <td class="concept-b">动态面板</td>
+      <td>静态：yᵢₜ = xᵢₜβ + αᵢ + εᵢₜ。动态：含滞后因变量 yᵢₜ₋₁。动态面板的 FE 估计在短面板中有 Nickell 偏误（~1/T）。</td>
+    </tr>
+    <tr>
+      <td class="careful" colspan="3">⚠️ 易错：Hausman检验不显著 = 用RE？—— 检验的前提是RE假设成立且FE一致。如果不显著，还需检验RE的αᵢ是否真的与x不相关，以及是否满足球型误差假设。异方差下应该用修正的Hausman检验。</td>
+    </tr>
+    <tr>
+      <td class="careful" colspan="3">⚠️ 易错：FE模型不能估计不随时间变化的变量（性别、种族、教育水平等）—— 这些变量在组内变换中被消去。如果想估计这些变量的系数，用RE或Hausman-Taylor方法。</td>
+    </tr>
+  </table>
+</div>
+
+<div class="section-card">
+  <h3>📝 教师原题 <span class="exam-tag t">理论</span> <span class="exam-tag c">计算</span> <span class="exam-tag s">论述</span> <span class="exam-tag ca">案例</span></h3>
+
+  <div class="teacher-q">
+    <span class="q-label">【11-1·简答】</span>
+    <span class="exam-types"><span class="exam-tag t">理论</span><span class="exam-tag s">简答</span></span>
+    <p>面板数据的三个主要优势是什么？对比横截面数据和时间序列数据，面板数据为何能更好地控制遗漏变量偏差？</p>
+  </div>
+
+  <div class="teacher-q">
+    <span class="q-label">【11-2·论述】</span>
+    <span class="exam-types"><span class="exam-tag t">理论</span><span class="exam-tag s">论述</span></span>
+    <p>详细阐述固定效应模型和随机效应模型的基本假设差异。什么是Hausman检验？说明其原理、检验步骤和决策准则。</p>
+  </div>
+
+  <div class="teacher-q">
+    <span class="q-label">【11-3·计算】</span>
+    <span class="exam-types"><span class="exam-tag t">理论</span><span class="exam-tag c">计算</span></span>
+    <p>给定 FE 和 RE 回归结果：β̂_FE = 0.42, SE_FE = 0.08；β̂_RE = 0.37, SE_RE = 0.05。Var(β̂_FE)−Var(β̂_RE) ≈ 0.0039。计算 Hausman 统计量并判断应使用 FE 还是 RE（χ²₀.₀₅(1)=3.84）。</p>
+  </div>
+
+  <div class="teacher-q">
+    <span class="q-label">【11-4·综合】</span>
+    <span class="exam-types"><span class="exam-tag t">理论</span><span class="exam-tag c">计算</span><span class="exam-tag ca">案例</span></span>
+    <p>基于 100 家上市公司 5 年面板数据研究 R&amp;D 投入对企业绩效的影响。请设计完整的实证策略，包括模型设定、效应选择、检验流程和处理潜在内生性的方案。</p>
+  </div>
+
+  <div class="teacher-q">
+    <span class="q-label">【11-5·简答】</span>
+    <span class="exam-types"><span class="exam-tag t">理论</span><span class="exam-tag s">简答</span></span>
+    <p>Nickell偏误是什么？在什么条件下动态面板FE估计的偏误可以忽略？</p>
+  </div>
+</div>
+
+<div class="section-card">
+  <h3>⚡ SpeedBox · 面板数据速查</h3>
+  <div class="speed-box">
+    <h4>📋 面板模型选择速查</h4>
+    <ol style="padding-left:20px;margin-bottom:8px;">
+      <li><strong>Step 1</strong> — 检验是否需要个体效应：F检验（FE vs Pooled OLS）/ LM检验（RE vs Pooled OLS）</li>
+      <li><strong>Step 2</strong> — 选择 FE vs RE：Hausman 检验</li>
+      <li><strong>Step 3</strong> — 若 Hausman 显著 → 用 FE；不显著 → 用 RE</li>
+      <li><strong>Step 4</strong> — 若含滞后因变量 → 用差分GMM/系统GMM</li>
+      <li><strong>Step 5</strong> — 检验序列相关：Arellano-Bond AR(1)/AR(2) 检验</li>
+    </ol>
+    <h4 style="margin-top:10px;">📏 关键公式</h4>
+    <div class="formula">FE 组内估计量：β̂_Within = (ΣᵢΣₜ ẍᵢₜ'ẍᵢₜ)⁻¹(ΣᵢΣₜ ẍᵢₜ'ÿᵢₜ)</div>
+    <div class="formula">其中 ẍᵢₜ = xᵢₜ − x̄ᵢ，ÿᵢₜ = yᵢₜ − ȳᵢ</div>
+    <div class="formula">Hausman 检验：H = (β̂_FE − β̂_RE)'[Var(β̂_FE)−Var(β̂_RE)]⁻¹(β̂_FE − β̂_RE) ∼ χ²(K)</div>
+    <div class="formula">差分GMM矩条件：E[Zᵢ' Δεᵢ] = 0，其中 Zᵢ = diag(yᵢ₁,…,yᵢₜ₋₂, xᵢ₁,…,xᵢₜ₋₁)</div>
+    <div class="formula">系统GMM额外矩条件：E[Δyᵢₜ₋₁ · (αᵢ+εᵢₜ)] = 0</div>
+  </div>
+</div>
+
+<div class="section-card">
+  <h3>🧩 AI编拟·综合案例题</h3>
+  <div class="case-box">
+    <h4>📋 案例：气候变化对农业产出的面板数据分析</h4>
+    <p><span class="case-score">12分</span> 某研究团队收集了 31 个省份 2000-2022 年的面板数据，研究气候变化对农业产出的影响。</p>
+    <div class="case-detail">
+      <p><strong>变量：</strong> ln_Yᵢₜ（农业总产值对数），tempᵢₜ（年均温度℃），precipᵢₜ（年降水量mm），ln_fertilizerᵢₜ（化肥施用量对数），ln_laborᵢₜ（农业劳动力对数），policyᵢₜ（农业补贴政策虚拟变量）。N=31, T=23。</p>
+    </div>
+    <ol>
+      <li><strong>（3分）</strong> 建立基准面板模型：ln_Yᵢₜ = β₁·tempᵢₜ + β₂·precipᵢₜ + γ·Xᵢₜ + αᵢ + εᵢₜ。解释为什么需要控制个体效应 αᵢ。Pooled OLS 可能产生什么问题？</li>
+      <li><strong>（3分）</strong> Hausman 检验统计量 H=47.3，p&lt;0.001。你应该选择 FE 还是 RE？请详述理由。</li>
+      <li><strong>（3分）</strong> 你的 FE 结果显示 temp 系数为 -0.023（标准误 0.008），precip 系数为 0.00015（标准误 0.00006）。请解释这两个系数的经济含义和统计显著性。</li>
+      <li><strong>（3分）</strong> 如果担心农业投入存在内生性（如化肥使用量受当年产出预期影响），请提出至少两种处理内生性的面板数据方法。</li>
+    </ol>
+  </div>
+
+  <div class="case-box" style="margin-top:12px;">
+    <h4>📋 案例：最低工资对就业影响的动态面板分析</h4>
+    <p><span class="case-score">12分</span> 利用美国 50 州 1990-2020 年的年度数据，研究最低工资对青少年就业的影响。</p>
+    <div class="case-detail">
+      <p><strong>模型：</strong> ln_Empᵢₜ = ρ·ln_Empᵢₜ₋₁ + β₁·ln_MWᵢₜ + β₂·ln_GDPᵢₜ + β₃·Unempᵢₜ + αᵢ + εᵢₜ。ln_MW 为最低工资对数。</p>
+    </div>
+    <ol>
+      <li><strong>（3分）</strong> 为什么该模型不能使用标准 FE 估计？什么是 Nickell 偏误？T=31 时偏误是否严重？</li>
+      <li><strong>（3分）</strong> 请解释 Arellano-Bond 差分 GMM 如何解决动态面板内生性问题。列出其核心矩条件。</li>
+      <li><strong>（3分）</strong> Arellano-Bond AR(2) 检验的 p=0.42，这意味着什么？Sargan 检验的 p=0.038 又意味什么？</li>
+      <li><strong>（3分）</strong> 如果最低工资的滞后项仍然是弱工具变量，你会如何改进估计策略？</li>
+    </ol>
+  </div>
+  <p style="font-size:0.82em;color:var(--text-light);text-align:right;">📌 案例题型总计 24 分（已覆盖 2 题）· 累计 48 分</p>
+</div>
+
+<!-- ============================================================ -->
+<!-- TOPIC 12: 时间序列分析 (CORE) -->
+<!-- ============================================================ -->
+<div <div class="confusion" style="background:#e8f5e9;border-color:#2e7d32"><h5>💡 简答话术模板 · 固定效应vs随机效应</h5><p><b>📌 典型简答：固定效应模型和随机效应模型的区别，如何选择？</b></p><p><b>话术结构：</b>① 假设差异 → ② 估计方法 → ③ 选择标准</p><p><b>示范答案：</b></p><p>「固定效应(FE)模型不要求个体效应aᵢ与解释变量不相关，通过组内去均值消除aᵢ。</p><p>随机效应(RE)模型假设aᵢ与解释变量不相关，用GLS估计，更有效。</p><p>选择标准——Hausman检验：原假设H₀为RE成立(aᵢ与X不相关)。</p><p>若拒绝H₀，说明RE不一致，应选FE；若不拒绝，RE更有效，选RE。」</p><p style="margin-top:8px"><b>得分点：</b>FE假设(2分)+RE假设(2分)+Hausman原假设(2分)+结论(2分)</p></div>
+id="t12" class="topic-header">
+  <h2>专题12：时间序列与平稳性（Time Series）</h2>
+  <p>Time Series Analysis — Stationarity · ARIMA · Cointegration · Granger Causality</p>
+  <div class="topic-meta">
+    <span class="priority-box core">📌 PRIORITY: CORE</span>
+    <span class="weight-box">📊 WEIGHT: 20%</span>
+    <span class="stars">⭐⭐⭐⭐</span>
+    <span>📖 平稳性 · ARIMA · 协整 · 格兰杰因果</span>
+  </div>
+</div>
+
+<div class="section-card">
+  <h3>📌 核心知识点 <span class="exam-tag t">理论</span> <span class="exam-tag c">计算</span> <span class="exam-tag ca">案例</span> <span class="exam-tag s">论述</span></h3>
+
+  <p><span class="kp">KP-12.1</span> <strong>平稳性定义</strong> <span class="exam-tag t">理论</span> <span class="exam-tag s">简答</span> <span class="exam-tag j">判断</span>
+  — 严平稳：联合分布不随平移改变。弱平稳（协方差平稳）：E(yₜ)=μ, Var(yₜ)=γ₀, Cov(yₜ,yₜ₋ₖ)=γₖ 与 t 无关。</p>
+
+  <p><span class="kp">KP-12.2</span> <strong>单位根检验 (ADF / PP / KPSS)</strong> <span class="exam-tag t">理论</span> <span class="exam-tag c">计算</span> <span class="exam-tag s">论述</span>
+  — ADF 检验：H₀: 存在单位根（非平稳）。Δyₜ = α + βt + γyₜ₋₁ + ΣδᵢΔyₜ₋ᵢ + εₜ。γ=0 不能拒绝 H₀ 即存在单位根。McKinnon 临界值。</p>
+
+  <p><span class="kp">KP-12.3</span> <strong>ARIMA(p,d,q) 模型</strong> <span class="exam-tag t">理论</span> <span class="exam-tag c">计算</span> <span class="exam-tag ca">案例</span>
+  — AR(p): yₜ = c + φ₁yₜ₋₁+…+φₚyₜ₋ₚ + εₜ。MA(q): yₜ = μ + εₜ+θ₁εₜ₋₁+…+θ₉εₜ₋₉。ARIMA: 先差分 d 次使序列平稳，再拟合 ARMA(p,q)。</p>
+
+  <p><span class="kp">KP-12.4</span> <strong>Box-Jenkins 建模流程</strong> <span class="exam-tag t">理论</span> <span class="exam-tag s">简答</span>
+  — (1) 识别：ACF/PACF 定阶；(2) 估计：MLE/OLS；(3) 诊断：残差白噪声检验（Ljung-Box Q）；(4) 预测。</p>
+
+  <p><span class="kp">KP-12.5</span> <strong>ACF 与 PACF</strong> <span class="exam-tag t">理论</span> <span class="exam-tag c">计算</span>
+  — ACF：自相关函数 ρₖ = Cov(yₜ,yₜ₋ₖ)/Var(yₜ)。PACF：偏自相关函数，剔除了中间滞后项的影响。AR(p)的PACF在p阶后截尾；MA(q)的ACF在q阶后截尾。</p>
+
+  <p><span class="kp">KP-12.6</span> <strong>伪回归问题</strong> <span class="exam-tag t">理论</span> <span class="exam-tag s">简答</span> <span class="exam-tag j">判断</span>
+  — 两个独立非平稳序列回归可得显著 t 统计量（Granger-Newbold 现象）。R² &gt; DW 是伪回归信号。必须用协整方法处理。</p>
+
+  <p><span class="kp">KP-12.7</span> <strong>协整 (Cointegration)</strong> <span class="exam-tag t">理论</span> <span class="exam-tag c">计算</span> <span class="exam-tag ca">案例</span>
+  — 若 yₜ, xₜ ~ I(1)，存在线性组合 uₜ = yₜ − βxₜ ~ I(0)，则称 yₜ 与 xₜ 协整。Engle-Granger 两步法：协整回归→残差ADF检验。Johansen 协整检验（VAR框架）。</p>
+
+  <p><span class="kp">KP-12.8</span> <strong>误差修正模型 (ECM)</strong> <span class="exam-tag t">理论</span> <span class="exam-tag c">计算</span> <span class="exam-tag s">论述</span>
+  — Δyₜ = α + βΔxₜ + λ·ECₜ₋₁ + εₜ，其中 ECₜ₋₁ = yₜ₋₁ − γxₜ₋₁。λ &lt; 0 为误差修正速度，λ取值在 (−1,0) 之间。</p>
+
+  <p><span class="kp">KP-12.9</span> <strong>格兰杰因果关系</strong> <span class="exam-tag t">理论</span> <span class="exam-tag c">计算</span> <span class="exam-tag s">论述</span>
+  — Granger 因果：如果 X 的过去值有助于预测 Y（在包含Y的过去值的前提下），则 X Granger 引起 Y。基于 VAR 的 F 检验。注意：Granger 因果 ≠ 真正因果。</p>
+
+  <p><span class="kp">KP-12.10</span> <strong>VAR 与 结构VAR</strong> <span class="exam-tag t">理论</span> <span class="exam-tag ca">案例</span>
+  — VAR(p): Yₜ = c + Π₁Yₜ₋₁+…+ΠₚYₜ₋ₚ + εₜ。SVAR 通过 Cholesky 分解/短期约束/长期约束识别结构性冲击。脉冲响应函数（IRF）和方差分解（FEVD）。</p>
+</div>
+
+<div class="section-card">
+  <h3>📊 ConfusionTable · 常见混淆辨析</h3>
+  <table class="confusion-table">
+    <tr><th width="28%">易混概念 A</th><th width="28%">易混概念 B</th><th>关键区别（考点）</th></tr>
+    <tr>
+      <td class="concept-a">AR(p) 模型</td>
+      <td class="concept-b">MA(q) 模型</td>
+      <td>AR：yₜ 对自身滞后值回归，PACF p阶截尾。MA：yₜ 对滞后误差项回归，ACF q阶截尾。AR 无限记忆；MA q期后记忆消失。</td>
+    </tr>
+    <tr>
+      <td class="concept-a">单位根非平稳</td>
+      <td class="concept-b">趋势平稳</td>
+      <td>单位根（随机趋势）：yₜ = yₜ₋₁+εₜ，冲击永久性。趋势平稳：yₜ = α+βt+εₜ，冲击暂时性。ADF含趋势项可区分。</td>
+    </tr>
+    <tr>
+      <td class="concept-a">协整回归</td>
+      <td class="concept-b">伪回归</td>
+      <td>协整：残差 I(0)，长期均衡关系，ECM 可建模。伪回归：残差 I(1)，t 统计量虚假显著，R² &gt; DW。</td>
+    </tr>
+    <tr>
+      <td class="concept-a">Engle-Granger</td>
+      <td class="concept-b">Johansen</td>
+      <td>EG：两步法，适用于两个变量。Johansen：VAR框架，可处理多个协整关系，用迹检验和最大特征值检验确定协整秩。</td>
+    </tr>
+    <tr>
+      <td class="concept-a">Granger 因果</td>
+      <td class="concept-b">真正因果</td>
+      <td>Granger 因果是"预测能力"意义上的因果（基于时序先后），不等于结构因果。例如冰淇淋销量↑和犯罪率↑是Granger相关而非结构因果（共同由温度驱动）。</td>
+    </tr>
+    <tr>
+      <td class="concept-a">简化式 VAR</td>
+      <td class="concept-b">结构式 SVAR</td>
+      <td>简化式 VAR 误差项 εₜ 是复合冲击（结构冲击的线性组合）。SVAR 通过施加约束（短期/长期零约束或符号约束）识别结构冲击。</td>
+    </tr>
+    <tr>
+      <td class="careful" colspan="3">⚠️ 易错：ADF检验不能拒绝H₀ = 有单位根 = 差分？—— 需区分确定性趋势（趋势平稳）和随机趋势（差分平稳）。先含趋势项ADF，若不显著再降低趋势项。趋势平稳序列应去趋势而非差分（过度差分导致MA单位根）。</td>
+    </tr>
+  </table>
+</div>
+
+<div class="section-card">
+  <h3>📝 教师原题 <span class="exam-tag t">理论</span> <span class="exam-tag c">计算</span> <span class="exam-tag s">论述</span> <span class="exam-tag ca">案例</span></h3>
+
+  <div class="teacher-q">
+    <span class="q-label">【12-1·简答】</span>
+    <span class="exam-types"><span class="exam-tag t">理论</span><span class="exam-tag s">简答</span></span>
+    <p>什么是弱平稳（协方差平稳）？为什么时间序列分析中平稳性如此重要？非平稳序列直接回归会导致什么问题？</p>
+  </div>
+
+  <div class="teacher-q">
+    <span class="q-label">【12-2·计算】</span>
+    <span class="exam-types"><span class="exam-tag t">理论</span><span class="exam-tag c">计算</span></span>
+    <p>给定 ADF 检验结果：检验统计量 = −1.87，1%临界值 = −3.43，5%临界值 = −2.86，10%临界值 = −2.57。判断序列是否平稳。若不平稳，应如何处理？</p>
+  </div>
+
+  <div class="teacher-q">
+    <span class="q-label">【12-3·论述】</span>
+    <span class="exam-types"><span class="exam-tag t">理论</span><span class="exam-tag s">论述</span></span>
+    <p>详细阐述 Engle-Granger 两步协整检验法的步骤。什么是误差修正模型（ECM）？说明 ECM 中误差修正项系数的含义和取值范围。</p>
+  </div>
+
+  <div class="teacher-q">
+    <span class="q-label">【12-4·综合】</span>
+    <span class="exam-types"><span class="exam-tag ca">案例</span><span class="exam-tag s">论述</span></span>
+    <p>研究 CPI 与 PPI 之间的关系：首先检验两个序列的平稳性；若均为 I(1)，检验协整关系；建立 ECM 模型分析短期和长期动态关系；最后讨论是否可以做 Granger 因果检验及意义。</p>
+  </div>
+
+  <div class="teacher-q">
+    <span class="q-label">【12-5·判断】</span>
+    <span class="exam-types"><span class="exam-tag t">理论</span><span class="exam-tag j">判断</span></span>
+    <p>"只要 ACF 缓慢衰减，序列就一定是非平稳的"——判断该说法正误并说明理由。</p>
+  </div>
+</div>
+
+<div class="section-card">
+  <h3>⚡ SpeedBox · 时间序列速查</h3>
+  <div class="speed-box">
+    <h4>📋 Box-Jenkins 建模流程</h4>
+    <ol style="padding-left:20px;margin-bottom:8px;">
+      <li><strong>Step 1 识别</strong> — ACF/PACF 定阶：AR(p) → PACF 在 p 后截尾；MA(q) → ACF 在 q 后截尾；ARMA(p,q) → 两者均拖尾</li>
+      <li><strong>Step 2 估计</strong> — MLE 或条件最小二乘</li>
+      <li><strong>Step 3 诊断</strong> — Ljung-Box Q 检验残差是否为白噪声（H₀: 残差无自相关）</li>
+      <li><strong>Step 4 选择</strong> — AIC/BIC 最小化选择最优模型</li>
+      <li><strong>Step 5 预测</strong> — 点预测 + 区间预测</li>
+    </ol>
+    <h4 style="margin-top:10px;">📏 经典论文与关键检验</h4>
+    <ul style="padding-left:20px;margin-bottom:8px;">
+      <li>ADF 检验 (Dickey-Fuller 1979,1981) — H₀: 单位根</li>
+      <li>PP 检验 (Phillips-Perron 1988) — 对异方差稳健</li>
+      <li>KPSS 检验 (Kwiatkowski et al. 1992) — H₀: 平稳（与 ADF 相反）</li>
+      <li>EG 协整检验 (Engle-Granger 1987) — 残差 ADF</li>
+      <li>Johansen 协整 (Johansen 1991,1995) — 迹检验、最大特征值检验</li>
+      <li>Granger 因果检验 (Granger 1969) — VAR 框架 F 检验</li>
+    </ul>
+    <h4 style="margin-top:10px;">📏 关键公式</h4>
+    <div class="formula">AR(p): Φ(L)yₜ = c + εₜ，其中 Φ(L)=1−φ₁L−…−φₚLᵖ</div>
+    <div class="formula">MA(q): yₜ = μ + Θ(L)εₜ，其中 Θ(L)=1+θ₁L+…+θ₉Lᵠ</div>
+    <div class="formula">ARMA(p,q): Φ(L)yₜ = c + Θ(L)εₜ</div>
+    <div class="formula">ADF 回归: Δyₜ = α₀ + α₁t + γyₜ₋₁ + ΣᵢδᵢΔyₜ₋ᵢ + εₜ</div>
+    <div class="formula">ECM: Δyₜ = α + β₁Δxₜ + λ(yₜ₋₁ − γxₜ₋₁) + εₜ, λ∈(−1,0)</div>
+  </div>
+</div>
+
+<div class="section-card">
+  <h3>🧩 AI编拟·综合案例题</h3>
+  <div class="case-box">
+    <h4>📋 案例：GDP与能源消费的时间序列分析</h4>
+    <p><span class="case-score">12分</span> 使用中国 1980-2023 年年度数据，研究 GDP 与能源消费总量之间的动态关系。</p>
+    <div class="case-detail">
+      <p><strong>变量：</strong> ln_GDPₜ（实际GDP对数），ln_Energyₜ（能源消费总量对数，万吨标准煤）。</p>
+    </div>
+    <ol>
+      <li><strong>（2分）</strong> 对两个序列分别做 ADF 检验（含趋势项和截距项），结果如下表。判断每个序列的平稳性。</li>
+      <li><strong>（2分）</strong> 若两个序列均为 I(1)，检验两者是否存在协整关系。简述 Engle-Granger 两步法步骤。</li>
+      <li><strong>（3分）</strong> 建立 ECM 模型：Δln_GDPₜ = α + βΔln_Energyₜ + λ·ECₜ₋₁ + εₜ。若估计得 λ̂ = −0.38（标准误 0.12），说明该系数的含义和经济解释。</li>
+      <li><strong>（2分）</strong> Granger 因果检验结果：ln_Energy → ln_GDP 的 F=4.72 (p=0.015)，ln_GDP → ln_Energy 的 F=0.83 (p=0.442)。请解释检验结果。</li>
+      <li><strong>（3分）</strong> 如果你担心结构性突变（如2008年金融危机），你会如何扩展分析？介绍至少一种处理结构突变的时间序列方法。</li>
+    </ol>
+  </div>
+
+  <div class="case-box" style="margin-top:12px;">
+    <h4>📋 案例：货币政策与通胀的 VAR 分析</h4>
+    <p><span class="case-score">12分</span> 使用季度数据（2000Q1-2022Q4）构建 VAR 模型分析中国货币政策对通胀的传导机制。</p>
+    <div class="case-detail">
+      <p><strong>内生变量：</strong> GDP增长率(g)，CPI通胀率(π)，M2增长率(m)，7天回购利率(r)。</p>
+    </div>
+    <ol>
+      <li><strong>（2分）</strong> 构建 VAR(p) 模型。如何用 AIC/BIC/HQ 准则选择滞后阶数 p？</li>
+      <li><strong>（2分）</strong> 模型估计后检验 VAR 系统的稳定性（特征根条件）。为什么稳定性检验是必要的？</li>
+      <li><strong>（3分）</strong> 在 SVAR 框架中，使用 Cholesky 分解施加短期约束。变量排序为 [g, π, m, r] 的合理性依据是什么？</li>
+      <li><strong>（3分）</strong> 脉冲响应函数（IRF）显示：一个标准差的 r 正向冲击导致 π 在 2 个季度后下降 0.3%，并在第 6 季度收敛至零。请解释该结果的经济含义。</li>
+      <li><strong>（2分）</strong> 方差分解显示第 12 季度时 r 对 g 的预测误差贡献度为 8%，对 π 的贡献度为 22%。这对货币政策传导机制有何启示？</li>
+    </ol>
+  </div>
+  <p style="font-size:0.82em;color:var(--text-light);text-align:right;">📌 案例题型总计 24 分（已覆盖 2 题）· 累计 72 分</p>
+</div>
+
+<!-- ============================================================ -->
+<!-- TOPIC 13: 模型设定与诊断 (OVV, CLEAN) -->
+<!-- ============================================================ -->
+<div <div class="confusion" style="background:#e8f5e9;border-color:#2e7d32"><h5>💡 简答话术模板 · 伪回归解释</h5><p><b>📌 典型简答：什么是伪回归？如何避免？</b></p><p><b>话术结构：</b>① 定义 → ② 原因 → ③ 诊断 → ④ 处理</p><p><b>示范答案：</b></p><p>「伪回归是指对两个相互独立但非平稳的时间序列进行回归时，得到显著的t统计量和很高的R²，但结果毫无经济意义。</p><p>原因：非平稳序列有共同的时间趋势，导致虚假相关。</p><p>诊断方法：ADF单位根检验。若序列非平稳，不能直接回归。</p><p>处理方法：① 差分到平稳后再回归 ② 检验协整关系（若协整存在，可直接回归且结果有意义）。」</p><p style="margin-top:8px"><b>得分点：</b>定义(3分)+原因(2分)+ADF(2分)+协整(1分)</p></div>
+id="t13" class="topic-header">
+  <h2>专题13：模型设定与函数形式（Model Specification）</h2>
+<div style="background:#fff3e0;border:2px solid #e65100;border-radius:8px;padding:10px 14px;margin:10px 0;font-size:0.9em">
+<b>⚠️ 考试权重提示</b>：本专题考试权重极低（约2-4分），<b>建议优先学完核心专题(1/2/4/5/6/9/11/12)后再回看</b>。若时间紧迫，可直接跳到考前速记部分。
+</div>  <p>Model Specification &amp; Diagnostic Tests — RESET · 多重共线性 · 异方差 · 自相关</p>
+  <div class="topic-meta">
+    <span class="priority-box ovv">📌 PRIORITY: OVV</span>
+    <span class="weight-box">📊 WEIGHT: 6%</span>
+    <span class="stars">⭐⭐</span>
+    <span>📖 模型设定检验 · 诊断 · 补救措施</span>
+  </div>
+</div>
+
+<div class="section-card">
+  <h3>📌 核心知识点 <span class="exam-tag t">理论</span> <span class="exam-tag c">计算</span> <span class="exam-tag j">判断</span></h3>
+
+  <p><span class="kp">KP-13.1</span> <strong>模型设定偏误 (Specification Error)</strong> <span class="exam-tag t">理论</span> <span class="exam-tag s">简答</span>
+  — 遗漏相关变量（偏误）、包含无关变量（低效但无偏）、错误函数形式（偏误）、测量误差（衰减偏误）。</p>
+
+  <p><span class="kp">KP-13.2</span> <strong>RESET 检验 (Regression Specification Error Test)</strong> <span class="exam-tag t">理论</span> <span class="exam-tag c">计算</span>
+  — Ramsey RESET：在原模型中加入拟合值的平方项/立方项，检验其联合显著性。H₀: 模型设定正确。F~F(q, N−K−q)。</p>
+
+  <p><span class="kp">KP-13.3</span> <strong>多重共线性 (Multicollinearity)</strong> <span class="exam-tag t">理论</span> <span class="exam-tag j">判断</span> <span class="exam-tag s">简答</span>
+  — 方差膨胀因子 VIF = 1/(1−R²ⱼ)。VIF &gt; 10 或 1/VIF &lt; 0.1 提示严重共线性。后果：标准误膨胀、系数不稳定，但估计仍无偏且一致。</p>
+
+  <p><span class="kp">KP-13.4</span> <strong>异方差 (Heteroskedasticity)</strong> <span class="exam-tag t">理论</span> <span class="exam-tag c">计算</span>
+  — Var(εᵢ|X) ≠ σ²。OLS 仍无偏但标准误有偏。Breusch-Pagan 检验（H₀: 同方差）、White 检验（更一般）。补救：异方差稳健标准误 (White/Huber-Eicker-Sandwich) 或 WLS/FGLS。</p>
+
+  <p><span class="kp">KP-13.5</span> <strong>自相关 (Autocorrelation / Serial Correlation)</strong> <span class="exam-tag t">理论</span> <span class="exam-tag c">计算</span>
+  — Cov(εₜ, εₛ) ≠ 0 (t≠s)。Durbin-Watson 检验 (H₀: ρ=0，仅一阶自相关)。Breusch-Godfrey LM 检验（高阶）。补救：Newey-West 标准误/Cochrane-Orcutt/Prais-Winsten。</p>
+
+  <p><span class="kp">KP-13.6</span> <strong>参数稳定性检验</strong> <span class="exam-tag t">理论</span> <span class="exam-tag c">计算</span>
+  — Chow 检验（已知断点）：比较分段与全样本残差平方和。CUSUM 检验（未知断点）：递归残差累积和。Quandt-Andrews 检验（未知断点）。</p>
+
+  <p><span class="kp">KP-13.7</span> <strong>非正态性检验</strong> <span class="exam-tag t">理论</span> <span class="exam-tag j">判断</span>
+  — Jarque-Bera (JB) 检验：H₀: ε~N。JB = (N/6)·[S²+(K−3)²/4] ~ χ²(2)。S=偏度，K=峰度。大样本渐近有效。</p>
+</div>
+
+<div class="section-card">
+  <h3>📊 ConfusionTable · 常见混淆辨析</h3>
+  <table class="confusion-table">
+    <tr><th width="28%">易混概念 A</th><th width="28%">易混概念 B</th><th>关键区别（考点）</th></tr>
+    <tr>
+      <td class="concept-a">遗漏变量</td>
+      <td class="concept-b">包含无关变量</td>
+      <td>遗漏相关变量 → 偏误（omitted variable bias），影响一致性。包含无关变量 → 效率损失但无偏。前者后果严重得多。</td>
+    </tr>
+    <tr>
+      <td class="concept-a">异方差</td>
+      <td class="concept-b">自相关</td>
+      <td>异方差：横截面数据常见，Var(εᵢ) 随 i 变化。自相关：时间序列/面板常见，Cov(εₜ,εₜ₋₁)≠0。前者用White稳健标准误，后者用Newey-West标准误。</td>
+    </tr>
+    <tr>
+      <td class="concept-a">Durbin-Watson</td>
+      <td class="concept-b">Breusch-Godfrey LM</td>
+      <td>DW：仅一阶自相关，有"不确定区域"，滞后因变量模型无效。BG：任意阶自相关，含滞后因变量仍然有效，使用辅助回归R²。</td>
+    </tr>
+    <tr>
+      <td class="concept-a">Chow 检验</td>
+      <td class="concept-b">CUSUM 检验</td>
+      <td>Chow：需已知断点位置，比较子样本的 RSS。CUSUM：无需已知断点，基于递归残差的累积和，可用于检测结构突变的时序。</td>
+    </tr>
+    <tr>
+      <td class="careful" colspan="3">⚠️ 易错：VIF &gt; 10 = 一定需要处理？—— 如果共线性变量仅是控制变量，不感兴趣的预测变量存在共线性不影响预测精度，可以不处理。但如果感兴趣的变量VIF高，则需要考虑岭回归/主成分/删除变量。</td>
+    </tr>
+    <tr>
+      <td class="careful" colspan="3">⚠️ 易错：RESET检验不显著 = 模型设定正确？—— RESET仅能检测特定类型的设定偏误（非线性/遗漏交互项），不能检测所有设定问题。且RESET不能告知具体问题类型。</td>
+    </tr>
+  </table>
+</div>
+
+<div class="section-card">
+  <h3>📝 教师原题 <span class="exam-tag t">理论</span> <span class="exam-tag c">计算</span> <span class="exam-tag j">判断</span></h3>
+
+  <div class="teacher-q">
+    <span class="q-label">【13-1·简答】</span>
+    <span class="exam-types"><span class="exam-tag t">理论</span><span class="exam-tag s">简答</span></span>
+    <p>模型设定偏误有哪些类型？每种类型的后果是什么？如何检测和补救？</p>
+  </div>
+
+  <div class="teacher-q">
+    <span class="q-label">【13-2·计算】</span>
+    <span class="exam-types"><span class="exam-tag t">理论</span><span class="exam-tag c">计算</span></span>
+    <p>给定 RESET 检验的 F(2,120)=3.86，p=0.024。你对该模型设定有何判断？接下来应如何修正模型？</p>
+  </div>
+
+  <div class="teacher-q">
+    <span class="q-label">【13-3·判断】</span>
+    <span class="exam-types"><span class="exam-tag t">理论</span><span class="exam-tag j">判断</span></span>
+    <p>"多重共线性不影响 OLS 估计的无偏性和一致性，因此不需要处理"——判断该说法。</p>
+  </div>
+
+  <div class="teacher-q">
+    <span class="q-label">【13-4·简答】</span>
+    <span class="exam-types"><span class="exam-tag t">理论</span><span class="exam-tag s">简答</span></span>
+    <p>比较 Durbin-Watson 检验和 Breusch-Godfrey LM 检验的适用条件和优缺点。</p>
+  </div>
+
+  <div class="teacher-q">
+    <span class="q-label">【13-5·计算】</span>
+    <span class="exam-types"><span class="exam-tag t">理论</span><span class="exam-tag c">计算</span></span>
+    <p>White 检验：nR²=18.42，χ²₀.₀₅(8)=15.51。你对异方差问题的结论是什么？应采取什么补救措施？</p>
+  </div>
+</div>
+
+<div class="section-card">
+  <h3>⚡ SpeedBox · 模型诊断速查</h3>
+  <div class="speed-box">
+    <h4>📋 诊断流程·问题·补救 对照表</h4>
+    <table style="width:100%;border-collapse:collapse;margin-top:8px;font-size:0.88em;">
+      <tr><th style="background:#2c3e50;color:white;padding:6px 8px;text-align:left;">问题</th><th style="background:#2c3e50;color:white;padding:6px 8px;text-align:left;">检验</th><th style="background:#2c3e50;color:white;padding:6px 8px;text-align:left;">补救</th></tr>
+      <tr><td style="padding:5px 8px;border:1px solid #444;">非线性/遗漏交互</td><td style="padding:5px 8px;border:1px solid #444;">RESET</td><td style="padding:5px 8px;border:1px solid #444;">加平方项/交互项/半对数</td></tr>
+      <tr><td style="padding:5px 8px;border:1px solid #444;">多重共线性</td><td style="padding:5px 8px;border:1px solid #444;">VIF / 条件指数</td><td style="padding:5px 8px;border:1px solid #444;">岭回归/主成分/删变量/增样本</td></tr>
+      <tr><td style="padding:5px 8px;border:1px solid #444;">异方差</td><td style="padding:5px 8px;border:1px solid #444;">BP / White</td><td style="padding:5px 8px;border:1px solid #444;">稳健标准误 / WLS / FGLS</td></tr>
+      <tr><td style="padding:5px 8px;border:1px solid #444;">自相关</td><td style="padding:5px 8px;border:1px solid #444;">DW / BG LM</td><td style="padding:5px 8px;border:1px solid #444;">Newey-West / CO / PW / 差分</td></tr>
+      <tr><td style="padding:5px 8px;border:1px solid #444;">结构突变</td><td style="padding:5px 8px;border:1px solid #444;">Chow / CUSUM / QLR</td><td style="padding:5px 8px;border:1px solid #444;">分段回归 / 虚拟变量交互</td></tr>
+      <tr><td style="padding:5px 8px;border:1px solid #444;">非正态性</td><td style="padding:5px 8px;border:1px solid #444;">Jarque-Bera</td><td style="padding:5px 8px;border:1px solid #444;">大样本渐进；Bootstrap / 稳健估计</td></tr>
+    </table>
+  </div>
+</div>
+
+<div class="section-card">
+  <h3>🧩 AI编拟·综合案例题</h3>
+  <div class="case-box">
+    <h4>📋 案例：住房价格模型的完整诊断流程</h4>
+    <p><span class="case-score">12分</span> 某研究建立住房价格回归模型：ln(price) = β₀ + β₁·sqft + β₂·bedrooms + β₃·bathrooms + β₄·age + β₅·ln(income) + ε，使用 506 个社区横截面数据。</p>
+    <ol>
+      <li><strong>（2分）</strong> RESET 检验结果：F(2,498)=4.92, p=0.008。说明模型存在什么设定问题？可能的修正方案有哪些？</li>
+      <li><strong>（2分）</strong> 计算 VIF 值：sqft=8.2, bedrooms=6.7, bathrooms=7.1, age=1.3, ln_income=1.5。是否存在严重的多重共线性？为什么 bathrooms 和 bedrooms 的 VIF 较高？</li>
+      <li><strong>（3分）</strong> White 检验 nR²=38.5，χ²₀.₀₅(20)=31.4。解释检验结果并说明应该如何补救。</li>
+      <li><strong>（3分）</strong> 如果使用 White 异方差稳健标准误后，变量 sqft 的 t 统计量从 4.2 下降至 2.8，但仍然显著。这说明什么？为什么稳健标准误不一定会小于普通标准误？</li>
+      <li><strong>（2分）</strong> 研究者怀疑房价存在空间自相关。你会推荐什么检验方法？如果存在空间自相关，应使用什么模型？</li>
+    </ol>
+  </div>
+  <p style="font-size:0.82em;color:var(--text-light);text-align:right;">📌 案例题型总计 12 分（已覆盖 1 题）· 累计 84 分（总目标≥48分案例）</p>
+</div>
+
+<!-- ============================================================ -->
+<!-- FOOTER -->
+<!-- ============================================================ -->
+<div style="text-align:center;padding:30px 0 10px;color:var(--text-light);font-size:0.85em;border-top:1px solid var(--border);margin-top:30px;">
+  <p>📚 计量经济学 · Topic 10-13 v6 增强版</p>
+  <p>包含：PriorityBox · WeightBox · SpeedBox · ConfusionTable · exam_types · AI综合案例</p>
+  <p>级别标记：OVV（概览精简）· CORE（核心深度）· CLEAN（精炼版）</p>
+  <p>生成时间：2026-07-01</p>
+</div>
+
+</div><!-- /.container -->
+
+<div class="<div class="confusion" style="background:#e8f5e9;border-color:#2e7d32"><h5>💡 简答话术模板（通用）</h5><p><b>📌 通用简答结构：</b></p><p><b>第一步</b> — 下定义<br><b>第二步</b> — 给公式<br><b>第三步</b> — 作解释<br><b>第四步</b> — 举例子<br><b>第五步</b> — 下结论</p><p style="margin-top:8px"><b>得分技巧</b>：公式+解释各占50%分。</p></div>
+floating-btn">
+<button onclick="toggleAI()" title="考前5分钟速记">⏱</button>
+</div>
+<div class="floating-panel" id="speedPanel">
+<div class="header">⏱ 考前5分钟速记</div>
+<div class="body" id="speedBody">
+</div>
+</div>
+<script>
+document.addEventListener('click',function(e){var p=document.getElementById('speedPanel');if(!p.contains(e.target)&&!e.target.closest('.floating-btn button'))p&&p.classList.remove('show')});
+</script>
+
+</div>
+<!-- AI 学习助手侧边栏 -->
+<div 
+<!-- 回到顶部 -->
+<div onclick="window.scrollTo({top:0,behavior:'smooth'})" style="position:fixed;bottom:210px;right:20px;width:44px;height:44px;border-radius:50%;background:#1a237e;color:#fff;border:none;cursor:pointer;z-index:9997;display:flex;align-items:center;justify-content:center;font-size:1.1em;box-shadow:0 4px 12px rgba(0,0,0,0.15);opacity:0.7">⬆</div>
+
+id="aiPanel" style="position:fixed;top:60px;right:0;width:340px;max-height:90vh;background:#fff;border-radius:12px 0 0 12px;box-shadow:-4px 0 20px rgba(0,0,0,0.15);z-index:9999;display:flex;flex-direction:column;font-size:0.88em;overflow:hidden;border:1px solid #e0e0e0;border-right:none">
+<div style="background:#1a237e;color:#fff;padding:12px 14px;display:flex;justify-content:space-between;align-items:center">
+<span style="font-weight:700;font-size:1em">🤖 AI 学习助手</span>
+<span onclick="document.getElementById('aiPanel').style.display='none'" style="cursor:pointer;font-size:1.2em;padding:0 6px">✕</span>
+</div>
+<div style="padding:12px;overflow-y:auto;flex:1;display:flex;flex-direction:column;gap:8px">
+<p style="font-size:0.82em;color:#888">选中文本自动填入，或直接输入问题</p>
+<textarea id="aiq" placeholder="选中文本自动填入…" style="width:100%;height:60px;border:1px solid #ccc;border-radius:6px;padding:8px;font-size:0.88em;resize:vertical"></textarea>
+<div style="display:flex;gap:6px">
+<input id="apikey" type="password" placeholder="输入DeepSeek API Key" style="flex:1;padding:7px;border:1px solid #ccc;border-radius:6px;font-size:0.85em">
+<button onclick="askAI()" style="background:#1565c0;color:#fff;border:none;padding:7px 16px;border-radius:6px;cursor:pointer;font-weight:600;font-size:0.88em">🚀 提问</button>
+</div>
+<div id="aires" style="background:#f5f5f5;border-radius:8px;padding:10px;min-height:80px;max-height:300px;overflow-y:auto;white-space:pre-wrap;font-size:0.85em;line-height:1.6;color:#333">💡 输入问题后点击提问</div>
+</div>
+</div>
+
+<!-- 浮动机器人按钮（一直在右下角） -->
+<div id="aiToggleBtn" onclick="var p=document.getElementById('aiPanel');p.style.display=p.style.display==='none'?'flex':'none'" style="position:fixed;bottom:150px;right:20px;width:50px;height:50px;border-radius:50%;background:#1a237e;color:#fff;border:none;cursor:pointer;z-index:9998;display:flex;align-items:center;justify-content:center;font-size:1.3em;box-shadow:0 4px 12px rgba(0,0,0,0.2)">🤖</div>
+
+<script>
+function askAI(){
+  var q=document.getElementById('aiq').value.trim();
+  var key=document.getElementById('apikey').value.trim();
+  var res=document.getElementById('aires');
+  if(!q){res.innerText='⚠ 请先输入问题';return}
+  if(!key){res.innerText='⚠ 请先输入DeepSeek API Key';return}
+  res.innerText='⏳ 思考中…';
+  fetch('https://api.deepseek.com/v1/chat/completions',{
+    method:'POST',
+    headers:{'Content-Type':'application/json','Authorization':'Bearer '+key},
+    body:JSON.stringify({
+      model:'deepseek-chat',
+      messages:[
+        {role:'system',content:'你是计量经济学助教。用简单语言、分步思路、比喻解释的方式回答问题。假设学生几乎零基础。'},
+        {role:'user',content:q}
+      ],
+      stream:false
+    })
+  }).then(function(r){return r.json()}).then(function(d){
+    res.innerText=d.choices?.[0]?.message?.content||'❌ 无响应，请检查API Key';
+  }).catch(function(e){res.innerText='❌ 请求失败: '+e.message});
+}
+// Auto-capture selected text
+document.addEventListener('mouseup',function(){
+  var s=window.getSelection().toString().trim();
+  if(s){var inp=document.getElementById('aiq');if(inp)inp.value=s}
+});
+</script>
+
+</body></html>
