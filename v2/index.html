@@ -1002,28 +1002,16 @@ h2[class*="ovv"], h2[class*="ovv"] * {
 /* Left sidebar + main content layout */
 .container { margin-left: 230px; max-width: 900px; }
 @media (max-width: 768px) {
-  #leftSidebar { display: none !important; }
-  .container { margin-left: 0 !important; }
-  #sidebarToggle { display: flex !important; }
+  #topNav .topic-links { display: none; }
+  #topNav .mobile-menu-btn { display: block !important; }
 }
 
 
 
 /* === AUTHORITATIVE LAYOUT (v2) === */
-html, body { margin: 0; padding: 0; overflow-x: hidden; }
 
-#leftSidebar {
-  position: fixed !important;
-  top: 0 !important;
-  left: 0 !important;
-  width: 220px !important;
-  height: 100vh !important;
-  background: #1a237e !important;
-  z-index: 9998 !important;
-  overflow-y: auto !important;
-  box-shadow: 2px 0 12px rgba(0,0,0,0.2) !important;
-  display: block !important;
-}
+
+
 
 .container {
   max-width: 900px !important;
@@ -1034,9 +1022,8 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
 }
 
 @media (max-width: 768px) {
-  #leftSidebar { display: none !important; }
-  .container { margin-left: 0 !important; }
-  #sidebarToggle { display: flex !important; }
+  #topNav .topic-links { display: none; }
+  #topNav .mobile-menu-btn { display: block !important; }
 }
 
 /* Back-to-top button below the AI panel buttons */
@@ -1238,47 +1225,336 @@ h2.core, h2.imp, h2.ovv { color: #fff !important; }
 
 /* Table cells */
 td, th { color: #222 !important; padding: 8px !important; }
+
+
+/* === UNIVERSAL FORMAT NORMALIZATION (all fragments) === */
+
+/* TOPIC HEADERS - all fragments */
+h2 { color: #fff !important; padding: 15px 20px !important; 
+     border-radius: 12px !important; margin: 40px 0 20px !important; 
+     font-size: 1.3em !important; border: none !important; }
+
+/* SECTION HEADERS (第0节/第1节/第2节) - all fragments */
+.learn-header, .section-title, [class*=section-head], [class*=section-title] {
+  font-size: 1.3em !important; font-weight: 700 !important;
+  color: #1a237e !important; margin: 30px 0 15px !important;
+  border-bottom: 3px solid #1a237e !important; padding-bottom: 5px !important;
+}
+
+/* KNOWLEDGE POINTS - all fragments (.zb, .knowledge-point, .key-point, .kp, etc.) */
+.zb, .knowledge-point, .key-point, .kp, .principle-item, .conseq-card,
+.method-item, .model-type-box, .diag-compare, .consequence-item,
+.kp-item, [class*=chapter-section], .highlight-box, .stata-output,
+.regression-output, .correct-approach, .key-point-wrapper,
+.concept-a, .concept-b, .figure-concept {
+  background: #fff !important;
+  border: 1px solid #e0e0e0 !important;
+  border-left: 4px solid #ff6f00 !important;
+  padding: 12px 16px !important;
+  margin: 10px 0 !important;
+  border-radius: 0 8px 8px 0 !important;
+  font-size: 0.93em !important;
+  color: #222 !important;
+  line-height: 1.8 !important;
+}
+
+/* EXAMPLE / CASE BOXES - all fragments */
+.ex, .example-box, .case-box, .ai-case-box, .problem-card, .tricky-box,
+.case-detail, [class*=case-container], .case-wrapper {
+  background: #fff !important;
+  border: 1px solid #e0e0e0 !important;
+  border-radius: 12px !important;
+  padding: 18px !important;
+  margin: 20px 0 !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04) !important;
+}
+/* Nested elements inside example boxes should be clean */
+.ex h4, .example-box h4, .case-box h4, .problem-card h4,
+.ai-case-box h4, .tricky-box h4 {
+  color: #1a237e !important; font-size: 1.1em !important; margin-bottom: 8px !important;
+}
+
+/* QUESTIONS - all fragments */
+.q, .problem-card .problem-body, .problem-type, .case,
+.teacher-q, [class*=exam-question], .case-question,
+.case-scenario, [class*=question-text] {
+  background: #f5f5f5 !important;
+  border-radius: 8px !important;
+  padding: 12px 15px !important;
+  margin: 12px 0 4px !important;
+  font-weight: 600 !important;
+  color: #333 !important;
+  border-left: 4px solid #1565c0 !important;
+  font-size: 0.93em !important;
+}
+
+/* CASE SCENARIOS - keep readable but distinct */
+.case-scenario, .case-detail .case-scenario {
+  background: #fafafa !important;
+  border-left-color: #4caf50 !important;
+  font-weight: normal !important;
+}
+
+/* ANSWERS - all fragments */
+.a, .answer, .ai-answer, .answer-hint, [class*=solution],
+.case-questions .answer, .problem-card .answer {
+  background: #fafafa !important;
+  border: 1px dashed #1565c0 !important;
+  border-radius: 8px !important;
+  padding: 12px !important;
+  margin: 8px 0 15px !important;
+  color: #222 !important;
+}
+
+/* STEPS - normalize all step-like structures */
+.step, [class*=step-item], [class*=step-row] {
+  display: flex !important;
+  align-items: flex-start !important;
+  padding: 5px 0 !important;
+  border-bottom: 1px solid #eee !important;
+  font-size: 0.9em !important;
+}
+.step-num, [class*=step-num] {
+  min-width: 52px !important; font-weight: 700 !important; color: #1565c0 !important;
+}
+.step-label, [class*=step-label] {
+  min-width: 60px !important; color: #e65100 !important; font-weight: 600 !important;
+  font-size: 0.85em !important;
+}
+.step-text, [class*=step-text] {
+  flex: 1 !important; color: #222 !important;
+}
+
+/* BUTTONS - all fragments */
+.s, .s-btn, button.s, [class*=toggle-btn], [class*=show-btn] {
+  background: #1565c0 !important; color: #fff !important;
+  border: none !important; padding: 8px 18px !important;
+  border-radius: 6px !important; cursor: pointer !important;
+  font-size: 0.9em !important; margin: 5px 0 !important;
+}
+
+/* CONFUSION TABLES - all fragments */
+.confusion, .confusion-table-wrap, .compare-table-wrapper, .compare-table,
+[class*=comparison], [class*=contrast], .diagnosis-table,
+.remedy-table, .model-types {
+  background: #fff3e0 !important;
+  border: 1px solid #ffe0b2 !important;
+  border-radius: 10px !important;
+  padding: 14px !important;
+  margin: 18px 0 !important;
+  color: #222 !important;
+}
+.confusion h5, [class*=confusion] h5, .compare-table h5 {
+  color: #e65100 !important; margin-bottom: 8px !important;
+}
+table, td, th { color: #222 !important; padding: 8px !important; }
+table th, .compare-table th { background: #fff8e1 !important; font-weight: 700 !important; }
+
+/* SPEED BOXES */
+.speed-box, .speed-body, .speed-header, [class*=speed-card] {
+  background: #e8eaf6 !important;
+  border: 2px solid #1a237e !important;
+  border-radius: 10px !important;
+  padding: 14px !important;
+  margin: 20px 0 !important;
+  color: #222 !important;
+}
+
+/* WEIGHT / PRIORITY BOXES */
+.weight-box, .weight-body, .weight-header, [class*=weight-card],
+.priority-box, .topic-meta {
+  background: #fff9c4 !important;
+  border: 1px solid #f9a825 !important;
+  border-radius: 8px !important;
+  padding: 10px 14px !important;
+  margin: 10px 0 !important;
+  display: inline-block !important;
+  font-size: 0.88em !important;
+  color: #222 !important;
+}
+
+/* BADGES - normalize across fragments */
+.badge-core, .badge-imp, .badge-star, [class*=badge] {
+  display: inline-block !important;
+  font-size: 0.75em !important;
+  padding: 2px 10px !important;
+  border-radius: 10px !important;
+  font-weight: 700 !important;
+  color: #fff !important;
+}
+.badge-core { background: #c62828 !important; }
+.badge-imp { background: #e65100 !important; }
+
+/* EXAM TYPE TAGS */
+.exam-tag, .exam-tag-inline, .exam-type, .exam_types,
+[class*=exam-type], [class*=exam-tag] {
+  display: inline-block !important;
+  font-size: 0.72em !important;
+  padding: 1px 7px !important;
+  border-radius: 4px !important;
+  margin: 2px !important;
+  font-weight: normal !important;
+}
+.exam-tag[class*=choice], .exam-tag-inline[class*=choice] { background: #fff8e1 !important; color: #e65100 !important; }
+
+/* SOURCE LABELS */
+.source-teacher, [class*=source-teacher], .case-source,
+.problem-source, .q-label {
+  display: inline-block !important;
+  font-size: 0.78em !important;
+  padding: 2px 8px !important;
+  border-radius: 4px !important;
+  margin-right: 4px !important;
+}
+
+/* FORMULAS */
+.formula-display, [class*=formula], .formula {
+  font-family: 'Courier New', monospace !important;
+  background: #f9f9f9 !important;
+  padding: 4px 8px !important;
+  border-radius: 4px !important;
+  margin: 3px 0 !important;
+  display: inline-block !important;
+  font-size: 0.92em !important;
+}
+
+/* SHORT ANSWER TEMPLATES (green boxes) */
+[style*="background:#e8f5e9"], .confusion[style*="background:#e8f5e9"] {
+  background: #e8f5e9 !important;
+  border-color: #2e7d32 !important;
+  color: #222 !important;
+}
+
+/* CLEAN LABEL */
+.clean-label {
+  display: inline-block !important;
+  font-size: 0.7em !important;
+  padding: 1px 8px !important;
+  border-radius: 10px !important;
+  background: #ffcdd2 !important;
+  color: #c62828 !important;
+  font-weight: 700 !important;
+  margin-left: 6px !important;
+}
+
+/* COLORS - fix any white-on-light */
+body, body * { color: #222; }
+h1, h1 * { color: #1a237e !important; }
+h2, h2 * { color: #fff !important; }
+.tag-teacher { background: #e3f2fd !important; color: #1565c0 !important; }
+.tag-ai { background: #fce4ec !important; color: #c62828 !important; }
+.tag-single { background: #fff8e1 !important; color: #e65100 !important; }
+.tag-judge { background: #f3e5f5 !important; color: #6a1b9a !important; }
+.tag-short { background: #e8f5e9 !important; color: #2e7d32 !important; }
+.tag-case { background: #ffebee !important; color: #c62828 !important; }
+
+/* Remove extra unwanted borders from nested elements */
+.topic-header, .topic-meta, .priority-body { background: transparent !important; border: none !important; padding: 0 !important; margin: 0 !important; }
+
+/* CONSEQUENCE lists - normalize */
+.consequence-list, .consequence-grid, .method-list, .principle-list {
+  list-style: none !important; padding: 0 !important; margin: 10px 0 !important;
+}
+.consequence-item, .method-item, .principle-item {
+  margin: 6px 0 !important; padding: 8px 12px !important;
+}
+
+/* Chow test steps, BP steps etc */
+.chow-steps, .bp-steps, [class*="steps"] ol {
+  padding-left: 24px !important; margin: 10px 0 !important;
+}
+.chow-steps li, [class*="steps"] li {
+  margin: 6px 0 !important; line-height: 1.6 !important;
+}
+
+/* Original problems sections */
+.original-problems, .ai-case {
+  margin: 15px 0 !important;
+}
+
+/* Speed highlights */
+.speed-highlight, [class*="speed-highlight"] {
+  background: #fff !important;
+  border: 1px solid #1a237e !important;
+  padding: 6px 10px !important;
+  border-radius: 6px !important;
+  font-size: 0.9em !important;
+}
+
+/* Floating panel (speed panel) */
+.floating-panel { z-index: 9995 !important; }
+
+/* Topic dividers */
+.topic-divider { margin: 30px 0 !important; border: none !important; border-top: 2px solid #e0e0e0 !important; }
+
+/* Container - ensure no left margin conflict */
+.container { margin: 0 auto !important; margin-left: auto !important; margin-right: auto !important; max-width: 1000px !important; padding-top: 72px !important; }
 </style>
 </head><body>
-<!-- 左侧导航侧栏 -->
-<div id="leftSidebar" style="position:fixed;top:0;left:0;width:220px;height:100vh;background:#1a237e;z-index:9998;overflow-y:auto;box-shadow:2px 0 12px rgba(0,0,0,0.2)">
-<div style="padding:16px 14px;border-bottom:1px solid rgba(255,255,255,0.15)">
-<div style="color:#fff;font-size:1.1em;font-weight:700">📊 目录</div>
-<div style="color:rgba(255,255,255,0.6);font-size:0.75em;margin-top:4px">点击跳转专题</div>
-</div>
-<div style="padding:8px 0">
-<div style="padding:4px 14px;color:#ffcdd2;font-size:0.78em;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-top:8px">🔴 核心专题 ★★★★★</div>
-<a href="#t1" style="display:block;padding:6px 14px;color:#fff;text-decoration:none;font-size:0.82em;border-left:3px solid transparent" onmouseover="this.style.borderLeftColor='#ff5252';this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.borderLeftColor='transparent';this.style.background='transparent'">专题1·对数模型</a>
-<a href="#t2" style="display:block;padding:6px 14px;color:#fff;text-decoration:none;font-size:0.82em;border-left:3px solid transparent" onmouseover="this.style.borderLeftColor='#ff5252';this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.borderLeftColor='transparent';this.style.background='transparent'">专题2·虚拟变量</a>
-<a href="#t4" style="display:block;padding:6px 14px;color:#fff;text-decoration:none;font-size:0.82em;border-left:3px solid transparent" onmouseover="this.style.borderLeftColor='#ff5252';this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.borderLeftColor='transparent';this.style.background='transparent'">专题4·异方差</a>
-<a href="#t5" style="display:block;padding:6px 14px;color:#fff;text-decoration:none;font-size:0.82em;border-left:3px solid transparent" onmouseover="this.style.borderLeftColor='#ff5252';this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.borderLeftColor='transparent';this.style.background='transparent'">专题5·自相关</a>
-<a href="#t6" style="display:block;padding:6px 14px;color:#fff;text-decoration:none;font-size:0.82em;border-left:3px solid transparent" onmouseover="this.style.borderLeftColor='#ff5252';this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.borderLeftColor='transparent';this.style.background='transparent'">专题6·F检验</a>
-<a href="#t9" style="display:block;padding:6px 14px;color:#fff;text-decoration:none;font-size:0.82em;border-left:3px solid transparent" onmouseover="this.style.borderLeftColor='#ff5252';this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.borderLeftColor='transparent';this.style.background='transparent'">专题9·OLS假设</a>
-<a href="#t11" style="display:block;padding:6px 14px;color:#fff;text-decoration:none;font-size:0.82em;border-left:3px solid transparent" onmouseover="this.style.borderLeftColor='#ff5252';this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.borderLeftColor='transparent';this.style.background='transparent'">专题11·面板数据</a>
-<a href="#t12" style="display:block;padding:6px 14px;color:#fff;text-decoration:none;font-size:0.82em;border-left:3px solid transparent" onmouseover="this.style.borderLeftColor='#ff5252';this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.borderLeftColor='transparent';this.style.background='transparent'">专题12·时间序列</a>
-
-<div style="padding:4px 14px;color:#ffe0b2;font-size:0.78em;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-top:12px">🟡 重要专题 ★★★</div>
-<a href="#t3" style="display:block;padding:6px 14px;color:#fff;text-decoration:none;font-size:0.82em" onmouseover="this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.background='transparent'">专题3·多重共线性</a>
-<a href="#t7" style="display:block;padding:6px 14px;color:#fff;text-decoration:none;font-size:0.82em" onmouseover="this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.background='transparent'">专题7·误差项vs残差</a>
-
-<div style="padding:4px 14px;color:#a5d6a7;font-size:0.78em;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-top:12px">🟢 了解专题 ★★</div>
-<a href="#t8" style="display:block;padding:6px 14px;color:rgba(255,255,255,0.6);text-decoration:none;font-size:0.82em" onmouseover="this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.background='transparent'">专题8·Probit/Logit</a>
-<a href="#t10" style="display:block;padding:6px 14px;color:rgba(255,255,255,0.6);text-decoration:none;font-size:0.82em" onmouseover="this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.background='transparent'">专题10·工具变量</a>
-<a href="#t13" style="display:block;padding:6px 14px;color:rgba(255,255,255,0.6);text-decoration:none;font-size:0.82em" onmouseover="this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.background='transparent'">专题13·模型设定</a>
-</div>
-<div style="position:absolute;bottom:0;left:0;right:0;padding:10px 14px;border-top:1px solid rgba(255,255,255,0.15);font-size:0.72em;color:rgba(255,255,255,0.5);text-align:center">
-📊 计量经济学 · 考前冲刺
-</div>
+<!-- 固定顶部导航栏 -->
+<div id="topNav" style="position:fixed;top:0;left:0;right:0;height:52px;background:#1a237e;z-index:9999;display:flex;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,0.2);padding:0 16px">
+  <div style="color:#fff;font-size:1em;font-weight:700;white-space:nowrap;margin-right:20px">📊 计量·冲刺</div>
+  <div class="topic-links" style="display:flex;gap:0;overflow-x:auto;flex:1;scrollbar-width:none;align-items:center">
+    <span style="color:#ffcdd2;font-size:0.7em;font-weight:700;margin-right:6px;white-space:nowrap">🔴</span>
+    <a href="#t1" style="color:#fff;text-decoration:none;font-size:0.75em;padding:4px 8px;border-radius:4px;white-space:nowrap" onmouseover="this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.background='transparent'">1·对数</a>
+    <a href="#t2" style="color:#fff;text-decoration:none;font-size:0.75em;padding:4px 8px;border-radius:4px;white-space:nowrap" onmouseover="this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.background='transparent'">2·虚拟</a>
+    <a href="#t4" style="color:#fff;text-decoration:none;font-size:0.75em;padding:4px 8px;border-radius:4px;white-space:nowrap" onmouseover="this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.background='transparent'">4·异方差</a>
+    <a href="#t5" style="color:#fff;text-decoration:none;font-size:0.75em;padding:4px 8px;border-radius:4px;white-space:nowrap" onmouseover="this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.background='transparent'">5·自相关</a>
+    <a href="#t6" style="color:#fff;text-decoration:none;font-size:0.75em;padding:4px 8px;border-radius:4px;white-space:nowrap" onmouseover="this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.background='transparent'">6·F检验</a>
+    <a href="#t9" style="color:#fff;text-decoration:none;font-size:0.75em;padding:4px 8px;border-radius:4px;white-space:nowrap" onmouseover="this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.background='transparent'">9·OLS</a>
+    <a href="#t11" style="color:#fff;text-decoration:none;font-size:0.75em;padding:4px 8px;border-radius:4px;white-space:nowrap" onmouseover="this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.background='transparent'">11·面板</a>
+    <a href="#t12" style="color:#fff;text-decoration:none;font-size:0.75em;padding:4px 8px;border-radius:4px;white-space:nowrap" onmouseover="this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.background='transparent'">12·时序</a>
+    <span style="color:#ffe0b2;font-size:0.7em;font-weight:700;margin:0 4px 0 8px;white-space:nowrap">🟡</span>
+    <a href="#t3" style="color:#fff;text-decoration:none;font-size:0.75em;padding:4px 8px;border-radius:4px;white-space:nowrap" onmouseover="this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.background='transparent'">3·共线性</a>
+    <a href="#t7" style="color:#fff;text-decoration:none;font-size:0.75em;padding:4px 8px;border-radius:4px;white-space:nowrap" onmouseover="this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.background='transparent'">7·残差</a>
+    <span style="color:#a5d6a7;font-size:0.7em;font-weight:700;margin:0 4px 0 8px;white-space:nowrap">🟢</span>
+    <a href="#t8" style="color:rgba(255,255,255,0.6);text-decoration:none;font-size:0.75em;padding:4px 8px;border-radius:4px;white-space:nowrap" onmouseover="this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.background='transparent'">8·Probit</a>
+    <a href="#t10" style="color:rgba(255,255,255,0.6);text-decoration:none;font-size:0.75em;padding:4px 8px;border-radius:4px;white-space:nowrap" onmouseover="this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.background='transparent'">10·工具</a>
+    <a href="#t13" style="color:rgba(255,255,255,0.6);text-decoration:none;font-size:0.75em;padding:4px 8px;border-radius:4px;white-space:nowrap" onmouseover="this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.background='transparent'">13·设定</a>
+  </div>
+  <div style="color:#fff;font-size:0.7em;white-space:nowrap;margin-left:8px" id="topicIndicator">⬆点击跳转</div>
 </div>
 
-<!-- 侧栏折叠按钮（手机/窄屏用） -->
+<script>
+// Smooth scroll for top nav + update indicator
+document.querySelectorAll('#topNav a').forEach(function(a){
+  a.addEventListener('click',function(e){
+    e.preventDefault();
+    var target = document.querySelector(this.getAttribute('href'));
+    if(target) {
+      target.scrollIntoView({behavior:'smooth', block:'start'});
+      document.getElementById('topicIndicator').textContent = this.textContent.trim();
+    }
+  });
+});
+// Add padding-top to first topic to account for fixed navbar
+window.addEventListener('load',function(){
+  var firstTopic = document.querySelector('.topic, [id^="t"]');
+  if(firstTopic) firstTopic.style.scrollMarginTop = '70px';
+});
+// Add scroll margin to all topic anchors
+document.querySelectorAll('[id^="t"]').forEach(function(el){el.style.scrollMarginTop = '70px'});
+</script>
+
+<style>
+/* Top nav: topic links scrollbar hidden */
+.topic-links::-webkit-scrollbar { display: none; }
+/* Container top padding for fixed nav */
+.container { padding-top: 70px !important; }
+@media (max-width: 768px) {
+  .topic-links { overflow-x: auto !important; }
+  .topic-links a { font-size: 0.7em !important; padding: 4px 5px !important; }
+}
+</style>
+
+<!-- 左侧导航侧栏<!-- 侧栏折叠按钮（手机/窄屏用） -->
 <div onclick="var s=document.getElementById('leftSidebar');var m=document.getElementById('mainContent');if(s.style.display!=='none'){s.style.display='none';m.style.marginLeft='0'}else{s.style.display='block';m.style.marginLeft='230px'}" style="display:none;position:fixed;top:10px;left:10px;z-index:9999;background:#1a237e;color:#fff;width:40px;height:40px;border-radius:8px;cursor:pointer;align-items:center;justify-content:center;font-size:1.2em" id="sidebarToggle">☰</div>
 
 <script>
 // Auto-hide sidebar on small screens
 if(window.innerWidth < 768){document.getElementById('leftSidebar').style.display='none'}
 // Smooth scroll for nav links
-document.querySelectorAll('#leftSidebar a').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();var t=document.querySelector(this.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth'})})});
+
 </script>
 
 
