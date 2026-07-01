@@ -4482,11 +4482,23 @@ id="t13" class="topic-header"&gt;
 <!-- /.container -->
 <div class="confusion" style="background:#e8f5e9;border-color:#2e7d32"><h4>💡 简答话术模板（通用）</h4><p><b>📌 通用简答结构：</b></p><p><b>第一步</b> — 下定义<br/><b>第二步</b> — 给公式<br/><b>第三步</b> — 作解释<br/><b>第四步</b> — 举例子<br/><b>第五步</b> — 下结论</p><p style="margin-top:8px"><b>得分技巧</b>：公式+解释各占50%分。</p></div>
 <div class="floating-btn">
-<button aria-label="切换AI功能" data-toggle="toggle-ai" title="考前5分钟速记">⏱</button>
+<button onclick="var p=document.getElementById('speedPanel');p.classList.toggle('show')" style="width:56px;height:56px;border-radius:50%;background:#1a237e;color:#fff;border:none;font-size:1.3em;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,0.2)" title="考前5分钟速记">⏱</button>
 </div>
 <div class="floating-panel" id="speedPanel">
 <div class="header">⏱ 考前5分钟速记</div>
-<div class="body" id="speedBody">
+<div class="body" id="speedBody" style="padding:10px 14px;overflow-y:auto;font-size:0.82em">
+<p style="color:#1a237e;font-weight:700;margin:0 0 6px 0;border-bottom:1px solid #1a237e;padding-bottom:4px">🔴 P0必记公式</p>
+<p style="margin:3px 0"><b>弹性</b>: lnY=β₀+β₁lnX → β₁ = %ΔY/%ΔX</p>
+<p style="margin:3px 0"><b>半弹性</b>: lnY=β₀+β₁X → %ΔY = 100β₁×ΔX</p>
+<p style="margin:3px 0"><b>还原A</b>: Â = e^{截距}</p>
+<p style="margin:3px 0"><b>VIF</b>: VIFⱼ=1/(1-R²ⱼ), VIF>10=严重共线性</p>
+<p style="margin:3px 0"><b>DW</b>: d≈2(1-ρ̂), d<dL→正自相关, d>dU→无</p>
+<p style="margin:3px 0"><b>BP检验</b>: LM=n×R²_û ~ χ²(k), 显著→异方差</p>
+<p style="margin:3px 0"><b>FE变换</b>: yᵢₜ-ȳᵢ=β₁(xᵢₜ-x̄ᵢ)+(uᵢₜ-ūᵢ)</p>
+<p style="margin:3px 0"><b>Hausman</b>: p<0.05→FE, p>0.05→RE</p>
+<p style="margin:3px 0"><b>ADF</b>: H₀:γ=0(不平稳), 统计量<临界值才平稳</p>
+<p style="margin:3px 0"><b>ECM</b>: 修正项系数γ<0, 以|γ|速度回调均衡</p>
+<p style="margin:6px 0 0 0;border-top:1px solid #ccc;padding-top:4px;color:#c62828;font-weight:600">📌 实证设计模板: 面板→DID→控制变量(城市/年份)→固定效应+平行趋势</p>
 </div>
 </div>
 <script>
